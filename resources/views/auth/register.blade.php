@@ -12,8 +12,8 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card shadow-lg">
                     <div class="card-header text-white text-center py-4" style="background-color: rgb(58, 175, 22);">
-                        <h3 class="mb-0">เข้าสู่ระบบ</h3>
-                        <p class="mb-0">ยินดีต้อนรับกลับ! กรุณาเข้าสู่ระบบเพื่อดำเนินการต่อ</p>
+                        <h3 class="mb-0">สมัครสมาชิก</h3>
+                        <p class="mb-0">กรุณากรอกข้อมูลเพื่อสมัครสมาชิก</p>
                     </div>
                     <div class="card-body p-4">
                         @if ($errors->any())
@@ -25,8 +25,12 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action="{{route('Login')}}" method="POST">
+                        <form action="{{ route('register') }}" method="POST">
                             @csrf
+                            <div class="mb-3">
+                                <label for="name" class="form-label">ชื่อ-นามสกุล</label>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="กรอกชื่อของคุณ" required>
+                            </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">อีเมล</label>
                                 <input type="email" name="email" id="email" class="form-control" placeholder="กรอกอีเมลของคุณ" required>
@@ -35,14 +39,18 @@
                                 <label for="password" class="form-label">รหัสผ่าน</label>
                                 <input type="password" name="password" id="password" class="form-control" placeholder="กรอกรหัสผ่านของคุณ" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="password_confirmation" class="form-label">ยืนยันรหัสผ่าน</label>
+                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="กรอกรหัสผ่านอีกครั้ง" required>
+                            </div>
                             <div class="d-grid gap-2">
-                                <button type="submit" class="btn" style="background-color: rgb(58, 175, 22); color: white;">เข้าสู่ระบบ</button>
+                                <button type="submit" class="btn" style="background-color: rgb(58, 175, 22); color:white;">สมัครสมาชิก</button>
                             </div>
                         </form>
                     </div>
-                    {{-- <div class="card-footer text-center py-3">
-                        <p class="mb-0">ยังไม่มีบัญชี? <a href="{{ route('showRegistrationForm') }}" class="text-decoration-none">สมัครสมาชิก</a></p>
-                    </div> --}}
+                    <div class="card-footer text-center py-3">
+                        <p class="mb-0">มีบัญชีอยู่แล้ว? <a href="{{ route('showLoginForm') }}" class="text-decoration-none">เข้าสู่ระบบ</a></p>
+                    </div>
                 </div>
             </div>
         </div>

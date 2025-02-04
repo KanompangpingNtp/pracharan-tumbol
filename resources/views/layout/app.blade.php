@@ -153,8 +153,8 @@
             </div>
             <div class="d-flex flex-column justify-content-start align-items-center d-none d-lg-block">
                 <div class="d-flex justify-content-end align-items-center gap-2">
-                    <a class="button-greenlight">เข้าสู่ระบบ</a>
-                    <a class="button-greenblack">สมัครสมาชิก</a>
+                    <a href="{{route('showLoginForm')}}" class="button-greenlight">เข้าสู่ระบบ</a>
+                    <a href="" class="button-greenblack">สมัครสมาชิก</a>
                 </div>
                 <div class="d-flex justify-content-start align-items-end gap-2 button-img mt-2">
                     <a class="button-greenlight" style="border-radius: 20px; padding:0px 24px;" >หน้าแรก</a>

@@ -12,6 +12,7 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 </head>
 <body>
     @if ($message = Session::get('success'))
@@ -54,9 +55,9 @@
                             ออกจากระบบ
                         </a>
                     </li>
-                    {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
-                    </form> --}}
+                    </form>
                 </ul>
             </li>
         </ul>
@@ -67,7 +68,14 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">ระบบ</div>
-                        {{-- <a class="nav-link" href="{{route('PressReleaseHome')}}">
+
+                        <a class="nav-link" href="{{route('ExecutiveBoardPage')}}">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการข้อมูลคณะผู้บริหาร
+                        </a>
+                        <a class="nav-link" href="{{route('PressReleaseHome')}}">
                             <div class="sb-nav-link-icon">
                                 <i class="bi bi-database-add"></i>
                             </div>
@@ -95,7 +103,7 @@
                                 <a class="nav-link" href="{{route('RevenueHome')}}">งานเก็บรายได้</a>
                             </nav>
                         </div>
-                        <a class="nav-link" href="{{route('ManagePersonnel')}}">
+                        {{-- <a class="nav-link" href="{{route('ManagePersonnel')}}">
                             <div class="sb-nav-link-icon">
                                 <i class="bi bi-database-add"></i>
                             </div>
@@ -167,10 +175,11 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
+                <div class="container-fluid px-4 container">
                     <div class="mt-5">
                         @yield('user_content')
                     </div>
+                    <br>
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">

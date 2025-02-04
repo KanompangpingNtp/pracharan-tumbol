@@ -136,13 +136,13 @@
                     <div class="mb-3">
                         <label for="photo_file" class="form-label">อัปโหลดรูปภาพ</label>
                         @if ($detail->images->isNotEmpty())
-                            <div>
-                                <img src="{{ asset('storage/' . $detail->images->first()->photo_file) }}" alt="รูปภาพ" style="width: 100px; height: auto;">
-                                <br>
-                                <small class="text-muted">รูปภาพที่อัปโหลดแล้ว</small>
-                                <input type="checkbox" name="remove_image" id="remove_image" value="1">
-                                <label for="remove_image">ลบ</label>
-                            </div>
+                        <div>
+                            <img src="{{ asset('storage/' . $detail->images->first()->photo_file) }}" alt="รูปภาพ" style="width: 100px; height: auto;">
+                            <br>
+                            <small class="text-muted">รูปภาพที่อัปโหลดแล้ว</small>
+                            <input type="checkbox" name="remove_image" id="remove_image" value="1">
+                            <label for="remove_image">ลบ</label>
+                        </div>
                         @endif
 
                         <br>
@@ -154,24 +154,22 @@
                     <div class="mb-3">
                         <label class="form-label">ระดับความสำคัญ</label>
                         <div>
-                            @for ($i = 1; $i <= 5; $i++)
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="status" id="status{{ $i }}" value="{{ $i }}"
-                                        @if ($detail->status == $i) checked @endif required>
-                                    <label class="form-check-label" for="status{{ $i }}">{{ $i }}</label>
-                                </div>
-                            @endfor
+                            @for ($i = 1; $i <= 5; $i++) <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="status{{ $i }}" value="{{ $i }}" @if ($detail->status == $i) checked @endif required>
+                                <label class="form-check-label" for="status{{ $i }}">{{ $i }}</label>
                         </div>
+                        @endfor
                     </div>
+                </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                    <button type="submit" class="btn btn-primary">บันทึก</button>
-                </div>
-            </form>
         </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+            <button type="submit" class="btn btn-primary">บันทึก</button>
+        </div>
+        </form>
     </div>
+</div>
 </div>
 @endforeach
 
@@ -181,4 +179,3 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" defer></script>
-

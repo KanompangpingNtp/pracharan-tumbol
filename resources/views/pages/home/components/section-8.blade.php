@@ -9,7 +9,7 @@
     }
 
     .btn-section-8 {
-        background: linear-gradient(to right, rgb(129, 199, 0), rgb(175, 255, 27), rgb(129, 199, 0));
+        background: linear-gradient(to right, #70c020, #d1f541, #70c020);
         border-radius: 20px;
         border: 0px solid black;
         box-shadow: 0 5px 15px rgba(129, 199, 0, 0.8);
@@ -21,7 +21,7 @@
 
     /* เอฟเฟกต์เมื่อ hover */
     .btn-section-8:hover {
-        background: linear-gradient(to right, rgb(100, 175, 0), rgb(140, 220, 20), rgb(100, 175, 0));
+        background: linear-gradient(to right, #d1f541, #70c020, #d1f541);
         box-shadow: 0 8px 20px rgba(129, 199, 0, 1);
         transform: scale(1.03);
     }
@@ -152,7 +152,7 @@
                 });
             </script>
         </div>
-        <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex flex-column justify-content-center align-items-center gap-4">
             <div>
                 <div class="title-section2 mb-3">
                     <div class="d-flex ">
@@ -187,12 +187,51 @@
                 <div class="px-4 py-2 lh-1 fw-bold fs-4"
                     style="background: linear-gradient(to right,#70c020, #d1f541, #70c020); 
                 border-top-left-radius: 20px; 
-                border-top-right-radius: 20px;">
+                border-top-right-radius: 20px;
+                box-shadow:0 1px 10px rgba(0, 0, 0, 0.7);">
                     ท่านคิดว่า อบต.พระอาจารย์ <br>
                     ควรเน้นหนักแก้ไขปัญหาเรื่องใดเป็น อันดับแรก?
                 </div>
-                <div class="bg-white text-black">
+                <div class="bg-white text-black p-2"
+                    style="border-bottom-left-radius: 20px; 
+                border-bottom-right-radius: 20px;
+                box-shadow:0 2px 10px rgba(0, 0, 0, 0.7);">
+                    <div class="radio-container mt-2 ms-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="options" value="1"
+                                id="radio1">
+                            <label class="form-check-label"
+                                for="radio1">จัดการเรื่องการศึกษาทั้งในและนอกระบบ</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="options" value="2"
+                                id="radio2">
+                            <label class="form-check-label" for="radio2">จัดมาตรการป้องกันน้ำท่วม</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="options" value="3"
+                                id="radio3">
+                            <label class="form-check-label" for="radio3">แก้ไขปัญหาสิ่งแวดล้อม</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="options" value="4"
+                                id="radio4">
+                            <label class="form-check-label" for="radio4">แก้ไขปัญหายาเสพติด</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="options" value="4"
+                                id="radio4">
+                            <label class="form-check-label" for="radio4">ปรับปรุงระบบสาธารณูปโภค</label>
+                        </div>
+                    </div>
 
+                    <!-- ปุ่มส่ง -->
+                    <div class="d-flex justify-content-end mt-2 w-100">
+                        <a href="#">
+                            <img src="{{ asset('images/home/section-8/btn-submit.png') }}" alt="3"
+                                class="img-fluid img-hover" width="120">
+                        </a>
+                    </div>
                 </div>
 
             </div>

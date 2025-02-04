@@ -1,0 +1,82 @@
+<style>
+    .bg-section5 {
+        background-image: url('{{ asset('images/home/section-5/bg-section5.png') }}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+</style>
+
+<main class="bg-section5 d-flex">
+    <div class="container d-flex flex-column flex-xl-row justify-content-center align-items-center">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <img src="{{ asset('images/home/section-5/title.png') }}" alt="title">
+
+            <?php
+            // ข้อมูลการ์ด
+            $cards = [['title' => 'Card 1', 'text' => 'เนื้อหาของ Card 1', 'image' => 'https://via.placeholder.com/150'], ['title' => 'Card 2', 'text' => 'เนื้อหาของ Card 2', 'image' => 'https://via.placeholder.com/150'], ['title' => 'Card 3', 'text' => 'เนื้อหาของ Card 3', 'image' => 'https://via.placeholder.com/150'], ['title' => 'Card 4', 'text' => 'เนื้อหาของ Card 4', 'image' => 'https://via.placeholder.com/150'], ['title' => 'Card 5', 'text' => 'เนื้อหาของ Card 5', 'image' => 'https://via.placeholder.com/150'], ['title' => 'Card 6', 'text' => 'เนื้อหาของ Card 6', 'image' => 'https://via.placeholder.com/150']];
+            
+            // กำหนดสีการ์ด
+            $cardColors = ['#d1f541', '#d1f541', '#b8e64d', '#b8e64d', '#77b329', '#77b329'];
+            ?>
+
+            <div class="row row-cols-1 row-cols-xl-2 g-3 mt-2">
+                <?php foreach ($cards as $index => $card): ?>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-black">
+                        <div class="card d-flex flex-row p-3 border-0 custom-card"
+                            style="background-color: <?= $cardColors[$index % count($cardColors)] ?>; border-radius:20px; box-shadow: 0 4px 5px rgba(255, 255, 255, 0.7);">
+                            <img src="<?= !empty($card['image']) ? $card['image'] : asset('images/home/section-4/logo-miss-files.png') ?>"
+                                class="card-img-top bg-white" alt="Image <?= $index + 1 ?>"
+                                onerror="this.onerror=null; this.src='{{ asset('images/home/section-4/logo-miss-files.png') }}';"
+                                style="height: 125px; width: 110px; object-fit: contain; border-radius: 10px;">
+                            <div class="card-body p-1 bg-white ms-2 lh-1" style="border-radius: 10px;">
+                                <div class="d-flex border-bottom align-items-center mb-1 pb-1">
+                                    <img src="{{ asset('images/home/section-5/calendar.png') }}" alt="calendar"
+                                        class="me-2" width="30">
+                                    dd-mm-yyyy
+                                </div>
+                                <h5 class="card-title"><?= $card['title'] ?></h5>
+                                <p class="card-text"><?= $card['text'] ?></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <a href="#" class="link-green mt-3 text-black" style="border-radius: 30px;">ดูทั้งหมด</a>
+        </div>
+
+        <?php
+            // ข้อมูลการ์ด
+            $card2s = [['title' => 'Card 1', 'text' => 'เนื้อหาของ Card 1', 'image' => 'https://via.placeholder.com/150'], ['title' => 'Card 2', 'text' => 'เนื้อหาของ Card 2', 'image' => 'https://via.placeholder.com/150'], ['title' => 'Card 3', 'text' => 'เนื้อหาของ Card 3', 'image' => 'https://via.placeholder.com/150']];
+            
+            ?>
+
+        <div class="d-flex flex-column justify-content-center align-items-center w-100 px-3">
+            <img src="{{ asset('images/home/section-5/title2.png') }}" alt="title">
+            <div class="p-2 d-flex flex-column w-100" style="background: linear-gradient(to bottom, #d1f541, #569419); border-radius: 20px;">
+                <?php foreach ($card2s as $index => $card): ?>
+                <a href="#" class="text-decoration-none text-black">
+                    <div class="card d-flex flex-row p-3 border-0 custom-card"
+                        style=" border-radius:20px; background-color: transparent;">
+                        <img src="<?= !empty($card['image']) ? $card['image'] : asset('images/home/section-4/logo-miss-files.png') ?>"
+                            class="card-img-top bg-white" alt="Image <?= $index + 1 ?>"
+                            onerror="this.onerror=null; this.src='{{ asset('images/home/section-4/logo-miss-files.png') }}';"
+                            style="height: 100px; width: 100px; object-fit: contain; border-radius: 10px;">
+                        <div class="card-body ms-2 lh-1 p-0" style="border-radius: 10px;">
+                            <p class="card-text bg-white px-2 py-1 rounded"><?= $card['text'] ?></p>
+                        </div>
+                    </div>
+                </a>
+                <?php endforeach; ?>
+            </div>
+            <a href="#" class="mt-2  img-hover">
+                <img src="{{asset('images/home/section-5/button2.png')}}" alt="button-link" >
+            </a>
+        </div>
+        
+    </div>
+</main>

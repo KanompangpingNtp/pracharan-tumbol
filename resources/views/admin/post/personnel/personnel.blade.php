@@ -119,7 +119,6 @@
         </div>
     </div>
 </div>
-</div>
 @endforeach
 
 <script src="{{asset('js/datatable.js')}}"></script>

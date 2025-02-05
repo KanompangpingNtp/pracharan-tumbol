@@ -78,24 +78,79 @@
     }
 
     .button-green-search {
-            background-color: rgb(58, 175, 22);
-            font-size: 22px;
-            font-weight: bold;
-            padding: 0px 15px;
-            border: 0px solid black;
-            border-radius: 10px;
-            color: #ffffff;
-            cursor: pointer;
-            text-decoration: none;
-            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
-            transition: all 0.3s ease;
+        background-color: rgb(58, 175, 22);
+        font-size: 22px;
+        font-weight: bold;
+        padding: 0px 15px;
+        border: 0px solid black;
+        border-radius: 10px;
+        color: #ffffff;
+        cursor: pointer;
+        text-decoration: none;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+        transition: all 0.3s ease;
+    }
+
+    .button-green-search:hover {
+        background-color: rgb(27, 116, 0);
+    }
+
+     /* ตั้งค่าเริ่มต้นของคอนเทนเนอร์ */
+     .custom-dropdown-container {
+        position: relative;
+    }
+
+    /* สไตล์สำหรับ dropdown menu */
+    .custom-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+        font-size: 23px;
+        min-width: 200px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .custom-dropdown-container:hover .custom-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* สไตล์สำหรับแต่ละรายการใน dropdown */
+    .dropdown-item {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+        background-color: #ececec;
+        border-radius: 4px;
+    }
+
+    /* Keyframes สำหรับ slide-down */
+    @keyframes slide-down {
+        0% {
+            opacity: 0;
+            transform: translateY(-10%);
         }
 
-        .button-green-search:hover {
-            background-color: rgb(27, 116, 0);
+        100% {
+            opacity: 1;
+            transform: translateY(0);
         }
-    
-
+    }
 </style>
 <main class="d-flex flex-column align-items-center justify-content-end bg-page1">
     <div class="bg-menu w-100 pb-2 pt-3">
@@ -106,11 +161,31 @@
                     <div>ข้อมูลพื้นฐาน</div>
                 </a>
             </div>
-            <div class="d-flex flex-column align-items-center justify-content-center">
+            {{-- <div class="d-flex flex-column align-items-center justify-content-center">
                 <a href="#" class="navbar-item">
                     <img src="{{ asset('images/header/teamwork.png') }}" alt="ปุ่มบุคลากร">
                     <div>บุคลากร</div>
                 </a>
+            </div> --}}
+            <div
+                class="custom-dropdown-container d-flex flex-column align-items-center justify-content-center position-relative">
+                <a class="custom-hover-trigger navbar-item d-flex flex-column align-items-center">
+                    <img src="{{ asset('images/header/teamwork.png') }}" alt="teamwork" class="navbar-icon">
+                    <div class="navbar-text">บุคลากร</div>
+                </a>
+                <!-- ลิสต์รายการ -->
+                <ul class="custom-dropdown-menu">
+                    <li>
+                        <a href="#" class="dropdown-item">แผนผังองค์กรรวม</a>
+                    </li>
+                    {{-- @foreach ($personnelAgencies as $agency)
+                        <li>
+                            <a href="{{ route('agency.show', ['id' => $agency->id]) }}" class="dropdown-item">
+                                {{ $agency->personnel_agency_name }}
+                            </a>
+                        </li>
+                    @endforeach --}}
+                </ul>
             </div>
             <div class="d-flex flex-column align-items-center justify-content-center">
                 <a href="#" class="navbar-item">
@@ -147,30 +222,40 @@
     <div class="bg-runtext w-100 d-flex align-items-center">
         <div class="container d-flex align-items-center gap-3">
             <div class="col-12 col-md-9 bg-text">
-                <div style="white-space: nowrap; overflow: hidden; position: relative; width: 100%; height: 38px; background: linear-gradient(to right, #ffffff6b, #ffffff6b); border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); padding: 5px;">
-                    <span style="display: inline-block; position: absolute; white-space: nowrap; animation: marquee 15s linear infinite; color: rgb(0, 0, 0); font-size: 20px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
-                        วิสัยทัศน์ : พัฒนาคุณภาพชีวิตและสังคม ช่วยกันคิดช่วยกันทำ การเกษรก้าวหน้าแบบยั่งยืน บ้านเมืองน่าอยู่
+                <div
+                    style="white-space: nowrap; overflow: hidden; position: relative; width: 100%; height: 38px; background: linear-gradient(to right, #ffffff6b, #ffffff6b); border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); padding: 5px;">
+                    <span
+                        style="display: inline-block; position: absolute; white-space: nowrap; animation: marquee 15s linear infinite; color: rgb(0, 0, 0); font-size: 20px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                        วิสัยทัศน์ : พัฒนาคุณภาพชีวิตและสังคม ช่วยกันคิดช่วยกันทำ การเกษรก้าวหน้าแบบยั่งยืน
+                        บ้านเมืองน่าอยู่
                     </span>
                 </div>
             </div>
             <div class="col-3 d-none d-md-block">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="ค้นหา..." style="border-radius: 10px 0 0 10px;">
-                    <button class="button-green-search" type="button" style="border-radius: 0 10px 10px 0;">
+                <form action="https://www.google.com/search" method="GET" class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="ค้นหา..."
+                        style="border-radius: 10px 0 0 10px;">
+                    <button class="button-green-search" type="submit" style="border-radius: 0 10px 10px 0;">
                         <i class="fas fa-search mt-2"></i>
                     </button>
-                </div>
+                </form>
             </div>
-            
+
+
         </div>
     </div>
-    
+
     <style>
-    @keyframes marquee {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
     </style>
-    
+
 
 </main>

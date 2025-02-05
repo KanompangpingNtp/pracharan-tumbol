@@ -99,9 +99,9 @@
             <img src="{{ asset('images/home/section-1/businessman.png') }}" alt="icon">
         </div>
         <div class="d-flex justify-content-between w-100 overflow-x-auto mb-4"> <!-- เพิ่ม w-100 เพื่อให้เต็มความกว้าง -->
-            <div class="flex-grow-1 position-relative" style="min-width: 250px;">
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center" style="min-width: 250px;">
                 <img src="{{ asset('images/home/section-1/1.png') }}" alt="persernal" style="width: 100%; height: 400px; object-fit: contain;">
-                <div class="position-absolute top-50 start-50 translate-middle w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+                <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายสายชล ทับเปลี่ยน <br>
                     <span style="font-size: 18px;">นายกองค์การบริหารส่วนตำบลพระอาจารย์</span>
@@ -111,9 +111,9 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-grow-1 position-relative mt-5" style="min-width: 250px;">
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
                 <img src="{{ asset('images/home/section-1/2.png') }}" alt="persernal" style="width: 100%; height: 350px; object-fit: contain;">
-                <div class="position-absolute top-50 start-50 translate-middle w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+                <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายวิเชียร มูฮำหมัด <br>
                     <span style="font-size: 18px;">รองนายกองค์การ</span> <br>
@@ -124,9 +124,9 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-grow-1 position-relative mt-5" style="min-width: 250px;">
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
                 <img src="{{ asset('images/home/section-1/3.png') }}" alt="persernal" style="width: 100%; height: 350px; object-fit: contain;">
-                <div class="position-absolute top-50 start-50 translate-middle w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+                <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายภูทัย บุญรอด<br>
                     <span style="font-size: 18px;">รองนายกองค์การ</span> <br>
@@ -137,9 +137,9 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-grow-1 position-relative mt-5" style="min-width: 250px;">
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center mt-5" style="min-width: 250px;">
                 <img src="{{ asset('images/home/section-1/4.png') }}" alt="persernal" style="width: 100%; height: 350px; object-fit: contain;">
-                <div class="position-absolute top-50 start-50 translate-middle w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+                <div class="mt-2  w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายไพโรจน์ อาดำ<br>
                     <span style="font-size: 18px;">เลขานุการนายก</span>
@@ -197,12 +197,12 @@
         
         <div class="row justify-content-center align-items-center mt-4 px-3 ">
             <!-- ฝั่งซ้าย: ภาพบุคคล -->
-            <div class="col-12 col-lg-6 d-flex justify-content-center position-relative" style="min-width: 250px;">
-                <img src="{{ asset('images/home/section-1/4.png') }}" alt="persernal" class="img-fluid" style="height: 400px; object-fit: contain;">
-                <div class="position-absolute top-50 start-50 translate-middle w-75 lh-1" 
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center" style="min-width: 250px;">
+                <img src="{{ asset('images/home/section-1/4.png') }}" alt="persernal" class="img-fluid" style="height: 300px; object-fit: contain;">
+                <div class="my-2 w-75 lh-1" 
                     style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     
-                    <div class="text-center bg-white text-black p-2 fs-4" 
+                    <div class="text-center bg-white text-black p-2 fs-4 " 
                         style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายเสกสรรค์ บัวเจริญ<br>
                         <span style="font-size: 18px;">รองปลัดองค์การบริหาร</span><br>
@@ -220,16 +220,9 @@
     
             <!-- ฝั่งขวา: ภาพการ์ด -->
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-                <div class="d-flex justify-content-between align-items-end px-3">
-                    <img src="{{asset('images/home/section-1/tree.png')}}" alt="tree">
-                    <img src="{{asset('images/home/section-1/wind-power.png')}}" alt="wind">
-                    <img src="{{asset('images/home/section-1/tree.png')}}" alt="tree" class="d-none d-xl-block">
-                    <img src="{{asset('images/home/section-1/battery.png')}}" alt="battery">
-                    <img src="{{asset('images/home/section-1/tree.png')}}" alt="tree" class="d-none d-md-block">
-                    <img src="{{asset('images/home/section-1/smart-city.png')}}" alt="hotel" class="d-none d-sm-block">
-                </div>
+  
                 <a href="#" class="hover-effect">
-                    <img src="{{ asset('images/home/section-1/card.png') }}" alt="card" class="img-fluid">
+                    <img src="{{ asset('images/home/section-1/service-card.png') }}" alt="card" class="img-fluid">
                 </a>
             </div>
         </div>

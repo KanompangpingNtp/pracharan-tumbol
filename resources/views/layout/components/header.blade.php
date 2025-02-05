@@ -155,11 +155,31 @@
 <main class="d-flex flex-column align-items-center justify-content-end bg-page1">
     <div class="bg-menu w-100 pb-2 pt-3">
         <div class="container d-flex flex-wrap justify-content-evenly">
-            <div class="d-flex flex-column align-items-center justify-content-center">
+            {{-- <div class="d-flex flex-column align-items-center justify-content-center">
                 <a href="#" class="navbar-item">
                     <img src="{{ asset('images/header/house.png') }}" alt="ปุ่มหน้าหลัก">
                     <div>ข้อมูลพื้นฐาน</div>
                 </a>
+            </div> --}}
+            <div
+                class="custom-dropdown-container d-flex flex-column align-items-center justify-content-center position-relative">
+                <a class="custom-hover-trigger navbar-item d-flex flex-column align-items-center">
+                    <img src="{{ asset('images/header/house.png') }}" alt="house" class="navbar-icon">
+                    <div class="navbar-text">บุคลากร</div>
+                </a>
+                <!-- ลิสต์รายการ -->
+                <ul class="custom-dropdown-menu">
+                    <li>
+                        <a href="{{route('AgencyPage')}}" class="dropdown-item">แผนผังองค์กรรวม</a>
+                    </li>
+                    @foreach ($personnelAgencies as $agency)
+                        <li>
+                            <a href="{{ route('AgencyShow', ['id' => $agency->id]) }}" class="dropdown-item">
+                                {{ $agency->personnel_agency_name }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
             {{-- <div class="d-flex flex-column align-items-center justify-content-center">
                 <a href="#" class="navbar-item">

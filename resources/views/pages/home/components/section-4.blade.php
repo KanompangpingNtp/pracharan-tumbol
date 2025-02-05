@@ -65,8 +65,8 @@
                          onerror="this.onerror=null; this.src='{{ asset('images/home/section-4/logo-miss-files.png') }}';"
                          style="height: 200px; object-fit: contain; border-radius:10px;">
 
-                    <div class="card-body bg-white mt-2 lh-1" style="border-radius:10px;">
-                        <h5 class="card-title">{{ $post->title_name }}</h5>
+                    <div class="card-body bg-white mt-2 lh-1 p-2" style="border-radius:10px;">
+                        <h5 class="card-title m-0">{{ $post->title_name }}</h5>
                         <p class="card-text">{{ Str::limit($post->details, 100) }}</p>
                     </div>
 
@@ -137,6 +137,9 @@
                 </a>
                 <a href="#">
                     <img src="{{ asset('images/home/section-4/5.png') }}" alt="5" class="img-fluid img-hover">
+                </a>
+                <a href="#">
+                    <img src="{{ asset('images/home/section-4/6.png') }}" alt="6" class="img-fluid img-hover">
                 </a>
             </div>
         </div>

@@ -148,7 +148,9 @@
                 <img src="{{ asset('images/header/logo.png') }}" alt="logo" class="logo d-none d-md-block">
                 <div class="text-title-nav lh-1 text-center text-md-start ">
                     <span class="me-1" style="font-size: 42px;">องค์การบริหารส่วนตำบลพระอาจารย์</span> <br>
-                    <span style="font-size: 36px;">อำเภอองครักษ์ จังหวัดนครนายก</span>
+                     
+                    <span style="font-size: 26px;">อำเภอองครักษ์ จังหวัดนครนายก</span> <br>
+                    <span style="font-size: 26px;">Phra Achan Subdistrict Administrative Organization</span>
                 </div>
             </div>
             <div class="d-flex flex-column justify-content-start align-items-center d-none d-lg-block">
@@ -173,8 +175,6 @@
 
 
     @yield('content')
-
-
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

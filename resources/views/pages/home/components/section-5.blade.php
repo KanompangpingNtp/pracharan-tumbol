@@ -31,10 +31,10 @@
 
                             <div class="card-body p-1 bg-white ms-2 lh-1" style="border-radius: 10px;">
                                 <div class="d-flex border-bottom align-items-center mb-1 pb-1">
-                                    <img src="{{ asset('images/home/section-5/calendar.png') }}" alt="calendar" class="me-2" width="30">
+                                    <img src="{{ asset('images/home/section-5/calendar.png') }}" alt="calendar" class="me-2" width="25">
                                     {{ \Carbon\Carbon::parse($post->created_at)->format('d-m-Y') }}
                                 </div>
-                                <h5 class="card-title">{{ $post->title_name }}</h5>
+                                <h5 class="card-title m-0">{{ $post->title_name }}</h5>
                                 <p class="card-text">{{ $post->topic_name }}</p>
                             </div>
                         </div>

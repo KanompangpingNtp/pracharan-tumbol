@@ -28,8 +28,8 @@ use App\Http\Controllers\TestController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('pages.home.app');
+// Route::get('/check', function () {
+//     return view('pages.banner-in.app');
 // });
 
 Route::get('/layout', [ShowDataDetailController::class, 'layout'])->name('layout');

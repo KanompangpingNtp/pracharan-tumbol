@@ -83,22 +83,22 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-6 col-lg-4">
-                <a href="#">
+                <a href="http://www.admincourt.go.th/admincourt/site/09illustration.html" target="_blank">
                     <img src="{{ asset('images/home/section-2/1.png') }}" alt="1" class="img-fluid img-hover">
                 </a>
             </div>
             <div class="col-6 col-lg-4">
-                <a href="#">
+                <a href="https://www.nacc.go.th/NACCPPWFC?" target="_blank">
                     <img src="{{ asset('images/home/section-2/2.png') }}" alt="2" class="img-fluid img-hover">
                 </a>
             </div>
             <div class="col-6 col-lg-4">
-                <a href="#">
+                <a href="http://www.gprocurement.go.th/new_index.html" target="_blank">
                     <img src="{{ asset('images/home/section-2/3.png') }}" alt="3" class="img-fluid img-hover">
                 </a>
             </div>
             <div class="col-6 col-lg-4">
-                <a href="#">
+                <a href="http://www.oic.go.th/INFOCENTER52/5250/" target="_blank">
                     <img src="{{ asset('images/home/section-2/4.png') }}" alt="4" class="img-fluid img-hover">
                 </a>
             </div>

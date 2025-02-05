@@ -317,9 +317,7 @@
         <!-- ฝั่งขวา: ภาพการ์ด -->
         <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
 
-            <a href="#" class="hover-effect">
                 <img src="{{ asset('images/home/section-1/service-card.png') }}" alt="card" class="img-fluid">
-            </a>
         </div>
     </div>
     </div>

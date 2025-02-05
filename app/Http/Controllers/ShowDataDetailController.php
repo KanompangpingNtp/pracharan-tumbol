@@ -94,4 +94,11 @@ class ShowDataDetailController extends Controller
 
     //     return view('user.press-release.detail-data.index', compact('pressRelease'));
     // }
+
+    public function banner ()
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        return view('pages.banner-in.app', compact('personnelAgencies'));
+    }
 }

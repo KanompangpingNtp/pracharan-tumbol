@@ -38,6 +38,8 @@ Route::get('/', [ShowDataDetailController::class, 'HomeDataPage'])->name('HomeDa
 Route::get('/Agency/page', [ShowDataAgencyController::class, 'AgencyPage'])->name('AgencyPage');
 Route::get('/agency/{id}', [ShowDataAgencyController::class, 'AgencyShow'])->name('AgencyShow');
 
+Route::get('/banner', [ShowDataDetailController::class, 'banner'])->name('banner');
+
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');
 Route::post('/login', [AuthController::class, 'login'])->name('Login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -112,8 +114,12 @@ Route::middleware(['check.auth'])->group(function () {
     Route::post('/RecommendedPlaces/create', [RecommendedPlacesController::class, 'RecommendedPlacesCreate'])->name('RecommendedPlacesCreate');
     Route::delete('/RecommendedPlaces/delete/{id}', [RecommendedPlacesController::class, 'RecommendedPlacesDelete'])->name('RecommendedPlacesDelete');
     Route::put('/recommended-places/update/{id}', [RecommendedPlacesController::class, 'RecommendedPlacesUpdate'])->name('RecommendedPlacesUpdate');
-
 });
+
+// Route::get('/banner', function () {
+//     return view('pages.banner-in.app');
+// })->name('banner');
+
 
 
 //test

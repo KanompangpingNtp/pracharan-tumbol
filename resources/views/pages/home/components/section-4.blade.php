@@ -138,7 +138,7 @@
                 <a href="#">
                     <img src="{{ asset('images/home/section-4/5.png') }}" alt="5" class="img-fluid img-hover">
                 </a>
-                <a href="#">
+                <a href="{{route('banner')}}">
                     <img src="{{ asset('images/home/section-4/6.png') }}" alt="6" class="img-fluid img-hover">
                 </a>
             </div>

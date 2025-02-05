@@ -107,7 +107,7 @@
             </div>
             <div class="col-xl-2 d-flex flex-column align-items-center">
                 <img src="{{ asset('images/home/section-3/line.png') }}" alt="line" class="custom-img-line mb-2">
-                <a href="#">
+                <a href="https://www.dla.go.th/oss.htm" target="_blank">
                     <img src="{{ asset('images/home/section-3/one-stop-service.png') }}" alt="oss"
                         class="custom-img-oss">
                 </a>

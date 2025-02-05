@@ -53,7 +53,7 @@
 @endphp
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-1">
-    @foreach ($activity as $index => $post)
+    @foreach ($activity->slice(0, 4) as $index => $post)
         <div class="col">
             <a href="#" class="text-decoration-none text-black">
                 <div class="card h-100 p-3 custom-card border-0"
@@ -73,7 +73,7 @@
                     <div class="d-flex justify-content-start align-items-end mt-1">
                         <img src="{{ asset('images/home/section-4/hourglass.png') }}" alt="hourglass" class="me-1" width="25">
                         <span class="bg-white p-1 px-3" style="border-radius:10px;">
-                            {{ \Carbon\Carbon::parse($post->created_at)->format('d-m-Y') }}
+                            {{ \Carbon\Carbon::parse($post->date)->format('d-m-Y') }}
                         </span>
                     </div>
                 </div>

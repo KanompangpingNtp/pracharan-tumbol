@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div class="d-flex flex-column justify-content-center align-items-center w-100 px-3">
+        <div class="d-flex flex-column justify-content-center align-items-center w-75 px-3">
             <img src="{{ asset('images/home/section-5/title2.png') }}" alt="title">
             <div class="p-2 d-flex flex-column w-100" style="background: linear-gradient(to bottom, #d1f541, #569419); border-radius: 20px;">
                 @foreach ($building as $index => $place)

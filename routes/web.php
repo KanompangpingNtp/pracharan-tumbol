@@ -13,6 +13,7 @@ use App\Http\Controllers\RevenueController;
 use App\Http\Controllers\ManagePersonnelController;
 use App\Http\Controllers\PersonnelAgencyController;
 use App\Http\Controllers\RecommendedPlacesController;
+use App\Http\Controllers\ShowDataDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,11 @@ use App\Http\Controllers\RecommendedPlacesController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home.app');
-});
+// Route::get('/', function () {
+//     return view('pages.home.app');
+// });
+
+Route::get('/', [ShowDataDetailController::class, 'HomeDataPage'])->name('HomeDataPage');
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');
 Route::post('/login', [AuthController::class, 'login'])->name('Login');

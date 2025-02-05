@@ -237,15 +237,21 @@
                     <div class="bg-view-in-page7 d-flex flex-column justify-content-start align-items-center gap-1 overflow-auto" id="contentArea" style="flex-grow: 1;">
                         <!-- เนื้อหาที่จะถูกเปลี่ยนแปลงที่นี่ -->
                     </div>
-                    <div id="pagination" class="d-flex justify-content-center mt-3">
+                    {{-- <div id="pagination" class="d-flex justify-content-center mt-3">
                         <button id="prevBtn" class="btn btn-outline-dark me-2" style="display:none;">
                             <i class="fa-solid fa-chevron-left"></i> ก่อนหน้า
                         </button>
                         <button id="nextBtn" class="btn btn-outline-dark" style="display:none;">
                             ถัดไป <i class="fa-solid fa-chevron-right"></i>
                         </button>
+                    </div> --}}
+                    <div class="d-flex justify-content-end align-items-start my-2 position-relative">
+                        <a href="#" class="link-green-section3 me-2">ดูทั้งหมด</a>
+                        <img src="{{ asset('images/home/section-3/leaf.png') }}" alt="leaf"
+                            style="position: absolute; right: -5px; top: 20px; transform: translateY(-50%) rotate(30deg); width: 50px;">
                     </div>
                 </div>
+                
             </div>
         </div>
         

@@ -15,6 +15,8 @@ use App\Http\Controllers\ShowDataAgencyController;
 use App\Http\Controllers\RecommendedPlacesController;
 use App\Http\Controllers\ShowDataDetailController;
 
+use App\Http\Controllers\TestController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -109,3 +111,7 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/RecommendedPlaces/page', [RecommendedPlacesController::class, 'RecommendedPlacesPage'])->name('RecommendedPlacesPage');
     Route::post('/RecommendedPlaces/create', [RecommendedPlacesController::class, 'RecommendedPlacesCreate'])->name('RecommendedPlacesCreate');
 });
+
+
+//test
+Route::get('/test', [TestController::class, 'test'])->name('test');

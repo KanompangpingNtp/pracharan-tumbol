@@ -90,7 +90,7 @@
 
     .hover-effect:hover img {
         transform: scale(1.05);
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
+       
         border-radius: 20px;
     }
 
@@ -106,13 +106,15 @@
         <div class="d-flex justify-content-between w-100 overflow-x-auto mb-4">
             <!-- เพิ่ม w-100 เพื่อให้เต็มความกว้าง -->
             @foreach ($executiveStatus1 as $executive)
-            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center mt-5" style="min-width: 250px;">
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center " style="min-width: 250px;">
                 <img src="{{ !empty($executive->images->first()->photo_file) ? asset('storage/' . $executive->images->first()->photo_file) : asset('images/home/section-1/1.png') }}" alt="persernal" style="width: 100%; height: 350px; object-fit: contain;" onerror="this.onerror=null; this.src='{{ asset('images/home/section-1/1.png') }}';">
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         {{ $executive->full_name }} <br>
-                        <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                        <span style="font-size: 18px;">
+                            {!! str_replace(' ', '<br>', e($executive->position)) !!}
+                        </span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
                         <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span>
@@ -123,13 +125,15 @@
             @endforeach
 
             @foreach ($executiveStatus2 as $executive)
-            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 230px;">
                 <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         {{ $executive->full_name }} <br>
-                        <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                        <span style="font-size: 18px;">
+                            {!! str_replace(' ', '<br>', e($executive->position)) !!}
+                        </span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
                         <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
@@ -139,13 +143,15 @@
             @endforeach
 
             @foreach ($executiveStatus3 as $executive)
-            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 230px;">
                 <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         {{ $executive->full_name }} <br>
-                        <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                        <span style="font-size: 18px;">
+                            {!! str_replace(' ', '<br>', e($executive->position)) !!}
+                        </span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
                         <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
@@ -155,13 +161,15 @@
             @endforeach
 
             @foreach ($executiveStatus4 as $executive)
-            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 230px;">
                 <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         {{ $executive->full_name }} <br>
-                        <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                        <span style="font-size: 18px;">
+                            {!! str_replace(' ', '<br>', e($executive->position)) !!}
+                        </span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
                         <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
@@ -292,7 +300,9 @@
 
                 <div class="text-center bg-white text-black p-2 fs-4 " style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                     {{ $executive->full_name }}<br>
-                    <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                    <span style="font-size: 18px;">
+                        {!! str_replace(' ', '<br>', e($executive->position)) !!}
+                    </span>
                 </div>
 
                 <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;

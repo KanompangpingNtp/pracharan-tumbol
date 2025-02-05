@@ -176,15 +176,15 @@
                 <!-- ลิสต์รายการ -->
                 <ul class="custom-dropdown-menu">
                     <li>
-                        <a href="#" class="dropdown-item">แผนผังองค์กรรวม</a>
+                        <a href="{{route('AgencyPage')}}" class="dropdown-item">แผนผังองค์กรรวม</a>
                     </li>
-                    {{-- @foreach ($personnelAgencies as $agency)
+                    @foreach ($personnelAgencies as $agency)
                         <li>
-                            <a href="{{ route('agency.show', ['id' => $agency->id]) }}" class="dropdown-item">
+                            <a href="{{ route('AgencyShow', ['id' => $agency->id]) }}" class="dropdown-item">
                                 {{ $agency->personnel_agency_name }}
                             </a>
                         </li>
-                    @endforeach --}}
+                    @endforeach
                 </ul>
             </div>
             <div class="d-flex flex-column align-items-center justify-content-center">

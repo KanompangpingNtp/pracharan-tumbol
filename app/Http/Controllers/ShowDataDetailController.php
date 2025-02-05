@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PostDetail;
+use App\Models\PersonnelAgency;
 
 class ShowDataDetailController extends Controller
 {
@@ -51,6 +52,8 @@ class ShowDataDetailController extends Controller
                 $query->where('type_name', 'สถานที่แนะนำ');
             })->get();
 
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
         return view('pages.home.app', compact(
             'pressRelease',
             'activity',
@@ -58,7 +61,8 @@ class ShowDataDetailController extends Controller
             'procurementResults',
             'average',
             'revenue',
-            'building'
+            'building',
+            'personnelAgencies'
         ));
     }
 

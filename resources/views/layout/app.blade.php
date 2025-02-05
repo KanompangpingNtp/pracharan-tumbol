@@ -157,7 +157,7 @@
                     <a href="" class="button-greenblack">สมัครสมาชิก</a>
                 </div>
                 <div class="d-flex justify-content-start align-items-end gap-2 button-img mt-2">
-                    <a class="button-greenlight" style="border-radius: 20px; padding:0px 24px;" >หน้าแรก</a>
+                    <a class="button-greenlight" style="border-radius: 20px; padding:0px 24px;" href="{{route('HomeDataPage')}}" >หน้าแรก</a>
                     <img src="{{ asset('images/header/minus.png') }}" alt="minus">
                     <img src="{{ asset('images/header/normal.png') }}" alt="normal">
                     <img src="{{ asset('images/header/plus.png') }}" alt="plus">

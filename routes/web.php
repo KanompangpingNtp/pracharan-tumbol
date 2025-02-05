@@ -11,7 +11,7 @@ use App\Http\Controllers\ProcurementResultsController;
 use App\Http\Controllers\AveragePriceController;
 use App\Http\Controllers\RevenueController;
 use App\Http\Controllers\ManagePersonnelController;
-use App\Http\Controllers\PersonnelAgencyController;
+use App\Http\Controllers\ShowDataAgencyController;
 use App\Http\Controllers\RecommendedPlacesController;
 use App\Http\Controllers\ShowDataDetailController;
 
@@ -30,12 +30,15 @@ use App\Http\Controllers\ShowDataDetailController;
 //     return view('pages.home.app');
 // });
 
+Route::get('/layout', [ShowDataDetailController::class, 'layout'])->name('layout');
 Route::get('/', [ShowDataDetailController::class, 'HomeDataPage'])->name('HomeDataPage');
+
+Route::get('/Agency/page', [ShowDataAgencyController::class, 'AgencyPage'])->name('AgencyPage');
+Route::get('/agency/{id}', [ShowDataAgencyController::class, 'AgencyShow'])->name('AgencyShow');
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');
 Route::post('/login', [AuthController::class, 'login'])->name('Login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
 Route::get('/showRegistrationForm', [AuthController::class, 'showRegistrationForm'])->name('showRegistrationForm');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 

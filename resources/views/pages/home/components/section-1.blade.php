@@ -111,6 +111,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
                 <img src="{{ asset('images/home/section-1/2.png') }}" alt="persernal" style="width: 100%; height: 350px; object-fit: contain;">
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
@@ -124,6 +125,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
                 <img src="{{ asset('images/home/section-1/3.png') }}" alt="persernal" style="width: 100%; height: 350px; object-fit: contain;">
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
@@ -137,6 +139,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center mt-5" style="min-width: 250px;">
                 <img src="{{ asset('images/home/section-1/4.png') }}" alt="persernal" style="width: 100%; height: 350px; object-fit: contain;">
                 <div class="mt-2  w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
@@ -149,8 +152,9 @@
                     </div>
                 </div>
             </div>
+
         </div>
-        
+
         <div class="bg-menu-section1 p-3 mx-3 position-relative">
             <img src="{{asset('images/home/section-1/leaf.png')}}" alt="leaf"  style="position: absolute; left: -20px; top: 10px; transform: translateY(-50%) rotate(300deg); max-width: 80px;">
             <!-- รายการเมนู -->
@@ -194,33 +198,33 @@
             </div>
             <img src="{{asset('images/home/section-1/leaf.png')}}" alt="leaf"  style="position: absolute; right: -20px; bottom: -20px; transform: translateY(-50%) rotate(120deg); width: 80px;">
         </div>
-        
+
         <div class="row justify-content-center align-items-center mt-4 px-3 ">
             <!-- ฝั่งซ้าย: ภาพบุคคล -->
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center" style="min-width: 250px;">
                 <img src="{{ asset('images/home/section-1/4.png') }}" alt="persernal" class="img-fluid" style="height: 300px; object-fit: contain;">
-                <div class="my-2 w-75 lh-1" 
+                <div class="my-2 w-75 lh-1"
                     style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
-                    
-                    <div class="text-center bg-white text-black p-2 fs-4 " 
+
+                    <div class="text-center bg-white text-black p-2 fs-4 "
                         style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายเสกสรรค์ บัวเจริญ<br>
                         <span style="font-size: 18px;">รองปลัดองค์การบริหาร</span><br>
                         <span style="font-size: 18px;">ส่วนตำบลพระอาจารย์</span>
                     </div>
-    
+
                     <div class="fs-4 text-center p-1 fw-bold"
-                        style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; 
+                        style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;
                         background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
-                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> 
+                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span>
                         098-251-2771
                     </div>
                 </div>
             </div>
-    
+
             <!-- ฝั่งขวา: ภาพการ์ด -->
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-  
+
                 <a href="#" class="hover-effect">
                     <img src="{{ asset('images/home/section-1/service-card.png') }}" alt="card" class="img-fluid">
                 </a>

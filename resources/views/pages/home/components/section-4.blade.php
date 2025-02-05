@@ -53,7 +53,7 @@
 @endphp
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-1">
-    @foreach ($activity as $index => $post)
+    @foreach ($activity->slice(0, 4) as $index => $post)
         <div class="col">
             <a href="#" class="text-decoration-none text-black">
                 <div class="card h-100 p-3 custom-card border-0"

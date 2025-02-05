@@ -198,7 +198,7 @@
         <div class="row justify-content-center align-items-center mt-4 px-3 ">
             <!-- ฝั่งซ้าย: ภาพบุคคล -->
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center" style="min-width: 250px;">
-                <img src="{{ asset('images/home/section-1/4.png') }}" alt="persernal" class="img-fluid" style="height: 360px; object-fit: contain;">
+                <img src="{{ asset('images/home/section-1/4.png') }}" alt="persernal" class="img-fluid" style="height: 300px; object-fit: contain;">
                 <div class="my-2 w-75 lh-1" 
                     style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     
@@ -220,16 +220,9 @@
     
             <!-- ฝั่งขวา: ภาพการ์ด -->
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-                <div class="d-flex justify-content-between align-items-end px-3">
-                    <img src="{{asset('images/home/section-1/tree.png')}}" alt="tree">
-                    <img src="{{asset('images/home/section-1/wind-power.png')}}" alt="wind">
-                    <img src="{{asset('images/home/section-1/tree.png')}}" alt="tree" class="d-none d-xl-block">
-                    <img src="{{asset('images/home/section-1/battery.png')}}" alt="battery">
-                    <img src="{{asset('images/home/section-1/tree.png')}}" alt="tree" class="d-none d-md-block">
-                    <img src="{{asset('images/home/section-1/smart-city.png')}}" alt="hotel" class="d-none d-sm-block">
-                </div>
+  
                 <a href="#" class="hover-effect">
-                    <img src="{{ asset('images/home/section-1/card.png') }}" alt="card" class="img-fluid">
+                    <img src="{{ asset('images/home/section-1/service-card.png') }}" alt="card" class="img-fluid">
                 </a>
             </div>
         </div>

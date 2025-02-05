@@ -400,27 +400,28 @@
             contentArea.appendChild(layoutWrapper);
         });
 
-        document.getElementById('prevBtn').style.display = currentPage === 1 ? 'none' : 'inline-block';
-        document.getElementById('nextBtn').style.display = currentPage * itemsPerPage >= allItems.length ? 'none' :
-            'inline-block';
+        // document.getElementById('prevBtn').style.display = currentPage === 1 ? 'none' : 'inline-block';
+        // document.getElementById('nextBtn').style.display = currentPage * itemsPerPage >= allItems.length ? 'none' :
+        //     'inline-block';
     }
 
 
-    document.getElementById('prevBtn').addEventListener('click', function() {
-        if (currentPage > 1) {
-            currentPage--;
-            displayItems();
-        }
-    });
+    // document.getElementById('prevBtn').addEventListener('click', function() {
+    //     if (currentPage > 1) {
+    //         currentPage--;
+    //         displayItems();
+    //     }
+    // });
 
-    document.getElementById('nextBtn').addEventListener('click', function() {
-        if (currentPage * itemsPerPage < allItems.length) {
-            currentPage++;
-            displayItems();
-        }
-    });
+    // document.getElementById('nextBtn').addEventListener('click', function() {
+    //     if (currentPage * itemsPerPage < allItems.length) {
+    //         currentPage++;
+    //         displayItems();
+    //     }
+    // });
 
     window.onload = function() {
-        changeContent('จัดซื้อจัดจ้าง', @json($procurement));
-    }
+    changeContent('จัดซื้อจัดจ้าง', {!! json_encode($procurement) !!});
+}
+
 </script>

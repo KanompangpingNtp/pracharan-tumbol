@@ -103,12 +103,18 @@
                                 <a class="nav-link" href="{{route('RevenueHome')}}">งานเก็บรายได้</a>
                             </nav>
                         </div>
-                        {{-- <a class="nav-link" href="{{route('ManagePersonnel')}}">
+                        <a class="nav-link" href="{{route('ManagePersonnel')}}">
                             <div class="sb-nav-link-icon">
                                 <i class="bi bi-database-add"></i>
                             </div>
                             จัดการบุคลากร
-                        </a> --}}
+                        </a>
+                        <a class="nav-link" href="{{route('RecommendedPlacesPage')}}">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการสถานที่แนะนำ
+                        </a>
 
                         {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon">

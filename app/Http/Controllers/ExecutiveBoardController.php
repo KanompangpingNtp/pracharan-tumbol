@@ -103,9 +103,9 @@ class ExecutiveBoardController extends Controller
     {
         $ExecutiveBoard = ExecutiveBoard::findOrFail($id);
 
-        $ExecutiveBoardImage = ExecutiveBoardImage::where('personnel_detail_id', $id)->first();
+        $ExecutiveBoardImage = ExecutiveBoardImage::where('executive_board_id', $id)->first();
         if ($ExecutiveBoardImage) {
-            Storage::disk('public')->delete($ExecutiveBoardImage->post_photo_file);
+            Storage::disk('public')->delete($ExecutiveBoardImage->photo_file);
             $ExecutiveBoardImage->delete();
         }
 

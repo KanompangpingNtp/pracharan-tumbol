@@ -69,6 +69,7 @@
             <th>#</th>
             <th>ชื่อ</th>
             <th>ตำแหน่ง</th>
+            <th>แผนก</th>
             <th>เบอร์ติดต่อ</th>
             <th>ระดับความสำคัญ</th>
             <th>รูปภาพ</th>
@@ -80,6 +81,7 @@
         <tr>
             <td>{{ $key + 1 }}</td>
             <td>{{ $detail->full_name }}</td>
+            <td>{{ $detail->department }}</td>
             <td>{{ $detail->position }}</td>
             <td>{{ $detail->phone_number }}</td>
             <td>{{ $detail->status }}</td>
@@ -122,6 +124,11 @@
                         <label for="full_name" class="form-label">ชื่อ-นามสกุล</label>
                         <input type="text" class="form-control" id="full_name" name="full_name" value="{{ $detail->full_name }}" required>
                     </div>
+
+                    {{-- <div class="mb-3">
+                        <label for="department" class="form-label">ตำแหน่ง</label>
+                        <input type="text" class="form-control" id="department" name="department" value="{{ $detail->department }}" required>
+                    </div> --}}
 
                     <div class="mb-3">
                         <label for="position" class="form-label">ตำแหน่ง</label>

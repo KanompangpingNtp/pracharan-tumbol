@@ -32,8 +32,8 @@
         max-width: none;
     }
 
-    .bg-menu-section1{
-        background: linear-gradient(to left, rgb(148, 228, 0 ,0.2), rgb(104, 160, 0 ,0.4), rgb(148, 228, 0,0.2));
+    .bg-menu-section1 {
+        background: linear-gradient(to left, rgb(148, 228, 0, 0.2), rgb(104, 160, 0, 0.4), rgb(148, 228, 0, 0.2));
         box-shadow: 0 2px 30px rgba(255, 255, 255, 0.8);
         border-radius: 10px;
     }
@@ -55,9 +55,11 @@
     }
 
     .menu-box:hover {
-        transform: scale(1.03); /* ขยายขึ้น 8% */
+        transform: scale(1.03);
+        /* ขยายขึ้น 8% */
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-        filter: brightness(0.9); /* ทำให้สีเข้มขึ้นเล็กน้อย */
+        filter: brightness(0.9);
+        /* ทำให้สีเข้มขึ้นเล็กน้อย */
     }
 
     .menu-box img {
@@ -68,7 +70,8 @@
     }
 
     .menu-box:hover img {
-        transform: rotate(-5deg) scale(1.1); /* เอียงเล็กน้อย และขยาย */
+        transform: rotate(-5deg) scale(1.1);
+        /* เอียงเล็กน้อย และขยาย */
     }
 
     .menu-box div {
@@ -77,7 +80,8 @@
     }
 
     .menu-box:hover div {
-        color: #2e5902; /* ทำให้สีข้อความเข้มขึ้น */
+        color: #2e5902;
+        /* ทำให้สีข้อความเข้มขึ้น */
     }
 
     .hover-effect img {
@@ -89,6 +93,7 @@
         box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
         border-radius: 20px;
     }
+
 </style>
 
 <!-- Content Section -->
@@ -98,13 +103,78 @@
             คณะผู้บริหาร
             <img src="{{ asset('images/home/section-1/businessman.png') }}" alt="icon">
         </div>
-        <div class="d-flex justify-content-between w-100 overflow-x-auto mb-4"> <!-- เพิ่ม w-100 เพื่อให้เต็มความกว้าง -->
-            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center" style="min-width: 250px;">
+        <div class="d-flex justify-content-between w-100 overflow-x-auto mb-4">
+            <!-- เพิ่ม w-100 เพื่อให้เต็มความกว้าง -->
+            @foreach ($executiveStatus1 as $executive)
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center mt-5" style="min-width: 250px;">
+                <img src="{{ !empty($executive->images->first()->photo_file) ? asset('storage/' . $executive->images->first()->photo_file) : asset('images/home/section-1/1.png') }}" alt="persernal" style="width: 100%; height: 350px; object-fit: contain;" onerror="this.onerror=null; this.src='{{ asset('images/home/section-1/1.png') }}';">
+
+                <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+                    <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        {{ $executive->full_name }} <br>
+                        <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                    </div>
+                    <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
+                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span>
+                        {{ $executive->phone_number }}
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+            @foreach ($executiveStatus2 as $executive)
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
+                <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
+
+                <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+                    <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        {{ $executive->full_name }} <br>
+                        <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                    </div>
+                    <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
+                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+            @foreach ($executiveStatus3 as $executive)
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
+                <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
+
+                <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+                    <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        {{ $executive->full_name }} <br>
+                        <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                    </div>
+                    <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
+                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+            @foreach ($executiveStatus4 as $executive)
+            <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
+                <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
+
+                <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+                    <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        {{ $executive->full_name }} <br>
+                        <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                    </div>
+                    <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
+                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            {{-- <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center" style="min-width: 250px;">
                 <img src="{{ asset('images/home/section-1/1.png') }}" alt="persernal" style="width: 100%; height: 400px; object-fit: contain;">
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายสายชล ทับเปลี่ยน <br>
-                    <span style="font-size: 18px;">นายกองค์การบริหารส่วนตำบลพระอาจารย์</span>
+                        <span style="font-size: 18px;">นายกองค์การบริหารส่วนตำบลพระอาจารย์</span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
                         <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> 086-7831441
@@ -117,8 +187,8 @@
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายวิเชียร มูฮำหมัด <br>
-                    <span style="font-size: 18px;">รองนายกองค์การ</span> <br>
-                    <span style="font-size: 18px;">บริหารส่วนตำบลพระอาจารย์</span>
+                        <span style="font-size: 18px;">รองนายกองค์การ</span> <br>
+                        <span style="font-size: 18px;">บริหารส่วนตำบลพระอาจารย์</span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
                         <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> 089-532-8435
@@ -131,8 +201,8 @@
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายภูทัย บุญรอด<br>
-                    <span style="font-size: 18px;">รองนายกองค์การ</span> <br>
-                    <span style="font-size: 18px;">บริหารส่วนตำบลพระอาจารย์</span>
+                        <span style="font-size: 18px;">รองนายกองค์การ</span> <br>
+                        <span style="font-size: 18px;">บริหารส่วนตำบลพระอาจารย์</span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
                         <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> 081-3646785
@@ -145,18 +215,18 @@
                 <div class="mt-2  w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         นายไพโรจน์ อาดำ<br>
-                    <span style="font-size: 18px;">เลขานุการนายก</span>
+                        <span style="font-size: 18px;">เลขานุการนายก</span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
                         <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> 089-966-8684
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 
         <div class="bg-menu-section1 p-3 mx-3 position-relative">
-            <img src="{{asset('images/home/section-1/leaf.png')}}" alt="leaf"  style="position: absolute; left: -20px; top: 10px; transform: translateY(-50%) rotate(300deg); max-width: 80px;">
+            <img src="{{asset('images/home/section-1/leaf.png')}}" alt="leaf" style="position: absolute; left: -20px; top: 10px; transform: translateY(-50%) rotate(300deg); max-width: 80px;">
             <!-- รายการเมนู -->
             <div class="row w-100 justify-content-center">
                 <div class="col-12 col-md-6 col-lg-4">
@@ -196,39 +266,51 @@
                     </a>
                 </div>
             </div>
-            <img src="{{asset('images/home/section-1/leaf.png')}}" alt="leaf"  style="position: absolute; right: -20px; bottom: -20px; transform: translateY(-50%) rotate(120deg); width: 80px;">
+            <img src="{{asset('images/home/section-1/leaf.png')}}" alt="leaf" style="position: absolute; right: -20px; bottom: -20px; transform: translateY(-50%) rotate(120deg); width: 80px;">
         </div>
 
         <div class="row justify-content-center align-items-center mt-4 px-3 ">
             <!-- ฝั่งซ้าย: ภาพบุคคล -->
-            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center" style="min-width: 250px;">
-                <img src="{{ asset('images/home/section-1/4.png') }}" alt="persernal" class="img-fluid" style="height: 300px; object-fit: contain;">
-                <div class="my-2 w-75 lh-1"
-                    style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+            @foreach ($executiveStatus5 as $executive)
+            {{-- <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 250px;">
+            <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
 
-                    <div class="text-center bg-white text-black p-2 fs-4 "
-                        style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
-                        นายเสกสรรค์ บัวเจริญ<br>
-                        <span style="font-size: 18px;">รองปลัดองค์การบริหาร</span><br>
-                        <span style="font-size: 18px;">ส่วนตำบลพระอาจารย์</span>
-                    </div>
-
-                    <div class="fs-4 text-center p-1 fw-bold"
-                        style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;
-                        background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
-                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span>
-                        098-251-2771
-                    </div>
+            <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
+                <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                    {{ $executive->full_name }} <br>
+                    <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                    <span style="font-size: 18px;">nodata</span>
+                </div>
+                <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
+                    <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
                 </div>
             </div>
+        </div> --}}
+        <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center" style="min-width: 250px;">
+            <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="persernal" class="img-fluid" style="height: 300px; object-fit: contain;">
+            <div class="my-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
 
-            <!-- ฝั่งขวา: ภาพการ์ด -->
-            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                <div class="text-center bg-white text-black p-2 fs-4 " style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                    {{ $executive->full_name }}<br>
+                    <span style="font-size: 18px;">{{ $executive->position }}</span> <br>
+                </div>
 
-                <a href="#" class="hover-effect">
-                    <img src="{{ asset('images/home/section-1/service-card.png') }}" alt="card" class="img-fluid">
-                </a>
+                <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;
+                        background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
+                    <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span>
+                    {{ $executive->phone_number }}
+                </div>
             </div>
         </div>
+        @endforeach
+
+        <!-- ฝั่งขวา: ภาพการ์ด -->
+        <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+
+            <a href="#" class="hover-effect">
+                <img src="{{ asset('images/home/section-1/service-card.png') }}" alt="card" class="img-fluid">
+            </a>
+        </div>
+    </div>
     </div>
 </main>

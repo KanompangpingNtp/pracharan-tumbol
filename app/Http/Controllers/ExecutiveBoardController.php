@@ -24,6 +24,7 @@ class ExecutiveBoardController extends Controller
             'full_name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
             'phone_number' => 'required|string|max:255',
+            // 'department' => 'required|string|max:255',
             'status' => 'required|string',
             'photo_file' => 'nullable|file|mimes:jpg,jpeg,png',
         ]);
@@ -34,6 +35,7 @@ class ExecutiveBoardController extends Controller
             'full_name' => $request->full_name,
             'position' => $request->position,
             'phone_number' => $request->phone_number,
+            // 'department' => $request->department,
             'status' => $request->status,
         ]);
 
@@ -60,6 +62,7 @@ class ExecutiveBoardController extends Controller
             'phone_number' => 'required|string|max:255',
             'status' => 'required|integer|min:1|max:5',
             'photo_file' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
+            // 'department' => 'required|string|max:255',
         ]);
 
         $executiveBoard = ExecutiveBoard::findOrFail($id);
@@ -68,6 +71,7 @@ class ExecutiveBoardController extends Controller
             'position' => $request->position,
             'phone_number' => $request->phone_number,
             'status' => $request->status,
+            // 'department' => $request->department,
         ]);
 
         if ($request->has('remove_image')) {

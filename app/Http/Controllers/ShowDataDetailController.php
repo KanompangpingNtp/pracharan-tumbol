@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PostDetail;
 use App\Models\PersonnelAgency;
+use App\Models\ExecutiveBoard;
 
 class ShowDataDetailController extends Controller
 {
@@ -52,7 +53,17 @@ class ShowDataDetailController extends Controller
                 $query->where('type_name', 'สถานที่แนะนำ');
             })->get();
 
+        //บุคคากร
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        //คณะผู้บริหาร
+        $executiveStatus1 = ExecutiveBoard::with('images')->where('status', 1)->get();
+        $executiveStatus2 = ExecutiveBoard::with('images')->where('status', 2)->get();
+        $executiveStatus3 = ExecutiveBoard::with('images')->where('status', 3)->get();
+        $executiveStatus4 = ExecutiveBoard::with('images')->where('status', 4)->get();
+        $executiveStatus5 = ExecutiveBoard::with('images')->where('status', 5)->get();
+
+        // dd( $ExecutiveBoard);
 
         return view('pages.home.app', compact(
             'pressRelease',
@@ -62,7 +73,12 @@ class ShowDataDetailController extends Controller
             'average',
             'revenue',
             'building',
-            'personnelAgencies'
+            'personnelAgencies',
+            'executiveStatus1',
+            'executiveStatus2',
+            'executiveStatus3',
+            'executiveStatus4',
+            'executiveStatus5',
         ));
     }
 

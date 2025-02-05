@@ -1,6 +1,8 @@
 @extends('admin.layout.admin_layout')
 @section('user_content')
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+
 <h2 class="text-center">จัดการสถานที่แนะนำ</h2><br>
 
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -57,7 +59,7 @@
 <br>
 <br>
 
-<table class="table table-bordered text-center">
+<table class="table table-bordered text-center" id="data_table">
     <thead>
         <tr>
             <th>#</th>
@@ -87,4 +89,10 @@
     </tbody>
 </table>
 
+<script src="{{asset('js/datatable.js')}}"></script>
+<script src="{{ asset('js/multipart_files.js') }}"></script>
+
 @endsection
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" defer></script>

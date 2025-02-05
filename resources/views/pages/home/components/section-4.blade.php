@@ -73,7 +73,7 @@
                     <div class="d-flex justify-content-start align-items-end mt-1">
                         <img src="{{ asset('images/home/section-4/hourglass.png') }}" alt="hourglass" class="me-1" width="25">
                         <span class="bg-white p-1 px-3" style="border-radius:10px;">
-                            {{ \Carbon\Carbon::parse($post->created_at)->format('d-m-Y') }}
+                            {{ \Carbon\Carbon::parse($post->date)->format('d-m-Y') }}
                         </span>
                     </div>
                 </div>

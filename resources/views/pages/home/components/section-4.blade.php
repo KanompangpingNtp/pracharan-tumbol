@@ -56,7 +56,7 @@
     @foreach ($activity as $index => $post)
         <div class="col">
             <a href="#" class="text-decoration-none text-black">
-                <div class="card h-100 p-3 custom-card"
+                <div class="card h-100 p-3 custom-card border-0"
                      style="background-color: {{ $cardColors[$index % count($cardColors)] }};">
 
                     <img src="{{ !empty($post->photos->first()->post_photo_file) ? asset('storage/' . $post->photos->first()->post_photo_file) : asset('images/home/section-4/logo-miss-files.png') }}"

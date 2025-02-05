@@ -74,13 +74,13 @@
             <td>{{ $postDetail->details ?? 'N/A' }}</td>
             <td>
                 {{-- <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#showFile-{{ $postDetail->id }}">
-                แสดงไฟล์
-                </button>
-                <form action="{{ route('ClassRoomDelete', $postDetail->id) }}" method="POST" style="display:inline;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">ลบ</button>
-                </form> --}}
+                    <i class="bi bi-file-image"></i>
+                </button> --}}
+                <form action="{{ route('RecommendedPlacesDelete', $postDetail->id) }}" method="POST" style="display:inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="bi bi-trash"></i></button>
+                </form>
             </td>
         </tr>
         @endforeach

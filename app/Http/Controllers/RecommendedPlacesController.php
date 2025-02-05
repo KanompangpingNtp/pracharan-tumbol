@@ -82,4 +82,18 @@ class RecommendedPlacesController extends Controller
 
         return redirect()->back()->with('success', 'โพสถูกเพิ่มแล้ว!');
     }
+
+    public function RecommendedPlacesDelete($id)
+    {
+        $postDetail = PostDetail::findOrFail($id);
+
+        foreach ($postDetail->photos as $photo) {
+            Storage::disk('public')->delete($photo->post_photo_file); // ลบไฟล์จาก storage
+            $photo->delete(); // ลบข้อมูลในฐานข้อมูล
+        }
+
+        $postDetail->delete();
+
+        return redirect()->back()->with('success', 'ลบข้อมูลเรียบร้อยแล้ว!');
+    }
 }

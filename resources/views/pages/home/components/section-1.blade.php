@@ -166,7 +166,7 @@
             @foreach ($executiveStatus4 as $executive)
             <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 230px;">
                 {{-- <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;"> --}}
-                <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/4.png') }}" alt="personal" style="width: 100%; height: 250px; object-fit: contain;">
+                <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/4.png') }}" alt="personal" style="width: 100%; height: 250px; object-fit: contain; margin-bottom: 20px;;">
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">

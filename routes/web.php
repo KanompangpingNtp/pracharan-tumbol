@@ -14,8 +14,10 @@ use App\Http\Controllers\ManagePersonnelController;
 use App\Http\Controllers\ShowDataAgencyController;
 use App\Http\Controllers\RecommendedPlacesController;
 use App\Http\Controllers\ShowDataDetailController;
-use App\Http\Controllers\BasicInformationController;
 use App\Http\Controllers\LocalAdminPromotionController;
+use App\Http\Controllers\Information\HistoryController;
+use App\Http\Controllers\Information\AdminHistoryController;
+
 
 use App\Http\Controllers\TestController;
 
@@ -34,15 +36,16 @@ use App\Http\Controllers\TestController;
 //     return view('pages.banner-in.app');
 // });
 
-Route::get('/layout', [ShowDataDetailController::class, 'layout'])->name('layout');
 Route::get('/', [ShowDataDetailController::class, 'HomeDataPage'])->name('HomeDataPage');
+Route::get('/layout', [ShowDataDetailController::class, 'layout'])->name('layout');
+Route::get('/banner', [ShowDataDetailController::class, 'banner'])->name('banner');
 
+//บุคลากร
 Route::get('/Agency/page', [ShowDataAgencyController::class, 'AgencyPage'])->name('AgencyPage');
 Route::get('/agency/{id}', [ShowDataAgencyController::class, 'AgencyShow'])->name('AgencyShow');
 
-Route::get('/banner', [ShowDataDetailController::class, 'banner'])->name('banner');
-
-Route::get('/basic-information/page', [BasicInformationController::class, 'BasicInformationPages'])->name('BasicInformationPages');
+//ข้อมูลพื้นฐาน
+Route::get('/History/page', [HistoryController::class, 'HistoryPage'])->name('HistoryPage');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -118,6 +121,8 @@ Route::middleware(['check.auth'])->group(function () {
     Route::post('/LocalAdminPromotion/create', [LocalAdminPromotionController::class, 'LocalAdminPromotionCreate'])->name('LocalAdminPromotionCreate');
     Route::put('/LocalAdminPromotion/update/{id}', [LocalAdminPromotionController::class, 'LocalAdminPromotionUpdate'])->name('LocalAdminPromotionUpdate');
     Route::delete('/LocalAdminPromotion/delete/{id}', [LocalAdminPromotionController::class, 'LocalAdminPromotionDelete'])->name('LocalAdminPromotionDelete');
+
+    Route::get('/Admin/History/page', [AdminHistoryController::class, 'HistoryAdmin'])->name('HistoryAdmin');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

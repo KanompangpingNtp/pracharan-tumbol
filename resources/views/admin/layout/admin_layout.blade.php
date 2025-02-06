@@ -138,7 +138,7 @@
                         </div>
 
                         <div class="sb-sidenav-menu-heading">แถบเมนู</div>
-                        {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts3">
                             <div class="sb-nav-link-icon">
                                 <i class="bi bi-database-add"></i>
                             </div>
@@ -147,12 +147,11 @@
                                 <i class="fas fa-angle-down"></i>
                             </div>
                         </a>
-                        <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">แบบแสดงหน้าเดียว</a>
-                                <a class="nav-link" href="">แบบรายการ</a>
+                                <a class="nav-link" href="{{route('HistoryAdmin')}}">ประวัติความเป็นมา</a>
                             </nav>
-                        </div> --}}
+                        </div>
 
                         {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon">

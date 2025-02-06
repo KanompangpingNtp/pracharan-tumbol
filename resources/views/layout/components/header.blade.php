@@ -168,18 +168,21 @@
                     <div class="navbar-text">ข้อมูลพื้นฐาน</div>
                 </a>
                 <!-- ลิสต์รายการ -->
-                {{-- <ul class="custom-dropdown-menu">
+                <ul class="custom-dropdown-menu">
                     <li>
-                        <a href="{{route('AgencyPage')}}" class="dropdown-item">แผนผังองค์กรรวม</a>
+                        <a href="" class="dropdown-item">ประวัติความเป็นมา</a>
+                        <a href="" class="dropdown-item">วิสัยทัศน์/พันธกิจ</a>
+                        <a href="" class="dropdown-item">ข้อมูลสภาพทั่วไป</a>
+                        <a href="" class="dropdown-item">ยุทธศาสตร์และแนวทางการพัฒนา</a>
                     </li>
-                    @foreach ($personnelAgencies as $agency)
+                    {{-- @foreach ($personnelAgencies as $agency)
                         <li>
                             <a href="{{ route('AgencyShow', ['id' => $agency->id]) }}" class="dropdown-item">
                                 {{ $agency->personnel_agency_name }}
                             </a>
                         </li>
-                    @endforeach
-                </ul> --}}
+                    @endforeach --}}
+                </ul>
             </div>
             {{-- <div class="d-flex flex-column align-items-center justify-content-center">
                 <a href="#" class="navbar-item">

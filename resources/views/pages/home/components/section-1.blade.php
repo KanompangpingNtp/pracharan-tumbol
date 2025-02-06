@@ -107,7 +107,7 @@
             <!-- เพิ่ม w-100 เพื่อให้เต็มความกว้าง -->
             @foreach ($executiveStatus1 as $executive)
             <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center " style="min-width: 250px;">
-                <img src="{{ !empty($executive->images->first()->photo_file) ? asset('storage/' . $executive->images->first()->photo_file) : asset('images/home/section-1/1.png') }}" alt="persernal" style="width: 100%; height: 350px; object-fit: contain;" onerror="this.onerror=null; this.src='{{ asset('images/home/section-1/1.png') }}';">
+                <img src="{{ !empty($executive->images->first()->photo_file) ? asset('storage/' . $executive->images->first()->photo_file) : asset('images/home/section-1/1.png') }}" alt="persernal" style="width: 100%; height: 400px; object-fit: contain;" onerror="this.onerror=null; this.src='{{ asset('images/home/section-1/1.png') }}';">
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
@@ -127,7 +127,7 @@
             @foreach ($executiveStatus2 as $executive)
             <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 230px;">
                 {{-- <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;"> --}}
-                <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/2.png') }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
+                <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/2.png') }}" alt="personal" style="width: 100%; height: 300px; object-fit: contain;">
 
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
@@ -147,7 +147,7 @@
             @foreach ($executiveStatus3 as $executive)
             <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 230px;">
                 {{-- <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;"> --}}
-                <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/3.png') }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
+                <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/3.png') }}" alt="personal" style="width: 100%; height: 300px; object-fit: contain;">
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
@@ -166,7 +166,7 @@
             @foreach ($executiveStatus4 as $executive)
             <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center  mt-5" style="min-width: 230px;">
                 {{-- <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;"> --}}
-                <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/4.png') }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
+                <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/4.png') }}" alt="personal" style="width: 100%; height: 300px; object-fit: contain;">
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
                     <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
@@ -300,7 +300,7 @@
     </div> --}}
     <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center" style="min-width: 250px;">
         {{-- <img src="{{ asset('storage/' . ($executive->images->first()->photo_file ?? 'default-image.png')) }}" alt="persernal" class="img-fluid" style="height: 300px; object-fit: contain;"> --}}
-        <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/2.png') }}" alt="personal" style="width: 100%; height: 350px; object-fit: contain;">
+        <img src="{{ asset(optional($executive->images->first())->photo_file ? 'storage/' . optional($executive->images->first())->photo_file : 'images/home/section-1/2.png') }}" alt="personal" style="width: 100%; height: 300px; object-fit: contain;">
         <div class="my-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
 
             <div class="text-center bg-white text-black p-2 fs-4 " style="border-top-left-radius: 15px; border-top-right-radius: 15px;">

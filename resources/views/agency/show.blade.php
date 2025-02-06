@@ -59,7 +59,7 @@
                             <img src="{{ asset('storage/' . $image->post_photo_file) }}" alt="Personnel Image" style="width: auto; height: 250px; object-fit: cover;">
                             @endforeach
                             @else
-                            <img src="{{ asset('backend/images/images.png') }}" alt="Personnel Image" style="width: auto; height: 250px; object-fit: cover;">
+                            <img src="{{ asset('backend/images/images.png') }}" alt="Personnel Image" style="width: auto; height: 200px; object-fit: cover;">
                             @endif
 
                             <!-- แสดงข้อมูลของแต่ละรายการ -->
@@ -81,7 +81,7 @@
                                 <img src="{{ asset('storage/' . $image->post_photo_file) }}" alt="Personnel Image" style="width: auto; height: 250px; object-fit: cover;">
                                 @endforeach
                                 @else
-                                <img src="{{ asset('backend/images/images.png') }}" alt="Personnel Image" style="width: auto; height: 250px; object-fit: cover;">
+                                <img src="{{ asset('backend/images/images.png') }}" alt="Personnel Image" style="width: auto; height: 200px; object-fit: cover;">
                                 @endif
                                 <div class="fs-4 mt-2">
                                     {{ $chunk->first()->full_name }}<br>
@@ -98,7 +98,7 @@
                                 <img src="{{ asset('storage/' . $image->post_photo_file) }}" alt="Personnel Image" style="width: auto; height: 250px; object-fit: cover;">
                                 @endforeach
                                 @else
-                                <img src="{{ asset('backend/images/images.png') }}" alt="Personnel Image" style="width: auto; height: 250px; object-fit: cover;">
+                                <img src="{{ asset('backend/images/images.png') }}" alt="Personnel Image" style="width: auto; height: 200px; object-fit: cover;">
                                 @endif
                                 <div class="fs-4 mt-2">
                                     {{ $chunk->last()->full_name }}<br>

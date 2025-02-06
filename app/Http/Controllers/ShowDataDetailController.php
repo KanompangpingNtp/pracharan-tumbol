@@ -65,6 +65,11 @@ class ShowDataDetailController extends Controller
 
         // dd( $ExecutiveBoard);
 
+        $LocalAdminPromotion = PostDetail::with('postType', 'pdfs')
+        ->whereHas('postType', function ($query) {
+            $query->where('type_name', 'กรมส่งเสริมการปกครองท้องถิ่น');
+        })->get();
+
         return view('pages.home.app', compact(
             'pressRelease',
             'activity',
@@ -79,6 +84,7 @@ class ShowDataDetailController extends Controller
             'executiveStatus3',
             'executiveStatus4',
             'executiveStatus5',
+            'LocalAdminPromotion'
         ));
     }
 

@@ -14,6 +14,8 @@ use App\Http\Controllers\ManagePersonnelController;
 use App\Http\Controllers\ShowDataAgencyController;
 use App\Http\Controllers\RecommendedPlacesController;
 use App\Http\Controllers\ShowDataDetailController;
+use App\Http\Controllers\BasicInformationController;
+use App\Http\Controllers\LocalAdminPromotionController;
 
 use App\Http\Controllers\TestController;
 
@@ -40,11 +42,7 @@ Route::get('/agency/{id}', [ShowDataAgencyController::class, 'AgencyShow'])->nam
 
 Route::get('/banner', [ShowDataDetailController::class, 'banner'])->name('banner');
 
-Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');
-Route::post('/login', [AuthController::class, 'login'])->name('Login');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/showRegistrationForm', [AuthController::class, 'showRegistrationForm'])->name('showRegistrationForm');
-Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/basic-information/page', [BasicInformationController::class, 'BasicInformationPages'])->name('BasicInformationPages');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -114,13 +112,20 @@ Route::middleware(['check.auth'])->group(function () {
     Route::post('/RecommendedPlaces/create', [RecommendedPlacesController::class, 'RecommendedPlacesCreate'])->name('RecommendedPlacesCreate');
     Route::delete('/RecommendedPlaces/delete/{id}', [RecommendedPlacesController::class, 'RecommendedPlacesDelete'])->name('RecommendedPlacesDelete');
     Route::put('/recommended-places/update/{id}', [RecommendedPlacesController::class, 'RecommendedPlacesUpdate'])->name('RecommendedPlacesUpdate');
+
+    //admin LocalAdminPromotion
+    Route::get('/LocalAdminPromotion/page', [LocalAdminPromotionController::class, 'LocalAdminPromotionPage'])->name('LocalAdminPromotionPage');
+    Route::post('/LocalAdminPromotion/create', [LocalAdminPromotionController::class, 'LocalAdminPromotionCreate'])->name('LocalAdminPromotionCreate');
+    Route::put('/LocalAdminPromotion/update/{id}', [LocalAdminPromotionController::class, 'LocalAdminPromotionUpdate'])->name('LocalAdminPromotionUpdate');
+    Route::delete('/LocalAdminPromotion/delete/{id}', [LocalAdminPromotionController::class, 'LocalAdminPromotionDelete'])->name('LocalAdminPromotionDelete');
 });
+
+Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');
+Route::post('/login', [AuthController::class, 'login'])->name('Login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/showRegistrationForm', [AuthController::class, 'showRegistrationForm'])->name('showRegistrationForm');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 // Route::get('/banner', function () {
 //     return view('pages.banner-in.app');
 // })->name('banner');
-
-
-
-//test
-Route::get('/test', [TestController::class, 'test'])->name('test');

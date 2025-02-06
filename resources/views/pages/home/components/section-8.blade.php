@@ -47,6 +47,20 @@
                         การปกครองท้องถิ่น</button>
                     <button id="btn2" class="btn-section-8 text-center px-4">จากท้องถิ่นจังหวัด</button>
                 </div>
+
+                {{-- <div id="box1" class="w-100 rounded d-flex flex-column">
+                    @foreach($LocalAdminPromotion as $post)
+                        <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
+                            <span><strong>ชื่อ {{ $post->title_name }}</strong></span> <span class="text-end">วัน {{ $post->date }}</span> <br>
+                            @foreach($post->pdfs as $pdf)
+                                <a href="{{ asset('storage/' . $pdf->post_pdf_file) }}" target="_blank">
+                                    {{ basename($pdf->post_pdf_file) }}
+                                </a>
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div> --}}
+
                 <div id="box1" class=" w-100 rounded d-flex flex-column">
                     <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
                         <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
@@ -89,6 +103,7 @@
                         mollitia dolorem?
                     </div>
                 </div>
+
                 <div id="box2" class=" w-100  rounded d-none">
                     <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
                         <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
@@ -185,15 +200,15 @@
                     </div>
                 </div>
                 <div class="px-4 py-2 lh-1 fw-bold fs-4"
-                    style="background: linear-gradient(to right,#70c020, #d1f541, #70c020); 
-                border-top-left-radius: 20px; 
+                    style="background: linear-gradient(to right,#70c020, #d1f541, #70c020);
+                border-top-left-radius: 20px;
                 border-top-right-radius: 20px;
                 box-shadow:0 1px 10px rgba(0, 0, 0, 0.7);">
                     ท่านคิดว่า อบต.พระอาจารย์ <br>
                     ควรเน้นหนักแก้ไขปัญหาเรื่องใดเป็น อันดับแรก?
                 </div>
                 <div class="bg-white text-black p-2"
-                    style="border-bottom-left-radius: 20px; 
+                    style="border-bottom-left-radius: 20px;
                 border-bottom-right-radius: 20px;
                 box-shadow:0 2px 10px rgba(0, 0, 0, 0.7);">
                     <div class="radio-container mt-2 ms-2">

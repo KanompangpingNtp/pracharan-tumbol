@@ -168,7 +168,7 @@
                     <div class="navbar-text">ข้อมูลพื้นฐาน</div>
                 </a>
                 <!-- ลิสต์รายการ -->
-                <ul class="custom-dropdown-menu">
+                {{-- <ul class="custom-dropdown-menu">
                     <li>
                         <a href="{{route('AgencyPage')}}" class="dropdown-item">แผนผังองค์กรรวม</a>
                     </li>
@@ -179,7 +179,7 @@
                             </a>
                         </li>
                     @endforeach
-                </ul>
+                </ul> --}}
             </div>
             {{-- <div class="d-flex flex-column align-items-center justify-content-center">
                 <a href="#" class="navbar-item">

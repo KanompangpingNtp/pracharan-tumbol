@@ -129,10 +129,12 @@
                     style="margin-top: -4rem;">
                 <div class="d-flex flex-column justify-content-center align-items-start">
                     <div class="lh-1">
-                        <span class="fw-bold fs-4">องค์การบริหารส่วนตำบลเสม็ดใต้</span> <br>
+                        <span class="fw-bold fs-4">องค์การบริหารส่วนตำบลพระอาจารย์</span> <br>
+                        <span class="fw-bold fs-5">Phra Achan Subdistrict Administrative Organization</span> <br>
                         <span class="text-muted">
-                            เลขที่ 111 หมู่ที่ 4 ตำบลเสม็ดใต้ <br>
-                            อำเภอบางคล้า จังหวัดฉะเชิงเทรา 24110
+                            ถนนคลองหกวา หมู่ที่ 5 ตำบลพระอาจารย์ <br>
+                            อำเภอองครักษ์ จังหวัดนครนายก <br>
+                            รหัสไปรษณีย์ 26120
                         </span>
                     </div>
                 </div>

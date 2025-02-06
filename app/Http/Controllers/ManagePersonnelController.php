@@ -123,7 +123,7 @@ class ManagePersonnelController extends Controller
     {
         $request->validate([
             'full_name' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
+            'phone' => 'nullable|string|max:255',
             'department' => 'required|string|max:255',
             'status' => 'required|string',
             'post_photo_file' => 'nullable|file|mimes:jpg,jpeg,png',
@@ -156,7 +156,7 @@ class ManagePersonnelController extends Controller
     {
         $request->validate([
             'full_name' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
+            'phone' => 'nullable|string|max:255',
             'department' => 'required|string|max:255',
             'status' => 'required|string',
             'post_photo_file' => 'nullable|file|mimes:jpg,jpeg,png',

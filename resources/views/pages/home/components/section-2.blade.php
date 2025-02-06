@@ -69,7 +69,10 @@
                     </div>
                 </div>
                 <div class="bg-green">
-                    <iframe height="400" src="https://www.youtube.com/embed/2XhBpAuKYQ0" title="YouTube video player"
+                    {{-- <iframe height="400" src="https://www.youtube.com/embed/2XhBpAuKYQ0" title="YouTube video player"
+                        frameborder="0" allowfullscreen style="border-radius: 20px; width: 100%;">
+                    </iframe> --}}
+                    <iframe height="400" src="https://www.youtube.com/embed/" title="YouTube video player"
                         frameborder="0" allowfullscreen style="border-radius: 20px; width: 100%;">
                     </iframe>
                 </div>
@@ -108,6 +111,6 @@
                 </a>
             </div>
         </div>
-        
+
     </div>
 </main>

@@ -67,7 +67,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">ระบบ</div>
+                        <div class="sb-sidenav-menu-heading">ข้อมูลหน้าหลัก</div>
 
                         <a class="nav-link" href="{{route('ExecutiveBoardPage')}}">
                             <div class="sb-nav-link-icon">
@@ -115,6 +115,44 @@
                             </div>
                             จัดการสถานที่แนะนำ
                         </a>
+                        {{-- <a class="nav-link" href="">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการหนังสือราชการ
+                        </a> --}}
+                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการหนังสือราชการ
+                            <div class="sb-sidenav-collapse-arrow">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{route('LocalAdminPromotionPage')}}">จากกรมส่งเสริมการปกครองท้องถิ่น</a>
+                                <a class="nav-link" href="">จากท้องถิ่นจังหวัด</a>
+                            </nav>
+                        </div>
+
+                        <div class="sb-sidenav-menu-heading">แถบเมนู</div>
+                        {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการเมนูข้อมูลพื้นฐาน
+                            <div class="sb-sidenav-collapse-arrow">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="">แบบแสดงหน้าเดียว</a>
+                                <a class="nav-link" href="">แบบรายการ</a>
+                            </nav>
+                        </div> --}}
 
                         {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon">

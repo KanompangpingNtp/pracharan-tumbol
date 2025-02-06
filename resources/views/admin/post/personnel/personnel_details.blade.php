@@ -28,7 +28,7 @@
 
                     <div class="mb-3">
                         <label for="phone" class="form-label">เบอร์ติดต่อ</label>
-                        <input type="text" class="form-control" id="phone" name="phone" required>
+                        <input type="text" class="form-control" id="phone" name="phone">
                     </div>
 
                     <div class="mb-3">
@@ -127,7 +127,7 @@
 
                     <div class="mb-3">
                         <label for="phone" class="form-label">เบอร์ติดต่อ</label>
-                        <input type="text" class="form-control" id="phone" name="phone" value="{{ $detail->phone }}" required>
+                        <input type="text" class="form-control" id="phone" name="phone" value="{{ $detail->phone }}" >
                     </div>
 
                     <div class="mb-3">

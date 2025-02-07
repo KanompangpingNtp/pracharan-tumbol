@@ -10,21 +10,21 @@ use App\Models\BasicInfoType;
 use App\Models\BasicInfoPdf;
 use Illuminate\Support\Facades\Storage;
 
-class AdminHistoryController extends Controller
+class AdminGeneralInformationController extends Controller
 {
-    public function  HistoryAdmin()
+    public function  GeneralInformationAdmin()
     {
         $basicInfoType = BasicInfoType::all();
 
-        $basicInfoTypeID = $basicInfoType->firstWhere('type_name', 'ประวัติความเป็นมา')->id;
+        $basicInfoTypeID = $basicInfoType->firstWhere('type_name', 'ข้อมูลสภาพทั่วไป')->id;
 
         $basicInfoDetail = BasicInfoDetail::with('type', 'images', 'pdf')
             ->where('basic_info_type_id', $basicInfoTypeID)->get();
 
-        return view('admin.post.history.page', compact('basicInfoDetail', 'basicInfoType'));
+        return view('admin.post.general_information.page', compact('basicInfoDetail', 'basicInfoType'));
     }
 
-    public function HistoryCreate(Request $request)
+    public function GeneralInformationCreate(Request $request)
     {
         $request->validate([
             'basic_info_type' => 'required|exists:basic_info_types,id',
@@ -70,7 +70,7 @@ class AdminHistoryController extends Controller
         return redirect()->back()->with('success', 'สร้างข้อมูลสำเร็จ');
     }
 
-    public function HistoryDelete($id)
+    public function GeneralInformationDelete($id)
     {
         $basicInfoDetail = BasicInfoDetail::findOrFail($id);
 

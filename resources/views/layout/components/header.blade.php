@@ -170,10 +170,10 @@
                 <!-- ลิสต์รายการ -->
                 <ul class="custom-dropdown-menu">
                     <li>
-                        <a href="" class="dropdown-item">ประวัติความเป็นมา</a>
-                        <a href="" class="dropdown-item">วิสัยทัศน์/พันธกิจ</a>
-                        <a href="" class="dropdown-item">ข้อมูลสภาพทั่วไป</a>
-                        <a href="" class="dropdown-item">ยุทธศาสตร์และแนวทางการพัฒนา</a>
+                        <a href="{{route('HistoryPage')}}" class="dropdown-item">ประวัติความเป็นมา</a>
+                        <a href="{{route('VisionMissionPage')}}" class="dropdown-item">วิสัยทัศน์/พันธกิจ</a>
+                        <a href="{{route('GeneralInformationPage')}}" class="dropdown-item">ข้อมูลสภาพทั่วไป</a>
+                        <a href="{{route('StrategyGuidelinePage')}}" class="dropdown-item">ยุทธศาสตร์และแนวทางการพัฒนา</a>
                     </li>
                     {{-- @foreach ($personnelAgencies as $agency)
                         <li>

@@ -1,12 +1,12 @@
 @extends('admin.layout.admin_layout')
 @section('user_content')
 
-<h2 class="text-center">ประวัติความเป็นมา</h2><br>
+<h2 class="text-center">ยุทธศาสตร์และแนวทางการพัฒนา</h2><br>
 
 <div class="card mt-3">
     <div class="card-body">
         @forelse ($basicInfoDetail as $detail)
-        <form action="{{ route('HistoryDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้หรือไม่?');">
+        <form action="{{ route('StrategyGuidelineDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้หรือไม่?');">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger btn-sm">ลบ</button>
@@ -52,10 +52,10 @@
 </div>
 <br>
 
-<form action="{{route('HistoryCreate')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('StrategyGuidelineCreate')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div>
-        <input type="hidden" name="basic_info_type" value="{{ $basicInfoType->firstWhere('type_name', 'ประวัติความเป็นมา')->id }}">
+        <input type="hidden" name="basic_info_type" value="{{ $basicInfoType->firstWhere('type_name', 'ยุทธศาสตร์และแนวทางการพัฒนา')->id }}">
     </div>
 
     <div class="mb-3">

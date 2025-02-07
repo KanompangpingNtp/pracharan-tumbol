@@ -17,6 +17,12 @@ use App\Http\Controllers\ShowDataDetailController;
 use App\Http\Controllers\LocalAdminPromotionController;
 use App\Http\Controllers\Information\HistoryController;
 use App\Http\Controllers\Information\AdminHistoryController;
+use App\Http\Controllers\Information\GeneralInformationController;
+use App\Http\Controllers\Information\AdminGeneralInformationController;
+use App\Http\Controllers\Information\AdminVisionMissionController;
+use App\Http\Controllers\Information\AdminStrategyGuidelineController;
+use App\Http\Controllers\Information\VisionMissionController;
+use App\Http\Controllers\Information\StrategyGuidelineController;
 
 
 use App\Http\Controllers\TestController;
@@ -46,6 +52,9 @@ Route::get('/agency/{id}', [ShowDataAgencyController::class, 'AgencyShow'])->nam
 
 //ข้อมูลพื้นฐาน
 Route::get('/History/page', [HistoryController::class, 'HistoryPage'])->name('HistoryPage');
+Route::get('/VisionMission/page', [VisionMissionController::class, 'VisionMissionPage'])->name('VisionMissionPage');
+Route::get('/GeneralInformation/page', [GeneralInformationController::class, 'GeneralInformationPage'])->name('GeneralInformationPage');
+Route::get('/StrategyGuideline/page', [StrategyGuidelineController::class, 'StrategyGuidelinePage'])->name('StrategyGuidelinePage');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -122,7 +131,25 @@ Route::middleware(['check.auth'])->group(function () {
     Route::put('/LocalAdminPromotion/update/{id}', [LocalAdminPromotionController::class, 'LocalAdminPromotionUpdate'])->name('LocalAdminPromotionUpdate');
     Route::delete('/LocalAdminPromotion/delete/{id}', [LocalAdminPromotionController::class, 'LocalAdminPromotionDelete'])->name('LocalAdminPromotionDelete');
 
+    //History
     Route::get('/Admin/History/page', [AdminHistoryController::class, 'HistoryAdmin'])->name('HistoryAdmin');
+    Route::post('/Admin/History/create', [AdminHistoryController::class, 'HistoryCreate'])->name('HistoryCreate');
+    Route::delete('/Admin/History/delete/{id}', [AdminHistoryController::class, 'HistoryDelete'])->name('HistoryDelete');
+
+    //GeneralInformation
+    Route::get('/Admin/GeneralInformation/page', [AdminGeneralInformationController::class, 'GeneralInformationAdmin'])->name('GeneralInformationAdmin');
+    Route::post('/Admin/GeneralInformation/create', [AdminGeneralInformationController::class, 'GeneralInformationCreate'])->name('GeneralInformationCreate');
+    Route::delete('/Admin/GeneralInformation/delete/{id}', [AdminGeneralInformationController::class, 'GeneralInformationDelete'])->name('GeneralInformationDelete');
+
+    //VisionMission
+    Route::get('/Admin/VisionMission/page', [AdminVisionMissionController::class, 'VisionMissionAdmin'])->name('VisionMissionAdmin');
+    Route::post('/Admin/VisionMission/create', [AdminVisionMissionController::class, 'VisionMissionCreate'])->name('VisionMissionCreate');
+    Route::delete('/Admin/VisionMission/delete/{id}', [AdminVisionMissionController::class, 'VisionMissionDelete'])->name('VisionMissionDelete');
+
+    //StrategyGuideline
+    Route::get('/Admin/StrategyGuideline/page', [AdminStrategyGuidelineController::class, 'StrategyGuidelineAdmin'])->name('StrategyGuidelineAdmin');
+    Route::post('/Admin/StrategyGuideline/create', [AdminStrategyGuidelineController::class, 'StrategyGuidelineCreate'])->name('StrategyGuidelineCreate');
+    Route::delete('/Admin/StrategyGuideline/delete/{id}', [AdminStrategyGuidelineController::class, 'StrategyGuidelineDelete'])->name('StrategyGuidelineDelete');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

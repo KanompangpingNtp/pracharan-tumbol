@@ -393,9 +393,9 @@
             document.addEventListener("DOMContentLoaded", function() {
                 window.onload = function() {
                     const loadingScreen = document.getElementById("loading-screen");
-                    const pageContent = document.getElementById("page-content");
+                    // const pageContent = document.getElementById("page-content");
 
-                    if (loadingScreen && pageContent) {
+                    if (loadingScreen) {
                         loadingScreen.style.display = "none"; // ซ่อน loading
                         // pageContent.style.display = "block"; // แสดงเนื้อหา
                     }

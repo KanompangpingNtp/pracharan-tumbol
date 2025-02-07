@@ -49,16 +49,18 @@
                 </div>
 
                 <div id="box1" class="w-100 rounded d-flex flex-column">
-                    @foreach($LocalAdminPromotion as $post)
-                        <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                            <span><strong>ชื่อ {{ $post->title_name }}</strong></span> <span class="text-end">วัน {{ $post->date }}</span> <br>
-                            @foreach($post->pdfs as $pdf)
-                                <a href="{{ asset('storage/' . $pdf->post_pdf_file) }}" target="_blank">
-                                    {{ basename($pdf->post_pdf_file) }}
-                                </a>
-                            @endforeach
-                        </div>
-                    @endforeach
+                    @foreach($LocalAdminPromotion->take(10) as $post)
+                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
+                        <span><strong>ชื่อ {{ $post->title_name }}</strong></span>
+                        <span class="text-end">วัน {{ $post->date }}</span> <br>
+                        @foreach($post->pdfs as $pdf)
+                            <a href="{{ asset('storage/' . $pdf->post_pdf_file) }}" target="_blank">
+                                {{ basename($pdf->post_pdf_file) }}
+                            </a>
+                        @endforeach
+                    </div>
+                @endforeach
+
                 </div>
 
                 {{-- <div id="box1" class=" w-100 rounded d-flex flex-column">

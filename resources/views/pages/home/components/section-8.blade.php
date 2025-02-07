@@ -49,7 +49,7 @@
                 </div>
 
                 <div id="box1" class="w-100 rounded d-flex flex-column">
-                    @foreach($LocalAdminPromotion->take(7) as $post)
+                    @foreach($LocalAdminPromotion->take(6) as $post)
                     <div class="p-2 mb-2 " style="background-color: rgb(230, 230, 230);">
                         <span><strong>ชื่อ {{ $post->title_name }}</strong></span>
                         <span class="text-end">วัน {{ $post->date }}</span> <br>

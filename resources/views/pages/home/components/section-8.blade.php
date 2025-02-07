@@ -48,7 +48,7 @@
                     <button id="btn2" class="btn-section-8 text-center px-4">จากท้องถิ่นจังหวัด</button>
                 </div>
 
-                {{-- <div id="box1" class="w-100 rounded d-flex flex-column">
+                <div id="box1" class="w-100 rounded d-flex flex-column">
                     @foreach($LocalAdminPromotion as $post)
                         <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
                             <span><strong>ชื่อ {{ $post->title_name }}</strong></span> <span class="text-end">วัน {{ $post->date }}</span> <br>
@@ -59,50 +59,50 @@
                             @endforeach
                         </div>
                     @endforeach
-                </div> --}}
-
-                <div id="box1" class=" w-100 rounded d-flex flex-column">
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
                 </div>
+
+                {{-- <div id="box1" class=" w-100 rounded d-flex flex-column">
+                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
+                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
+                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
+                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
+                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
+                        mollitia dolorem?
+                    </div>
+                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
+                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
+                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
+                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
+                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
+                        mollitia dolorem?
+                    </div>
+                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
+                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
+                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
+                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
+                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
+                        mollitia dolorem?
+                    </div>
+                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
+                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
+                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
+                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
+                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
+                        mollitia dolorem?
+                    </div>
+                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
+                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
+                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
+                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
+                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
+                        mollitia dolorem?
+                    </div>
+                </div> --}}
 
                 <div id="box2" class=" w-100  rounded d-none">
                     <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">

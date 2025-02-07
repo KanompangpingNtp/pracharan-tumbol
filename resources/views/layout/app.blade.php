@@ -136,99 +136,276 @@
             background-color: rgb(148, 228, 0);
             /* เปลี่ยนสีเมื่อ hover */
         }
+
+        /* Loading Screen */
+        .cube {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg);
+            animation: animateD 8s linear infinite;
+        }
+
+        @keyframes animateD {
+            0% {
+                transform: rotateX(-15deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(-15deg) rotateY(-360deg);
+            }
+        }
+
+        .cube div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .cube2 {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            transform-style: preserve-3d;
+            animation: animateD2 5s ease-out infinite alternate;
+        }
+
+        @keyframes animateD2 {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(180deg) rotateY(-360deg);
+            }
+        }
+
+        .cube2 div {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            width: 65%;
+            height: 65%;
+            transform-style: preserve-3d;
+        }
+
+        .cube2 div span {
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 65%;
+            height: 65%;
+            background: transparent;
+            border: 2px solid #7dff99;
+            transform: rotateY(calc(90deg * var(--i))) translateZ(62px);
+        }
+
+        .cube3 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg);
+            animation: animateD3 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes animateD3 {
+            0% {
+                transform: rotateX(-90deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(90deg) rotateY(45deg);
+            }
+        }
+
+        .cube3 div {
+            position: absolute;
+            top: 70px;
+            left: 70px;
+            width: 15%;
+            height: 15%;
+            transform-style: preserve-3d;
+        }
+
+        .cube3 div span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #7dff99;
+            transform: rotateY(calc(90deg * var(--i))) translateZ(14px);
+            box-shadow: 0px 0px 7px #7dff99;
+        }
+
+        .top3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #7dff99;
+            transform: rotateX(90deg) translateZ(14px);
+            box-shadow: 0px 0px 10px #7dff99;
+        }
+
+        #loading-screen {
+            position: fixed;
+            /* ให้ loading screen อยู่เต็มหน้าจอ */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            /* เพิ่มพื้นหลังให้ดูชัดขึ้น */
+            display: flex;
+            /* ใช้ Flexbox จัดกลาง */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            /* ให้แน่ใจว่าอยู่ด้านบนสุด */
+        }
     </style>
 </head>
 
 <body>
-
-    <!-- Content Section -->
-    <header class="bg-nav d-flex">
-        <div class="container d-flex justify-content-center justify-content-md-between align-items-center">
-            <div class="d-flex  justify-content-start align-items-center gap-3">
-                <img src="{{ asset('images/header/logo.png') }}" alt="logo" class="logo d-none d-md-block">
-                <div class="text-title-nav lh-1 text-center text-md-start ">
-                    <span class="me-1" style="font-size: 42px;">องค์การบริหารส่วนตำบลพระอาจารย์</span> <br>
-
-                    <span style="font-size: 26px;">อำเภอองครักษ์ จังหวัดนครนายก</span> <br>
-                    <span style="font-size: 26px;">Phra Achan Subdistrict Administrative Organization</span>
-                </div>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="cube">
+            <div class="topD"></div>
+            <div>
+                <span style="--i:0"></span>
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
             </div>
-            <div class="d-flex flex-column justify-content-start align-items-center d-none d-lg-block">
-                <div class="d-flex justify-content-end align-items-center gap-2">
-                    <a href="{{ route('showLoginForm') }}" class="button-greenlight">เข้าสู่ระบบ</a>
-                    <a href="" class="button-greenblack">สมัครสมาชิก</a>
+
+            <div class="cube2">
+                <div>
+                    <span style="--i:0"></span>
+                    <span style="--i:1"></span>
+                    <span style="--i:2"></span>
+                    <span style="--i:3"></span>
                 </div>
-                <div class="d-flex justify-content-start align-items-end gap-2 button-img mt-2">
-                    <a class="button-greenlight" style="border-radius: 20px; padding:0px 24px;"
-                        href="{{ route('HomeDataPage') }}">หน้าแรก</a>
-                    <img src="{{ asset('images/header/minus.png') }}" alt="ลดขนาด" data-action="decrease">
-                    <img src="{{ asset('images/header/normal.png') }}" alt="ขนาดปกติ" data-action="normal">
-                    <img src="{{ asset('images/header/plus.png') }}" alt="เพิ่มขนาด" data-action="increase">
 
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            let defaultFontSize = 20; // ขนาดเริ่มต้น
-                            const minFontSize = 10;
-                            const maxFontSize = 40;
-                            const step = 2;
-
-                            function updateFontSize(size) {
-                                document.querySelectorAll("*").forEach(el => {
-                                    el.style.fontSize = size + "px";
-                                });
-                            }
-
-                            document.querySelectorAll("img[data-action]").forEach(img => {
-                                img.addEventListener("click", function() {
-                                    let action = this.getAttribute("data-action");
-
-                                    if (action === "decrease") {
-                                        defaultFontSize = Math.max(minFontSize, defaultFontSize - step);
-                                    } else if (action === "normal") {
-                                        defaultFontSize = 20;
-                                    } else if (action === "increase") {
-                                        defaultFontSize = Math.min(maxFontSize, defaultFontSize + step);
-                                    }
-
-                                    updateFontSize(defaultFontSize);
-                                });
-                            });
-                        });
-                    </script>
-
-                    <img src="{{ asset('images/header/disability.png') }}" alt="btn-disability" width="42"
-                        height="42" id="toggleTheme">
-
-                    <style>
-                        .dark-mode * {
-                            background-color: black !important;
-                            color: white !important;
-                        }
-                    </style>
-
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            const toggleButton = document.getElementById("toggleTheme");
-
-                            toggleButton.addEventListener("click", function() {
-                                document.body.classList.toggle("dark-mode");
-                            });
-                        });
-                    </script>
-
-                    <img src="{{ asset('images/header/thailand.png') }}" alt="thailand">
-                    <img src="{{ asset('images/header/united-kingdom.png') }}" alt="english">
+                <div class="cube3">
+                    <div class="top3"></div>
+                    <div>
+                        <span style="--i:0"></span>
+                        <span style="--i:1"></span>
+                        <span style="--i:2"></span>
+                        <span style="--i:3"></span>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-    @include('layout.components.header')
+    </div>
+    <div id="page-content">
+        <!-- Content Section -->
+        <header class="bg-nav d-flex">
+            <div class="container d-flex justify-content-center justify-content-md-between align-items-center">
+                <div class="d-flex  justify-content-start align-items-center gap-3">
+                    <img src="{{ asset('images/header/logo.png') }}" alt="logo" class="logo d-none d-md-block">
+                    <div class="text-title-nav lh-1 text-center text-md-start ">
+                        <span class="me-1" style="font-size: 42px;">องค์การบริหารส่วนตำบลพระอาจารย์</span> <br>
+
+                        <span style="font-size: 26px;">อำเภอองครักษ์ จังหวัดนครนายก</span> <br>
+                        <span style="font-size: 26px;">Phra Achan Subdistrict Administrative Organization</span>
+                    </div>
+                </div>
+                <div class="d-flex flex-column justify-content-start align-items-center d-none d-lg-block">
+                    <div class="d-flex justify-content-end align-items-center gap-2">
+                        <a href="{{ route('showLoginForm') }}" class="button-greenlight">เข้าสู่ระบบ</a>
+                        <a href="" class="button-greenblack">สมัครสมาชิก</a>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-end gap-2 button-img mt-2">
+                        <a class="button-greenlight" style="border-radius: 20px; padding:0px 24px;"
+                            href="{{ route('HomeDataPage') }}">หน้าแรก</a>
+                        <img src="{{ asset('images/header/minus.png') }}" alt="ลดขนาด" data-action="decrease">
+                        <img src="{{ asset('images/header/normal.png') }}" alt="ขนาดปกติ" data-action="normal">
+                        <img src="{{ asset('images/header/plus.png') }}" alt="เพิ่มขนาด" data-action="increase">
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function() {
+                                let defaultFontSize = 20; // ขนาดเริ่มต้น
+                                const minFontSize = 10;
+                                const maxFontSize = 40;
+                                const step = 2;
+
+                                function updateFontSize(size) {
+                                    document.querySelectorAll("*").forEach(el => {
+                                        el.style.fontSize = size + "px";
+                                    });
+                                }
+
+                                document.querySelectorAll("img[data-action]").forEach(img => {
+                                    img.addEventListener("click", function() {
+                                        let action = this.getAttribute("data-action");
+
+                                        if (action === "decrease") {
+                                            defaultFontSize = Math.max(minFontSize, defaultFontSize - step);
+                                        } else if (action === "normal") {
+                                            defaultFontSize = 20;
+                                        } else if (action === "increase") {
+                                            defaultFontSize = Math.min(maxFontSize, defaultFontSize + step);
+                                        }
+
+                                        updateFontSize(defaultFontSize);
+                                    });
+                                });
+                            });
+                        </script>
+
+                        <img src="{{ asset('images/header/disability.png') }}" alt="btn-disability" width="42"
+                            height="42" id="toggleTheme">
+
+                        <style>
+                            .dark-mode * {
+                                background-color: black !important;
+                                color: white !important;
+                            }
+                        </style>
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function() {
+                                const toggleButton = document.getElementById("toggleTheme");
+
+                                toggleButton.addEventListener("click", function() {
+                                    document.body.classList.toggle("dark-mode");
+                                });
+                            });
+                        </script>
+
+                        <img src="{{ asset('images/header/thailand.png') }}" alt="thailand">
+                        <img src="{{ asset('images/header/united-kingdom.png') }}" alt="english">
+                    </div>
+                </div>
+            </div>
+        </header>
+        @include('layout.components.header')
 
 
-    @yield('content')
+        @yield('content')
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                window.onload = function() {
+                    const loadingScreen = document.getElementById("loading-screen");
+                    const pageContent = document.getElementById("page-content");
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+                    if (loadingScreen && pageContent) {
+                        loadingScreen.style.display = "none"; // ซ่อน loading
+                        // pageContent.style.display = "block"; // แสดงเนื้อหา
+                    }
+                };
+            });
+        </script>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
 </body>
 
 </html>

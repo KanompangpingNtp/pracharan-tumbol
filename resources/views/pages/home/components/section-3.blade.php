@@ -75,7 +75,7 @@
                     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner" style="border-radius: 20px;">
                             <div class="carousel-item active">
-                                <img src="{{ asset('images/home/section-3/bg-section3.png') }}" class="d-block w-100"
+                                <img src="{{ asset('images/home/section-3/nogift.png') }}" class="d-block w-100"
                                     alt="Image 1">
                             </div>
                             <div class="carousel-item">
@@ -114,11 +114,10 @@
             </div>
             <div class="col-xl-3 d-flex justify-content-center">
                 <!-- Facebook Page Plugin -->
-                <div class="fb-page" data-href="https://www.facebook.com/phraarjansao"
-                    data-tabs="timeline" data-width="300" data-height="520" data-small-header="false"
-                    data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true">
-                    <blockquote cite="https://www.facebook.com/phraarjansao"
-                        class="fb-xfbml-parse-ignore">
+                <div class="fb-page" data-href="https://www.facebook.com/phraarjansao" data-tabs="timeline"
+                    data-width="300" data-height="520" data-small-header="false" data-adapt-container-width="false"
+                    data-hide-cover="false" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/phraarjansao" class="fb-xfbml-parse-ignore">
                         <a href="https://www.facebook.com/phraarjansao">Facebook</a>
                     </blockquote>
                 </div>

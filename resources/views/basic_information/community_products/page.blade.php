@@ -1,0 +1,56 @@
+@extends('layout.app')
+@section('content')
+<style>
+    .bg {
+        background-image: url('{{ asset('images/agency/BG-AENGY.png') }}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+    .custom-gradient-shadow {
+        border-radius: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3),
+            /* เงาพื้นฐาน */
+            0 0 50px -10px rgba(158, 255, 3, 0.8),
+            /* เงาสีฟ้าเข้ม */
+            0 0 50px -10px rgba(72, 255, 0, 0.8);
+        /* เงาสีฟ้าอ่อน */
+        background-color: #ffffff;
+    }
+
+</style>
+<div class="bg py-5">
+    <div class="container py-5 custom-gradient-shadow">
+        <div class=" d-flex flex-column justify-content-center p-5">
+            <div class="fs-1 fw-bold mb-4 text-center" style="color: #77b329;">ผลิตภัณฑ์ชุมชน/OTOP</div>
+
+            @foreach ($listDetail as $detail)
+            <br>
+
+            <a href="{{ route('ShowDetails', $detail->id) }}" style="text-decoration: none;">
+
+                <p>{{ $detail->list_details_name }}</p>
+
+                {{-- รูปภาพ --}}
+                @if ($detail->images->isNotEmpty())
+                <div class="row">
+                    @foreach ($detail->images->where('status', 1) as $image)
+                    <div class="col-md-3">
+                        <img src="{{ asset('storage/' . $image->images_file) }}" class="img-fluid rounded">
+                    </div>
+                    @endforeach
+                </div>
+                @else
+                <p class="text-muted"></p>
+                @endif
+            </a>
+            @endforeach
+
+        </div>
+    </div>
+</div>
+
+
+@endsection

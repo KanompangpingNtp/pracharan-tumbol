@@ -162,7 +162,7 @@
 <body>
     <!-- Loading Screen -->
     <div id="loading-screen">
-        <img src="{{ asset('images/home/video/GM_.gif') }}" alt="gm" style="width: 45rem">
+        <img src="{{ asset('images/home/video/gm-load.gif') }}" alt="gm" style="width: 25rem">
     </div>
     <div id="page-content">
         <!-- Content Section -->

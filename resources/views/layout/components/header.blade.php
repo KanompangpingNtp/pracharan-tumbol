@@ -95,8 +95,8 @@
         background-color: rgb(27, 116, 0);
     }
 
-     /* ตั้งค่าเริ่มต้นของคอนเทนเนอร์ */
-     .custom-dropdown-container {
+    /* ตั้งค่าเริ่มต้นของคอนเทนเนอร์ */
+    .custom-dropdown-container {
         position: relative;
     }
 
@@ -203,7 +203,7 @@
                 <!-- ลิสต์รายการ -->
                 <ul class="custom-dropdown-menu">
                     <li>
-                        <a href="{{route('AgencyPage')}}" class="dropdown-item">แผนผังองค์กรรวม</a>
+                        <a href="{{ route('AgencyPage') }}" class="dropdown-item">แผนผังองค์กรรวม</a>
                     </li>
                     @foreach ($personnelAgencies as $agency)
                         <li>
@@ -241,7 +241,7 @@
             <div class="d-flex flex-column align-items-center justify-content-center">
                 <a href="#" class="navbar-item">
                     <img src="{{ asset('images/header/group.png') }}" alt="ปุ่มเมนูสำหรับประชาชน">
-                    <div>เมนูสำรหับประชาชน</div>
+                    <div>เมนูหรับประชาชน</div>
                 </a>
             </div>
         </div>

@@ -148,23 +148,74 @@
                 <img src="{{ asset('images/header/logo.png') }}" alt="logo" class="logo d-none d-md-block">
                 <div class="text-title-nav lh-1 text-center text-md-start ">
                     <span class="me-1" style="font-size: 42px;">องค์การบริหารส่วนตำบลพระอาจารย์</span> <br>
-                     
+
                     <span style="font-size: 26px;">อำเภอองครักษ์ จังหวัดนครนายก</span> <br>
                     <span style="font-size: 26px;">Phra Achan Subdistrict Administrative Organization</span>
                 </div>
             </div>
             <div class="d-flex flex-column justify-content-start align-items-center d-none d-lg-block">
                 <div class="d-flex justify-content-end align-items-center gap-2">
-                    <a href="{{route('showLoginForm')}}" class="button-greenlight">เข้าสู่ระบบ</a>
+                    <a href="{{ route('showLoginForm') }}" class="button-greenlight">เข้าสู่ระบบ</a>
                     <a href="" class="button-greenblack">สมัครสมาชิก</a>
                 </div>
                 <div class="d-flex justify-content-start align-items-end gap-2 button-img mt-2">
-                    <a class="button-greenlight" style="border-radius: 20px; padding:0px 24px;" href="{{route('HomeDataPage')}}" >หน้าแรก</a>
-                    <img src="{{ asset('images/header/minus.png') }}" alt="minus">
-                    <img src="{{ asset('images/header/normal.png') }}" alt="normal">
-                    <img src="{{ asset('images/header/plus.png') }}" alt="plus">
+                    <a class="button-greenlight" style="border-radius: 20px; padding:0px 24px;"
+                        href="{{ route('HomeDataPage') }}">หน้าแรก</a>
+                    <img src="{{ asset('images/header/minus.png') }}" alt="ลดขนาด" data-action="decrease">
+                    <img src="{{ asset('images/header/normal.png') }}" alt="ขนาดปกติ" data-action="normal">
+                    <img src="{{ asset('images/header/plus.png') }}" alt="เพิ่มขนาด" data-action="increase">
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            let defaultFontSize = 20; // ขนาดเริ่มต้น
+                            const minFontSize = 10;
+                            const maxFontSize = 40;
+                            const step = 2;
+
+                            function updateFontSize(size) {
+                                document.querySelectorAll("*").forEach(el => {
+                                    el.style.fontSize = size + "px";
+                                });
+                            }
+
+                            document.querySelectorAll("img[data-action]").forEach(img => {
+                                img.addEventListener("click", function() {
+                                    let action = this.getAttribute("data-action");
+
+                                    if (action === "decrease") {
+                                        defaultFontSize = Math.max(minFontSize, defaultFontSize - step);
+                                    } else if (action === "normal") {
+                                        defaultFontSize = 20;
+                                    } else if (action === "increase") {
+                                        defaultFontSize = Math.min(maxFontSize, defaultFontSize + step);
+                                    }
+
+                                    updateFontSize(defaultFontSize);
+                                });
+                            });
+                        });
+                    </script>
+
                     <img src="{{ asset('images/header/disability.png') }}" alt="btn-disability" width="42"
-                        height="42">
+                        height="42" id="toggleTheme">
+
+                    <style>
+                        .dark-mode * {
+                            background-color: black !important;
+                            color: white !important;
+                        }
+                    </style>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            const toggleButton = document.getElementById("toggleTheme");
+
+                            toggleButton.addEventListener("click", function() {
+                                document.body.classList.toggle("dark-mode");
+                            });
+                        });
+                    </script>
+
                     <img src="{{ asset('images/header/thailand.png') }}" alt="thailand">
                     <img src="{{ asset('images/header/united-kingdom.png') }}" alt="english">
                 </div>

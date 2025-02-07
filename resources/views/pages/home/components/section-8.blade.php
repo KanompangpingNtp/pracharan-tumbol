@@ -39,7 +39,7 @@
                     <img src="{{ asset('images/home/section-8/book.png') }}" alt="icon" width="100">
                 </div>
             </div>
-            <div class="bg-white shadow text-black p-3 d-flex flex-column justify-content-center "
+            <div class="bg-white shadow text-black p-3 d-flex flex-column justify-content-center"
                 style="border-radius: 20px;">
                 <div
                     class="d-flex flex-column flex-md-row justify-content-center align-items-center lh-1 gap-2 gap-md-5 my-4">
@@ -49,17 +49,17 @@
                 </div>
 
                 <div id="box1" class="w-100 rounded d-flex flex-column">
-                    @foreach($LocalAdminPromotion->take(10) as $post)
-                    <div class="p-2 mb-2 " style="background-color: rgb(230, 230, 230);">
-                        <span><strong>ชื่อ {{ $post->title_name }}</strong></span>
-                        <span class="text-end">วัน {{ $post->date }}</span> <br>
-                        @foreach($post->pdfs as $pdf)
-                            <a href="{{ asset('storage/' . $pdf->post_pdf_file) }}" target="_blank">
-                                {{ basename($pdf->post_pdf_file) }}
-                            </a>
-                        @endforeach
-                    </div>
-                @endforeach
+                    @foreach ($LocalAdminPromotion->take(10) as $post)
+                        <div class="p-2 mb-2 " style="background-color: rgb(230, 230, 230);">
+                            <span><strong>ชื่อ {{ $post->title_name }}</strong></span>
+                            <span class="text-end">วัน {{ $post->date }}</span> <br>
+                            @foreach ($post->pdfs as $pdf)
+                                <a href="{{ asset('storage/' . $pdf->post_pdf_file) }}" target="_blank">
+                                    {{ basename($pdf->post_pdf_file) }}
+                                </a>
+                            @endforeach
+                        </div>
+                    @endforeach
 
                 </div>
 
@@ -215,10 +215,8 @@
                 box-shadow:0 2px 10px rgba(0, 0, 0, 0.7);">
                     <div class="radio-container mt-2 ms-2">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="options" value="1"
-                                id="radio1">
-                            <label class="form-check-label"
-                                for="radio1">จัดการเรื่องการศึกษาทั้งในและนอกระบบ</label>
+                            <input class="form-check-input" type="radio" name="options" value="1" id="radio1">
+                            <label class="form-check-label" for="radio1">จัดการเรื่องการศึกษาทั้งในและนอกระบบ</label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="options" value="2"

@@ -26,6 +26,7 @@ use App\Http\Controllers\Information\StrategyGuidelineController;
 use App\Http\Controllers\Information\AdminCommunityProductsController;
 use App\Http\Controllers\Information\AdminImportantPlacesController;
 use App\Http\Controllers\Information\CommunityProductsController;
+use App\Http\Controllers\Information\ImportantPlacesController;
 
 use App\Http\Controllers\TestController;
 
@@ -59,6 +60,10 @@ Route::get('/GeneralInformation/page', [GeneralInformationController::class, 'Ge
 Route::get('/StrategyGuideline/page', [StrategyGuidelineController::class, 'StrategyGuidelinePage'])->name('StrategyGuidelinePage');
 
 Route::get('/CommunityProducts/page', [CommunityProductsController::class, 'CommunityProductsPage'])->name('CommunityProductsPage');
+Route::get('/CommunityProducts/showdetails/index/{id}', [CommunityProductsController::class, 'ShowDetails'])->name('ShowDetails');
+
+Route::get('/ImportantPlaces/page', [ImportantPlacesController::class, 'ImportantPlacesPage'])->name('ImportantPlacesPage');
+Route::get('/ImportantPlaces/showdetails/index/{id}', [ImportantPlacesController::class, 'ImportantPlacesShowDetails'])->name('ImportantPlacesShowDetails');
 
 Route::middleware(['check.auth'])->group(function () {
 

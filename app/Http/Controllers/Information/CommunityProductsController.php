@@ -19,6 +19,16 @@ class CommunityProductsController extends Controller
         $listDetail = ListDetail::with('type', 'images')
             ->where('basic_info_type_id', $basicInfoTypeID)->get();
 
-        return view('basic_information.community_products.page',compact('personnelAgencies','listDetail','basicInfoType'));
+        return view('basic_information.community_products.page', compact('personnelAgencies', 'listDetail', 'basicInfoType'));
+    }
+
+    public function ShowDetails($id)
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $listDetail = ListDetail::with('images')->findOrFail($id);
+
+        // ส่งข้อมูลไปยังหน้า view
+        return view('basic_information.community_products.show_details', compact('listDetail','personnelAgencies'));
     }
 }

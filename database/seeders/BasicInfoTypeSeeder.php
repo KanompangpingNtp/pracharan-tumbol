@@ -18,6 +18,10 @@ class BasicInfoTypeSeeder extends Seeder
             ['type_name' => 'วิสัยทัศน์/พันธกิจ'],
             ['type_name' => 'ข้อมูลสภาพทั่วไป'],
             ['type_name' => 'ยุทธศาสตร์และแนวทางการพัฒนา'],
+
+            //หลายรายการ
+            ['type_name' => 'ผลิตภัณฑ์ชุมชน/OTOP'],
+            ['type_name' => 'สถานที่สำคัญ/แหล่งท่องเที่ยว'],
         ];
 
         foreach ($data as $item) {

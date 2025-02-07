@@ -23,7 +23,9 @@ use App\Http\Controllers\Information\AdminVisionMissionController;
 use App\Http\Controllers\Information\AdminStrategyGuidelineController;
 use App\Http\Controllers\Information\VisionMissionController;
 use App\Http\Controllers\Information\StrategyGuidelineController;
-
+use App\Http\Controllers\Information\AdminCommunityProductsController;
+use App\Http\Controllers\Information\AdminImportantPlacesController;
+use App\Http\Controllers\Information\CommunityProductsController;
 
 use App\Http\Controllers\TestController;
 
@@ -55,6 +57,8 @@ Route::get('/History/page', [HistoryController::class, 'HistoryPage'])->name('Hi
 Route::get('/VisionMission/page', [VisionMissionController::class, 'VisionMissionPage'])->name('VisionMissionPage');
 Route::get('/GeneralInformation/page', [GeneralInformationController::class, 'GeneralInformationPage'])->name('GeneralInformationPage');
 Route::get('/StrategyGuideline/page', [StrategyGuidelineController::class, 'StrategyGuidelinePage'])->name('StrategyGuidelinePage');
+
+Route::get('/CommunityProducts/page', [CommunityProductsController::class, 'CommunityProductsPage'])->name('CommunityProductsPage');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -150,6 +154,24 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/StrategyGuideline/page', [AdminStrategyGuidelineController::class, 'StrategyGuidelineAdmin'])->name('StrategyGuidelineAdmin');
     Route::post('/Admin/StrategyGuideline/create', [AdminStrategyGuidelineController::class, 'StrategyGuidelineCreate'])->name('StrategyGuidelineCreate');
     Route::delete('/Admin/StrategyGuideline/delete/{id}', [AdminStrategyGuidelineController::class, 'StrategyGuidelineDelete'])->name('StrategyGuidelineDelete');
+
+    //CommunityProducts
+    Route::get('/Admin/CommunityProducts/page', [AdminCommunityProductsController::class, 'CommunityProductsAdmin'])->name('CommunityProductsAdmin');
+    Route::post('/Admin/CommunityProducts/create/name', [AdminCommunityProductsController::class, 'CommunityProductsNameCreate'])->name('CommunityProductsNameCreate');
+    Route::delete('/Admin/CommunityProducts/{id}/delete', [AdminCommunityProductsController::class, 'CommunityProductDelete'])->name('CommunityProductDelete');
+    Route::post('/Admin/CommunityProducts/{id}/update', [AdminCommunityProductsController::class, 'CommunityProductsNameUpdate'])->name('CommunityProductsNameUpdate');
+    Route::get('/Admin/CommunityProducts/show/details/{id}', [AdminCommunityProductsController::class, 'CommunityProductShowDertails'])->name('CommunityProductShowDertails');
+    Route::post('/Admin/CommunityProducts/show/details/{id}/create', [AdminCommunityProductsController::class, 'CommunityProductDertailsCreate'])->name('CommunityProductDertailsCreate');
+    Route::delete('/Admin/CommunityProducts/show/details/{id}/delete', [AdminCommunityProductsController::class, 'CommunityProductDetailsDelete'])->name('CommunityProductDetailsDelete');
+
+    Route::get('/Admin/ImportantPlaces/page', [AdminImportantPlacesController::class, 'ImportantPlacesAdmin'])->name('ImportantPlacesAdmin');
+    Route::post('/Admin/ImportantPlaces/create/name', [AdminImportantPlacesController::class, 'ImportantPlacesNameCreate'])->name('ImportantPlacesNameCreate');
+    Route::delete('/Admin/ImportantPlaces/{id}/delete', [AdminImportantPlacesController::class, 'ImportantPlacesDelete'])->name('ImportantPlacesDelete');
+    Route::post('/Admin/ImportantPlaces/{id}/update', [AdminImportantPlacesController::class, 'ImportantPlacesNameUpdate'])->name('ImportantPlacesNameUpdate');
+    Route::get('/Admin/ImportantPlaces/show/details/{id}', [AdminImportantPlacesController::class, 'ImportantPlacesShowDertails'])->name('ImportantPlacesShowDertails');
+    Route::post('/Admin/ImportantPlaces/show/details/{id}/create', [AdminImportantPlacesController::class, 'ImportantPlacesDertailsCreate'])->name('ImportantPlacesDertailsCreate');
+    Route::delete('/Admin/ImportantPlaces/show/details/{id}/delete', [AdminImportantPlacesController::class, 'ImportantPlacesDetailsDelete'])->name('ImportantPlacesDetailsDelete');
+
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

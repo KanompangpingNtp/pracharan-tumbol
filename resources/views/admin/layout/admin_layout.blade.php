@@ -64,7 +64,7 @@
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <nav class="sb-sidenav accordion sb-sidenav-dark overflow-auto" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">ข้อมูลหน้าหลัก</div>
@@ -153,6 +153,9 @@
                                 <a class="nav-link" href="{{route('VisionMissionAdmin')}}">วิสัยทัศน์/พันธกิจ</a>
                                 <a class="nav-link" href="{{route('GeneralInformationAdmin')}}">ข้อมูลสภาพทั่วไป</a>
                                 <a class="nav-link" href="{{route('StrategyGuidelineAdmin')}}">ยุทธศาสตร์และแนวทางการพัฒนา</a>
+
+                                <a class="nav-link" href="{{route('CommunityProductsAdmin')}}">ผลิตภัณฑ์ชุมชน/OTOP</a>
+                                <a class="nav-link" href="{{route('ImportantPlacesAdmin')}}">สถานที่สำคัญ/แหล่งท่องเที่ยว</a>
                             </nav>
                         </div>
 

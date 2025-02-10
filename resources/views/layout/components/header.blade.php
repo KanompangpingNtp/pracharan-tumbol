@@ -20,6 +20,7 @@
 
     .bg-menu {
         background-color: rgba(69, 211, 26, 0.6);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         background-image: url('{{ asset('images/header/bg-nav.png') }}');
         background-size: cover;
         background-position: center;
@@ -151,103 +152,149 @@
             transform: translateY(0);
         }
     }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        min-height: 83vh;
+        /* ให้พื้นที่ครอบคลุมหน้าจอ */
+        overflow: hidden;
+    }
+
+    .video-container video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* ปรับให้เต็มพื้นที่ */
+    }
+
+    .video-container .content {
+        position: absolute;
+        bottom: 0;
+        /* ติดขอบล่าง */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        color: white;
+
+        /* เพิ่มพื้นหลังโปร่งใสให้ตัวหนังสืออ่านง่ายขึ้น */
+    }
 </style>
-<main class="d-flex flex-column align-items-center justify-content-end bg-page1">
-    <div class="bg-menu w-100 pb-2 pt-3">
-        <div class="container d-flex flex-wrap justify-content-evenly">
-            {{-- <div class="d-flex flex-column align-items-center justify-content-center">
-                <a href="#" class="navbar-item">
-                    <img src="{{ asset('images/header/house.png') }}" alt="ปุ่มหน้าหลัก">
-                    <div>ข้อมูลพื้นฐาน</div>
-                </a>
-            </div> --}}
-            <div
-                class="custom-dropdown-container d-flex flex-column align-items-center justify-content-center position-relative">
-                <a class="custom-hover-trigger navbar-item d-flex flex-column align-items-center">
-                    <img src="{{ asset('images/header/house.png') }}" alt="house" class="navbar-icon">
-                    <div class="navbar-text">ข้อมูลพื้นฐาน</div>
-                </a>
-                <!-- ลิสต์รายการ -->
-                <ul class="custom-dropdown-menu">
-                    <li>
-                        <a href="{{route('HistoryPage')}}" class="dropdown-item">ประวัติความเป็นมา</a>
-                        <a href="{{route('VisionMissionPage')}}" class="dropdown-item">วิสัยทัศน์/พันธกิจ</a>
-                        <a href="{{route('GeneralInformationPage')}}" class="dropdown-item">ข้อมูลสภาพทั่วไป</a>
-                        <a href="{{route('StrategyGuidelinePage')}}" class="dropdown-item">ยุทธศาสตร์และแนวทางการพัฒนา</a>
+<main class="d-flex flex-column align-items-center justify-content-end ">
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="{{ asset('images/home/video/123.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <div class="bg-menu w-100 pb-2 pt-3">
+                <div class="container d-flex flex-wrap justify-content-evenly">
+                    {{-- <div class="d-flex flex-column align-items-center justify-content-center">
+                        <a href="#" class="navbar-item">
+                            <img src="{{ asset('images/header/house.png') }}" alt="ปุ่มหน้าหลัก">
+                            <div>ข้อมูลพื้นฐาน</div>
+                        </a>
+                    </div> --}}
+                    <div
+                        class="custom-dropdown-container d-flex flex-column align-items-center justify-content-center position-relative">
+                        <a class="custom-hover-trigger navbar-item d-flex flex-column align-items-center">
+                            <img src="{{ asset('images/header/house.png') }}" alt="house" class="navbar-icon">
+                            <div class="navbar-text">ข้อมูลพื้นฐาน</div>
+                        </a>
+                        <!-- ลิสต์รายการ -->
+                        <ul class="custom-dropdown-menu">
+                            <li>
+                                <a href="{{ route('HistoryPage') }}" class="dropdown-item">ประวัติความเป็นมา</a>
+                                <a href="{{ route('VisionMissionPage') }}" class="dropdown-item">วิสัยทัศน์/พันธกิจ</a>
+                                <a href="{{ route('GeneralInformationPage') }}"
+                                    class="dropdown-item">ข้อมูลสภาพทั่วไป</a>
+                                <a href="{{ route('StrategyGuidelinePage') }}"
+                                    class="dropdown-item">ยุทธศาสตร์และแนวทางการพัฒนา</a>
 
-                        <a href="{{route('CommunityProductsPage')}}" class="dropdown-item">ผลิตภัณฑ์ชุมชน/OTOP</a>
-                        <a href="{{route('ImportantPlacesPage')}}" class="dropdown-item">สถานที่สำคัญ/แหล่งท่องเที่ยว</a>
+                                <a href="{{ route('CommunityProductsPage') }}"
+                                    class="dropdown-item">ผลิตภัณฑ์ชุมชน/OTOP</a>
+                                <a href="{{ route('ImportantPlacesPage') }}"
+                                    class="dropdown-item">สถานที่สำคัญ/แหล่งท่องเที่ยว</a>
 
-                        <a href="{{route('AuthorityPage')}}" class="dropdown-item">อำนาจหน้าที่</a>
-                        <a href="{{route('ManagementPolicyPage')}}" class="dropdown-item">นโยบายการบริหาร/เจตจำนงสุจริต</a>
-                    </li>
-                    {{-- @foreach ($personnelAgencies as $agency)
-                        <li>
-                            <a href="{{ route('AgencyShow', ['id' => $agency->id]) }}" class="dropdown-item">
-                                {{ $agency->personnel_agency_name }}
-                            </a>
-                        </li>
-                    @endforeach --}}
-                </ul>
-            </div>
-            {{-- <div class="d-flex flex-column align-items-center justify-content-center">
-                <a href="#" class="navbar-item">
-                    <img src="{{ asset('images/header/teamwork.png') }}" alt="ปุ่มบุคลากร">
-                    <div>บุคลากร</div>
-                </a>
-            </div> --}}
-            <div
-                class="custom-dropdown-container d-flex flex-column align-items-center justify-content-center position-relative">
-                <a class="custom-hover-trigger navbar-item d-flex flex-column align-items-center">
-                    <img src="{{ asset('images/header/teamwork.png') }}" alt="teamwork" class="navbar-icon">
-                    <div class="navbar-text">บุคลากร</div>
-                </a>
-                <!-- ลิสต์รายการ -->
-                <ul class="custom-dropdown-menu">
-                    <li>
-                        <a href="{{ route('AgencyPage') }}" class="dropdown-item">แผนผังองค์กรรวม</a>
-                    </li>
-                    @foreach ($personnelAgencies as $agency)
-                        <li>
-                            <a href="{{ route('AgencyShow', ['id' => $agency->id]) }}" class="dropdown-item">
-                                {{ $agency->personnel_agency_name }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <a href="#" class="navbar-item">
-                    <img src="{{ asset('images/header/online-survey.png') }}" alt="ปุ่มผลการดำเนินงาน">
-                    <div>ผลการดำเนินงาน</div>
-                </a>
-            </div>
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <a href="#" class="navbar-item">
-                    <img src="{{ asset('images/header/organization.png') }}" alt="ปุ่มอำนาจหน้าที่">
-                    <div>อำนาจหน้าที่</div>
-                </a>
-            </div>
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <a href="#" class="navbar-item">
-                    <img src="{{ asset('images/header/planning.png') }}" alt="ปุ่มแผนพัฒนาท้องถิ่น">
-                    <div>แผนพัฒนนาท้องถิ่น</div>
-                </a>
-            </div>
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <a href="#" class="navbar-item">
-                    <img src="{{ asset('images/header/law.png') }}" alt="กฏหมาย">
-                    <div>กฏหมายและกฏระเบียบ</div>
-                </a>
-            </div>
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <a href="#" class="navbar-item">
-                    <img src="{{ asset('images/header/group.png') }}" alt="ปุ่มเมนูสำหรับประชาชน">
-                    <div>เมนูหรับประชาชน</div>
-                </a>
+                                <a href="{{ route('AuthorityPage') }}" class="dropdown-item">อำนาจหน้าที่</a>
+                                <a href="{{ route('ManagementPolicyPage') }}"
+                                    class="dropdown-item">นโยบายการบริหาร/เจตจำนงสุจริต</a>
+                            </li>
+                            {{-- @foreach ($personnelAgencies as $agency)
+                                <li>
+                                    <a href="{{ route('AgencyShow', ['id' => $agency->id]) }}" class="dropdown-item">
+                                        {{ $agency->personnel_agency_name }}
+                                    </a>
+                                </li>
+                            @endforeach --}}
+                        </ul>
+                    </div>
+                    {{-- <div class="d-flex flex-column align-items-center justify-content-center">
+                        <a href="#" class="navbar-item">
+                            <img src="{{ asset('images/header/teamwork.png') }}" alt="ปุ่มบุคลากร">
+                            <div>บุคลากร</div>
+                        </a>
+                    </div> --}}
+                    <div
+                        class="custom-dropdown-container d-flex flex-column align-items-center justify-content-center position-relative">
+                        <a class="custom-hover-trigger navbar-item d-flex flex-column align-items-center">
+                            <img src="{{ asset('images/header/teamwork.png') }}" alt="teamwork" class="navbar-icon">
+                            <div class="navbar-text">บุคลากร</div>
+                        </a>
+                        <!-- ลิสต์รายการ -->
+                        <ul class="custom-dropdown-menu">
+                            <li>
+                                <a href="{{ route('AgencyPage') }}" class="dropdown-item">แผนผังองค์กรรวม</a>
+                            </li>
+                            @foreach ($personnelAgencies as $agency)
+                                <li>
+                                    <a href="{{ route('AgencyShow', ['id' => $agency->id]) }}" class="dropdown-item">
+                                        {{ $agency->personnel_agency_name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <a href="#" class="navbar-item">
+                            <img src="{{ asset('images/header/online-survey.png') }}" alt="ปุ่มผลการดำเนินงาน">
+                            <div>ผลการดำเนินงาน</div>
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <a href="#" class="navbar-item">
+                            <img src="{{ asset('images/header/organization.png') }}" alt="ปุ่มอำนาจหน้าที่">
+                            <div>อำนาจหน้าที่</div>
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <a href="#" class="navbar-item">
+                            <img src="{{ asset('images/header/planning.png') }}" alt="ปุ่มแผนพัฒนาท้องถิ่น">
+                            <div>แผนพัฒนนาท้องถิ่น</div>
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <a href="#" class="navbar-item">
+                            <img src="{{ asset('images/header/law.png') }}" alt="กฏหมาย">
+                            <div>กฏหมายและกฏระเบียบ</div>
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <a href="#" class="navbar-item">
+                            <img src="{{ asset('images/header/group.png') }}" alt="ปุ่มเมนูสำหรับประชาชน">
+                            <div>เมนูหรับประชาชน</div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="bg-runtext w-100 d-flex align-items-center">
         <div class="container d-flex align-items-center gap-3">
             <div class="col-12 col-md-9 bg-text">

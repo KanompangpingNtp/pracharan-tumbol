@@ -72,7 +72,7 @@
                     {{-- <iframe height="400" src="https://www.youtube.com/embed/2XhBpAuKYQ0" title="YouTube video player"
                         frameborder="0" allowfullscreen style="border-radius: 20px; width: 100%;">
                     </iframe> --}}
-                    <iframe height="400" src="https://www.youtube.com/embed/" title="YouTube video player"
+                    <iframe height="400" src="https://www.youtube.com/embed/MQc1I774ZNI" title="YouTube video player"
                         frameborder="0" allowfullscreen style="border-radius: 20px; width: 100%;">
                     </iframe>
                 </div>
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="col-lg-5 d-flex justify-content-center p-5 ">
-                <img src="{{ asset('images/home/section-2/page.png') }}" alt="page" class="img-fluid w-100">
+                <img src="{{ asset('images/home/section-2/ป้ายใหม่.png') }}" alt="page" class="img-fluid w-100">
             </div>
         </div>
         <div class="row justify-content-center">

@@ -34,7 +34,7 @@
                         <!-- Slide 1 -->
                         <div class="carousel-item active">
                             <div class="slide-card p-2">
-                                <img src="{{ asset('images/home/section-6/bg-section6.png') }}" alt="leaf">
+                                <img src="{{ asset('images/home/section-5/bg-section5.png') }}" alt="leaf">
                                 <div class=" p-2 my-3"
                                     style="background: linear-gradient(to bottom, #d1f541, #569419); border-radius: 30px; box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7);">
                                     <div class="text-box fs-4 text-center bg-white px-3 py-2"
@@ -47,7 +47,7 @@
                         <!-- Slide 2 -->
                         <div class="carousel-item ">
                             <div class="slide-card p-2">
-                                <img src="{{ asset('images/home/section-6/bg-section6.png') }}" alt="leaf">
+                                <img src="{{ asset('images/home/section-4/bg-section4.png') }}" alt="leaf">
                                 <div class=" p-2 my-3"
                                     style="background: linear-gradient(to bottom, #d1f541, #569419); border-radius: 30px; box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7);">
                                     <div class="text-box fs-4 text-center bg-white px-3 py-2"

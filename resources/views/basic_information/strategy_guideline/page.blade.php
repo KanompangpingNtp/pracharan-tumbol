@@ -41,7 +41,7 @@
                     @endforeach
                 </ul>
                 @else
-                <p>ไม่มีไฟล์ PDF</p>
+                <p></p>
                 @endif
 
                 {{-- แสดงรูปภาพ --}}
@@ -55,7 +55,7 @@
                     @endforeach
                 </div>
                 @else
-                <p>ไม่มีรูปภาพ</p>
+                <p></p>
                 @endif
 
                 <hr>

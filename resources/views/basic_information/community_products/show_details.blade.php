@@ -39,7 +39,7 @@
                             @endforeach
                         </div>
                     @else
-                        <p class="text-muted">ไม่มีรูปภาพ</p>
+                        <p class="text-muted"></p>
                     @endif
         </div>
     </div>

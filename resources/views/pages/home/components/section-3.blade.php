@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="bg-green">
-                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner" style="border-radius: 20px;">
                             <div class="carousel-item active">
                                 <img src="{{ asset('images/home/section-3/21.png') }}" class="d-block w-100"

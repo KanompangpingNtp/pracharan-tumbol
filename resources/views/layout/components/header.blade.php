@@ -177,6 +177,9 @@
 
                         <a href="{{route('CommunityProductsPage')}}" class="dropdown-item">ผลิตภัณฑ์ชุมชน/OTOP</a>
                         <a href="{{route('ImportantPlacesPage')}}" class="dropdown-item">สถานที่สำคัญ/แหล่งท่องเที่ยว</a>
+
+                        <a href="{{route('AuthorityPage')}}" class="dropdown-item">อำนาจหน้าที่</a>
+                        <a href="{{route('ManagementPolicyPage')}}" class="dropdown-item">นโยบายการบริหาร/เจตจำนงสุจริต</a>
                     </li>
                     {{-- @foreach ($personnelAgencies as $agency)
                         <li>

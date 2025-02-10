@@ -1,25 +1,25 @@
 @extends('admin.layout.admin_layout')
 @section('user_content')
 
-<h2 class="text-center">สถานที่สำคัญ/แหล่งท่องเที่ยว</h2><br>
+<h2 class="text-center">อำนาจหน้าที่</h2><br>
 
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    สร้างชื่อ สถานที่สำคัญ/แหล่งท่องเที่ยว
+    สร้างชื่อ อำนาจหน้าที่
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel"> สร้างชื่อ สถานที่สำคัญ/แหล่งท่องเที่ยว</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel"> สร้างชื่อ อำนาจหน้าที่</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('CommunityProductsNameCreate') }}" method="POST">
+            <form action="{{ route('AuthorityCreate') }}" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <input type="hidden" name="basic_info_type" value="{{ $basicInfoType->firstWhere('type_name', 'สถานที่สำคัญ/แหล่งท่องเที่ยว')->id }}">
-                        <label for="list_details_name" class="form-label">ชื่อสถานที่สำคัญ/แหล่งท่องเที่ยว</label>
+                        <input type="hidden" name="basic_info_type" value="{{ $basicInfoType->firstWhere('type_name', 'อำนาจหน้าที่')->id }}">
+                        <label for="list_details_name" class="form-label">ชื่ออำนาจหน้าที่</label>
                         <input type="text" class="form-control" id="list_details_name" name="list_details_name" required>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>ชื่อ สถานที่สำคัญ/แหล่งท่องเที่ยว</th>
+            <th>ชื่อ นโยบายการบริหาร/เจตจำนงสุจริต</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -48,7 +48,7 @@
         <tr>
             <td>{{ $index + 1 }}</td>
             <td>
-                <a href="{{ route('ImportantPlacesShowDertails', $detail->id) }}">
+                <a href="{{ route('AuthorityShowDertails', $detail->id) }}">
                     {{ $detail->list_details_name }}
                 </a>
             </td>
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="d-inline-block">
-                    <form action="{{ route('CommunityProductDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้?');">
+                    <form action="{{ route('AuthorityNameDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
@@ -78,13 +78,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="editModalLabel"> แก้ไขชื่อ ผลิตภัณฑ์</h1>
+                <h1 class="modal-title fs-5" id="editModalLabel"> แก้ไขชื่อ นโยบายการบริหาร</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('CommunityProductsNameUpdate', $detail->id) }}" method="POST">
+            <form action="{{ route('AuthorityNameUpdate', $detail->id) }}" method="POST">
                 @csrf
                 <div class="modal-body">
-                    <input type="hidden" name="basic_info_type" value="{{ $basicInfoType->firstWhere('type_name', 'ผลิตภัณฑ์ชุมชน/OTOP')->id }}">
                     <div class="mb-3">
                         <label for="list_details_name" class="form-label">ชื่อผลิตภัณฑ์</label>
                         <input type="text" class="form-control" id="list_details_name" name="list_details_name" value="{{ old('list_details_name', $detail->list_details_name) }}" required>

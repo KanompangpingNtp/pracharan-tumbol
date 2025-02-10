@@ -22,6 +22,9 @@ class BasicInfoTypeSeeder extends Seeder
             //หลายรายการ
             ['type_name' => 'ผลิตภัณฑ์ชุมชน/OTOP'],
             ['type_name' => 'สถานที่สำคัญ/แหล่งท่องเที่ยว'],
+
+            ['type_name' => 'อำนาจหน้าที่'],
+            ['type_name' => 'นโยบายการบริหาร/เจตจำนงสุจริต'],
         ];
 
         foreach ($data as $item) {

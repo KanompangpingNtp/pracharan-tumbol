@@ -27,6 +27,10 @@ use App\Http\Controllers\Information\AdminCommunityProductsController;
 use App\Http\Controllers\Information\AdminImportantPlacesController;
 use App\Http\Controllers\Information\CommunityProductsController;
 use App\Http\Controllers\Information\ImportantPlacesController;
+use App\Http\Controllers\Information\AdminAuthorityController;
+use App\Http\Controllers\Information\AuthorityController;
+use App\Http\Controllers\Information\AdminManagementPolicyController;
+use App\Http\Controllers\Information\ManagementPolicyController;
 
 use App\Http\Controllers\TestController;
 
@@ -64,6 +68,12 @@ Route::get('/CommunityProducts/showdetails/index/{id}', [CommunityProductsContro
 
 Route::get('/ImportantPlaces/page', [ImportantPlacesController::class, 'ImportantPlacesPage'])->name('ImportantPlacesPage');
 Route::get('/ImportantPlaces/showdetails/index/{id}', [ImportantPlacesController::class, 'ImportantPlacesShowDetails'])->name('ImportantPlacesShowDetails');
+
+Route::get('/Authority/page', [AuthorityController::class, 'AuthorityPage'])->name('AuthorityPage');
+Route::get('/Authority/showdetails/index/{id}', [AuthorityController::class, 'AuthorityShowDetails'])->name('AuthorityShowDetails');
+
+Route::get('/ManagementPolicy/page', [ManagementPolicyController::class, 'ManagementPolicyPage'])->name('ManagementPolicyPage');
+Route::get('/ManagementPolicy/showdetails/index/{id}', [ManagementPolicyController::class, 'ManagementPolicyShowDetails'])->name('ManagementPolicyShowDetails');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -169,6 +179,7 @@ Route::middleware(['check.auth'])->group(function () {
     Route::post('/Admin/CommunityProducts/show/details/{id}/create', [AdminCommunityProductsController::class, 'CommunityProductDertailsCreate'])->name('CommunityProductDertailsCreate');
     Route::delete('/Admin/CommunityProducts/show/details/{id}/delete', [AdminCommunityProductsController::class, 'CommunityProductDetailsDelete'])->name('CommunityProductDetailsDelete');
 
+    //ImportantPlaces
     Route::get('/Admin/ImportantPlaces/page', [AdminImportantPlacesController::class, 'ImportantPlacesAdmin'])->name('ImportantPlacesAdmin');
     Route::post('/Admin/ImportantPlaces/create/name', [AdminImportantPlacesController::class, 'ImportantPlacesNameCreate'])->name('ImportantPlacesNameCreate');
     Route::delete('/Admin/ImportantPlaces/{id}/delete', [AdminImportantPlacesController::class, 'ImportantPlacesDelete'])->name('ImportantPlacesDelete');
@@ -176,6 +187,24 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/ImportantPlaces/show/details/{id}', [AdminImportantPlacesController::class, 'ImportantPlacesShowDertails'])->name('ImportantPlacesShowDertails');
     Route::post('/Admin/ImportantPlaces/show/details/{id}/create', [AdminImportantPlacesController::class, 'ImportantPlacesDertailsCreate'])->name('ImportantPlacesDertailsCreate');
     Route::delete('/Admin/ImportantPlaces/show/details/{id}/delete', [AdminImportantPlacesController::class, 'ImportantPlacesDetailsDelete'])->name('ImportantPlacesDetailsDelete');
+
+    //Authority
+    Route::get('/Admin/Authority/page', [AdminAuthorityController::class, 'AuthorityAdmin'])->name('AuthorityAdmin');
+    Route::post('/Admin/Authority/create/name', [AdminAuthorityController::class, 'AuthorityCreate'])->name('AuthorityCreate');
+    Route::post('/Admin/Authority/{id}/update', [AdminAuthorityController::class, 'AuthorityNameUpdate'])->name('AuthorityNameUpdate');
+    Route::delete('/Admin/Authority/{id}/delete', [AdminAuthorityController::class, 'AuthorityNameDelete'])->name('AuthorityNameDelete');
+    Route::get('/Admin/Authority/show/details/{id}', [AdminAuthorityController::class, 'AuthorityShowDertails'])->name('AuthorityShowDertails');
+    Route::post('/Admin/Authority/show/details/{id}/create', [AdminAuthorityController::class, 'AuthorityDertailsCreate'])->name('AuthorityDertailsCreate');
+    Route::delete('/Admin/Authority/show/details/{id}/delete', [AdminAuthorityController::class, 'AuthorityDetailsDelete'])->name('AuthorityDetailsDelete');
+
+    //ManagementPolicy
+    Route::get('/Admin/ManagementPolicy/page', [AdminManagementPolicyController::class, 'ManagementPolicyAdmin'])->name('ManagementPolicyAdmin');
+    Route::post('/Admin/ManagementPolicy/create/name', [AdminManagementPolicyController::class, 'ManagementPolicyCreate'])->name('ManagementPolicyCreate');
+    Route::post('/Admin/ManagementPolicy/{id}/update', [AdminManagementPolicyController::class, 'ManagementPolicyNameUpdate'])->name('ManagementPolicyNameUpdate');
+    Route::delete('/Admin/ManagementPolicy/{id}/delete', [AdminManagementPolicyController::class, 'ManagementPolicyDelete'])->name('ManagementPolicyDelete');
+    Route::get('/Admin/ManagementPolicy/show/details/{id}', [AdminManagementPolicyController::class, 'ManagementPolicyShowDertails'])->name('ManagementPolicyShowDertails');
+    Route::post('/Admin/ManagementPolicy/show/details/{id}/create', [AdminManagementPolicyController::class, 'ManagementPolicyDertailsCreate'])->name('ManagementPolicyDertailsCreate');
+    Route::delete('/Admin/ManagementPolicy/show/details/{id}/delete', [AdminManagementPolicyController::class, 'ManagementPolicyDetailsDelete'])->name('ManagementPolicyDetailsDelete');
 
 });
 

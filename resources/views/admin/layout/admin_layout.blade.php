@@ -328,8 +328,8 @@
                                 <a class="nav-link" href="{{route('StrategyGuidelineAdmin')}}">ยุทธศาสตร์และแนวทางการพัฒนา</a>
                                 <a class="nav-link" href="{{route('CommunityProductsAdmin')}}">ผลิตภัณฑ์ชุมชน/OTOP</a>
                                 <a class="nav-link" href="{{route('ImportantPlacesAdmin')}}">สถานที่สำคัญ/แหล่งท่องเที่ยว</a>
-                                <a class="nav-link" href="">อำนาจหน้าที่</a>
-                                <a class="nav-link" href="">นโยบายการบริหาร/เจตจำนงสุจริต</a>
+                                <a class="nav-link" href="{{route('AuthorityAdmin')}}">อำนาจหน้าที่</a>
+                                <a class="nav-link" href="{{route('ManagementPolicyAdmin')}}">นโยบายการบริหาร/เจตจำนงสุจริต</a><br>
                             </nav>
                         </div>
 

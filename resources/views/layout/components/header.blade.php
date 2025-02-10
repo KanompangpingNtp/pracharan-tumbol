@@ -156,7 +156,7 @@
     .video-container {
         position: relative;
         width: 100%;
-        min-height: 83vh;
+        min-height: 76vh;
         /* ให้พื้นที่ครอบคลุมหน้าจอ */
         overflow: hidden;
     }

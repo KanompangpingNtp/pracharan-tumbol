@@ -158,7 +158,7 @@
     .video-container {
         position: relative;
         width: 100%;
-        min-height: 100vh;
+        min-height: 105vh;
         overflow: visible;
     }
 

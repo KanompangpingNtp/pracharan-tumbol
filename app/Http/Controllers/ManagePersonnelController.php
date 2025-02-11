@@ -115,7 +115,6 @@ class ManagePersonnelController extends Controller
             ->with('images')
             ->get();
 
-
         return view('admin.post.personnel.personnel_details', compact('PersonnelRank', 'PersonnelDetail'));
     }
 

@@ -26,7 +26,7 @@ class AuthorityController extends Controller
     {
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
 
-        $listDetail = ListDetail::with('images')->findOrFail($id);
+        $listDetail = ListDetail::with('images','pdf')->findOrFail($id);
 
         // ส่งข้อมูลไปยังหน้า view
         return view('basic_information.authority.show_details', compact('listDetail','personnelAgencies'));

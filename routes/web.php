@@ -31,6 +31,7 @@ use App\Http\Controllers\Information\AdminAuthorityController;
 use App\Http\Controllers\Information\AuthorityController;
 use App\Http\Controllers\Information\AdminManagementPolicyController;
 use App\Http\Controllers\Information\ManagementPolicyController;
+use App\Http\Controllers\performance_results\AdminFinancialReportController;
 
 use App\Http\Controllers\TestController;
 
@@ -206,6 +207,18 @@ Route::middleware(['check.auth'])->group(function () {
     Route::post('/Admin/ManagementPolicy/show/details/{id}/create', [AdminManagementPolicyController::class, 'ManagementPolicyDertailsCreate'])->name('ManagementPolicyDertailsCreate');
     Route::delete('/Admin/ManagementPolicy/show/details/{id}/delete', [AdminManagementPolicyController::class, 'ManagementPolicyDetailsDelete'])->name('ManagementPolicyDetailsDelete');
 
+    //FinancialReport
+    Route::get('/Admin/FinancialReport/page', [AdminFinancialReportController::class, 'FinancialReportAdmin'])->name('FinancialReportAdmin');
+    Route::post('/Admin/FinancialReport/create', [AdminFinancialReportController::class, 'FinancialReportCreate'])->name('FinancialReportCreate');
+    Route::put('/Admin/FinancialReport/{id}/update', [AdminFinancialReportController::class, 'FinancialReportUpdate'])->name('FinancialReportUpdate');
+    Route::delete('/Admin/FinancialReport/{id}/delete', [AdminFinancialReportController::class, 'FinancialReportDelete'])->name('FinancialReportDelete');
+    Route::get('/Admin/FinancialReport/show/details/{id}', [AdminFinancialReportController::class, 'FinancialReportShowDertails'])->name('FinancialReportShowDertails');
+    Route::post('/Admin/FinancialReport/details/{id}/create', [AdminFinancialReportController::class, 'FinancialReportDertailsCreate'])->name('FinancialReportDertailsCreate');
+    Route::put('/Admin/FinancialReport/details/{id}/update', [AdminFinancialReportController::class, 'FinancialReportDertailsUpdate'])->name('FinancialReportDertailsUpdate');
+    Route::delete('/Admin/FinancialReport/details/{id}/delete', [AdminFinancialReportController::class, 'FinancialReportDertailsDelete'])->name('FinancialReportDertailsDelete');
+    Route::get('/Admin/FinancialReport/show/details/results/{id}', [AdminFinancialReportController::class, 'FinancialReportShowDertailResults'])->name('FinancialReportShowDertailResults');
+    Route::post('/Admin/FinancialReport/details/{id}/create/results', [AdminFinancialReportController::class, 'FinancialReportDertailsCreateResults'])->name('FinancialReportDertailsCreateResults');
+    Route::delete('/Admin/FinancialReport/details/{id}/results/delete', [AdminFinancialReportController::class, 'FinancialReportDertailsDeleteResults'])->name('FinancialReportDertailsDeleteResults');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

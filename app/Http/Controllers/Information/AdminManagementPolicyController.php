@@ -6,9 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\BasicInfoType;
 use App\Models\ListDetail;
-use App\Models\BasicInfoPdf;
-use App\Models\BasicInfoImage;
 use App\Models\ListDetailImage;
+use App\Models\ListDetailsPdf;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -82,24 +81,34 @@ class AdminManagementPolicyController extends Controller
             'file_post.*' => 'file|mimes:jpg,jpeg,png,pdf',
         ]);
 
-        // dd( $request);
-
         $ListDetail = ListDetail::findOrFail($DetailsId);
         $ListDetail->update([
             'details' => $request->details,
         ]);
 
-         // การอัปโหลดไฟล์เพิ่มเติม
-         if ($request->hasFile('file_post')) {
+        if ($request->hasFile('file_post')) {
             foreach ($request->file('file_post') as $file) {
                 $filename = time() . '_' . $file->getClientOriginalName();
-                $path = $file->storeAs('listdetail_image', $filename, 'public');
 
-                ListDetailImage::create([
-                    'list_details_id' => $ListDetail->id,
-                    'images_file' => $path,
-                    'status' => '2',
-                ]);
+                if (in_array($file->extension(), ['jpg', 'jpeg', 'png'])) {
+                    $path = $file->storeAs('listdetail_image', $filename, 'public');
+
+                    ListDetailImage::create([
+                        'list_details_id' => $ListDetail->id,
+                        'images_file' => $path,
+                        'status' => '1',
+                    ]);
+                }
+
+                if ($file->extension() == 'pdf') {
+                    $path = $file->storeAs('listdetail_pdf', $filename, 'public');
+
+                    ListDetailsPdf::create([
+                        'list_details_id' => $ListDetail->id,
+                        'pdf_file' => $path,
+                        'status' => '1',
+                    ]);
+                }
             }
         }
 
@@ -110,14 +119,18 @@ class AdminManagementPolicyController extends Controller
     {
         $ListDetail = ListDetail::findOrFail($DetailsId);
 
-        // ลบข้อมูลในตาราง ListDetailImage
         $images = ListDetailImage::where('list_details_id', $ListDetail->id)->get();
         foreach ($images as $image) {
-            Storage::disk('public')->delete($image->images_file); // ลบไฟล์จาก storage
-            $image->delete(); // ลบข้อมูลภาพจากฐานข้อมูล
+            Storage::disk('public')->delete($image->images_file);
+            $image->delete();
         }
 
-        // อัปเดตค่า details ให้เป็น null แทนการลบทั้ง record
+        $pdfs = ListDetailsPdf::where('list_details_id', $ListDetail->id)->get();
+        foreach ($pdfs as $pdf) {
+            Storage::disk('public')->delete($pdf->pdf_file);
+            $pdf->delete();
+        }
+
         $ListDetail->update([
             'details' => null,
         ]);

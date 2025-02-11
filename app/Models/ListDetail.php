@@ -22,6 +22,11 @@ class ListDetail extends Model
 
     public function images()
     {
-        return $this->hasMany(ListDetailImage::class, 'list_details_id'); // ให้แน่ใจว่าใช้ชื่อคอลัมน์ตรง
+        return $this->hasMany(ListDetailImage::class, 'list_details_id');
+    }
+
+    public function pdf()
+    {
+        return $this->hasMany(ListDetailsPdf::class, 'list_details_id');
     }
 }

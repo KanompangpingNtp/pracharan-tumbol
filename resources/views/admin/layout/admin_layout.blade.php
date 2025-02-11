@@ -334,7 +334,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts4" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">รายงานงบการเงิน</a>
+                                <a class="nav-link" href="{{route('FinancialReportAdmin')}}">รายงานงบการเงิน</a>
                                 <a class="nav-link" href="">รายผลการดำเนินงาน</a>
                                 <a class="nav-link" href="">รายงานการติดตามและประเมิน</a>
                             </nav>

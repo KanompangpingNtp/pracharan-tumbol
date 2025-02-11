@@ -15,7 +15,7 @@
             @method('DELETE')
             <button type="submit" class="btn btn-danger btn-sm">ลบ</button>
         </form>
-    @endif
+        @endif
 
         <br>
 
@@ -26,15 +26,32 @@
 
         <div class="row">
             @foreach($listDetail->images->sortBy('status') as $image)
-                <div class="col-md-3">
-                    <img src="{{ asset('storage/' . $image->images_file) }}" class="img-fluid rounded">
-                </div>
+            <div class="col-md-3">
+                <img src="{{ asset('storage/' . $image->images_file) }}" class="img-fluid rounded">
+            </div>
             @endforeach
         </div>
+
+        <br>
+
+        <!-- แสดงไฟล์ PDF -->
+        @if($listDetail->pdf->isNotEmpty())
+        <div class="row">
+            @foreach($listDetail->pdf as $pdf)
+            <div class="col-md-12">
+                <embed src="{{ asset('storage/' . $pdf->pdf_file) }}" type="application/pdf" width="100%" height="500px">
+            </div>
+            @endforeach
+        </div>
+        @else
+        <p class="text-center">ไม่มีไฟล์ PDF</p>
+        @endif
+
         @endif
 
     </div>
 </div>
+
 
 <br>
 
@@ -47,16 +64,15 @@
         </div>
     </div>
 
-
-        <div class="mb-3">
-            <label for="file_post" class="form-label">แนบไฟล์ภาพเพิ่มเติม</label>
-            <input type="file" class="form-control" id="file_post" name="file_post[]" multiple>
-            <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png</small>
-            <!-- แสดงรายการไฟล์ที่แนบ -->
-            <div id="file-list" class="mt-1">
-                <div class="d-flex flex-wrap gap-3"></div>
-            </div>
+    <div class="mb-3">
+        <label for="file_post" class="form-label">แนบไฟล์ภาพเพิ่มเติม</label>
+        <input type="file" class="form-control" id="file_post" name="file_post[]" multiple>
+        <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf</small>
+        <!-- แสดงรายการไฟล์ที่แนบ -->
+        <div id="file-list" class="mt-1">
+            <div class="d-flex flex-wrap gap-3"></div>
         </div>
+    </div>
 
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <script>

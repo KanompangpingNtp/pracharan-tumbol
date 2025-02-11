@@ -26,11 +26,27 @@
 
         <div class="row">
             @foreach($listDetail->images->sortBy('status') as $image)
-                <div class="col-md-3">
-                    <img src="{{ asset('storage/' . $image->images_file) }}" class="img-fluid rounded">
-                </div>
+            <div class="col-md-3">
+                <img src="{{ asset('storage/' . $image->images_file) }}" class="img-fluid rounded">
+            </div>
             @endforeach
         </div>
+
+        <br>
+
+        <!-- แสดงไฟล์ PDF -->
+        @if($listDetail->pdf->isNotEmpty())
+        <div class="row">
+            @foreach($listDetail->pdf as $pdf)
+            <div class="col-md-12">
+                <embed src="{{ asset('storage/' . $pdf->pdf_file) }}" type="application/pdf" width="100%" height="500px">
+            </div>
+            @endforeach
+        </div>
+        @else
+        <p class="text-center">ไม่มีไฟล์ PDF</p>
+        @endif
+
         @endif
 
     </div>

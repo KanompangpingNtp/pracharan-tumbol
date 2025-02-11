@@ -29,6 +29,20 @@
 
             <p class="card-text">{!! $listDetail->details ?? 'ไม่มีข้อมูล' !!}</p>
 
+            @if ($listDetail->pdf->isNotEmpty())
+            <div class="row mt-3">
+                @foreach ($listDetail->pdf as $pdf)
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <embed src="{{ asset('storage/' . $pdf->pdf_file) }}" type="application/pdf" width="100%" height="800px">
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            @else
+            <p class="text-muted"></p>
+            @endif
+
             @if ($listDetail->images->isNotEmpty())
             <div class="row">
                 @foreach ($listDetail->images as $image)
@@ -40,6 +54,7 @@
             @else
             <p class="text-muted"></p>
             @endif
+
         </div>
     </div>
 </div>

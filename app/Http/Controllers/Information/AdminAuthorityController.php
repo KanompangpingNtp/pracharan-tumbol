@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\BasicInfoType;
 use App\Models\ListDetail;
 use App\Models\ListDetailImage;
+use App\Models\ListDetailsPdf;
 use Illuminate\Support\Facades\Storage;
 
 class AdminAuthorityController extends Controller
@@ -66,7 +67,7 @@ class AdminAuthorityController extends Controller
 
     public function AuthorityShowDertails($id)
     {
-        $listDetail = ListDetail::with('type', 'images')->findOrFail($id);
+        $listDetail = ListDetail::with('type', 'images','pdf')->findOrFail($id);
 
         return view('admin.post.authority.show_details', compact('listDetail'));
     }
@@ -86,19 +87,33 @@ class AdminAuthorityController extends Controller
             'details' => $request->details,
         ]);
 
-         // การอัปโหลดไฟล์เพิ่มเติม
-         if ($request->hasFile('file_post')) {
+        if ($request->hasFile('file_post')) {
             foreach ($request->file('file_post') as $file) {
                 $filename = time() . '_' . $file->getClientOriginalName();
-                $path = $file->storeAs('listdetail_image', $filename, 'public');
 
-                ListDetailImage::create([
-                    'list_details_id' => $ListDetail->id,
-                    'images_file' => $path,
-                    'status' => '2',
-                ]);
+                // กรณีของไฟล์ภาพ (jpg, jpeg, png)
+                if (in_array($file->extension(), ['jpg', 'jpeg', 'png'])) {
+                    $path = $file->storeAs('listdetail_image', $filename, 'public');
+
+                    ListDetailImage::create([
+                        'list_details_id' => $ListDetail->id,
+                        'images_file' => $path,
+                        'status' => '1',  // 2 คือสถานะสำหรับภาพ
+                    ]);
+                }
+
+                if ($file->extension() == 'pdf') {
+                    $path = $file->storeAs('listdetail_pdf', $filename, 'public');
+
+                    ListDetailsPdf::create([
+                        'list_details_id' => $ListDetail->id,
+                        'pdf_file' => $path,
+                        'status' => '1',
+                    ]);
+                }
             }
         }
+
 
         return redirect()->back()->with('success', 'เพิ่มข้อมูลสำเร็จ');
     }
@@ -111,6 +126,12 @@ class AdminAuthorityController extends Controller
         foreach ($images as $image) {
             Storage::disk('public')->delete($image->images_file);
             $image->delete();
+        }
+
+        $pdfs = ListDetailsPdf::where('list_details_id', $ListDetail->id)->get();
+        foreach ($pdfs as $pdf) {
+            Storage::disk('public')->delete($pdf->pdf_file);
+            $pdf->delete();
         }
 
         $ListDetail->update([

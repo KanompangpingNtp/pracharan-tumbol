@@ -45,7 +45,8 @@
                     class="d-flex flex-column flex-md-row justify-content-center align-items-center lh-1 gap-2 gap-md-5 my-4">
                     <button id="btn1" class="btn-section-8 text-center px-4">จากกรมส่งเสริม <br>
                         การปกครองท้องถิ่น</button>
-                    <button id="btn2" class="btn-section-8 text-center px-4">จากท้องถิ่นจังหวัด</button>
+                    <a href="https://www.nakhonnayoklocal.go.th/public/" target="_blank" id="btn2"
+                        class="btn-section-8  text-black text-decoration-none px-4 py-4">จากท้องถิ่นจังหวัด</a>
                 </div>
 
                 <div id="box1" class="w-100 rounded d-flex flex-column">
@@ -63,91 +64,6 @@
 
                 </div>
 
-                {{-- <div id="box1" class=" w-100 rounded d-flex flex-column">
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                </div> --}}
-
-                <div id="box2" class=" w-100  rounded d-none">
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                    <div class="p-0 mb-2" style="background-color: rgb(230, 230, 230);">
-                        <img src="{{ asset('images/home/section-8/bookmark.png') }}" alt="bookmark" width="30">
-                        2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque nostrum minus quidem suscipit
-                        dolores maxime natus nulla nesciunt unde, perferendis, officiis veniam minima commodi
-                        consectetur ullam, voluptatem amet dignissimos rerum autem neque laboriosam. Suscipit beatae ea
-                        iste, tenetur accusantium quam architecto dolores quasi inventore ratione hic enim asperiores
-                        mollitia dolorem?
-                    </div>
-                </div>
                 <div class="d-flex justify-content-end">
                     <a href="#">
                         <img src="{{ asset('images/home/section-8/btn.png') }}" alt="3"
@@ -157,17 +73,6 @@
 
             </div>
 
-            <script>
-                document.getElementById("btn1").addEventListener("click", function() {
-                    document.getElementById("box1").classList.remove("d-none");
-                    document.getElementById("box2").classList.add("d-none");
-                });
-
-                document.getElementById("btn2").addEventListener("click", function() {
-                    document.getElementById("box2").classList.remove("d-none");
-                    document.getElementById("box1").classList.add("d-none");
-                });
-            </script>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center gap-4">
             <div>
@@ -219,18 +124,15 @@
                             <label class="form-check-label" for="radio1">จัดการเรื่องการศึกษาทั้งในและนอกระบบ</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="options" value="2"
-                                id="radio2">
+                            <input class="form-check-input" type="radio" name="options" value="2" id="radio2">
                             <label class="form-check-label" for="radio2">จัดมาตรการป้องกันน้ำท่วม</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="options" value="3"
-                                id="radio3">
+                            <input class="form-check-input" type="radio" name="options" value="3" id="radio3">
                             <label class="form-check-label" for="radio3">แก้ไขปัญหาสิ่งแวดล้อม</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="options" value="4"
-                                id="radio4">
+                            <input class="form-check-input" type="radio" name="options" value="4" id="radio4">
                             <label class="form-check-label" for="radio4">แก้ไขปัญหายาเสพติด</label>
                         </div>
                         <div class="form-check">

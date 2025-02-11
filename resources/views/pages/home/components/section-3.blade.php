@@ -72,20 +72,20 @@
                     </div>
                 </div>
                 <div class="bg-green">
-                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner" style="border-radius: 20px;">
                             <div class="carousel-item active">
-                                <img src="{{ asset('images/home/section-3/nogift.png') }}" class="d-block w-100"
+                                <img src="{{ asset('images/home/section-3/21.png') }}" class="d-block w-100"
                                     alt="Image 1">
                             </div>
-                            <div class="carousel-item">
+                            {{-- <div class="carousel-item">
                                 <img src="{{ asset('images/home/section-2/bg-section2.png') }}" class="d-block w-100"
                                     alt="Image 2">
                             </div>
                             <div class="carousel-item">
                                 <img src="{{ asset('images/home/section-1/bg-section1.png') }}" class="d-block w-100"
                                     alt="Image 3">
-                            </div>
+                            </div> --}}
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                             data-bs-slide="prev">

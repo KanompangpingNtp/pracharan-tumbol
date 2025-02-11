@@ -20,13 +20,11 @@
 
     .bg-menu {
         background-color: rgba(69, 211, 26, 0.6);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         background-image: url('{{ asset('images/header/bg-nav.png') }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         min-height: 7vh;
-        z-index: 2;
         transition: transform 0.3s ease;
     }
 
@@ -90,6 +88,7 @@
         text-decoration: none;
         text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
         transition: all 0.3s ease;
+
     }
 
     .button-green-search:hover {
@@ -99,6 +98,7 @@
     /* ตั้งค่าเริ่มต้นของคอนเทนเนอร์ */
     .custom-dropdown-container {
         position: relative;
+
     }
 
     /* สไตล์สำหรับ dropdown menu */
@@ -107,8 +107,8 @@
         top: 100%;
         left: 50%;
         transform: translateX(-50%);
-        background-color: white;
-        border: 1px solid #ddd;
+        background-color: rgb(27, 116, 0, 0.9);
+        border: 1px solid rgb(58, 175, 22);
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         list-style: none;
@@ -119,6 +119,7 @@
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 999;
     }
 
     .custom-dropdown-container:hover .custom-dropdown-menu {
@@ -131,12 +132,13 @@
         display: block;
         padding: 10px 20px;
         text-decoration: none;
-        color: #333;
-        transition: background-color 0.3s ease;
+        color: #ffffff;
+        transition: all 0.3s ease;
     }
 
     .dropdown-item:hover {
-        background-color: #ececec;
+        color: rgb(0, 0, 0);
+        background-color: rgb(58, 175, 22);
         border-radius: 4px;
     }
 
@@ -156,9 +158,8 @@
     .video-container {
         position: relative;
         width: 100%;
-        min-height: 76vh;
-        /* ให้พื้นที่ครอบคลุมหน้าจอ */
-        overflow: hidden;
+        min-height: 100vh;
+        overflow: visible;
     }
 
     .video-container video {
@@ -169,20 +170,18 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        /* ปรับให้เต็มพื้นที่ */
     }
 
     .video-container .content {
         position: absolute;
         bottom: 0;
-        /* ติดขอบล่าง */
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
         text-align: center;
         color: white;
-
-        /* เพิ่มพื้นหลังโปร่งใสให้ตัวหนังสืออ่านง่ายขึ้น */
+        overflow: visible;
+        z-index: 999;
     }
 </style>
 <main class="d-flex flex-column align-items-center justify-content-end ">
@@ -299,7 +298,7 @@
         <div class="container d-flex align-items-center gap-3">
             <div class="col-12 col-md-9 bg-text">
                 <div
-                    style="white-space: nowrap; overflow: hidden; position: relative; width: 100%; height: 38px; background: linear-gradient(to right, #ffffff6b, #ffffff6b); border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); padding: 5px;">
+                    style="white-space: nowrap; overflow: hidden; position: relative; width: 100%; height: 38px; background: linear-gradient(to right, #ffffff6b, #ffffff6b); border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); padding: 5px; ">
                     <span
                         style="display: inline-block; position: absolute; white-space: nowrap; animation: marquee 15s linear infinite; color: rgb(0, 0, 0); font-size: 20px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
                         วิสัยทัศน์ : พัฒนาคุณภาพชีวิตและสังคม ช่วยกันคิดช่วยกันทำ การเกษรก้าวหน้าแบบยั่งยืน

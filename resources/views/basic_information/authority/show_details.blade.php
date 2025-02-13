@@ -33,7 +33,7 @@
             <div class="row mt-3">
                 @foreach ($listDetail->pdf as $pdf)
                 <div class="row justify-content-center">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <embed src="{{ asset('storage/' . $pdf->pdf_file) }}" type="application/pdf" width="100%" height="800px">
                     </div>
                 </div>

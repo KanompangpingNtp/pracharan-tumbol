@@ -10,7 +10,7 @@ use App\Models\BasicInfoType;
 
 class ManagementPolicyController extends Controller
 {
-    public function  ManagementPolicyPage()
+    public function ManagementPolicyPage()
     {
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
 

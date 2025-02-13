@@ -32,6 +32,11 @@ use App\Http\Controllers\Information\AuthorityController;
 use App\Http\Controllers\Information\AdminManagementPolicyController;
 use App\Http\Controllers\Information\ManagementPolicyController;
 use App\Http\Controllers\performance_results\AdminFinancialReportController;
+use App\Http\Controllers\performance_results\FinancialReportController;
+use App\Http\Controllers\performance_results\AdminPerformanceReportController;
+use App\Http\Controllers\performance_results\PerformanceReportController;
+use App\Http\Controllers\performance_results\AdminMonitoringEvaluationController;
+use App\Http\Controllers\performance_results\MonitoringEvaluationController;
 
 use App\Http\Controllers\TestController;
 
@@ -75,6 +80,21 @@ Route::get('/Authority/showdetails/index/{id}', [AuthorityController::class, 'Au
 
 Route::get('/ManagementPolicy/page', [ManagementPolicyController::class, 'ManagementPolicyPage'])->name('ManagementPolicyPage');
 Route::get('/ManagementPolicy/showdetails/index/{id}', [ManagementPolicyController::class, 'ManagementPolicyShowDetails'])->name('ManagementPolicyShowDetails');
+
+//ผลงานงบการเงิน
+Route::get('/FinancialReport/page', [FinancialReportController::class, 'FinancialReportPage'])->name('FinancialReportPage');
+Route::get('/FinancialReport/show/details/{id}', [FinancialReportController::class, 'FinancialReportShowDertailsPage'])->name('FinancialReportShowDertailsPage');
+Route::get('/FinancialReport/show/details/results/{id}', [FinancialReportController::class, 'FinancialReportShowDertailResultsPage'])->name('FinancialReportShowDertailResultsPage');
+
+//ผลงานดำเนินการ
+Route::get('/PerformanceReport/page', [PerformanceReportController::class, 'PerformanceReportPage'])->name('PerformanceReportPage');
+Route::get('/PerformanceReport/show/details/{id}', [PerformanceReportController::class, 'PerformanceReportShowDertailsPage'])->name('PerformanceReportShowDertailsPage');
+Route::get('/PerformanceReport/show/details/results/{id}', [PerformanceReportController::class, 'PerformanceReportShowDertailResultsPage'])->name('PerformanceReportShowDertailResultsPage');
+
+//รายงานการติดตามและประเมิน
+Route::get('/MonitoringEvaluation/page', [MonitoringEvaluationController::class, 'MonitoringEvaluationPage'])->name('MonitoringEvaluationPage');
+Route::get('/MonitoringEvaluation/show/details/{id}', [MonitoringEvaluationController::class, 'MonitoringEvaluationShowDertailsPage'])->name('MonitoringEvaluationShowDertailsPage');
+Route::get('/MonitoringEvaluation/show/details/results/{id}', [MonitoringEvaluationController::class, 'MonitoringEvaluationShowDertailResultsPage'])->name('MonitoringEvaluationShowDertailResultsPage');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -219,6 +239,32 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/FinancialReport/show/details/results/{id}', [AdminFinancialReportController::class, 'FinancialReportShowDertailResults'])->name('FinancialReportShowDertailResults');
     Route::post('/Admin/FinancialReport/details/{id}/create/results', [AdminFinancialReportController::class, 'FinancialReportDertailsCreateResults'])->name('FinancialReportDertailsCreateResults');
     Route::delete('/Admin/FinancialReport/details/{id}/results/delete', [AdminFinancialReportController::class, 'FinancialReportDertailsDeleteResults'])->name('FinancialReportDertailsDeleteResults');
+
+    //PerformanceReport
+    Route::get('/Admin/PerformanceReport/page', [AdminPerformanceReportController::class, 'PerformanceReportAdmin'])->name('PerformanceReportAdmin');
+    Route::post('/Admin/PerformanceReport/create', [AdminPerformanceReportController::class, 'PerformanceReportCreate'])->name('PerformanceReportCreate');
+    Route::put('/Admin/PerformanceReport/{id}/update', [AdminPerformanceReportController::class, 'PerformanceReportUpdate'])->name('PerformanceReportUpdate');
+    Route::delete('/Admin/PerformanceReport/{id}/delete', [AdminPerformanceReportController::class, 'PerformanceReportDelete'])->name('PerformanceReportDelete');
+    Route::get('/Admin/PerformanceReport/show/details/{id}', [AdminPerformanceReportController::class, 'PerformanceReportShowDertails'])->name('PerformanceReportShowDertails');
+    Route::post('/Admin/PerformanceReport/details/{id}/create', [AdminPerformanceReportController::class, 'PerformanceReportDertailsCreate'])->name('PerformanceReportDertailsCreate');
+    Route::put('/Admin/PerformanceReport/details/{id}/update', [AdminPerformanceReportController::class, 'PerformanceReportDertailsUpdate'])->name('PerformanceReportDertailsUpdate');
+    Route::delete('/Admin/PerformanceReport/details/{id}/delete', [AdminPerformanceReportController::class, 'PerformanceReportDertailsDelete'])->name('PerformanceReportDertailsDelete');
+    Route::get('/Admin/PerformanceReport/show/details/results/{id}', [AdminPerformanceReportController::class, 'PerformanceReportShowDertailResults'])->name('PerformanceReportShowDertailResults');
+    Route::post('/Admin/PerformanceReport/details/{id}/create/results', [AdminPerformanceReportController::class, 'PerformanceReportDertailsCreateResults'])->name('PerformanceReportDertailsCreateResults');
+    Route::delete('/Admin/PerformanceReport/details/{id}/results/delete', [AdminPerformanceReportController::class, 'PerformanceReportDertailsDeleteResults'])->name('PerformanceReportDertailsDeleteResults');
+
+    //MonitoringEvaluation
+    Route::get('/Admin/MonitoringEvaluation/page', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationAdmin'])->name('MonitoringEvaluationAdmin');
+    Route::post('/Admin/MonitoringEvaluation/create', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationCreate'])->name('MonitoringEvaluationCreate');
+    Route::put('/Admin/MonitoringEvaluation/{id}/update', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationUpdate'])->name('MonitoringEvaluationUpdate');
+    Route::delete('/Admin/MonitoringEvaluation/{id}/delete', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationDelete'])->name('MonitoringEvaluationDelete');
+    Route::get('/Admin/MonitoringEvaluation/show/details/{id}', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationShowDertails'])->name('MonitoringEvaluationShowDertails');
+    Route::post('/Admin/MonitoringEvaluation/details/{id}/create', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationDertailsCreate'])->name('MonitoringEvaluationDertailsCreate');
+    Route::put('/Admin/MonitoringEvaluation/details/{id}/update', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationDertailsUpdate'])->name('MonitoringEvaluationDertailsUpdate');
+    Route::delete('/Admin/MonitoringEvaluation/details/{id}/delete', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationDertailsDelete'])->name('MonitoringEvaluationDertailsDelete');
+    Route::get('/Admin/MonitoringEvaluation/show/details/results/{id}', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationShowDertailResults'])->name('MonitoringEvaluationShowDertailResults');
+    Route::post('/Admin/MonitoringEvaluation/details/{id}/create/results', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationDertailsCreateResults'])->name('MonitoringEvaluationDertailsCreateResults');
+    Route::delete('/Admin/MonitoringEvaluation/details/{id}/results/delete', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationDertailsDeleteResults'])->name('MonitoringEvaluationDertailsDeleteResults');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

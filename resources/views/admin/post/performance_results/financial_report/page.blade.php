@@ -74,6 +74,8 @@
     </tbody>
 </table>
 
+
+@foreach($PerfResultsDetail as $detail)
 <div class="modal fade" id="editModal{{ $detail->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $detail->id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -99,6 +101,7 @@
         </div>
     </div>
 </div>
+@endforeach
 
 <script src="{{asset('js/datatable.js')}}"></script>
 

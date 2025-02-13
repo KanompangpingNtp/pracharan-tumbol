@@ -17,6 +17,8 @@ class PerfResultsTypeSeeder extends Seeder
             ['type_name' => 'รายงานงบการเงิน'],
             ['type_name' => 'รายผลการดำเนินงาน'],
             ['type_name' => 'รายงานการติดตามและประเมิน'],
+            ['type_name' => 'งบประมาณรายจ่ายประจำปี'],
+            ['type_name' => 'รายงานผลการดำเนินงานรอบ6เดือน'],
         ];
 
         foreach ($data as $item) {

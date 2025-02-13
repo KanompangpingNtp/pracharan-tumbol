@@ -1,7 +1,7 @@
 @extends('admin.layout.admin_layout')
 @section('user_content')
 
-<h2 class="text-center">รายงานการติดตามและประเมิน</h2><br>
+<h2 class="text-center">งบประมาณรายจ่ายประจำปี</h2><br>
 
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
     สร้างรายงาน
@@ -11,14 +11,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel"> สร้างรายงาน</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel"> สร้างรายงานงบประมาณรายจ่ายประจำปี</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{route('MonitoringEvaluationCreate')}}" method="POST">
+            <form action="{{route('AnnualBudgetCreate')}}" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <input type="hidden" name="perf_results_type" value="{{ $perfResultsType->firstWhere('type_name', 'รายงานการติดตามและประเมิน')->id }}">
+                        <input type="hidden" name="perf_results_type" value="{{ $perfResultsType->firstWhere('type_name', 'งบประมาณรายจ่ายประจำปี')->id }}">
                         <label for="detail_name" class="form-label">ชื่อรายงาน</label>
                         <input type="text" class="form-control" id="detail_name" name="detail_name" required>
                     </div>
@@ -39,7 +39,7 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>ชื่อรายงานการติดตามและประเมิน</th>
+            <th>ชื่องบประมาณรายจ่ายประจำปี</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -48,7 +48,7 @@
         <tr>
             <td>{{ $index + 1 }}</td>
             <td>
-                <a href="{{ route('MonitoringEvaluationShowDertails', $detail->id) }}">
+                <a href="{{ route('AnnualBudgetShowDertails', $detail->id) }}">
                     {{ $detail->detail_name }}
                 </a>
             </td>
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="d-inline-block">
-                    <form action="{{ route('MonitoringEvaluationDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้?');">
+                    <form action="{{ route('AnnualBudgetDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
@@ -82,7 +82,7 @@
                 <h1 class="modal-title fs-5" id="editModalLabel{{ $detail->id }}"> แก้ไขรายผลการดำเนินงาน</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('MonitoringEvaluationUpdate', $detail->id) }}" method="POST">
+            <form action="{{ route('AnnualBudgetUpdate', $detail->id) }}" method="POST">
                 @csrf
                 @method('PUT') <!-- Use PUT for updating -->
                 <div class="modal-body">

@@ -256,8 +256,8 @@
                         <a href="{{route('FinancialReportPage')}}" class="dropdown-item">รายงานงบการเงิน</a>
                         <a href="{{route('PerformanceReportPage')}}" class="dropdown-item">รายผลการดำเนินงาน</a>
                         <a href="{{route('MonitoringEvaluationPage')}}" class="dropdown-item">รายงานการติดตามและประเมิน</a>
-                        <a href="" class="dropdown-item">งบประมาณรายจ่ายประจำปี</a>
-                        <a href="" class="dropdown-item">รายงานผลการดำเนินงานรอบ 6 เดือน</a>
+                        <a href="{{route('AnnualBudgetPage')}}" class="dropdown-item">งบประมาณรายจ่ายประจำปี</a>
+                        {{-- <a href="{{route('SixMonthPerformancePage')}}" class="dropdown-item">รายงานผลการดำเนินงานรอบ 6 เดือน</a> --}}
                     </li>
                 </ul>
             </div>

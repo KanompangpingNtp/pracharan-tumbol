@@ -337,6 +337,8 @@
                                 <a class="nav-link" href="{{route('FinancialReportAdmin')}}">รายงานงบการเงิน</a>
                                 <a class="nav-link" href="{{route('PerformanceReportAdmin')}}">รายผลการดำเนินงาน</a>
                                 <a class="nav-link" href="{{route('MonitoringEvaluationAdmin')}}">รายงานการติดตามและประเมิน</a>
+                                <a class="nav-link" href="{{route('AnnualBudgetAdmin')}}">งบประมาณรายจ่ายประจำปี</a>
+                                <a class="nav-link" href="{{route('SixMonthPerformanceAdmin')}}">รายงานผลการดำเนินงานรอบ 6 เดือน</a>
                             </nav>
                         </div>
 

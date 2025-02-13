@@ -37,6 +37,10 @@ use App\Http\Controllers\performance_results\AdminPerformanceReportController;
 use App\Http\Controllers\performance_results\PerformanceReportController;
 use App\Http\Controllers\performance_results\AdminMonitoringEvaluationController;
 use App\Http\Controllers\performance_results\MonitoringEvaluationController;
+use App\Http\Controllers\performance_results\AdminAnnualBudgetController;
+use App\Http\Controllers\performance_results\AnnualBudgetController;
+use App\Http\Controllers\performance_results\AdminSixMonthPerformanceController;
+use App\Http\Controllers\performance_results\SixMonthPerformanceController;
 
 use App\Http\Controllers\TestController;
 
@@ -95,6 +99,16 @@ Route::get('/PerformanceReport/show/details/results/{id}', [PerformanceReportCon
 Route::get('/MonitoringEvaluation/page', [MonitoringEvaluationController::class, 'MonitoringEvaluationPage'])->name('MonitoringEvaluationPage');
 Route::get('/MonitoringEvaluation/show/details/{id}', [MonitoringEvaluationController::class, 'MonitoringEvaluationShowDertailsPage'])->name('MonitoringEvaluationShowDertailsPage');
 Route::get('/MonitoringEvaluation/show/details/results/{id}', [MonitoringEvaluationController::class, 'MonitoringEvaluationShowDertailResultsPage'])->name('MonitoringEvaluationShowDertailResultsPage');
+
+//งบประมาณรายจ่ายประจำปี
+Route::get('/AnnualBudget/page', [AnnualBudgetController::class, 'AnnualBudgetPage'])->name('AnnualBudgetPage');
+Route::get('/AnnualBudget/show/details/{id}', [AnnualBudgetController::class, 'AnnualBudgetShowDertailsPage'])->name('AnnualBudgetShowDertailsPage');
+Route::get('/AnnualBudget/show/details/results/{id}', [AnnualBudgetController::class, 'AnnualBudgetShowDertailResultsPage'])->name('AnnualBudgetShowDertailResultsPage');
+
+//รายงานผลการดำเนินงานรอบ 6 เดือน
+Route::get('/SixMonthPerformance/page', [SixMonthPerformanceController::class, 'SixMonthPerformancePage'])->name('SixMonthPerformancePage');
+Route::get('/SixMonthPerformance/show/details/{id}', [SixMonthPerformanceController::class, 'SixMonthPerformanceShowDertailsPage'])->name('SixMonthPerformanceShowDertailsPage');
+Route::get('/SixMonthPerformance/show/details/results/{id}', [SixMonthPerformanceController::class, 'SixMonthPerformanceShowDertailResultsPage'])->name('SixMonthPerformanceShowDertailResultsPage');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -265,6 +279,32 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/MonitoringEvaluation/show/details/results/{id}', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationShowDertailResults'])->name('MonitoringEvaluationShowDertailResults');
     Route::post('/Admin/MonitoringEvaluation/details/{id}/create/results', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationDertailsCreateResults'])->name('MonitoringEvaluationDertailsCreateResults');
     Route::delete('/Admin/MonitoringEvaluation/details/{id}/results/delete', [AdminMonitoringEvaluationController::class, 'MonitoringEvaluationDertailsDeleteResults'])->name('MonitoringEvaluationDertailsDeleteResults');
+
+    //AnnualBudget
+    Route::get('/Admin/AnnualBudget/page', [AdminAnnualBudgetController::class, 'AnnualBudgetAdmin'])->name('AnnualBudgetAdmin');
+    Route::post('/Admin/AnnualBudget/create', [AdminAnnualBudgetController::class, 'AnnualBudgetCreate'])->name('AnnualBudgetCreate');
+    Route::put('/Admin/AnnualBudget/{id}/update', [AdminAnnualBudgetController::class, 'AnnualBudgetUpdate'])->name('AnnualBudgetUpdate');
+    Route::delete('/Admin/AnnualBudget/{id}/delete', [AdminAnnualBudgetController::class, 'AnnualBudgetDelete'])->name('AnnualBudgetDelete');
+    Route::get('/Admin/AnnualBudget/show/details/{id}', [AdminAnnualBudgetController::class, 'AnnualBudgetShowDertails'])->name('AnnualBudgetShowDertails');
+    Route::post('/Admin/AnnualBudget/details/{id}/create', [AdminAnnualBudgetController::class, 'AnnualBudgetDertailsCreate'])->name('AnnualBudgetDertailsCreate');
+    Route::put('/Admin/AnnualBudget/details/{id}/update', [AdminAnnualBudgetController::class, 'AnnualBudgetDertailsUpdate'])->name('AnnualBudgetDertailsUpdate');
+    Route::delete('/Admin/AnnualBudget/details/{id}/delete', [AdminAnnualBudgetController::class, 'AnnualBudgetDertailsDelete'])->name('AnnualBudgetDertailsDelete');
+    Route::get('/Admin/AnnualBudget/show/details/results/{id}', [AdminAnnualBudgetController::class, 'AnnualBudgetShowDertailResults'])->name('AnnualBudgetShowDertailResults');
+    Route::post('/Admin/AnnualBudget/details/{id}/create/results', [AdminAnnualBudgetController::class, 'AnnualBudgetDertailsCreateResults'])->name('AnnualBudgetDertailsCreateResults');
+    Route::delete('/Admin/AnnualBudget/details/{id}/results/delete', [AdminAnnualBudgetController::class, 'AnnualBudgetDertailsDeleteResults'])->name('AnnualBudgetDertailsDeleteResults');
+
+    //SixMonthPerformance
+    Route::get('/Admin/SixMonthPerformance/page', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceAdmin'])->name('SixMonthPerformanceAdmin');
+    Route::post('/Admin/SixMonthPerformance/create', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceCreate'])->name('SixMonthPerformanceCreate');
+    Route::put('/Admin/SixMonthPerformance/{id}/update', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceUpdate'])->name('SixMonthPerformanceUpdate');
+    Route::delete('/Admin/SixMonthPerformance/{id}/delete', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceDelete'])->name('SixMonthPerformanceDelete');
+    Route::get('/Admin/SixMonthPerformance/show/details/{id}', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceShowDertails'])->name('SixMonthPerformanceShowDertails');
+    Route::post('/Admin/SixMonthPerformance/details/{id}/create', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceDertailsCreate'])->name('SixMonthPerformanceDertailsCreate');
+    Route::put('/Admin/SixMonthPerformance/details/{id}/update', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceDertailsUpdate'])->name('SixMonthPerformanceDertailsUpdate');
+    Route::delete('/Admin/SixMonthPerformance/details/{id}/delete', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceDertailsDelete'])->name('SixMonthPerformanceDertailsDelete');
+    Route::get('/Admin/SixMonthPerformance/show/details/results/{id}', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceShowDertailResults'])->name('SixMonthPerformanceShowDertailResults');
+    Route::post('/Admin/SixMonthPerformance/details/{id}/create/results', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceDertailsCreateResults'])->name('SixMonthPerformanceDertailsCreateResults');
+    Route::delete('/Admin/SixMonthPerformance/details/{id}/results/delete', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceDertailsDeleteResults'])->name('SixMonthPerformanceDertailsDeleteResults');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

@@ -16,14 +16,14 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel"> เพิ่มไฟล์เอกสาร</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('FinancialReportDertailsCreateResults', $PerfResultsMinorDetail->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('MonitoringEvaluationDertailsCreateResults', $PerfResultsMinorDetail->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="file_post" class="form-label">แนบไฟล์ภาพเพิ่มเติม</label>
                         <input type="file" class="form-control" id="file_post" name="file_post[]" multiple>
-                        <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png</small>
-                        <!-- แสดงรายการไฟล์ที่แนบ -->
+                        <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf</small>
+
                         <div id="file-list" class="mt-1">
                             <div class="d-flex flex-wrap gap-3"></div>
                         </div>
@@ -62,7 +62,7 @@
                     <a href="{{ asset('storage/' . $file->file_path) }}" target="_blank" class="btn btn-primary btn-sm">
                         <i class="bi bi-file-earmark-pdf"></i>
                     </a>
-                    <form action="{{ route('FinancialReportDertailsDeleteResults', $file->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบไฟล์นี้หรือไม่?');">
+                    <form action="{{ route('SixMonthPerformanceDertailsDeleteResults', $file->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบไฟล์นี้หรือไม่?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">ลบ</button>

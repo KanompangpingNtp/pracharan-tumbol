@@ -1,25 +1,26 @@
 @extends('admin.layout.admin_layout')
 @section('user_content')
 
-<h2 class="text-center">รายงานการติดตามและประเมิน</h2><br>
+<button onclick="window.history.back();" class="btn btn-secondary">กลับ</button>
+
+<h2 class="text-center">งบประมาณรายจ่ายประจำปี <br><span class="text-primary">{{$PerfResultsDetail->detail_name}}</span></h2><br>
 
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    สร้างรายงาน
+    สร้างหัวข้อย่อย
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel"> สร้างรายงาน</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">สร้างหัวข้อย่อย <span class="text-primary">{{$PerfResultsDetail->detail_name}}</span></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{route('MonitoringEvaluationCreate')}}" method="POST">
+            <form action="{{route('AnnualBudgetDertailsCreate', $PerfResultsDetail->id)}}" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <input type="hidden" name="perf_results_type" value="{{ $perfResultsType->firstWhere('type_name', 'รายงานการติดตามและประเมิน')->id }}">
-                        <label for="detail_name" class="form-label">ชื่อรายงาน</label>
+                        <label for="detail_name" class="form-label">ชื่อหัวข้อย่อย</label>
                         <input type="text" class="form-control" id="detail_name" name="detail_name" required>
                     </div>
                 </div>
@@ -39,16 +40,16 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>ชื่อรายงานการติดตามและประเมิน</th>
+            <th>ชื่อหัวข้อย่อย</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($PerfResultsDetail as $index => $detail)
+        @foreach($PerfResultsMinorDetail as $index => $detail)
         <tr>
             <td>{{ $index + 1 }}</td>
             <td>
-                <a href="{{ route('MonitoringEvaluationShowDertails', $detail->id) }}">
+                <a href="{{ route('AnnualBudgetShowDertailResults', $detail->id) }}">
                     {{ $detail->detail_name }}
                 </a>
             </td>
@@ -61,7 +62,7 @@
                 </div>
 
                 <div class="d-inline-block">
-                    <form action="{{ route('MonitoringEvaluationDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้?');">
+                    <form action="{{ route('AnnualBudgetDertailsDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
@@ -74,21 +75,20 @@
     </tbody>
 </table>
 
-@foreach($PerfResultsDetail as $detail)
+@foreach($PerfResultsMinorDetail as $detail)
 <div class="modal fade" id="editModal{{ $detail->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $detail->id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="editModalLabel{{ $detail->id }}"> แก้ไขรายผลการดำเนินงาน</h1>
+                <h1 class="modal-title fs-5" id="editModalLabel{{ $detail->id }}"> แก้ไขข้อมูลย่อย</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('MonitoringEvaluationUpdate', $detail->id) }}" method="POST">
+            <form action="{{ route('AnnualBudgetDertailsUpdate', $detail->id) }}" method="POST">
                 @csrf
-                @method('PUT') <!-- Use PUT for updating -->
+                @method('PUT')
                 <div class="modal-body">
                     <div class="mb-3">
-                        {{-- <input type="hidden" name="perf_results_type" value="{{ $perfResultsType->firstWhere('type_name', 'รายงานการติดตามและประเมิน')->id }}"> --}}
-                        <label for="detail_name{{ $detail->id }}" class="form-label">ชื่อรายผลการดำเนินงาน</label>
+                        <label for="detail_name{{ $detail->id }}" class="form-label">ชื่อรายละเอียดย่อย</label>
                         <input type="text" class="form-control" id="detail_name{{ $detail->id }}" name="detail_name" value="{{ $detail->detail_name }}" required>
                     </div>
                 </div>

@@ -206,16 +206,14 @@
                         <div class="navbar-text">ข้อมูลพื้นฐาน</div>
                     </a>
                     <!-- ลิสต์รายการ -->
-                    <ul class="custom-dropdown-menu">
+                    <ul class="custom-dropdown-menu text-start">
                         <li>
                             <a href="{{ route('HistoryPage') }}" class="dropdown-item">ประวัติความเป็นมา</a>
                             <a href="{{ route('VisionMissionPage') }}" class="dropdown-item">วิสัยทัศน์/พันธกิจ</a>
                             <a href="{{ route('GeneralInformationPage') }}" class="dropdown-item">ข้อมูลสภาพทั่วไป</a>
                             <a href="{{ route('StrategyGuidelinePage') }}" class="dropdown-item">ยุทธศาสตร์และแนวทางการพัฒนา</a>
-
                             <a href="{{ route('CommunityProductsPage') }}" class="dropdown-item">ผลิตภัณฑ์ชุมชน/OTOP</a>
                             <a href="{{ route('ImportantPlacesPage') }}" class="dropdown-item">สถานที่สำคัญ/แหล่งท่องเที่ยว</a>
-
                             <a href="{{ route('AuthorityPage') }}" class="dropdown-item">อำนาจหน้าที่</a>
                             <a href="{{ route('ManagementPolicyPage') }}" class="dropdown-item">นโยบายการบริหาร/เจตจำนงสุจริต</a>
                         </li>
@@ -233,7 +231,7 @@
                     <div class="navbar-text">บุคลากร</div>
                 </a>
                 <!-- ลิสต์รายการ -->
-                <ul class="custom-dropdown-menu">
+                <ul class="custom-dropdown-menu text-start">
                     <li>
                         <a href="{{ route('AgencyPage') }}" class="dropdown-item">แผนผังองค์กรรวม</a>
                     </li>
@@ -251,13 +249,18 @@
                     <img src="{{ asset('images/header/online-survey.png') }}" alt="teamwork" class="navbar-icon">
                     <div class="navbar-text">ผลการดำเนินงาน</div>
                 </a>
-                <ul class="custom-dropdown-menu">
+                <ul class="custom-dropdown-menu text-start">
                     <li>
                         <a href="{{route('FinancialReportPage')}}" class="dropdown-item">รายงานงบการเงิน</a>
                         <a href="{{route('PerformanceReportPage')}}" class="dropdown-item">รายผลการดำเนินงาน</a>
                         <a href="{{route('MonitoringEvaluationPage')}}" class="dropdown-item">รายงานการติดตามและประเมิน</a>
-                        <a href="{{route('AnnualBudgetPage')}}" class="dropdown-item">งบประมาณรายจ่ายประจำปี</a>
-                        {{-- <a href="{{route('SixMonthPerformancePage')}}" class="dropdown-item">รายงานผลการดำเนินงานรอบ 6 เดือน</a> --}}
+                        {{-- <a href="{{route('AnnualBudgetPage')}}" class="dropdown-item">งบประมาณรายจ่ายประจำปี</a>
+                        <a href="{{route('SixMonthPerformancePage')}}" class="dropdown-item">รายงานผลการดำเนินงานรอบ 6 เดือน</a>
+                        <a href="{{route('OperationPage')}}" class="dropdown-item">การปฏิบัติงาน</a>
+                        <a href="{{route('HRPolicyPage')}}" class="dropdown-item">นโยบายการบริหารทรัพยากรบุคคล</a>
+                        <a href="{{route('HRPolicyManagementPage')}}" class="dropdown-item">การดำเนินการตามนโยบายและการบริหารทรัพยากรบุคคล</a>
+                        <a href="{{route('HRManagementDevelopmentPage')}}" class="dropdown-item">หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</a>
+                        <a href="{{route('HRResultsReportPage')}}" class="dropdown-item">รายงานผลการบริหารและพัฒนาทรัพยากรบุคคล</a> --}}
                     </li>
                 </ul>
             </div>

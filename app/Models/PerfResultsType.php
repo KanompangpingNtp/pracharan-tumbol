@@ -15,4 +15,9 @@ class PerfResultsType extends Model
     {
         return $this->hasMany(PerfResultsDetail::class);
     }
+
+    public function singleTopicFile()
+    {
+        return $this->hasMany(PerfResultsDetail::class);
+    }
 }

@@ -41,6 +41,16 @@ use App\Http\Controllers\performance_results\AdminAnnualBudgetController;
 use App\Http\Controllers\performance_results\AnnualBudgetController;
 use App\Http\Controllers\performance_results\AdminSixMonthPerformanceController;
 use App\Http\Controllers\performance_results\SixMonthPerformanceController;
+use App\Http\Controllers\performance_results\AdminOperationController;
+use App\Http\Controllers\performance_results\OperationController;
+use App\Http\Controllers\performance_results\AdminHRPolicyController;
+use App\Http\Controllers\performance_results\HRPolicyController;
+use App\Http\Controllers\performance_results\AdminHRPolicyManagementController;
+use App\Http\Controllers\performance_results\HRPolicyManagementController;
+use App\Http\Controllers\performance_results\AdminHRManagementDevelopmentController;
+use App\Http\Controllers\performance_results\HRManagementDevelopmentController;
+use App\Http\Controllers\performance_results\AdminHRResultsReportController;
+use App\Http\Controllers\performance_results\HRResultsReportController;
 
 use App\Http\Controllers\TestController;
 
@@ -109,6 +119,29 @@ Route::get('/AnnualBudget/show/details/results/{id}', [AnnualBudgetController::c
 Route::get('/SixMonthPerformance/page', [SixMonthPerformanceController::class, 'SixMonthPerformancePage'])->name('SixMonthPerformancePage');
 Route::get('/SixMonthPerformance/show/details/{id}', [SixMonthPerformanceController::class, 'SixMonthPerformanceShowDertailsPage'])->name('SixMonthPerformanceShowDertailsPage');
 Route::get('/SixMonthPerformance/show/details/results/{id}', [SixMonthPerformanceController::class, 'SixMonthPerformanceShowDertailResultsPage'])->name('SixMonthPerformanceShowDertailResultsPage');
+
+//นโยบายการบริหารทรัพยากรบุคคล
+Route::get('/HRPolicy/page', [HRPolicyController::class, 'HRPolicyPage'])->name('HRPolicyPage');
+Route::get('/HRPolicy/show/details/{id}', [HRPolicyController::class, 'HRPolicyShowDertailsPage'])->name('HRPolicyShowDertailsPage');
+Route::get('/HRPolicy/show/details/results/{id}', [HRPolicyController::class, 'HRPolicyShowDertailResultsPage'])->name('HRPolicyShowDertailResultsPage');
+
+//การดำเนินการตามนโยบายและการบริหารทรัพยากรบุคคล
+Route::get('/HRPolicyManagement/page', [HRPolicyManagementController::class, 'HRPolicyManagementPage'])->name('HRPolicyManagementPage');
+Route::get('/HRPolicyManagement/show/details/{id}', [HRPolicyManagementController::class, 'HRPolicyManagementShowDertailsPage'])->name('HRPolicyManagementShowDertailsPage');
+Route::get('/HRPolicyManagement/show/details/results/{id}', [HRPolicyManagementController::class, 'HRPolicyManagementShowDertailResultsPage'])->name('HRPolicyManagementShowDertailResultsPage');
+
+//หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล
+Route::get('/HRManagementDevelopment/page', [HRManagementDevelopmentController::class, 'HRManagementDevelopmentPage'])->name('HRManagementDevelopmentPage');
+Route::get('/HRManagementDevelopment/show/details/{id}', [HRManagementDevelopmentController::class, 'HRManagementDevelopmentShowDertailsPage'])->name('HRManagementDevelopmentShowDertailsPage');
+Route::get('/HRManagementDevelopment/show/details/results/{id}', [HRManagementDevelopmentController::class, 'HRManagementDevelopmentShowDertailResultsPage'])->name('HRManagementDevelopmentShowDertailResultsPage');
+
+//การปฏิบัติงาน
+Route::get('/Operation/page', [OperationController::class, 'OperationPage'])->name('OperationPage');
+
+//รายงานผลการบริหารและพัฒนาทรัพยากรบุคคล
+Route::get('/HRResultsReport/page', [HRResultsReportController::class, 'HRResultsReportPage'])->name('HRResultsReportPage');
+Route::get('/HRResultsReport/show/details/{id}', [HRResultsReportController::class, 'HRResultsReportShowDertailsPage'])->name('HRResultsReportShowDertailsPage');
+Route::get('/HRResultsReport/show/details/results/{id}', [HRResultsReportController::class, 'HRResultsReportShowDertailResultsPage'])->name('HRResultsReportShowDertailResultsPage');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -305,6 +338,62 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/SixMonthPerformance/show/details/results/{id}', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceShowDertailResults'])->name('SixMonthPerformanceShowDertailResults');
     Route::post('/Admin/SixMonthPerformance/details/{id}/create/results', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceDertailsCreateResults'])->name('SixMonthPerformanceDertailsCreateResults');
     Route::delete('/Admin/SixMonthPerformance/details/{id}/results/delete', [AdminSixMonthPerformanceController::class, 'SixMonthPerformanceDertailsDeleteResults'])->name('SixMonthPerformanceDertailsDeleteResults');
+
+    //Operation
+    Route::get('/Admin/Operation/page', [AdminOperationController::class, 'OperationAdmin'])->name('OperationAdmin');
+    Route::post('/Admin/Operation/create', [AdminOperationController::class, 'OperationCreate'])->name('OperationCreate');
+
+    //HRPolicy
+    Route::get('/Admin/HRPolicy/page', [AdminHRPolicyController::class, 'HRPolicyAdmin'])->name('HRPolicyAdmin');
+    Route::post('/Admin/HRPolicy/create', [AdminHRPolicyController::class, 'HRPolicyCreate'])->name('HRPolicyCreate');
+    Route::put('/Admin/HRPolicy/{id}/update', [AdminHRPolicyController::class, 'HRPolicyUpdate'])->name('HRPolicyUpdate');
+    Route::delete('/Admin/HRPolicy/{id}/delete', [AdminHRPolicyController::class, 'HRPolicyDelete'])->name('HRPolicyDelete');
+    Route::get('/Admin/HRPolicy/show/details/{id}', [AdminHRPolicyController::class, 'HRPolicyShowDertails'])->name('HRPolicyShowDertails');
+    Route::post('/Admin/HRPolicy/details/{id}/create', [AdminHRPolicyController::class, 'HRPolicyDertailsCreate'])->name('HRPolicyDertailsCreate');
+    Route::put('/Admin/HRPolicy/details/{id}/update', [AdminHRPolicyController::class, 'HRPolicyDertailsUpdate'])->name('HRPolicyDertailsUpdate');
+    Route::delete('/Admin/HRPolicy/details/{id}/delete', [AdminHRPolicyController::class, 'HRPolicyDertailsDelete'])->name('HRPolicyDertailsDelete');
+    Route::get('/Admin/HRPolicy/show/details/results/{id}', [AdminHRPolicyController::class, 'HRPolicyShowDertailResults'])->name('HRPolicyShowDertailResults');
+    Route::post('/Admin/HRPolicy/details/{id}/create/results', [AdminHRPolicyController::class, 'HRPolicyDertailsCreateResults'])->name('HRPolicyDertailsCreateResults');
+    Route::delete('/Admin/HRPolicy/details/{id}/results/delete', [AdminHRPolicyController::class, 'HRPolicyDertailsDeleteResults'])->name('HRPolicyDertailsDeleteResults');
+
+    //HRPolicyManagement
+    Route::get('/Admin/HRPolicyManagement/page', [AdminHRPolicyManagementController::class, 'HRPolicyManagementAdmin'])->name('HRPolicyManagementAdmin');
+    Route::post('/Admin/HRPolicyManagement/create', [AdminHRPolicyManagementController::class, 'HRPolicyManagementCreate'])->name('HRPolicyManagementCreate');
+    Route::put('/Admin/HRPolicyManagement/{id}/update', [AdminHRPolicyManagementController::class, 'HRPolicyManagementUpdate'])->name('HRPolicyManagementUpdate');
+    Route::delete('/Admin/HRPolicyManagement/{id}/delete', [AdminHRPolicyManagementController::class, 'HRPolicyManagementDelete'])->name('HRPolicyManagementDelete');
+    Route::get('/Admin/HRPolicyManagement/show/details/{id}', [AdminHRPolicyManagementController::class, 'HRPolicyManagementShowDertails'])->name('HRPolicyManagementShowDertails');
+    Route::post('/Admin/HRPolicyManagement/details/{id}/create', [AdminHRPolicyManagementController::class, 'HRPolicyManagementDertailsCreate'])->name('HRPolicyManagementDertailsCreate');
+    Route::put('/Admin/HRPolicyManagement/details/{id}/update', [AdminHRPolicyManagementController::class, 'HRPolicyManagementDertailsUpdate'])->name('HRPolicyManagementDertailsUpdate');
+    Route::delete('/Admin/HRPolicyManagement/details/{id}/delete', [AdminHRPolicyManagementController::class, 'HRPolicyManagementDertailsDelete'])->name('HRPolicyManagementDertailsDelete');
+    Route::get('/Admin/HRPolicyManagement/show/details/results/{id}', [AdminHRPolicyManagementController::class, 'HRPolicyManagementShowDertailResults'])->name('HRPolicyManagementShowDertailResults');
+    Route::post('/Admin/HRPolicyManagement/details/{id}/create/results', [AdminHRPolicyManagementController::class, 'HRPolicyManagementDertailsCreateResults'])->name('HRPolicyManagementDertailsCreateResults');
+    Route::delete('/Admin/HRPolicyManagement/details/{id}/results/delete', [AdminHRPolicyManagementController::class, 'HRPolicyManagementDertailsDeleteResults'])->name('HRPolicyManagementDertailsDeleteResults');
+
+    //HRManagementDevelopment
+    Route::get('/Admin/HRManagementDevelopment/page', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentAdmin'])->name('HRManagementDevelopmentAdmin');
+    Route::post('/Admin/HRManagementDevelopment/create', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentCreate'])->name('HRManagementDevelopmentCreate');
+    Route::put('/Admin/HRManagementDevelopment/{id}/update', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentUpdate'])->name('HRManagementDevelopmentUpdate');
+    Route::delete('/Admin/HRManagementDevelopment/{id}/delete', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentDelete'])->name('HRManagementDevelopmentDelete');
+    Route::get('/Admin/HRManagementDevelopment/show/details/{id}', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentShowDertails'])->name('HRManagementDevelopmentShowDertails');
+    Route::post('/Admin/HRManagementDevelopment/details/{id}/create', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentDertailsCreate'])->name('HRManagementDevelopmentDertailsCreate');
+    Route::put('/Admin/HRManagementDevelopment/details/{id}/update', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentDertailsUpdate'])->name('HRManagementDevelopmentDertailsUpdate');
+    Route::delete('/Admin/HRManagementDevelopment/details/{id}/delete', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentDertailsDelete'])->name('HRManagementDevelopmentDertailsDelete');
+    Route::get('/Admin/HRManagementDevelopment/show/details/results/{id}', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentShowDertailResults'])->name('HRManagementDevelopmentShowDertailResults');
+    Route::post('/Admin/HRManagementDevelopment/details/{id}/create/results', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentDertailsCreateResults'])->name('HRManagementDevelopmentDertailsCreateResults');
+    Route::delete('/Admin/HRManagementDevelopment/details/{id}/results/delete', [AdminHRManagementDevelopmentController::class, 'HRManagementDevelopmentDertailsDeleteResults'])->name('HRManagementDevelopmentDertailsDeleteResults');
+
+    //HRResultsReport
+    Route::get('/Admin/HRResultsReport/page', [AdminHRResultsReportController::class, 'HRResultsReportAdmin'])->name('HRResultsReportAdmin');
+    Route::post('/Admin/HRResultsReport/create', [AdminHRResultsReportController::class, 'HRResultsReportCreate'])->name('HRResultsReportCreate');
+    Route::put('/Admin/HRResultsReport/{id}/update', [AdminHRResultsReportController::class, 'HRResultsReportUpdate'])->name('HRResultsReportUpdate');
+    Route::delete('/Admin/HRResultsReport/{id}/delete', [AdminHRResultsReportController::class, 'HRResultsReportDelete'])->name('HRResultsReportDelete');
+    Route::get('/Admin/HRResultsReport/show/details/{id}', [AdminHRResultsReportController::class, 'HRResultsReportShowDertails'])->name('HRResultsReportShowDertails');
+    Route::post('/Admin/HRResultsReport/details/{id}/create', [AdminHRResultsReportController::class, 'HRResultsReportDertailsCreate'])->name('HRResultsReportDertailsCreate');
+    Route::put('/Admin/HRResultsReport/details/{id}/update', [AdminHRResultsReportController::class, 'HRResultsReportDertailsUpdate'])->name('HRResultsReportDertailsUpdate');
+    Route::delete('/Admin/HRResultsReport/details/{id}/delete', [AdminHRResultsReportController::class, 'HRResultsReportDertailsDelete'])->name('HRResultsReportDertailsDelete');
+    Route::get('/Admin/HRResultsReport/show/details/results/{id}', [AdminHRResultsReportController::class, 'HRResultsReportShowDertailResults'])->name('HRResultsReportShowDertailResults');
+    Route::post('/Admin/HRResultsReport/details/{id}/create/results', [AdminHRResultsReportController::class, 'HRResultsReportDertailsCreateResults'])->name('HRResultsReportDertailsCreateResults');
+    Route::delete('/Admin/HRResultsReport/details/{id}/results/delete', [AdminHRResultsReportController::class, 'HRResultsReportDertailsDeleteResults'])->name('HRResultsReportDertailsDeleteResults');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

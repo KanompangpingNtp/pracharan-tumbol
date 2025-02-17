@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('perf_single_topic_files', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('perf_results_type_id')->constrained('perf_results_types')->onDelete('cascade');
+            $table->foreignId('perf_single_topic_id')->constrained('perf_single_topics')->onDelete('cascade');
             $table->string('file_path');
             $table->string('file_type');
             $table->timestamps();

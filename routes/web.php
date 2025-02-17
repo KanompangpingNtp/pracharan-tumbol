@@ -51,6 +51,14 @@ use App\Http\Controllers\performance_results\AdminHRManagementDevelopmentControl
 use App\Http\Controllers\performance_results\HRManagementDevelopmentController;
 use App\Http\Controllers\performance_results\AdminHRResultsReportController;
 use App\Http\Controllers\performance_results\HRResultsReportController;
+use App\Http\Controllers\performance_results\AdminTransparencyController;
+use App\Http\Controllers\performance_results\TransparencyController;
+use App\Http\Controllers\performance_results\AdminFinancialStatementController;
+use App\Http\Controllers\performance_results\FinancialStatementController;
+use App\Http\Controllers\performance_results\AdminWorkProcedureController;
+use App\Http\Controllers\performance_results\WorkProcedureController;
+use App\Http\Controllers\performance_results\AdminCodeofEthicsController;
+use App\Http\Controllers\performance_results\CodeofEthicsController;
 
 use App\Http\Controllers\TestController;
 
@@ -137,6 +145,23 @@ Route::get('/HRManagementDevelopment/show/details/results/{id}', [HRManagementDe
 
 //การปฏิบัติงาน
 Route::get('/Operation/page', [OperationController::class, 'OperationPage'])->name('OperationPage');
+Route::get('/Operation/show/details/{id}', [OperationController::class, 'OperationDertail'])->name('OperationDertail');
+
+//มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริต
+Route::get('/Transparency/page', [TransparencyController::class, 'TransparencyPage'])->name('TransparencyPage');
+Route::get('/Transparency/show/details/{id}', [TransparencyController::class, 'TransparencyDertail'])->name('TransparencyDertail');
+
+//รายงานแสดงฐานะการเงิน
+Route::get('/FinancialStatement/page', [FinancialStatementController::class, 'FinancialStatementPage'])->name('FinancialStatementPage');
+Route::get('/FinancialStatement/show/details/{id}', [FinancialStatementController::class, 'FinancialStatementDertail'])->name('FinancialStatementDertail');
+
+//การลดขั้นตอนการปฏิบัติงาน
+Route::get('/WorkProcedure/page', [WorkProcedureController::class, 'WorkProcedurePage'])->name('WorkProcedurePage');
+Route::get('/WorkProcedure/show/details/{id}', [WorkProcedureController::class, 'WorkProcedureDertail'])->name('WorkProcedureDertail');
+
+//ประมวลจริยธรรม
+Route::get('/CodeofEthics/page', [WorkProcedureController::class, 'CodeofEthicsPage'])->name('CodeofEthicsPage');
+Route::get('/CodeofEthics/show/details/{id}', [WorkProcedureController::class, 'CodeofEthicsDertail'])->name('CodeofEthicsDertail');
 
 //รายงานผลการบริหารและพัฒนาทรัพยากรบุคคล
 Route::get('/HRResultsReport/page', [HRResultsReportController::class, 'HRResultsReportPage'])->name('HRResultsReportPage');
@@ -342,6 +367,10 @@ Route::middleware(['check.auth'])->group(function () {
     //Operation
     Route::get('/Admin/Operation/page', [AdminOperationController::class, 'OperationAdmin'])->name('OperationAdmin');
     Route::post('/Admin/Operation/create', [AdminOperationController::class, 'OperationCreate'])->name('OperationCreate');
+    Route::put('/Admin/Operation/{id}/update', [AdminOperationController::class, 'OperationUpdate'])->name('OperationUpdate');
+    Route::delete('/Admin/Operation/{id}/delete', [AdminOperationController::class, 'OperationDelete'])->name('OperationDelete');
+    Route::get('/Admin/Operation/show/details/{id}', [AdminOperationController::class, 'OperationShowDertails'])->name('OperationShowDertails');
+    Route::post('/Admin/Operation/details/{id}/create', [AdminOperationController::class, 'OperationCreateFiles'])->name('OperationCreateFiles');
 
     //HRPolicy
     Route::get('/Admin/HRPolicy/page', [AdminHRPolicyController::class, 'HRPolicyAdmin'])->name('HRPolicyAdmin');
@@ -394,6 +423,42 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/HRResultsReport/show/details/results/{id}', [AdminHRResultsReportController::class, 'HRResultsReportShowDertailResults'])->name('HRResultsReportShowDertailResults');
     Route::post('/Admin/HRResultsReport/details/{id}/create/results', [AdminHRResultsReportController::class, 'HRResultsReportDertailsCreateResults'])->name('HRResultsReportDertailsCreateResults');
     Route::delete('/Admin/HRResultsReport/details/{id}/results/delete', [AdminHRResultsReportController::class, 'HRResultsReportDertailsDeleteResults'])->name('HRResultsReportDertailsDeleteResults');
+
+    //Transparency
+    Route::get('/Admin/Transparency/page', [AdminTransparencyController::class, 'TransparencyAdmin'])->name('TransparencyAdmin');
+    Route::post('/Admin/Transparency/create', [AdminTransparencyController::class, 'TransparencyCreate'])->name('TransparencyCreate');
+    Route::put('/Admin/Transparency/{id}/update', [AdminTransparencyController::class, 'TransparencyUpdate'])->name('TransparencyUpdate');
+    Route::delete('/Admin/Transparency/{id}/delete', [AdminTransparencyController::class, 'TransparencyDelete'])->name('TransparencyDelete');
+    Route::get('/Admin/Transparency/show/details/{id}', [AdminTransparencyController::class, 'TransparencyShowDertails'])->name('TransparencyShowDertails');
+    Route::post('/Admin/Transparency/details/{id}/create', [AdminTransparencyController::class, 'TransparencyCreateFiles'])->name('TransparencyCreateFiles');
+    Route::delete('/Admin/Transparency/details/{id}/delete', [AdminTransparencyController::class, 'TransparencyDertailsDelete'])->name('TransparencyDertailsDelete');
+
+    //FinancialStatement
+    Route::get('/Admin/FinancialStatement/page', [AdminFinancialStatementController::class, 'FinancialStatementAdmin'])->name('FinancialStatementAdmin');
+    Route::post('/Admin/FinancialStatement/create', [AdminFinancialStatementController::class, 'FinancialStatementCreate'])->name('FinancialStatementCreate');
+    Route::put('/Admin/FinancialStatement/{id}/update', [AdminFinancialStatementController::class, 'FinancialStatementUpdate'])->name('FinancialStatementUpdate');
+    Route::delete('/Admin/FinancialStatement/{id}/delete', [AdminFinancialStatementController::class, 'FinancialStatementDelete'])->name('FinancialStatementDelete');
+    Route::get('/Admin/FinancialStatement/show/details/{id}', [AdminFinancialStatementController::class, 'FinancialStatementShowDertails'])->name('FinancialStatementShowDertails');
+    Route::post('/Admin/FinancialStatement/details/{id}/create', [AdminFinancialStatementController::class, 'FinancialStatementCreateFiles'])->name('FinancialStatementCreateFiles');
+    Route::delete('/Admin/FinancialStatement/details/{id}/delete', [AdminFinancialStatementController::class, 'FinancialStatementDertailsDelete'])->name('FinancialStatementDertailsDelete');
+
+    //WorkProcedure
+    Route::get('/Admin/WorkProcedure/page', [AdminWorkProcedureController::class, 'WorkProcedureAdmin'])->name('WorkProcedureAdmin');
+    Route::post('/Admin/WorkProcedure/create', [AdminWorkProcedureController::class, 'WorkProcedureCreate'])->name('WorkProcedureCreate');
+    Route::put('/Admin/WorkProcedure/{id}/update', [AdminWorkProcedureController::class, 'WorkProcedureUpdate'])->name('WorkProcedureUpdate');
+    Route::delete('/Admin/WorkProcedure/{id}/delete', [AdminWorkProcedureController::class, 'WorkProcedureDelete'])->name('WorkProcedureDelete');
+    Route::get('/Admin/WorkProcedure/show/details/{id}', [AdminWorkProcedureController::class, 'WorkProcedureShowDertails'])->name('WorkProcedureShowDertails');
+    Route::post('/Admin/WorkProcedure/details/{id}/create', [AdminWorkProcedureController::class, 'WorkProcedureCreateFiles'])->name('WorkProcedureCreateFiles');
+    Route::delete('/Admin/WorkProcedure/details/{id}/delete', [AdminWorkProcedureController::class, 'WorkProcedureDertailsDelete'])->name('WorkProcedureDertailsDelete');
+
+    //CodeofEthics
+    Route::get('/Admin/CodeofEthics/page', [AdminCodeofEthicsController::class, 'CodeofEthicsAdmin'])->name('CodeofEthicsAdmin');
+    Route::post('/Admin/CodeofEthics/create', [AdminCodeofEthicsController::class, 'CodeofEthicsCreate'])->name('CodeofEthicsCreate');
+    Route::put('/Admin/CodeofEthics/{id}/update', [AdminCodeofEthicsController::class, 'CodeofEthicsUpdate'])->name('CodeofEthicsUpdate');
+    Route::delete('/Admin/CodeofEthics/{id}/delete', [AdminCodeofEthicsController::class, 'CodeofEthicsDelete'])->name('CodeofEthicsDelete');
+    Route::get('/Admin/CodeofEthics/show/details/{id}', [AdminCodeofEthicsController::class, 'CodeofEthicsShowDertails'])->name('CodeofEthicsShowDertails');
+    Route::post('/Admin/CodeofEthics/details/{id}/create', [AdminCodeofEthicsController::class, 'CodeofEthicsCreateFiles'])->name('CodeofEthicsCreateFiles');
+    Route::delete('/Admin/CodeofEthics/details/{id}/delete', [AdminCodeofEthicsController::class, 'CodeofEthicsDertailsDelete'])->name('CodeofEthicsDertailsDelete');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

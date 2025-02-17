@@ -1,25 +1,25 @@
 @extends('admin.layout.admin_layout')
 @section('user_content')
 
-<h2 class="text-center">การปฏิบัติงาน</h2><br>
+<h2 class="text-center">มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริต</h2><br>
 
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    สร้างการปฏิบัติงาน
+    สร้างมาตรการ
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel"> สร้างการปฏิบัติงาน</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel"> สร้างมาตรการ</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{route('OperationCreate')}}" method="POST">
+            <form action="{{route('TransparencyCreate')}}" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <input type="hidden" name="perf_results_type" value="{{ $perfResultsType->firstWhere('type_name', 'การปฏิบัติงาน')->id }}">
-                        <label for="detail_name" class="form-label">ชื่อการปฏิบัติงาน</label>
+                        <input type="hidden" name="perf_results_type" value="{{ $perfResultsType->firstWhere('type_name', 'มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริต')->id }}">
+                        <label for="detail_name" class="form-label">ชื่อมาตรการ</label>
                         <input type="text" class="form-control" id="detail_name" name="detail_name" required>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
         <tr>
             <td>{{ $index + 1 }}</td>
             <td>
-                <a href="{{ route('OperationShowDertails', $detail->id) }}">
+                <a href="{{ route('TransparencyShowDertails', $detail->id) }}">
                     {{ $detail->detail_name }}
                 </a>
             </td>
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="d-inline-block">
-                    <form action="{{ route('OperationDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้?');">
+                    <form action="{{ route('TransparencyDelete', $detail->id) }}" method="POST" onsubmit="return confirm('คุณต้องการลบข้อมูลนี้?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
@@ -82,7 +82,7 @@
                 <h1 class="modal-title fs-5" id="editModalLabel{{ $detail->id }}"> แก้ไขรายผลการดำเนินงาน</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('OperationUpdate', $detail->id) }}" method="POST">
+            <form action="{{ route('TransparencyUpdate', $detail->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="modal-body">

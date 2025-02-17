@@ -84,7 +84,7 @@
 <div class="bg py-5">
     <div class="container py-5 custom-gradient-shadow">
         <div class=" d-flex flex-column justify-content-center p-5">
-            <div class="fs-1 fw-bold mb-4 text-center" style="color: #77b329;">การปฏิบัติงาน</div>
+            <div class="fs-1 fw-bold mb-4 text-center" style="color: #77b329;">มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริต</div>
             <style>
                 .table td:hover {
                     background-color: #28a745;
@@ -118,7 +118,7 @@
             <table class="table">
                 @foreach($PerfSingleTopic as $detail)
                 <tr>
-                    <td><a href="{{route('OperationDertail',$detail->id)}}">{{ $detail->detail_name }}</a></td>
+                    <td><a href="{{route('TransparencyDertail',$detail->id)}}">{{ $detail->detail_name }}</a></td>
                 </tr>
                 @endforeach
             </table>

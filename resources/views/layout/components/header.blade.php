@@ -256,15 +256,15 @@
                         <a href="{{route('MonitoringEvaluationPage')}}" class="dropdown-item">รายงานการติดตามและประเมิน</a>
                         <a href="{{route('AnnualBudgetPage')}}" class="dropdown-item">งบประมาณรายจ่ายประจำปี</a>
                         <a href="{{route('SixMonthPerformancePage')}}" class="dropdown-item">รายงานผลการดำเนินงานรอบ 6 เดือน</a>
-                        {{-- <a href="{{route('OperationPage')}}" class="dropdown-item">การปฏิบัติงาน</a> --}}
+                        <a href="{{route('OperationPage')}}" class="dropdown-item">การปฏิบัติงาน</a>
                         <a href="{{route('HRPolicyPage')}}" class="dropdown-item">นโยบายการบริหารทรัพยากรบุคคล</a>
                         <a href="{{route('HRPolicyManagementPage')}}" class="dropdown-item">การดำเนินการตามนโยบายและการบริหารทรัพยากรบุคคล</a>
                         <a href="{{route('HRManagementDevelopmentPage')}}" class="dropdown-item">หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</a>
                         <a href="{{route('HRResultsReportPage')}}" class="dropdown-item">รายงานผลการบริหารและพัฒนาทรัพยากรบุคคล</a>
-                        {{-- <a href="" class="dropdown-item">มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริต</a>
-                        <a href="" class="dropdown-item">รายงานแสดงฐานะการเงิน</a>
-                        <a href="" class="dropdown-item">การลดขั้นตอนการปฏิบัติงาน</a>
-                        <a href="" class="dropdown-item">ประมวลจริยธรรม</a> --}}
+                        <a href="{{route('TransparencyPage')}}" class="dropdown-item">มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริต</a>
+                        <a href="{{route('FinancialStatementPage')}}" class="dropdown-item">รายงานแสดงฐานะการเงิน</a>
+                        <a href="{{route('WorkProcedurePage')}}" class="dropdown-item">การลดขั้นตอนการปฏิบัติงาน</a>
+                        <a href="" class="dropdown-item">ประมวลจริยธรรม</a>
                     </li>
                 </ul>
             </div>

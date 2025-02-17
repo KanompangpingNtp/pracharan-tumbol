@@ -84,44 +84,18 @@
 <div class="bg py-5">
     <div class="container py-5 custom-gradient-shadow">
         <div class=" d-flex flex-column justify-content-center p-5">
-            <div class="fs-1 fw-bold mb-4 text-center" style="color: #77b329;">การปฏิบัติงาน</div>
-            <style>
-                .table td:hover {
-                    background-color: #28a745;
-                    color: white;
-                }
+            <div class="fs-1 fw-bold mb-4 text-center" style="color: #77b329;">การปฏิบัติงาน <br>{{$PerfSingleTopic->detail_name}}</div>
 
-                table {
-                    border-collapse: collapse;
-                }
-
-                table td,
-                table th {
-                    border: none;
-                }
-
-                table tr:nth-child(odd) {
-                    background-color: #dcf5bc;
-                }
-
-                table tr:nth-child(even) {
-                    background-color: #ffffff;
-                }
-
-                a {
-                    text-decoration: none;
-                    color: #333;
-                }
-
-            </style>
-
-            <table class="table">
-                @foreach($PerfSingleTopic as $detail)
-                <tr>
-                    <td><a href="{{route('OperationDertail',$detail->id)}}">{{ $detail->detail_name }}</a></td>
-                </tr>
-                @endforeach
-            </table>
+            @if($PerfSingleTopic->files->isNotEmpty())
+            @foreach($PerfSingleTopic->files as $file)
+            <a href="{{ asset('storage/' . $file->file_path) }}" download class="btn btn-success btn-sm mb-2">
+                <i class="bi bi-download"></i> ดาวน์โหลดไฟล์ PDF
+            </a>
+            <iframe src="{{ asset('storage/' . $file->file_path) }}" width="100%" height="800px"></iframe>
+            @endforeach
+            @else
+            <p class="text-center text-muted">ไม่มีข้อมูล</p>
+            @endif
 
         </div>
     </div>

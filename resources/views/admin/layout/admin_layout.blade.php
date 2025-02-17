@@ -310,6 +310,7 @@
                                 <i class="fas fa-angle-down"></i>
                             </div>
                         </a>
+
                         <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{route('HistoryAdmin')}}">ประวัติความเป็นมา</a>
@@ -339,14 +340,18 @@
                                 <a class="nav-link" href="{{route('MonitoringEvaluationAdmin')}}">รายงานการติดตามและประเมิน</a>
                                 <a class="nav-link" href="{{route('AnnualBudgetAdmin')}}">งบประมาณรายจ่ายประจำปี</a>
                                 <a class="nav-link" href="{{route('SixMonthPerformanceAdmin')}}">รายงานผลการดำเนินงานรอบ 6 เดือน</a>
-                                {{-- <a class="nav-link" href="{{route('OperationAdmin')}}">การปฏิบัติงาน</a> --}}
+                                <a class="nav-link" href="{{route('OperationAdmin')}}">การปฏิบัติงาน</a>
                                 <a class="nav-link" href="{{route('HRPolicyAdmin')}}">นโยบายการบริหารทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRPolicyManagementAdmin')}}">การดำเนินการตามนโยบายและการบริหารทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRManagementDevelopmentAdmin')}}">หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRResultsReportAdmin')}}">รายงานผลการบริหารและพัฒนาทรัพยากรบุคคล</a>
+
+                                <a class="nav-link" href="{{route('TransparencyAdmin')}}">มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริต</a>
+                                <a class="nav-link" href="{{route('FinancialStatementAdmin')}}">รายงานแสดงฐานะการเงิน</a>
+                                <a class="nav-link" href="{{route('WorkProcedureAdmin')}}">การลดขั้นตอนการปฏิบัติงาน</a>
+                                <a class="nav-link mb-5" href="{{route('CodeofEthicsAdmin')}}">ประมวลจริยธรรม</a>
                             </nav>
                         </div>
-
                     </div>
                 </div>
                 {{-- <div class="sb-sidenav-footer">

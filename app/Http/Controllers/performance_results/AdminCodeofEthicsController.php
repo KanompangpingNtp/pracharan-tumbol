@@ -7,26 +7,27 @@ use Illuminate\Http\Request;
 use App\Models\PerfResultsType;
 use App\Models\PerfSingleTopic;
 use App\Models\PerfSingleTopicFile;
+use Illuminate\Support\Facades\Storage;
 
-class AdminOperationController extends Controller
+class AdminCodeofEthicsController extends Controller
 {
-    public function OperationAdmin()
+    public function CodeofEthicsAdmin()
     {
         $perfResultsType = PerfResultsType::all();
-        $perfResultsTypeID = $perfResultsType->firstWhere('type_name', 'การปฏิบัติงาน')->id;
+        $perfResultsTypeID = $perfResultsType->firstWhere('type_name', 'ประมวลจริยธรรม')->id;
         $PerfSingleTopic = PerfSingleTopic::where('perf_results_type_id', $perfResultsTypeID)->get();
 
-        return view('admin.post.performance_results.operation.page', compact('PerfSingleTopic', 'perfResultsType'));
+        return view('admin.post.performance_results.code_ethics.page', compact('PerfSingleTopic', 'perfResultsType'));
     }
 
-    public function OperationCreate(Request $request)
+    public function CodeofEthicsCreate(Request $request)
     {
         $request->validate([
             'perf_results_type' => 'required|exists:perf_results_types,id',
             'detail_name' => 'required|string',
         ]);
 
-        // dd( $request);
+        // dd($request);
 
         $PerfSingleTopic = PerfSingleTopic::create([
             'perf_results_type_id' => $request->perf_results_type,
@@ -36,7 +37,7 @@ class AdminOperationController extends Controller
         return redirect()->back()->with('success', 'เพิ่มข้อมูลสำเร็จ');
     }
 
-    public function OperationUpdate(Request $request, $id)
+    public function CodeofEthicsUpdate(Request $request, $id)
     {
         $request->validate([
             'detail_name' => 'required|string',
@@ -51,7 +52,7 @@ class AdminOperationController extends Controller
         return redirect()->back()->with('success', 'อัปเดตข้อมูลสำเร็จ');
     }
 
-    public function OperationDelete($id)
+    public function CodeofEthicsDelete($id)
     {
         $PerfSingleTopic = PerfSingleTopic::findOrFail($id);
 
@@ -60,20 +61,18 @@ class AdminOperationController extends Controller
         return redirect()->back()->with('success', 'ลบข้อมูลเรียบร้อย');
     }
 
-    public function OperationShowDertails($id)
+    public function CodeofEthicsShowDertails($id)
     {
         $PerfSingleTopic = PerfSingleTopic::with('files')->findOrFail($id);
 
-        return view('admin.post.performance_results.operation.show_details', compact('PerfSingleTopic',));
+        return view('admin.post.performance_results.code_ethics.show_details', compact('PerfSingleTopic',));
     }
 
-    public function OperationCreateFiles(Request $request, $DetailsId)
+    public function CodeofEthicsCreateFiles(Request $request, $DetailsId)
     {
         $request->validate([
             'file_post.*' => 'file|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx|max:25120',
         ]);
-
-        // dd($request);
 
         if ($request->hasFile('file_post')) {
             foreach ($request->file('file_post') as $file) {
@@ -91,5 +90,16 @@ class AdminOperationController extends Controller
         }
 
         return redirect()->back()->with('success', 'เพิ่มข้อมูลสำเร็จ');
+    }
+
+    public function CodeofEthicsDertailsDelete($fileId)
+    {
+        $file = PerfSingleTopicFile::findOrFail($fileId);
+
+        Storage::disk('public')->delete($file->file_path);
+
+        $file->delete();
+
+        return redirect()->back()->with('success', 'ลบไฟล์สำเร็จ');
     }
 }

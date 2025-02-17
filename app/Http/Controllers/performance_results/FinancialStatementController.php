@@ -8,25 +8,25 @@ use App\Models\PerfResultsType;
 use App\Models\PersonnelAgency;
 use App\Models\PerfSingleTopic;
 
-class OperationController extends Controller
+class FinancialStatementController extends Controller
 {
-    public function OperationPage()
+    public function FinancialStatementPage()
     {
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
 
         $perfResultsType = PerfResultsType::all();
-        $perfResultsTypeID = $perfResultsType->firstWhere('type_name', 'การปฏิบัติงาน')->id;
+        $perfResultsTypeID = $perfResultsType->firstWhere('type_name', 'รายงานแสดงฐานะการเงิน')->id;
         $PerfSingleTopic = PerfSingleTopic::where('perf_results_type_id', $perfResultsTypeID)->get();
 
-        return view('performance_results.operation.page',compact('personnelAgencies','PerfSingleTopic','perfResultsType'));
+        return view('performance_results.financial_statement.page',compact('personnelAgencies','PerfSingleTopic','perfResultsType'));
     }
 
-    public function OperationDertail($id)
+    public function FinancialStatementDertail($id)
     {
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
 
         $PerfSingleTopic = PerfSingleTopic::with('files')->findOrFail($id);
 
-        return view('performance_results.operation.show_details', compact('PerfSingleTopic','personnelAgencies'));
+        return view('performance_results.financial_statement.show_details', compact('PerfSingleTopic','personnelAgencies'));
     }
 }

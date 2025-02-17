@@ -9,14 +9,10 @@ class PerfSingleTopicFile extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'perf_results_type_id',
-        'file_path',
-        'file_type',
-    ];
+    protected $fillable = ['perf_single_topic_id', 'file_path', 'file_type'];
 
-    public function type()
+    public function perfSingleTopic()
     {
-        return $this->belongsTo(PerfResultsType::class, 'perf_results_type_id');
+        return $this->belongsTo(PerfSingleTopic::class);
     }
 }

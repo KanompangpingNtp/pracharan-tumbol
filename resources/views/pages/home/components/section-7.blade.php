@@ -50,7 +50,6 @@
 //         'pdfs' => [['post_pdf_file' => 'revenue_2025_1.pdf'], ['post_pdf_file' => 'revenue_2025_2.pdf']],
 //     ],
 // ];
-
 ?>
 <style>
     .bg-page7 {
@@ -216,25 +215,30 @@
 
 <main class="bg-page7 d-flex">
     <div class="container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-        <div class="col-lg-7 d-flex flex-column justify-content-between align-items-center" >
+        <div class="col-lg-7 d-flex flex-column justify-content-between align-items-center">
             <img src="{{ asset('images/home/section-7/titlex.png') }}" alt="titlex" class="mb-3">
             <div class="d-flex flex-column align-content-center justify-content-center w-100" style="flex-grow: 1;">
                 <div class="bg-view-page7">
                     <div class="d-flex align-content-center justify-content-around gap-2 py-3 px-3">
-                        <div class="luxury-button" id="btnProcurement" onclick="changeContent('จัดซื้อจัดจ้าง', {{ json_encode($procurement) }})">
+                        <div class="luxury-button" id="btnProcurement"
+                            onclick="changeContent('จัดซื้อจัดจ้าง', {{ json_encode($procurement) }})">
                             ประกาศจัดซื้อจัดจ้าง
                         </div>
-                        <div class="luxury-button" id="btnProcurementResults" onclick="changeContent('ผลจัดซื้อจัดจ้าง', {{ json_encode($procurementResults) }})">
+                        <div class="luxury-button" id="btnProcurementResults"
+                            onclick="changeContent('ผลจัดซื้อจัดจ้าง', {{ json_encode($procurementResults) }})">
                             ผลจัดซื้อจัดจ้าง
                         </div>
-                        <div class="luxury-button" id="btnAverage" onclick="changeContent('ราคากลาง', {{ json_encode($average) }})">
+                        <div class="luxury-button" id="btnAverage"
+                            onclick="changeContent('ราคากลาง', {{ json_encode($average) }})">
                             ประกาศราคากลาง
                         </div>
-                        <div class="luxury-button" id="btnRevenue" onclick="changeContent('เก็บรายได้', {{ json_encode($revenue) }})">
+                        <div class="luxury-button" id="btnRevenue"
+                            onclick="changeContent('เก็บรายได้', {{ json_encode($revenue) }})">
                             งานเก็บรายได้
                         </div>
                     </div>
-                    <div class="bg-view-in-page7 d-flex flex-column justify-content-start align-items-center gap-1 overflow-auto" id="contentArea" style="flex-grow: 1;">
+                    <div class="bg-view-in-page7 d-flex flex-column justify-content-start align-items-center gap-1 overflow-auto"
+                        id="contentArea" style="flex-grow: 1;">
                         <!-- เนื้อหาที่จะถูกเปลี่ยนแปลงที่นี่ -->
                     </div>
                     {{-- <div id="pagination" class="d-flex justify-content-center mt-3">
@@ -251,11 +255,11 @@
                             style="position: absolute; right: -5px; top: 20px; transform: translateY(-50%) rotate(30deg); width: 50px;">
                     </div>
                 </div>
-                
+
             </div>
         </div>
-        
-        
+
+
         <div class="col-lg-5 d-flex flex-column justify-content-center align-items-center gap-3">
             <img src="{{ asset('images/home/section-7/titlexx.png') }}" alt="titlexx">
             <div class="bg-view-page7 py-3 d-grid gap-2" style="display: grid; grid-template-columns: repeat(2, 1fr);">
@@ -299,11 +303,12 @@
                     <img src="{{ asset('images/home/section-7/7.png') }}" alt="7" class="img-fluid img-hover">
                 </a>
                 <a href="#" class="col-span-2 text-center">
-                    <img src="{{ asset('images/home/section-7/14.png') }}" alt="14" class="img-fluid img-hover">
+                    <img src="{{ asset('images/home/section-7/14.png') }}" alt="14"
+                        class="img-fluid img-hover">
                 </a>
             </div>
         </div>
-        
+
     </div>
 </main>
 
@@ -419,9 +424,14 @@
     //         displayItems();
     //     }
     // });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        console.log('start fun');
 
-    window.onload = function() {
-    changeContent('จัดซื้อจัดจ้าง', {!! json_encode($procurement) !!});
-}
+        let procurementData = @json($procurement);
+        console.log('Loaded Data:', procurementData);
 
+        changeContent('จัดซื้อจัดจ้าง', procurementData);
+    });
 </script>

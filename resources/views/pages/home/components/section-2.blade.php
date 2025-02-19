@@ -101,7 +101,7 @@
                 </a>
             </div>
             <div class="col-6 col-lg-4">
-                <a href="http://www.oic.go.th/INFOCENTER52/5250/" target="_blank">
+                <a href="https://www.oic.go.th/infocenter62/6294/#" target="_blank">
                     <img src="{{ asset('images/home/section-2/4.png') }}" alt="4" class="img-fluid img-hover">
                 </a>
             </div>

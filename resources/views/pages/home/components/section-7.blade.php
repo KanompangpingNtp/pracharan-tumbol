@@ -269,13 +269,13 @@
                 <a href="#">
                     <img src="{{ asset('images/home/section-7/8.png') }}" alt="8" class="img-fluid img-hover">
                 </a>
-                <a href="#" class="col-span-2 text-center">
+                <a href="https://welfare.dla.go.th/webview/" target="_blank" class="col-span-2 text-center">
                     <img src="{{ asset('images/home/section-7/2.png') }}" alt="2" class="img-fluid img-hover">
                 </a>
                 <a href="#" class="col-span-2 text-center">
                     <img src="{{ asset('images/home/section-7/9.png') }}" alt="9" class="img-fluid img-hover">
                 </a>
-                <a href="#" class="col-span-2 text-center">
+                <a href="https://govwelfare.dep.go.th/" target="_blank" class="col-span-2 text-center">
                     <img src="{{ asset('images/home/section-7/3.png') }}" alt="3" class="img-fluid img-hover">
                 </a>
                 <a href="#" class="col-span-2 text-center">

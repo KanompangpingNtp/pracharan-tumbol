@@ -64,6 +64,29 @@
                 @endforeach
             </table>
 
+            @if($LocalAdminPromotion && $LocalAdminPromotion->count() > 0)
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center mt-5">
+                    <!-- Previous button -->
+                    <li class="page-item {{ $LocalAdminPromotion->onFirstPage() ? 'disabled' : '' }}">
+                        <a class="page-link" href="{{ $LocalAdminPromotion->previousPageUrl() }}">ก่อนหน้า</a>
+                    </li>
+
+                    <!-- Page number buttons -->
+                    @foreach ($LocalAdminPromotion->getUrlRange(1, $LocalAdminPromotion->lastPage()) as $page => $url)
+                    <li class="page-item {{ $page == $LocalAdminPromotion->currentPage() ? 'active' : '' }}">
+                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                    </li>
+                    @endforeach
+
+                    <!-- Next button -->
+                    <li class="page-item {{ !$LocalAdminPromotion->hasMorePages() ? 'disabled' : '' }}">
+                        <a class="page-link" href="{{ $LocalAdminPromotion->nextPageUrl() }}">ต่อไป</a>
+                    </li>
+                </ul>
+            </nav>
+            @endif
+
         </div>
     </div>
 </div>

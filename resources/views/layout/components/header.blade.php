@@ -237,7 +237,7 @@
                             <div class="navbar-text">บุคลากร</div>
                         </a>
                         </li>
-                        @endforeach
+
                         </ul>
                     </div>
                     <div

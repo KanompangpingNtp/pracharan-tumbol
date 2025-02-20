@@ -29,7 +29,7 @@
 
 <main class="bg-section8 d-flex">
     <div class="container d-flex flex-column flex-lg-row justify-content-center  align-items-center gap-3">
-        <div class="d-flex flex-column justify-content-center  align-items-center">
+        <div class="d-flex flex-column justify-content-center  align-items-center  w-100">
             <div class="title-section2  mb-3">
                 <div class="d-flex ">
                     <div class="d-flex flex-column align-items-center lh-1 me-2">
@@ -39,7 +39,7 @@
                     <img src="{{ asset('images/home/section-8/book.png') }}" alt="icon" width="100">
                 </div>
             </div>
-            <div class="bg-white shadow text-black p-3 d-flex flex-column justify-content-center"
+            <div class="bg-white shadow text-black p-3 d-flex flex-column justify-content-center w-100"
                 style="border-radius: 20px;">
                 <div
                     class="d-flex flex-column flex-md-row justify-content-center align-items-center lh-1 gap-2 gap-md-5 my-4">
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="d-flex justify-content-end">
-                    <a href="{{route('CivilServantBook')}}">
+                    <a href="{{ route('CivilServantBook') }}">
                         <img src="{{ asset('images/home/section-8/btn.png') }}" alt="3"
                             class="img-fluid img-hover" width="140">
                     </a>

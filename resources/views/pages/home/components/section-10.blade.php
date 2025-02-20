@@ -172,7 +172,7 @@
                     <ul class="no-bullets">
                         <li><a href="#" class="text-decoration-none ">หน้าแรก</a></li>
                         <li><a href="#" class="text-decoration-none ">กระดานกระทู้</a></li>
-                        <li><a href="#" class="text-decoration-none ">ติดต่อ</a></li>
+                        <li><a href="{{route('contect')}}" class="text-decoration-none ">ติดต่อ</a></li>
                         <li><a href="#" class="text-decoration-none ">แผนผังเว็บไซต์</a></li>
                     </ul>
                 </div>

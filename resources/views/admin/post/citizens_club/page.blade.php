@@ -3,25 +3,25 @@
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 
-<h2 class="text-center">จัดการที่นี่ตำบลพระอาจารย์</h2><br>
+<h2 class="text-center">จัดการชมรมผู้สูงอายุ</h2><br>
 
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    สร้าง
+    สร้างชมรมผู้สูงอายุ
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" style="margin-top: 5%;">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">สร้าง</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">สร้างชมรมผู้สูงอายุ</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{route('RecommendedPlacesCreate')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('CitizensClubCreate')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
 
                     <div class="mb-3">
-                        <input type="hidden" name="post_type_id" value="{{ $postTypes->firstWhere('type_name', 'สถานที่แนะนำ')->id }}">
+                        <input type="hidden" name="post_type_id" value="{{ $postTypes->firstWhere('type_name', 'ชมรมผู้สูงอายุ')->id }}">
                         <label for="topic_name" class="form-label">หัวข้อ</label>
                         <input type="text" class="form-control" id="topic_name" name="topic_name">
                     </div>
@@ -83,7 +83,7 @@
                     <i class="bi bi-pencil-square"></i>
                 </button>
 
-                <form action="{{ route('RecommendedPlacesDelete', $postDetail->id) }}" method="POST" style="display:inline;">
+                <form action="{{ route('CitizensClubDelete', $postDetail->id) }}" method="POST" style="display:inline;">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="bi bi-trash"></i></button>
@@ -133,7 +133,7 @@
                 <h1 class="modal-title fs-5" id="editModalLabel-{{ $postDetail->id }}">แก้ไขกิจกรรม</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('RecommendedPlacesUpdate', $postDetail->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('CitizensClubUpdate', $postDetail->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="modal-body">

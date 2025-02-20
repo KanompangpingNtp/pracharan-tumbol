@@ -9,22 +9,22 @@ use App\Models\PostPhoto;
 use App\Models\PersonnelAgency;
 use Illuminate\Support\Facades\Storage;
 
-class RecommendedPlacesController extends Controller
+class CitizensClubController extends Controller
 {
-    public function RecommendedPlacesPage()
+    public function CitizensClubPage()
     {
         $postTypes = PostType::all();
 
-        $postTypeId = $postTypes->firstWhere('type_name', 'สถานที่แนะนำ')->id;
+        $postTypeId = $postTypes->firstWhere('type_name', 'ชมรมผู้สูงอายุ')->id;
 
         $postDetails = PostDetail::with('postType', 'photos', 'pdfs')
             ->where('post_type_id', $postTypeId)
             ->get();
 
-        return view('admin.post.recommended_places.recommended_places', compact('postDetails', 'postTypes'));
+        return view('admin.post.citizens_club.page', compact('postDetails', 'postTypes'));
     }
 
-    public function RecommendedPlacesCreate(Request $request)
+    public function CitizensClubCreate(Request $request)
     {
         $request->validate([
             'post_type_id' => 'required|exists:post_types,id',
@@ -84,7 +84,7 @@ class RecommendedPlacesController extends Controller
         return redirect()->back()->with('success', 'โพสถูกเพิ่มแล้ว!');
     }
 
-    public function RecommendedPlacesDelete($id)
+    public function CitizensClubDelete($id)
     {
         $postDetail = PostDetail::findOrFail($id);
 
@@ -98,7 +98,7 @@ class RecommendedPlacesController extends Controller
         return redirect()->back()->with('success', 'ลบข้อมูลเรียบร้อยแล้ว!');
     }
 
-    public function RecommendedPlacesUpdate(Request $request, $id)
+    public function CitizensClubUpdate(Request $request, $id)
     {
         $request->validate([
             'post_type_id' => 'required|exists:post_types,id',
@@ -165,30 +165,30 @@ class RecommendedPlacesController extends Controller
         return redirect()->back()->with('success', 'แก้ไขโพสเรียบร้อย!');
     }
 
-    public function RecommendedPlacesShowData()
+    public function CitizensClubShowData()
     {
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
 
-        $RecommendedPlaces = PostDetail::with('postType', 'videos', 'photos', 'pdfs')
+        $citizensClub = PostDetail::with('postType', 'videos', 'photos', 'pdfs')
             ->whereHas('postType', function ($query) {
-                $query->where('type_name', 'สถานที่แนะนำ');
+                $query->where('type_name', 'ชมรมผู้สูงอายุ');
             })
             ->orderBy('created_at', 'desc')
             ->paginate(14);
 
-        return view('pages.recommended_places.show_data', compact('RecommendedPlaces','personnelAgencies'));
+        return view('pages.citizens_club.show_data', compact('citizensClub','personnelAgencies'));
     }
 
-    public function RecommendedPlacesShowDetails($id)
+    public function CitizensClubShowDetails($id)
     {
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
 
-        $RecommendedPlaces = PostDetail::with(['postType', 'videos', 'photos', 'pdfs'])
+        $citizensClub = PostDetail::with(['postType', 'videos', 'photos', 'pdfs'])
             ->whereHas('postType', function ($query) {
-                $query->where('type_name', 'สถานที่แนะนำ');
+                $query->where('type_name', 'ชมรมผู้สูงอายุ');
             })
             ->findOrFail($id);
 
-        return view('pages.recommended_places.show_detail', compact('RecommendedPlaces','personnelAgencies'));
+        return view('pages.citizens_club.show_detail', compact('citizensClub','personnelAgencies'));
     }
 }

@@ -63,8 +63,7 @@ use App\Http\Controllers\performance_results\CodeofEthicsController;
 use App\Http\Controllers\FeaturedVideoController;
 use App\Http\Controllers\TreasuryAnnouncementController;
 use App\Http\Controllers\CivilServantBookController;
-
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\CitizensClubController;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,8 +114,12 @@ Route::get('/PressRelease/ShowData', [PressReleaseController::class, 'PressRelea
 Route::get('/PressRelease/ShowDetails/{id}', [PressReleaseController::class, 'PressReleaseShowDetails'])->name('PressReleaseShowDetails');
 
 //ชมรมผู้สูงอายุ
-Route::get('/CitizensClub/ShowData', [RecommendedPlacesController::class, 'CitizensClubShowData'])->name('CitizensClubShowData');
-Route::get('/CitizensClub/ShowDetails/{id}', [RecommendedPlacesController::class, 'CitizensClubShowDetails'])->name('CitizensClubShowDetails');
+Route::get('/CitizensClub/ShowData', [CitizensClubController::class, 'CitizensClubShowData'])->name('CitizensClubShowData');
+Route::get('/CitizensClub/ShowDetails/{id}', [CitizensClubController::class, 'CitizensClubShowDetails'])->name('CitizensClubShowDetails');
+
+//สถานที่แนะนำ
+Route::get('/RecommendedPlaces/ShowData', [RecommendedPlacesController::class, 'RecommendedPlacesShowData'])->name('RecommendedPlacesShowData');
+Route::get('/RecommendedPlaces/ShowDetails/{id}', [RecommendedPlacesController::class, 'RecommendedPlacesShowDetails'])->name('RecommendedPlacesShowDetails');
 
 //บุคลากร
 Route::get('/Agency/page', [ShowDataAgencyController::class, 'AgencyPage'])->name('AgencyPage');
@@ -505,6 +508,12 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/NoticeBoard/page', [NoticeBoardController::class, 'NoticeBoardAdmin'])->name('NoticeBoardAdmin');
     Route::post('/Admin/NoticeBoard/create', [NoticeBoardController::class, 'NoticeBoardCreate'])->name('NoticeBoardCreate');
     Route::delete('/Admin/NoticeBoard/delete{id}', [NoticeBoardController::class, 'NoticeBoardDelete'])->name('NoticeBoardDelete');
+
+    //CitizensClub
+    Route::get('/CitizensClub/page', [CitizensClubController::class, 'CitizensClubPage'])->name('CitizensClubPage');
+    Route::post('/CitizensClub/create', [CitizensClubController::class, 'CitizensClubCreate'])->name('CitizensClubCreate');
+    Route::delete('/CitizensClub/delete/{id}', [CitizensClubController::class, 'CitizensClubDelete'])->name('CitizensClubDelete');
+    Route::put('/CitizensClub/update/{id}', [CitizensClubController::class, 'CitizensClubUpdate'])->name('CitizensClubUpdate');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

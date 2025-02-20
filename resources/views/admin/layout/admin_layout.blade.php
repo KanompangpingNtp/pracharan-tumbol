@@ -278,11 +278,23 @@
                             </div>
                             จัดการบุคลากร
                         </a>
-                        <a class="nav-link" href="{{ route('RecommendedPlacesPage') }}">
+                        {{-- <a class="nav-link" href="{{ route('RecommendedPlacesPage') }}">
                             <div class="sb-nav-link-icon">
                                 <i class="bi bi-database-add"></i>
                             </div>
                             จัดการชมรมผู้สูงอายุ
+                        </a> --}}
+                        <a class="nav-link" href="{{ route('CitizensClubPage') }}">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการชมรมผู้สูงอายุ
+                        </a>
+                        <a class="nav-link" href="{{ route('RecommendedPlacesPage') }}">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการที่นี่ตำบลพระอาจารย์
                         </a>
                         <a class="nav-link" href="{{route('NoticeBoardAdmin')}}">
                             <div class="sb-nav-link-icon">

@@ -67,6 +67,14 @@ class ShowDataDetailController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
+        //ชมรมผู้สูงอายุ
+        $citizensClub = PostDetail::with('postType', 'videos', 'photos', 'pdfs')
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'ชมรมผู้สูงอายุ');
+            })
+            ->orderBy('created_at', 'desc')
+            ->get();
+
         //บุคคากร
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
 
@@ -80,11 +88,11 @@ class ShowDataDetailController extends Controller
         // dd( $ExecutiveBoard);
 
         $LocalAdminPromotion = PostDetail::with('postType', 'pdfs')
-        ->whereHas('postType', function ($query) {
-            $query->where('type_name', 'กรมส่งเสริมการปกครองท้องถิ่น');
-        })
-        ->orderBy('created_at', 'desc')
-        ->get();
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'กรมส่งเสริมการปกครองท้องถิ่น');
+            })
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         $noticeBoard = PostDetail::with('postType', 'photos')
             ->whereHas('postType', function ($query) {
@@ -98,7 +106,6 @@ class ShowDataDetailController extends Controller
             'procurementResults',
             'average',
             'revenue',
-            'building',
             'personnelAgencies',
             'executiveStatus1',
             'executiveStatus2',
@@ -106,21 +113,23 @@ class ShowDataDetailController extends Controller
             'executiveStatus4',
             'executiveStatus5',
             'LocalAdminPromotion',
-            'noticeBoard'
+            'noticeBoard',
+            'citizensClub',
+            'building'
         ));
     }
 
-    public function banner ()
+    public function banner()
     {
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
 
         return view('pages.banner-in.app', compact('personnelAgencies'));
     }
 
-    public function contect ()
+    public function contect()
     {
         $personnelAgencies = PersonnelAgency::with('ranks')->get();
 
-        return view('pages.contect.app',compact('personnelAgencies'));
+        return view('pages.contect.app', compact('personnelAgencies'));
     }
 }

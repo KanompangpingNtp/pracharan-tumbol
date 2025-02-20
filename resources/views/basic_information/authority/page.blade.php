@@ -83,40 +83,57 @@
     <div class="bg py-5">
         <div class="container py-5 custom-gradient-shadow">
             <div class=" d-flex flex-column justify-content-center p-5">
-                <div class="fs-1 fw-bold mb-4 text-center" style="color: #77b329;">ผลิตภัณฑ์ชุมชน/OTOP</div>
+                <div class="fs-1 fw-bold mb-4 text-center" style="color: #77b329;">อำนาจหน้าที่</div>
 
-                {{-- @foreach ($listDetail as $detail)
-                    <a href="{{ route('ShowDetails', $detail->id) }}" style="text-decoration: none;">
-
-                        <p>{{ $detail->list_details_name }}</p>
-
-
-                        @if ($detail->images->isNotEmpty())
-                            <div class="row">
-                                @foreach ($detail->images->where('status', 1) as $image)
-                                    <div class="col-md-3">
-                                        <img src="{{ asset('storage/' . $image->images_file) }}" class="img-fluid rounded">
-                                    </div>
-                                @endforeach
-                            </div>
-                        @else
-                            <p class="text-muted"></p>
-                        @endif
-                    </a>
-                @endforeach --}}
-                <div class="row">
+                {{-- <div class="row">
                     @foreach ($listDetail as $detail)
                         <div class="col-md-6 col-lg-4 mb-4">
                             <div class="card custom-card shadow-lg"
                                 onclick="window.location='{{ route('AuthorityShowDetails', $detail->id) }}'">
-                                {{-- เนื้อหาของการ์ด --}}
                                 <div class="card-body text-center">
                                     <h5 class="card-title">{{ $detail->list_details_name }}</h5>
                                 </div>
                             </div>
                         </div>
                     @endforeach
-                </div>
+                </div> --}}
+                <style>
+                    .table td:hover {
+                        background-color: #28a745;
+                        color: white;
+                    }
+
+                    table {
+                        border-collapse: collapse;
+                    }
+
+                    table td,
+                    table th {
+                        border: none;
+                    }
+
+                    table tr:nth-child(odd) {
+                        background-color: #dcf5bc;
+                    }
+
+                    table tr:nth-child(even) {
+                        background-color: #ffffff;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: #333;
+                    }
+
+                </style>
+
+                <table class="table">
+                    @foreach($listDetail as $detail)
+                    <tr>
+                        <td><a href="{{route('AuthorityShowDetails',$detail->id)}}">{{ $detail->list_details_name }}</a></td>
+                    </tr>
+                    @endforeach
+                </table>
 
             </div>
         </div>

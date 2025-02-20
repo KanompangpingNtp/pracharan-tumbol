@@ -341,7 +341,7 @@
                                 <a class="nav-link" href="{{route('AnnualBudgetAdmin')}}">งบประมาณรายจ่ายประจำปี</a>
                                 <a class="nav-link" href="{{route('SixMonthPerformanceAdmin')}}">รายงานผลการดำเนินงานรอบ 6 เดือน</a>
                                 <a class="nav-link" href="{{route('OperationAdmin')}}">การปฏิบัติงาน</a>
-                                <a class="nav-link" href="{{route('HRPolicyAdmin')}}">นโยบายการบริหารทรัพยากรบุคคล</a>
+                                <a class="nav-link" href="{{route('HRPolicyAdmin')}}">การบริหารและพัฒนาทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRPolicyManagementAdmin')}}">การดำเนินการตามนโยบายและการบริหารทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRManagementDevelopmentAdmin')}}">หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRResultsReportAdmin')}}">รายงานผลการบริหารและพัฒนาทรัพยากรบุคคล</a>

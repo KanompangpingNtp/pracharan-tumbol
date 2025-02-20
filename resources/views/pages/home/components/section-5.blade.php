@@ -49,7 +49,7 @@
 
             {{-- <a href="#" class="link-green mt-3 text-black" style="border-radius: 30px;">ดูทั้งหมด</a> --}}
             <div class="d-flex justify-content-end align-items-start mt-3 position-relative">
-                <a href="#" class="link-green-section3 me-2">ดูทั้งหมด</a>
+                <a href="{{route('PressReleaseShowData')}}" class="link-green-section3 me-2">ดูทั้งหมด</a>
                 <img src="{{ asset('images/home/section-3/leaf.png') }}" alt="leaf"
                     style="position: absolute; right: -5px; top: 20px; transform: translateY(-50%) rotate(30deg); width: 50px;">
             </div>

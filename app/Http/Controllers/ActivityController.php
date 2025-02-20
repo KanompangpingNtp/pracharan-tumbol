@@ -8,6 +8,7 @@ use App\Models\PostDetail;
 use App\Models\PostPdf;
 use App\Models\PostPhoto;
 use App\Models\PostVideo;
+use App\Models\PersonnelAgency;
 use Illuminate\Support\Facades\Storage;
 
 class ActivityController extends Controller
@@ -227,5 +228,32 @@ class ActivityController extends Controller
         }
 
         return redirect()->back()->with('success', 'แก้ไขข้อมูลเรียบร้อยแล้ว!');
+    }
+
+    public function ActivityShowData()
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $activity = PostDetail::with('postType', 'videos', 'photos', 'pdfs')
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'กิจกรรม');
+            })
+            ->orderBy('created_at', 'desc')
+            ->paginate(14);
+
+        return view('pages.activity.show_data', compact('activity', 'personnelAgencies'));
+    }
+
+    public function ActivityShowDetails($id)
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $activity = PostDetail::with(['postType', 'videos', 'photos', 'pdfs'])
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'กิจกรรม');
+            })
+            ->findOrFail($id);
+
+        return view('pages.activity.show_detail', compact('activity', 'personnelAgencies'));
     }
 }

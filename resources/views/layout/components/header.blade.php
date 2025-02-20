@@ -214,7 +214,7 @@
                             <a href="{{ route('StrategyGuidelinePage') }}" class="dropdown-item">ยุทธศาสตร์และแนวทางการพัฒนา</a>
                             <a href="{{ route('CommunityProductsPage') }}" class="dropdown-item">ผลิตภัณฑ์ชุมชน/OTOP</a>
                             <a href="{{ route('ImportantPlacesPage') }}" class="dropdown-item">สถานที่สำคัญ/แหล่งท่องเที่ยว</a>
-                            <a href="{{ route('AuthorityPage') }}" class="dropdown-item">อำนาจหน้าที่</a>
+                            {{-- <a href="{{ route('AuthorityPage') }}" class="dropdown-item">อำนาจหน้าที่</a> --}}
                             <a href="{{ route('ManagementPolicyPage') }}" class="dropdown-item">นโยบายการบริหาร/เจตจำนงสุจริต</a>
                         </li>
                     </ul>
@@ -264,7 +264,7 @@
                         <a href="{{route('TransparencyPage')}}" class="dropdown-item">มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริต</a>
                         <a href="{{route('FinancialStatementPage')}}" class="dropdown-item">รายงานแสดงฐานะการเงิน</a>
                         <a href="{{route('WorkProcedurePage')}}" class="dropdown-item">การลดขั้นตอนการปฏิบัติงาน</a>
-                        <a href="" class="dropdown-item">ประมวลจริยธรรม</a>
+                        {{-- <a href="" class="dropdown-item">ประมวลจริยธรรม</a> --}}
                     </li>
                 </ul>
             </div>
@@ -280,7 +280,7 @@
                 </ul>
             </div> --}}
             <div class="d-flex flex-column align-items-center justify-content-center">
-                <a href="#" class="navbar-item">
+                <a href="{{ route('AuthorityPage') }}" class="navbar-item">
                     <img src="{{ asset('images/header/organization.png') }}" alt="ปุ่มอำนาจหน้าที่">
                     <div>อำนาจหน้าที่</div>
                 </a>

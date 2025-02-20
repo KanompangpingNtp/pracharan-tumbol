@@ -81,6 +81,17 @@ Route::get('/', [ShowDataDetailController::class, 'HomeDataPage'])->name('HomeDa
 Route::get('/layout', [ShowDataDetailController::class, 'layout'])->name('layout');
 Route::get('/banner', [ShowDataDetailController::class, 'banner'])->name('banner');
 
+//ติดต่อ
+Route::get('/contect', [ShowDataDetailController::class, 'contect'])->name('contect');
+
+//กิจกรรม
+Route::get('/Activity/ShowData', [ActivityController::class, 'ActivityShowData'])->name('ActivityShowData');
+Route::get('/Activity/ShowDetails/{id}', [ActivityController::class, 'ActivityShowDetails'])->name('ActivityShowDetails');
+
+//ประชาสัมพันธ์
+Route::get('/PressRelease/ShowData', [PressReleaseController::class, 'PressReleaseShowData'])->name('PressReleaseShowData');
+Route::get('/PressRelease/ShowDetails/{id}', [PressReleaseController::class, 'PressReleaseShowDetails'])->name('PressReleaseShowDetails');
+
 //บุคลากร
 Route::get('/Agency/page', [ShowDataAgencyController::class, 'AgencyPage'])->name('AgencyPage');
 Route::get('/agency/{id}', [ShowDataAgencyController::class, 'AgencyShow'])->name('AgencyShow');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\PostType;
 use App\Models\PostDetail;
 use App\Models\PostPdf;
+use App\Models\PersonnelAgency;
 use Illuminate\Support\Facades\Storage;
 
 class AveragePriceController extends Controller
@@ -120,5 +121,30 @@ class AveragePriceController extends Controller
         $postDetail->delete();
 
         return redirect()->back()->with('success', 'โพสถูกลบแล้ว');
+    }
+
+    public function AveragePriceShowData()
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $AveragePrice = PostDetail::with('postType','photos')
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'ประกาศราคากลาง');
+            })->paginate(14);
+
+        return view('pages.treasury_announcement.average_price.show_data', compact('AveragePrice','personnelAgencies'));
+    }
+
+    public function AveragePriceShowDetails($id)
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $AveragePrice = PostDetail::with(['postType','photos'])
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'ประกาศราคากลาง');
+            })
+            ->findOrFail($id);
+
+        return view('pages.treasury_announcement.average_price.show_detail', compact('AveragePrice','personnelAgencies'));
     }
 }

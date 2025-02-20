@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\PostType;
 use App\Models\PostDetail;
 use App\Models\PostPdf;
+use App\Models\PersonnelAgency;
 use Illuminate\Support\Facades\Storage;
 
 class RevenueController extends Controller
@@ -123,5 +124,30 @@ class RevenueController extends Controller
         $postDetail->delete();
 
         return redirect()->back()->with('success', 'โพสถูกลบแล้ว');
+    }
+
+    public function RevenueShowData()
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $Revenue = PostDetail::with('postType','photos')
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'งานเก็บรายได้');
+            })->paginate(14);
+
+        return view('pages.treasury_announcement.revenue.show_data', compact('Revenue','personnelAgencies'));
+    }
+
+    public function RevenueShowDetails($id)
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $Revenue = PostDetail::with(['postType','photos'])
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'งานเก็บรายได้');
+            })
+            ->findOrFail($id);
+
+        return view('pages.treasury_announcement.revenue.show_detail', compact('Revenue','personnelAgencies'));
     }
 }

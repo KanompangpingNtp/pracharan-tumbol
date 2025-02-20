@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\PostType;
 use App\Models\PostDetail;
 use App\Models\PostPdf;
+use App\Models\PersonnelAgency;
 use Illuminate\Support\Facades\Storage;
 
 class ProcurementController extends Controller
@@ -125,5 +126,30 @@ class ProcurementController extends Controller
 
         // ส่งกลับไปยังหน้าก่อนหน้าและแสดงข้อความสำเร็จ
         return redirect()->back()->with('success', 'โพสถูกลบแล้ว');
+    }
+
+    public function ProcurementShowData()
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $Procurement = PostDetail::with('postType','photos')
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'ประกาศจัดซื้อจัดจ้าง');
+            })->paginate(14);
+
+        return view('pages.treasury_announcement.procurement.show_data', compact('Procurement','personnelAgencies'));
+    }
+
+    public function ProcurementShowDetails($id)
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $Procurement = PostDetail::with(['postType','photos'])
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'ประกาศจัดซื้อจัดจ้าง');
+            })
+            ->findOrFail($id);
+
+        return view('pages.treasury_announcement.procurement.show_detail', compact('Procurement','personnelAgencies'));
     }
 }

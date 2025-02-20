@@ -282,7 +282,13 @@
                             <div class="sb-nav-link-icon">
                                 <i class="bi bi-database-add"></i>
                             </div>
-                            จัดการสถานที่แนะนำ
+                            จัดการชมรมผู้สูงอายุ
+                        </a>
+                        <a class="nav-link" href="{{route('NoticeBoardAdmin')}}">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการป้ายประกาศ
                         </a>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
                             <div class="sb-nav-link-icon">
@@ -341,7 +347,7 @@
                                 <a class="nav-link" href="{{route('AnnualBudgetAdmin')}}">งบประมาณรายจ่ายประจำปี</a>
                                 <a class="nav-link" href="{{route('SixMonthPerformanceAdmin')}}">รายงานผลการดำเนินงานรอบ 6 เดือน</a>
                                 <a class="nav-link" href="{{route('OperationAdmin')}}">การปฏิบัติงาน</a>
-                                <a class="nav-link" href="{{route('HRPolicyAdmin')}}">นโยบายการบริหารทรัพยากรบุคคล</a>
+                                <a class="nav-link" href="{{route('HRPolicyAdmin')}}">การบริหารและพัฒนาทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRPolicyManagementAdmin')}}">การดำเนินการตามนโยบายและการบริหารทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRManagementDevelopmentAdmin')}}">หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRResultsReportAdmin')}}">รายงานผลการบริหารและพัฒนาทรัพยากรบุคคล</a>

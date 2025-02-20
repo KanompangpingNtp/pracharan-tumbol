@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\PostType;
 use App\Models\PostDetail;
 use App\Models\PostPhoto;
+use App\Models\PersonnelAgency;
 use Illuminate\Support\Facades\Storage;
 
 class RecommendedPlacesController extends Controller
@@ -162,5 +163,32 @@ class RecommendedPlacesController extends Controller
         }
 
         return redirect()->back()->with('success', 'แก้ไขโพสเรียบร้อย!');
+    }
+
+    public function CitizensClubShowData()
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $citizensClub = PostDetail::with('postType', 'videos', 'photos', 'pdfs')
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'สถานที่แนะนำ');
+            })
+            ->orderBy('created_at', 'desc')
+            ->paginate(14);
+
+        return view('pages.citizens_club.show_data', compact('citizensClub','personnelAgencies'));
+    }
+
+    public function CitizensClubShowDetails($id)
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        $citizensClub = PostDetail::with(['postType', 'videos', 'photos', 'pdfs'])
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'สถานที่แนะนำ');
+            })
+            ->findOrFail($id);
+
+        return view('pages.citizens_club.show_detail', compact('citizensClub','personnelAgencies'));
     }
 }

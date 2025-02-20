@@ -48,39 +48,34 @@
         </div>
 
         @php
-    // กำหนดสีการ์ด
-    $cardColors = ['#d1f541', '#b8e64d', '#77b329', '#569419'];
-@endphp
+        // กำหนดสีการ์ด
+        $cardColors = ['#d1f541', '#b8e64d', '#77b329', '#569419'];
+        @endphp
 
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-1">
-    @foreach ($activity->slice(0, 4) as $index => $post)
-        <div class="col">
-            <a href="#" class="text-decoration-none text-black">
-                <div class="card h-100 p-3 custom-card border-0"
-                     style="background-color: {{ $cardColors[$index % count($cardColors)] }};">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-1">
+            @foreach ($activity->slice(0, 4) as $index => $post)
+            <div class="col">
+                <a href="{{ route('ActivityShowDetails', $post->id) }}" class="text-decoration-none text-black">
+                    <div class="card h-100 p-3 custom-card border-0" style="background-color: {{ $cardColors[$index % count($cardColors)] }};">
 
-                    <img src="{{ !empty($post->photos->first()->post_photo_file) ? asset('storage/' . $post->photos->first()->post_photo_file) : asset('images/home/section-4/logo-miss-files.png') }}"
-                         class="card-img-top bg-white"
-                         alt="Image {{ $index + 1 }}"
-                         onerror="this.onerror=null; this.src='{{ asset('images/home/section-4/logo-miss-files.png') }}';"
-                         style="height: 200px; object-fit: contain; border-radius:10px;">
+                        <img src="{{ !empty($post->photos->first()->post_photo_file) ? asset('storage/' . $post->photos->first()->post_photo_file) : asset('images/home/section-4/logo-miss-files.png') }}" class="card-img-top bg-white" alt="Image {{ $index + 1 }}" onerror="this.onerror=null; this.src='{{ asset('images/home/section-4/logo-miss-files.png') }}';" style="height: 200px; object-fit: contain; border-radius:10px;">
 
-                    <div class="card-body bg-white mt-2 lh-1 p-2" style="border-radius:10px;">
-                        <h5 class="card-title m-0">{{ $post->title_name }}</h5>
-                        <p class="card-text">{{ Str::limit($post->details, 100) }}</p>
+                        <div class="card-body bg-white mt-2 lh-1 p-2" style="border-radius:10px;">
+                            <h5 class="card-title m-0">{{ $post->title_name }}</h5>
+                            <p class="card-text">{{ Str::limit($post->details, 100) }}</p>
+                        </div>
+
+                        <div class="d-flex justify-content-start align-items-end mt-1">
+                            <img src="{{ asset('images/home/section-4/hourglass.png') }}" alt="hourglass" class="me-1" width="25">
+                            <span class="bg-white p-1 px-3" style="border-radius:10px;">
+                                {{ \Carbon\Carbon::parse($post->date)->format('d-m-Y') }}
+                            </span>
+                        </div>
                     </div>
-
-                    <div class="d-flex justify-content-start align-items-end mt-1">
-                        <img src="{{ asset('images/home/section-4/hourglass.png') }}" alt="hourglass" class="me-1" width="25">
-                        <span class="bg-white p-1 px-3" style="border-radius:10px;">
-                            {{ \Carbon\Carbon::parse($post->date)->format('d-m-Y') }}
-                        </span>
-                    </div>
-                </div>
-            </a>
+                </a>
+            </div>
+            @endforeach
         </div>
-    @endforeach
-</div>
 
 
         <style>
@@ -110,7 +105,7 @@
                 <img src="{{ asset('images/home/section-4/mountain.png') }}" alt="mountain" width="47">
                 <img src="{{ asset('images/home/section-4/battery.png') }}" alt="battery" width="47" class="d-none d-sm-block">
                 <img src="{{ asset('images/home/section-4/wind-power.png') }}" alt="wind-power" width="47" class="d-none d-sm-block">
-                <a href="#" class="link-green">ดูทั้งหมด</a>
+                <a href="{{route('ActivityShowData')}}" class="link-green">ดูทั้งหมด</a>
                 <img src="{{ asset('images/home/section-4/trees.png') }}" alt="trees" width="47" class="d-none d-sm-block">
                 <img src="{{ asset('images/home/section-4/house.png') }}" alt="house" width="47" class="d-none d-sm-block">
                 <img src="{{ asset('images/home/section-4/trees.png') }}" alt="trees" width="47">

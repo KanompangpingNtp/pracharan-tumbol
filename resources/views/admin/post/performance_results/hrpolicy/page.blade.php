@@ -1,7 +1,7 @@
 @extends('admin.layout.admin_layout')
 @section('user_content')
 
-<h2 class="text-center">นโยบายการบริหารทรัพยากรบุคคล</h2><br>
+<h2 class="text-center">การบริหารและพัฒนาทรัพยากรบุคคล</h2><br>
 
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
     สร้างนโยบาย

@@ -3,7 +3,7 @@
 
 <button onclick="window.history.back();" class="btn btn-secondary">กลับ</button>
 
-<h2 class="text-center">รายงานการติดตามและประเมิน <br><span class="text-primary">{{$PerfResultsDetail->detail_name}}</span></h2><br>
+<h2 class="text-center">การบริหารและพัฒนาทรัพยากรบุคคล <br><span class="text-primary">{{$PerfResultsDetail->detail_name}}</span></h2><br>
 
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
     สร้างหัวข้อย่อย

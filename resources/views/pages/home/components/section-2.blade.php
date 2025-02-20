@@ -77,7 +77,7 @@
                     </iframe>
                 </div>
                 <div class="d-flex justify-content-end mt-3">
-                    <a href="#" class="link-green">วิดีโอเพิ่มเติม</a>
+                    <a href="{{route('FeaturedVideoData')}}" class="link-green">วิดีโอเพิ่มเติม</a>
                 </div>
             </div>
             <div class="col-lg-5 d-flex justify-content-center p-5 ">

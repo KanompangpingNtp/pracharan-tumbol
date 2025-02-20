@@ -218,7 +218,7 @@
                                     class="dropdown-item">ผลิตภัณฑ์ชุมชน/OTOP</a>
                                 <a href="{{ route('ImportantPlacesPage') }}"
                                     class="dropdown-item">สถานที่สำคัญ/แหล่งท่องเที่ยว</a>
-                                <a href="{{ route('AuthorityPage') }}" class="dropdown-item">อำนาจหน้าที่</a>
+                                {{-- <a href="{{ route('AuthorityPage') }}" class="dropdown-item">อำนาจหน้าที่</a> --}}
                                 <a href="{{ route('ManagementPolicyPage') }}"
                                     class="dropdown-item">นโยบายการบริหาร/เจตจำนงสุจริต</a>
                             </li>
@@ -236,18 +236,8 @@
                             <img src="{{ asset('images/header/teamwork.png') }}" alt="teamwork" class="navbar-icon">
                             <div class="navbar-text">บุคลากร</div>
                         </a>
-                        <!-- ลิสต์รายการ -->
-                        <ul class="custom-dropdown-menu text-start">
-                            <li>
-                                <a href="{{ route('AgencyPage') }}" class="dropdown-item">แผนผังองค์กรรวม</a>
-                            </li>
-                            @foreach ($personnelAgencies as $agency)
-                                <li>
-                                    <a href="{{ route('AgencyShow', ['id' => $agency->id]) }}" class="dropdown-item">
-                                        {{ $agency->personnel_agency_name }}
-                                    </a>
-                                </li>
-                            @endforeach
+                        </li>
+                        @endforeach
                         </ul>
                     </div>
                     <div
@@ -283,7 +273,7 @@
                                     class="dropdown-item">รายงานแสดงฐานะการเงิน</a>
                                 <a href="{{ route('WorkProcedurePage') }}"
                                     class="dropdown-item">การลดขั้นตอนการปฏิบัติงาน</a>
-                                <a href="" class="dropdown-item">ประมวลจริยธรรม</a>
+                                {{-- <a href="" class="dropdown-item">ประมวลจริยธรรม</a> --}}
                             </li>
                         </ul>
                     </div>
@@ -299,7 +289,7 @@
                 </ul>
             </div> --}}
                     <div class="d-flex flex-column align-items-center justify-content-center">
-                        <a href="#" class="navbar-item">
+                        <a href="{{ route('AuthorityPage') }}" class="navbar-item">
                             <img src="{{ asset('images/header/organization.png') }}" alt="ปุ่มอำนาจหน้าที่">
                             <div>อำนาจหน้าที่</div>
                         </a>
@@ -324,46 +314,44 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="bg-runtext w-100 d-flex align-items-center">
-        <div class="container d-flex align-items-center gap-3">
-            <div class="col-12 col-md-9 bg-text">
-                <div
-                    style="white-space: nowrap; overflow: hidden; position: relative; width: 100%; height: 38px; background: linear-gradient(to right, #ffffff6b, #ffffff6b); border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); padding: 5px; ">
-                    <span
-                        style="display: inline-block; position: absolute; white-space: nowrap; animation: marquee 15s linear infinite; color: rgb(0, 0, 0); font-size: 20px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
-                        วิสัยทัศน์ : พัฒนาคุณภาพชีวิตและสังคม ช่วยกันคิดช่วยกันทำ การเกษรก้าวหน้าแบบยั่งยืน
-                        บ้านเมืองน่าอยู่
-                    </span>
+            <div class="bg-runtext w-100 d-flex align-items-center">
+                <div class="container d-flex align-items-center gap-3">
+                    <div class="col-12 col-md-9 bg-text">
+                        <div
+                            style="white-space: nowrap; overflow: hidden; position: relative; width: 100%; height: 38px; background: linear-gradient(to right, #ffffff6b, #ffffff6b); border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); padding: 5px; ">
+                            <span
+                                style="display: inline-block; position: absolute; white-space: nowrap; animation: marquee 15s linear infinite; color: rgb(0, 0, 0); font-size: 20px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                                วิสัยทัศน์ : พัฒนาคุณภาพชีวิตและสังคม ช่วยกันคิดช่วยกันทำ การเกษรก้าวหน้าแบบยั่งยืน
+                                บ้านเมืองน่าอยู่
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-3 d-none d-md-block">
+                        <form action="https://www.google.com/search" method="GET" class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="ค้นหา..."
+                                style="border-radius: 10px 0 0 10px;">
+                            <button class="button-green-search" type="submit" style="border-radius: 0 10px 10px 0;">
+                                <i class="fas fa-search mt-2"></i>
+                            </button>
+                        </form>
+                    </div>
+
+
                 </div>
             </div>
-            <div class="col-3 d-none d-md-block">
-                <form action="https://www.google.com/search" method="GET" class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="ค้นหา..."
-                        style="border-radius: 10px 0 0 10px;">
-                    <button class="button-green-search" type="submit" style="border-radius: 0 10px 10px 0;">
-                        <i class="fas fa-search mt-2"></i>
-                    </button>
-                </form>
-            </div>
 
+            <style>
+                @keyframes marquee {
+                    0% {
+                        transform: translateX(100%);
+                    }
 
-        </div>
-    </div>
-
-    <style>
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-    </style>
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
+            </style>
 
 
 </main>

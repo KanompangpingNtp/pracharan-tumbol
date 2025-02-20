@@ -251,7 +251,7 @@
 
 
         @yield('content')
-        <script>
+        {{-- <script>
             document.addEventListener("DOMContentLoaded", function() {
                 window.onload = function() {
                     const loadingScreen = document.getElementById("loading-screen");
@@ -262,6 +262,21 @@
                         // pageContent.style.display = "block"; // แสดงเนื้อหา
                     }
                 };
+            });
+        </script> --}}
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                setTimeout(() => {
+                    const loadingScreen = document.getElementById("loading-screen");
+                    const pageContent = document.getElementById("page-content");
+
+                    if (loadingScreen) {
+                        loadingScreen.style.display = "none"; // ซ่อน loading
+                    }
+                    if (pageContent) {
+                        pageContent.style.display = "block"; // แสดงเนื้อหา
+                    }
+                }, 3000); // แสดง loading screen 2 วินาที
             });
         </script>
         <!-- Scripts -->

@@ -187,7 +187,7 @@
 <main class="d-flex flex-column align-items-center justify-content-end ">
     <div class="video-container">
         <video autoplay loop muted playsinline>
-            <source src="{{ asset('images/home/video/123.mp4') }}" type="video/mp4">
+            <source src="{{ asset('images/home/video/vdos.webm') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="content">

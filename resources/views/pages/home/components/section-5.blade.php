@@ -60,7 +60,7 @@
             <div class="p-2 d-flex flex-column w-100"
                 style="background: linear-gradient(to bottom, #d1f541, #569419); border-radius: 20px;">
                 @foreach ($building as $index => $place)
-                    <a href="#" class="text-decoration-none text-black">
+                    <a href="{{ route('CitizensClubShowDetails', $place->id) }}" class="text-decoration-none text-black">
                         <div class="card d-flex flex-row p-3 border-0 custom-card"
                             style="border-radius:20px; background-color: transparent;">
                             <img src="{{ !empty($place->photos->first()->post_photo_file) ? asset('storage/' . $place->photos->first()->post_photo_file) : asset('images/home/section-4/logo-miss-files.png') }}"

@@ -72,20 +72,12 @@
                     </div>
                 </div>
                 <div class="bg-green">
-                    <div id="carouselExample" class="carousel slide">
+                    {{-- <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner" style="border-radius: 20px;">
                             <div class="carousel-item active">
                                 <img src="{{ asset('images/home/section-3/21.png') }}" class="d-block w-100"
                                     alt="Image 1">
                             </div>
-                            {{-- <div class="carousel-item">
-                                <img src="{{ asset('images/home/section-2/bg-section2.png') }}" class="d-block w-100"
-                                    alt="Image 2">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('images/home/section-1/bg-section1.png') }}" class="d-block w-100"
-                                    alt="Image 3">
-                            </div> --}}
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                             data-bs-slide="prev">
@@ -97,10 +89,45 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
+                    </div> --}}
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner" style="border-radius: 20px;">
+                            @if ($noticeBoard->isNotEmpty())
+                                @foreach ($noticeBoard as $key => $post)
+                                    @php
+                                        $firstPhoto = $post->photos->first();
+                                    @endphp
+                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                        @if ($firstPhoto)
+                                            <img src="{{ asset('storage/' . $firstPhoto->post_photo_file) }}" class="d-block w-100" alt="Slide {{ $key + 1 }}">
+                                        @else
+                                            <img src="{{ asset('images/home/section-3/21.png') }}" class="d-block w-100" alt="Default Image">
+                                        @endif
+                                    </div>
+                                @endforeach
+                            @else
+                                <!-- กรณีไม่มีข้อมูลให้แสดงรูปเริ่มต้น -->
+                                <div class="carousel-item active">
+                                    <img src="{{ asset('images/home/section-3/21.png') }}" class="d-block w-100" alt="Default Image">
+                                </div>
+                            @endif
+                        </div>
+
+                        @if ($noticeBoard->count() > 1)
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        @endif
                     </div>
+
                 </div>
                 <div class="d-flex justify-content-end align-items-start mt-3 position-relative">
-                    <a href="#" class="link-green-section3 me-2">ดูทั้งหมด</a>
+                    <a href="{{route('NoticeBoardShowData')}}" class="link-green-section3 me-2">ดูทั้งหมด</a>
                     <img src="{{ asset('images/home/section-3/leaf.png') }}" alt="leaf"
                         style="position: absolute; right: -5px; top: 20px; transform: translateY(-50%) rotate(30deg); width: 50px;">
                 </div>

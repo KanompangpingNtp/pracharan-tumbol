@@ -86,6 +86,11 @@ class ShowDataDetailController extends Controller
         ->orderBy('created_at', 'desc')
         ->get();
 
+        $noticeBoard = PostDetail::with('postType', 'photos')
+            ->whereHas('postType', function ($query) {
+                $query->where('type_name', 'ป้ายประกาศ');
+            })->get();
+
         return view('pages.home.app', compact(
             'pressRelease',
             'activity',
@@ -100,7 +105,8 @@ class ShowDataDetailController extends Controller
             'executiveStatus3',
             'executiveStatus4',
             'executiveStatus5',
-            'LocalAdminPromotion'
+            'LocalAdminPromotion',
+            'noticeBoard'
         ));
     }
 

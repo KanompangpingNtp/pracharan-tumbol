@@ -15,6 +15,7 @@ use App\Http\Controllers\ShowDataAgencyController;
 use App\Http\Controllers\RecommendedPlacesController;
 use App\Http\Controllers\ShowDataDetailController;
 use App\Http\Controllers\LocalAdminPromotionController;
+use App\Http\Controllers\NoticeBoardController;
 use App\Http\Controllers\Information\HistoryController;
 use App\Http\Controllers\Information\AdminHistoryController;
 use App\Http\Controllers\Information\GeneralInformationController;
@@ -59,6 +60,8 @@ use App\Http\Controllers\performance_results\AdminWorkProcedureController;
 use App\Http\Controllers\performance_results\WorkProcedureController;
 use App\Http\Controllers\performance_results\AdminCodeofEthicsController;
 use App\Http\Controllers\performance_results\CodeofEthicsController;
+use App\Http\Controllers\FeaturedVideoController;
+use App\Http\Controllers\TreasuryAnnouncementController;
 
 use App\Http\Controllers\TestController;
 
@@ -83,6 +86,20 @@ Route::get('/banner', [ShowDataDetailController::class, 'banner'])->name('banner
 
 //ติดต่อ
 Route::get('/contect', [ShowDataDetailController::class, 'contect'])->name('contect');
+
+//วิดีทัศน์แนะนำ
+Route::get('/FeaturedVideo', [FeaturedVideoController::class, 'FeaturedVideoData'])->name('FeaturedVideoData');
+
+//ประกาศของคลัง
+Route::get('/TreasuryAnnouncement/ShowData', [TreasuryAnnouncementController::class, 'TreasuryAnnouncementData'])->name('TreasuryAnnouncementData');
+Route::get('/Procurement/ShowData', [ProcurementController::class, 'ProcurementShowData'])->name('ProcurementShowData');
+Route::get('/Procurement/ShowDetails/{id}', [ProcurementController::class, 'ProcurementShowDetails'])->name('ProcurementShowDetails');
+Route::get('/ProcurementResults/ShowData', [ProcurementResultsController::class, 'ProcurementResultsShowData'])->name('ProcurementResultsShowData');
+Route::get('/ProcurementResults/ShowDetails/{id}', [ProcurementResultsController::class, 'ProcurementResultsShowDetails'])->name('ProcurementResultsShowDetails');
+Route::get('/AveragePrice/ShowData', [AveragePriceController::class, 'AveragePriceShowData'])->name('AveragePriceShowData');
+Route::get('/AveragePrice/ShowDetails/{id}', [AveragePriceController::class, 'AveragePriceShowDetails'])->name('AveragePriceShowDetails');
+Route::get('/Revenue/ShowData', [RevenueController::class, 'RevenueShowData'])->name('RevenueShowData');
+Route::get('/Revenue/ShowDetails/{id}', [RevenueController::class, 'RevenueShowDetails'])->name('RevenueShowDetails');
 
 //กิจกรรม
 Route::get('/Activity/ShowData', [ActivityController::class, 'ActivityShowData'])->name('ActivityShowData');
@@ -182,6 +199,10 @@ Route::get('/CodeofEthics/show/details/{id}', [WorkProcedureController::class, '
 Route::get('/HRResultsReport/page', [HRResultsReportController::class, 'HRResultsReportPage'])->name('HRResultsReportPage');
 Route::get('/HRResultsReport/show/details/{id}', [HRResultsReportController::class, 'HRResultsReportShowDertailsPage'])->name('HRResultsReportShowDertailsPage');
 Route::get('/HRResultsReport/show/details/results/{id}', [HRResultsReportController::class, 'HRResultsReportShowDertailResultsPage'])->name('HRResultsReportShowDertailResultsPage');
+
+//ป้ายประกาศ
+Route::get('/NoticeBoard/ShowData', [NoticeBoardController::class, 'NoticeBoardShowData'])->name('NoticeBoardShowData');
+Route::get('/NoticeBoard/ShowDetails/{id}', [NoticeBoardController::class, 'NoticeBoardShowDetails'])->name('NoticeBoardShowDetails');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -474,6 +495,11 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/CodeofEthics/show/details/{id}', [AdminCodeofEthicsController::class, 'CodeofEthicsShowDertails'])->name('CodeofEthicsShowDertails');
     Route::post('/Admin/CodeofEthics/details/{id}/create', [AdminCodeofEthicsController::class, 'CodeofEthicsCreateFiles'])->name('CodeofEthicsCreateFiles');
     Route::delete('/Admin/CodeofEthics/details/{id}/delete', [AdminCodeofEthicsController::class, 'CodeofEthicsDertailsDelete'])->name('CodeofEthicsDertailsDelete');
+
+    //admin NoticeBoard
+    Route::get('/Admin/NoticeBoard/page', [NoticeBoardController::class, 'NoticeBoardAdmin'])->name('NoticeBoardAdmin');
+    Route::post('/Admin/NoticeBoard/create', [NoticeBoardController::class, 'NoticeBoardCreate'])->name('NoticeBoardCreate');
+    Route::delete('/Admin/NoticeBoard/delete{id}', [NoticeBoardController::class, 'NoticeBoardDelete'])->name('NoticeBoardDelete');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

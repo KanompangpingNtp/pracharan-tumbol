@@ -22,7 +22,7 @@
             <div class="row row-cols-1 row-cols-xl-2 g-3 mt-2">
                 @foreach ($pressRelease->slice(0, 6) as $index => $post)
                     <div class="col">
-                        <a href="#" class="text-decoration-none text-black">
+                        <a href="{{ route('PressReleaseShowDetails', $post->id) }}" class="text-decoration-none text-black">
                             <div class="card d-flex flex-row p-3 border-0 custom-card"
                                 style="background-color: {{ $cardColors[$index % count($cardColors)] }}; border-radius:20px; box-shadow: 0 4px 5px rgba(255, 255, 255, 0.7);">
 
@@ -69,13 +69,13 @@
                                 style="height: 100px; width: 100px; object-fit: contain; border-radius: 10px;">
 
                             <div class="card-body ms-2 lh-1 p-0" style="border-radius: 10px;">
-                                <p class="card-text bg-white px-2 py-1 rounded">{{ $place->details }}</p>
+                                <p class="card-text bg-white px-2 py-1 rounded">{{ $place->topic_name }}</p>
                             </div>
                         </div>
                     </a>
                 @endforeach
             </div>
-            <a href="#" class="mt-2 img-hover">
+            <a href="{{route('CitizensClubShowData')}}" class="mt-2 img-hover">
                 <img src="{{ asset('images/home/section-5/buttonx.png') }}" alt="button-link">
             </a>
         </div>

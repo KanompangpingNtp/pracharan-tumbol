@@ -92,6 +92,10 @@ Route::get('/Activity/ShowDetails/{id}', [ActivityController::class, 'ActivitySh
 Route::get('/PressRelease/ShowData', [PressReleaseController::class, 'PressReleaseShowData'])->name('PressReleaseShowData');
 Route::get('/PressRelease/ShowDetails/{id}', [PressReleaseController::class, 'PressReleaseShowDetails'])->name('PressReleaseShowDetails');
 
+//ชมรมผู้สูงอายุ
+Route::get('/CitizensClub/ShowData', [RecommendedPlacesController::class, 'CitizensClubShowData'])->name('CitizensClubShowData');
+Route::get('/CitizensClub/ShowDetails/{id}', [RecommendedPlacesController::class, 'CitizensClubShowDetails'])->name('CitizensClubShowDetails');
+
 //บุคลากร
 Route::get('/Agency/page', [ShowDataAgencyController::class, 'AgencyPage'])->name('AgencyPage');
 Route::get('/agency/{id}', [ShowDataAgencyController::class, 'AgencyShow'])->name('AgencyShow');

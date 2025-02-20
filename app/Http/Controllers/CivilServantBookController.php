@@ -16,7 +16,7 @@ class CivilServantBookController extends Controller
         ->whereHas('postType', function ($query) {
             $query->where('type_name', 'กรมส่งเสริมการปกครองท้องถิ่น');
         })->orderBy('created_at', 'desc')
-        ->get();
+        ->paginate(20);
 
         return view('pages.civil_servant_books.show_data', compact('personnelAgencies','LocalAdminPromotion'));
     }

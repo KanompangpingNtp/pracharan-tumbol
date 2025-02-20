@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="d-flex justify-content-end">
-                    <a href="#">
+                    <a href="{{route('CivilServantBook')}}">
                         <img src="{{ asset('images/home/section-8/btn.png') }}" alt="3"
                             class="img-fluid img-hover" width="140">
                     </a>

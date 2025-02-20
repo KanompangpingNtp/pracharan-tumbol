@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 class RevenueController extends Controller
 {
-    //
     public function RevenueHome()
     {
         $postTypes = PostType::all();
@@ -88,12 +87,11 @@ class RevenueController extends Controller
             foreach ($filesToDelete as $file) {
                 // ลบไฟล์ออกจาก Storage
                 Storage::disk('public')->delete($file->post_pdf_file);
-                // ลบข้อมูลในฐานข้อมูล
+
                 $file->delete();
             }
         }
 
-        // อัปโหลดไฟล์ใหม่ถ้ามี
         if ($request->hasFile('file_post')) {
             foreach ($request->file('file_post') as $file) {
                 $filename = time() . '_' . $file->getClientOriginalName();

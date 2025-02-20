@@ -62,6 +62,7 @@ use App\Http\Controllers\performance_results\AdminCodeofEthicsController;
 use App\Http\Controllers\performance_results\CodeofEthicsController;
 use App\Http\Controllers\FeaturedVideoController;
 use App\Http\Controllers\TreasuryAnnouncementController;
+use App\Http\Controllers\CivilServantBookController;
 
 use App\Http\Controllers\TestController;
 
@@ -100,6 +101,10 @@ Route::get('/AveragePrice/ShowData', [AveragePriceController::class, 'AveragePri
 Route::get('/AveragePrice/ShowDetails/{id}', [AveragePriceController::class, 'AveragePriceShowDetails'])->name('AveragePriceShowDetails');
 Route::get('/Revenue/ShowData', [RevenueController::class, 'RevenueShowData'])->name('RevenueShowData');
 Route::get('/Revenue/ShowDetails/{id}', [RevenueController::class, 'RevenueShowDetails'])->name('RevenueShowDetails');
+
+//หนังสือข้าราชการ
+Route::get('/CivilServantBook', [CivilServantBookController::class, 'CivilServantBook'])->name('CivilServantBook');
+Route::get('/CivilServantBook/ShowDetails/{id}', [CivilServantBookController::class, 'CivilServantDetails'])->name('CivilServantDetails');
 
 //กิจกรรม
 Route::get('/Activity/ShowData', [ActivityController::class, 'ActivityShowData'])->name('ActivityShowData');

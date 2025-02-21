@@ -84,13 +84,13 @@
 
             <div class="row">
                 <div class="col-lg-6 p-2">
-                    <a href="#" class="text-decoration-none">
+                    <a href="https://www.youtube.com/watch?v=uUDrXnHPVKs" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
                         <div class="d-flex align-items-center p-3 bg-blue-card-section-6"
                             style="height: 150px; border-radius: 10px; box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); display: block;">
 
                             <!-- รูปภาพด้านซ้าย -->
                             <div style="flex: 0 0 100px; height: 100px; overflow: hidden; border-radius: 10px;">
-                                <img src="{{ asset('images/video.png') }}"
+                                <img src="{{ asset('images/featured_video/1.PNG') }}"
                                     alt="Image 1" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
 
@@ -98,13 +98,13 @@
                             <div class="ms-3 bg-white h-100 rounded p-1"
                                 style="flex: 1; position: relative; height: 100%;">
                                 <div class="card-text text-dark">
-                                    No Title
+                                    แนะนำนโยบาย องค์การบริหารส่วนตำบลพระอาจารย์
                                 </div>
                                 <div class="card-date d-flex align-items-center">
                                     <img src="{{ asset('images/hourglass.png') }}"
                                         alt="icon" width="15" height="20" class="me-2">
                                     <div class="card-text text-dark">
-                                        No Date
+                                        21/02/2025
                                     </div>
                                 </div>
                             </div>

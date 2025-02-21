@@ -55,7 +55,7 @@
 
             <td class="text-center">
                 <div class="d-inline-block">
-                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal">
+                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal{{ $detail->id }}">
                         <i class="bi bi-pencil-square"></i>
                     </button>
                 </div>
@@ -74,20 +74,20 @@
 </table>
 
 @foreach($listDetail as $detail)
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModal{{ $detail->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $detail->id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="editModalLabel"> แก้ไขชื่อ ผลิตภัณฑ์</h1>
+                <h1 class="modal-title fs-5" id="editModalLabel{{ $detail->id }}">แก้ไขชื่อ ผลิตภัณฑ์</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ route('CommunityProductsNameUpdate', $detail->id) }}" method="POST">
                 @csrf
                 <div class="modal-body">
-                    <input type="hidden" name="basic_info_type" value="{{ $basicInfoType->firstWhere('type_name', 'ผลิตภัณฑ์ชุมชน/OTOP')->id }}">
+                    <input type="hidden" name="basic_info_type" value="{{ $basicInfoType->firstWhere('type_name', 'สถานที่สำคัญ/แหล่งท่องเที่ยว')->id }}">
                     <div class="mb-3">
-                        <label for="list_details_name" class="form-label">ชื่อผลิตภัณฑ์</label>
-                        <input type="text" class="form-control" id="list_details_name" name="list_details_name" value="{{ old('list_details_name', $detail->list_details_name) }}" required>
+                        <label for="list_details_name{{ $detail->id }}" class="form-label">ชื่อผลิตภัณฑ์</label>
+                        <input type="text" class="form-control" id="list_details_name{{ $detail->id }}" name="list_details_name" value="{{ old('list_details_name', $detail->list_details_name) }}" required>
                     </div>
                 </div>
                 <div class="modal-footer">

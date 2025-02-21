@@ -283,7 +283,7 @@
                                     class="dropdown-item">รายงานแสดงฐานะการเงิน</a>
                                 <a href="{{ route('WorkProcedurePage') }}"
                                     class="dropdown-item">การลดขั้นตอนการปฏิบัติงาน</a>
-                                <a href="" class="dropdown-item">ประมวลจริยธรรม</a>
+                                {{-- <a href="" class="dropdown-item">ประมวลจริยธรรม</a> --}}
                             </li>
                         </ul>
                     </div>

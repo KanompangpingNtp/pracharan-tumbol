@@ -169,7 +169,7 @@
 
 <main class="bg-section9 d-flex">
     <div class="container d-flex flex-column justify-content-start align-items-start">
-        <img src="{{ asset('images/home/section-9/title-section-9.png') }}" alt="title">
+        <img src="{{ asset('images/home/section-9/title-section-9.png') }}" alt="title" class="img-fluid">
         <div class="map-container d-none d-xxl-block">
             <!-- หมู่ 1 -->
             <img src="{{ asset('images/home/section-9/หมู่1.png') }}" alt="1" class="piece-1">

@@ -25,8 +25,8 @@
         <div class="title-section3 lh-1 d-flex align-items-center justify-content-center mb-2">
             ที่นี่ตำบลพระอาจารย์
         </div>
-        <div class="d-flex justify-content-center align-items-center mt-1 w-100 px-5 py-2">
-            <div class="px-2 pt-2 pb-4 position-relative" style="background: linear-gradient(to bottom, #d1f541, #569419); border-radius: 30px; box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7);">
+        <div class="d-flex justify-content-center align-items-center mt-1 px-5 py-2 w-100">
+            <div class="px-2 pt-2 pb-4 w-100 position-relative" style="background: linear-gradient(to bottom, #d1f541, #569419); border-radius: 30px; box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7);">
                 <img src="{{ asset('images/home/section-6/leaf.png') }}" alt="leaf" style="position: absolute; right: -20px; top: 10px; transform: translateY(-50%) rotate(30deg); width: 60px;">
                 <div id="carouselsatet" class="carousel slide">
                     <div class="carousel-inner">
@@ -34,7 +34,7 @@
                         <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                             <div class="slide-card p-2">
                                 <img src="{{ asset('storage/' . ($post->photos->first()->post_photo_file ?? 'images/default.jpg')) }}" alt="Image {{ $index + 1 }}"
-                                style="width: 900px; height: 450px; object-fit: cover; border-radius: 10px;">
+                                style=" height: 460px; object-fit: cover; border-radius: 10px;">
 
                                 <div class="p-2 my-3" style="background: linear-gradient(to bottom, #d1f541, #569419); border-radius: 30px; box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7);">
                                     <div class="text-box fs-4 text-center bg-white px-3 py-2" style="border-radius: 30px;">

@@ -36,7 +36,7 @@
                         <span>หนังสือข้าราชการ</span>
                         <div class="fs-3">องค์การบริหารส่วนตำบลพระอาจารย์</div>
                     </div>
-                    <img src="{{ asset('images/home/section-8/book.png') }}" alt="icon" width="100">
+                    <img src="{{ asset('images/home/section-8/book.png') }}" alt="icon" width="100" class="d-none d-sm-block">
                 </div>
             </div>
             <div class="bg-white shadow text-black p-3 d-flex flex-column justify-content-center w-100"
@@ -82,7 +82,7 @@
                             <span>E-LIBRARY</span>
                             <div class="fs-3">องค์การบริหารส่วนตำบลพระอาจารย์</div>
                         </div>
-                        <img src="{{ asset('images/home/section-8/bookshell.png') }}" alt="icon" width="140">
+                        <img src="{{ asset('images/home/section-8/bookshell.png') }}" alt="icon" width="140" class="d-none d-sm-block">
                     </div>
                 </div>
                 <div class="p-3"
@@ -106,7 +106,7 @@
                             <span>แบบสำรวจความคิดเห็น</span>
                             <div class="fs-3">องค์การบริหารส่วนตำบลพระอาจารย์</div>
                         </div>
-                        <img src="{{ asset('images/home/section-8/testing.png') }}" alt="icon" width="60">
+                        <img src="{{ asset('images/home/section-8/testing.png') }}" alt="icon" width="60" class="d-none d-sm-block">
                     </div>
                 </div>
                 <div class="px-4 py-2 lh-1 fw-bold fs-4"

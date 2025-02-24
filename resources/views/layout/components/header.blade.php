@@ -190,7 +190,7 @@
             <source src="{{ asset('images/home/video/vdos.webm') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="content">
+        <div class="content ">
             <div class="bg-menu w-100 pb-2 pt-3">
                 <div class="container d-flex flex-wrap justify-content-evenly">
                     {{-- <div class="d-flex flex-column align-items-center justify-content-center">
@@ -200,7 +200,7 @@
                     </a>
                 </div> --}}
                     <div
-                        class="custom-dropdown-container d-flex flex-column align-items-center justify-content-center position-relative">
+                        class="custom-dropdown-container d-flex flex-column align-items-center justify-content-center position-relative ">
                         <a class="custom-hover-trigger navbar-item d-flex flex-column align-items-center">
                             <img src="{{ asset('images/header/house.png') }}" alt="house" class="navbar-icon">
                             <div class="navbar-text">ข้อมูลพื้นฐาน</div>
@@ -325,6 +325,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
     <div class="bg-runtext w-100 d-flex align-items-center">

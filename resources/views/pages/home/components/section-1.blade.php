@@ -94,6 +94,15 @@
         border-radius: 20px;
     }
 
+    .hotline-btn {
+        text-decoration: none;
+        transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .hotline-btn:hover {
+        transform: scale(1.1); /* ขยายขนาดเมื่อ hover */
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); /* เรืองแสงสีขาว */
+    }
 </style>
 
 <!-- Content Section -->
@@ -117,7 +126,7 @@
                         </span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
-                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span>
+                        <a href="tel:{{ $executive->phone_number }}" class="bg-dark text-white px-2 fs-5 hotline-btn" style="border-radius: 20px;">สายด่วน</a>
                         {{ $executive->phone_number }}
                     </div>
                 </div>
@@ -131,14 +140,14 @@
 
 
                 <div class="mt-2 w-75 lh-1" style="box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); border-radius: 15px;">
-                    <div class="text-center bg-white text-black p-2 fs-4" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                    <div class="text-center bg-white text-black p-2 fs-4 " style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         {{ $executive->full_name }} <br>
                         <span style="font-size: 18px;">
                             {!! str_replace(' ', '<br>', e($executive->position)) !!}
                         </span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
-                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
+                        <a href="tel:{{ $executive->phone_number }}" class="bg-dark text-white px-2 fs-5 hotline-btn" style="border-radius: 20px;">สายด่วน</a> {{ $executive->phone_number }}
                     </div>
                 </div>
             </div>
@@ -157,7 +166,7 @@
                         </span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
-                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
+                        <a href="tel:{{ $executive->phone_number }}" class="bg-dark text-white px-2 fs-5 hotline-btn" style="border-radius: 20px;">สายด่วน</a> {{ $executive->phone_number }}
                     </div>
                 </div>
             </div>
@@ -176,7 +185,7 @@
                         </span>
                     </div>
                     <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
-                        <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span> {{ $executive->phone_number }}
+                        <a href="tel:{{ $executive->phone_number }}" class="bg-dark text-white px-2 fs-5 hotline-btn" style="border-radius: 20px;">สายด่วน</a> {{ $executive->phone_number }}
                     </div>
                 </div>
             </div>
@@ -313,7 +322,7 @@
 
             <div class="fs-4 text-center p-1 fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;
                         background: linear-gradient(to left, rgb(104, 160, 0), rgb(148, 228, 0), rgb(104, 160, 0));">
-                <span class="bg-dark text-white px-2 fs-5" style="border-radius: 20px;">สายด่วน</span>
+                <a href="tel:{{ $executive->phone_number }}" class="bg-dark text-white px-2 fs-5 hotline-btn" style="border-radius: 20px;">สายด่วน</a>
                 {{ $executive->phone_number }}
             </div>
         </div>

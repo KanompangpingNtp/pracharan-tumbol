@@ -33,6 +33,13 @@ class PerfResultsTypeSeeder extends Seeder
             ['type_name' => 'การลดขั้นตอนการปฏิบัติงาน'],
 
             ['type_name' => 'ประมวลจริยธรรม'],
+
+            ['type_name' => 'แผนดำเนินการประจำปี'],
+            ['type_name' => 'แผนอัตรากำลัง'],
+            ['type_name' => 'แผนการดำเนินงาน'],
+            ['type_name' => 'แผนงานป้องกันการทุจริต'],
+            ['type_name' => 'แผนปฏิบัติการจัดซื้อจัดจ้าง'],
+            ['type_name' => 'แผนพัฒนาท้องถิ่น'],
         ];
 
         foreach ($data as $item) {

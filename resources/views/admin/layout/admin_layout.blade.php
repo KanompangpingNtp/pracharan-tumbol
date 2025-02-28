@@ -363,11 +363,31 @@
                                 <a class="nav-link" href="{{route('HRPolicyManagementAdmin')}}">การดำเนินการตามนโยบายและการบริหารทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRManagementDevelopmentAdmin')}}">หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</a>
                                 <a class="nav-link" href="{{route('HRResultsReportAdmin')}}">รายงานผลการบริหารและพัฒนาทรัพยากรบุคคล</a>
-
                                 <a class="nav-link" href="{{route('TransparencyAdmin')}}">มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริต</a>
                                 <a class="nav-link" href="{{route('FinancialStatementAdmin')}}">รายงานแสดงฐานะการเงิน</a>
                                 <a class="nav-link" href="{{route('WorkProcedureAdmin')}}">การลดขั้นตอนการปฏิบัติงาน</a>
                                 <a class="nav-link mb-5" href="{{route('CodeofEthicsAdmin')}}">ประมวลจริยธรรม</a>
+                            </nav>
+                        </div>
+
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts5" aria-expanded="false" aria-controls="collapseLayouts5">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการแผนพัฒนาท้องถิ่น
+                            <div class="sb-sidenav-collapse-arrow">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </a>
+
+                        <div class="collapse" id="collapseLayouts5" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{route('AnnualActionPlanAdmin')}}">แผนดำเนินการประจำปี</a>
+                                <a class="nav-link" href="{{route('ManpowerPlanAdmin')}}">แผนอัตรากำลัง</a>
+                                <a class="nav-link" href="{{route('OperationalPlanAdmin')}}">แผนการดำเนินงาน</a>
+                                <a class="nav-link" href="{{route('AntiCorruptionPlanAdmin')}}">แผนงานป้องกันการทุจริต</a>
+                                <a class="nav-link" href="{{route('ProcurementActionPlanAdmin')}}">แผนปฏิบัติการจัดซื้อ - จัดจ้าง</a>
+                                <a class="nav-link mb-5" href="{{route('LocalDevelopmentPlanAdmin')}}">แผนพัฒนาท้องถิ่น</a>
                             </nav>
                         </div>
                     </div>

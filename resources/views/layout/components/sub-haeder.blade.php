@@ -4,7 +4,7 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-       
+
         /* ใช้ min-height เพื่อให้พื้นที่ครอบคลุมหน้าจอ */
     }
 
@@ -109,7 +109,7 @@
         }
     }
 
-   
+
 
     /* เมื่อหน้าจอเล็กกว่า lg (น้อยกว่า 992px) ให้เปลี่ยน bottom เป็น top */
     @media (max-width: 991px) {
@@ -282,12 +282,26 @@
                         </li>
 
                         <!-- 5. แผนพัฒนนาท้องถิ่น -->
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link d-flex flex-column align-items-center" href="#">
                                 <img src="{{ asset('images/header/planning.png') }}" alt="แผนพัฒนนาท้องถิ่น"
                                     class="navbar-icon">
                                 <div class="navbar-text">แผนพัฒนนาท้องถิ่น</div>
                             </a>
+                        </li> --}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex flex-column align-items-center" href="#" id="planningDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ asset('images/header/planning.png') }}" alt="แผนพัฒนาท้องถิ่น" class="navbar-icon">
+                                <div class="navbar-text">แผนพัฒนาท้องถิ่น</div>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="planningDropdown">
+                                <li><a class="dropdown-item" href="{{route('AnnualActionPage')}}">แผนดำเนินการประจำปี</a></li>
+                                <li><a class="dropdown-item" href="{{route('ManpowerPlanPage')}}">แผนอัตรากำลัง</a></li>
+                                <li><a class="dropdown-item" href="{{route('OperationalPlanPage')}}">แผนการดำเนินงาน</a></li>
+                                <li><a class="dropdown-item" href="{{route('AntiCorruptionPlanPage')}}">แผนงานป้องกันการทุจริต</a></li>
+                                <li><a class="dropdown-item" href="{{route('ProcurementActionPlanPage')}}">แผนปฏิบัติการจัดซื้อ - จัดจ้าง</a></li>
+                                <li><a class="dropdown-item" href="{{route('LocalDevelopmentPlanPage')}}">แผนพัฒนาท้องถิ่น</a></li>
+                            </ul>
                         </li>
 
                         <!-- 6. กฏหมายและกฏระเบียบ -->

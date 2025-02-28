@@ -64,6 +64,19 @@ use App\Http\Controllers\FeaturedVideoController;
 use App\Http\Controllers\TreasuryAnnouncementController;
 use App\Http\Controllers\CivilServantBookController;
 use App\Http\Controllers\CitizensClubController;
+use App\Http\Controllers\local_development_plan\AdminAnnualActionPlanController;
+use App\Http\Controllers\local_development_plan\AnnualActionPlanController;
+use App\Http\Controllers\local_development_plan\AdminManpowerPlanController;
+use App\Http\Controllers\local_development_plan\ManpowerPlanController;
+use App\Http\Controllers\local_development_plan\AdminOperationalPlanController;
+use App\Http\Controllers\local_development_plan\OperationalPlanController;
+use App\Http\Controllers\local_development_plan\AdminAntiCorruptionPlanController;
+use App\Http\Controllers\local_development_plan\AntiCorruptionPlanController;
+use App\Http\Controllers\local_development_plan\AdminProcurementActionPlanController;
+use App\Http\Controllers\local_development_plan\ProcurementActionPlanController;
+use App\Http\Controllers\local_development_plan\AdminLocalDevelopmentPlanController;
+use App\Http\Controllers\local_development_plan\LocalDevelopmentPlanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +113,30 @@ Route::get('/AveragePrice/ShowData', [AveragePriceController::class, 'AveragePri
 Route::get('/AveragePrice/ShowDetails/{id}', [AveragePriceController::class, 'AveragePriceShowDetails'])->name('AveragePriceShowDetails');
 Route::get('/Revenue/ShowData', [RevenueController::class, 'RevenueShowData'])->name('RevenueShowData');
 Route::get('/Revenue/ShowDetails/{id}', [RevenueController::class, 'RevenueShowDetails'])->name('RevenueShowDetails');
+
+//แผนดำเนินการประจำปี
+Route::get('/AnnualAction/page', [AnnualActionPlanController::class, 'AnnualActionPage'])->name('AnnualActionPage');
+Route::get('/AnnualAction/show/details/{id}', [AnnualActionPlanController::class, 'AnnualActionDertail'])->name('AnnualActionDertail');
+
+//แผนอัตรากำลัง
+Route::get('/ManpowerPlan/page', [ManpowerPlanController::class, 'ManpowerPlanPage'])->name('ManpowerPlanPage');
+Route::get('/ManpowerPlan/show/details/{id}', [ManpowerPlanController::class, 'ManpowerPlanDertail'])->name('ManpowerPlanDertail');
+
+//แผนการดำเนินงาน
+Route::get('/OperationalPlan/page', [OperationalPlanController::class, 'OperationalPlanPage'])->name('OperationalPlanPage');
+Route::get('/OperationalPlan/show/details/{id}', [OperationalPlanController::class, 'OperationalPlanDertail'])->name('OperationalPlanDertail');
+
+//แผนงานป้องกันการทุจริต
+Route::get('/AntiCorruptionPlan/page', [AntiCorruptionPlanController::class, 'AntiCorruptionPlanPage'])->name('AntiCorruptionPlanPage');
+Route::get('/AntiCorruptionPlan/show/details/{id}', [AntiCorruptionPlanController::class, 'AntiCorruptionPlanDertail'])->name('AntiCorruptionPlanDertail');
+
+//แผนปฏิบัติการจัดซื้อจัดจ้าง
+Route::get('/ProcurementActionPlan/page', [ProcurementActionPlanController::class, 'ProcurementActionPlanPage'])->name('ProcurementActionPlanPage');
+Route::get('/ProcurementActionPlan/show/details/{id}', [ProcurementActionPlanController::class, 'ProcurementActionPlanDertail'])->name('ProcurementActionPlanDertail');
+
+//แผนพัฒนาท้องถิ่น
+Route::get('/LocalDevelopmentPlan/page', [LocalDevelopmentPlanController::class, 'LocalDevelopmentPlanPage'])->name('LocalDevelopmentPlanPage');
+Route::get('/LocalDevelopmentPlan/show/details/{id}', [LocalDevelopmentPlanController::class, 'LocalDevelopmentPlanDertail'])->name('LocalDevelopmentPlanDertail');
 
 //หนังสือข้าราชการ
 Route::get('/CivilServantBook', [CivilServantBookController::class, 'CivilServantBook'])->name('CivilServantBook');
@@ -514,6 +551,60 @@ Route::middleware(['check.auth'])->group(function () {
     Route::post('/CitizensClub/create', [CitizensClubController::class, 'CitizensClubCreate'])->name('CitizensClubCreate');
     Route::delete('/CitizensClub/delete/{id}', [CitizensClubController::class, 'CitizensClubDelete'])->name('CitizensClubDelete');
     Route::put('/CitizensClub/update/{id}', [CitizensClubController::class, 'CitizensClubUpdate'])->name('CitizensClubUpdate');
+
+    //AnnualActionPlan
+    Route::get('/Admin/AnnualActionPlan/page', [AdminAnnualActionPlanController::class, 'AnnualActionPlanAdmin'])->name('AnnualActionPlanAdmin');
+    Route::post('/Admin/AnnualActionPlan/create', [AdminAnnualActionPlanController::class, 'AnnualActionPlanCreate'])->name('AnnualActionPlanCreate');
+    Route::put('/Admin/AnnualActionPlan/{id}/update', [AdminAnnualActionPlanController::class, 'AnnualActionPlanUpdate'])->name('AnnualActionPlanUpdate');
+    Route::delete('/Admin/AnnualActionPlan/{id}/delete', [AdminAnnualActionPlanController::class, 'AnnualActionPlanDelete'])->name('AnnualActionPlanDelete');
+    Route::get('/Admin/AnnualActionPlan/show/details/{id}', [AdminAnnualActionPlanController::class, 'AnnualActionPlanShowDertails'])->name('AnnualActionPlanShowDertails');
+    Route::post('/Admin/AnnualActionPlan/details/{id}/create', [AdminAnnualActionPlanController::class, 'AnnualActionPlanCreateFiles'])->name('AnnualActionPlanCreateFiles');
+    Route::delete('/Admin/AnnualActionPlan/details/{id}/delete', [AdminAnnualActionPlanController::class, 'AnnualActionPlanDertailsDelete'])->name('AnnualActionPlanDertailsDelete');
+
+    //ManpowerPlan
+    Route::get('/Admin/ManpowerPlan/page', [AdminManpowerPlanController::class, 'ManpowerPlanAdmin'])->name('ManpowerPlanAdmin');
+    Route::post('/Admin/ManpowerPlan/create', [AdminManpowerPlanController::class, 'ManpowerPlanCreate'])->name('ManpowerPlanCreate');
+    Route::put('/Admin/ManpowerPlan/{id}/update', [AdminManpowerPlanController::class, 'ManpowerPlanUpdate'])->name('ManpowerPlanUpdate');
+    Route::delete('/Admin/ManpowerPlan/{id}/delete', [AdminManpowerPlanController::class, 'ManpowerPlanDelete'])->name('ManpowerPlanDelete');
+    Route::get('/Admin/ManpowerPlan/show/details/{id}', [AdminManpowerPlanController::class, 'ManpowerPlanShowDertails'])->name('ManpowerPlanShowDertails');
+    Route::post('/Admin/ManpowerPlan/details/{id}/create', [AdminManpowerPlanController::class, 'ManpowerPlanCreateFiles'])->name('ManpowerPlanCreateFiles');
+    Route::delete('/Admin/ManpowerPlan/details/{id}/delete', [AdminManpowerPlanController::class, 'ManpowerPlanDertailsDelete'])->name('ManpowerPlanDertailsDelete');
+
+    //OperationalPlan
+    Route::get('/Admin/OperationalPlan/page', [AdminOperationalPlanController::class, 'OperationalPlanAdmin'])->name('OperationalPlanAdmin');
+    Route::post('/Admin/OperationalPlan/create', [AdminOperationalPlanController::class, 'OperationalPlanCreate'])->name('OperationalPlanCreate');
+    Route::put('/Admin/OperationalPlan/{id}/update', [AdminOperationalPlanController::class, 'OperationalPlanUpdate'])->name('OperationalPlanUpdate');
+    Route::delete('/Admin/OperationalPlan/{id}/delete', [AdminOperationalPlanController::class, 'OperationalPlanDelete'])->name('OperationalPlanDelete');
+    Route::get('/Admin/OperationalPlan/show/details/{id}', [AdminOperationalPlanController::class, 'OperationalPlanShowDertails'])->name('OperationalPlanShowDertails');
+    Route::post('/Admin/OperationalPlan/details/{id}/create', [AdminOperationalPlanController::class, 'OperationalPlanCreateFiles'])->name('OperationalPlanCreateFiles');
+    Route::delete('/Admin/OperationalPlan/details/{id}/delete', [AdminOperationalPlanController::class, 'OperationalPlanDertailsDelete'])->name('OperationalPlanDertailsDelete');
+
+    //AntiCorruptionPlan
+    Route::get('/Admin/AntiCorruptionPlan/page', [AdminAntiCorruptionPlanController::class, 'AntiCorruptionPlanAdmin'])->name('AntiCorruptionPlanAdmin');
+    Route::post('/Admin/AntiCorruptionPlan/create', [AdminAntiCorruptionPlanController::class, 'AntiCorruptionPlanCreate'])->name('AntiCorruptionPlanCreate');
+    Route::put('/Admin/AntiCorruptionPlan/{id}/update', [AdminAntiCorruptionPlanController::class, 'AntiCorruptionPlanUpdate'])->name('AntiCorruptionPlanUpdate');
+    Route::delete('/Admin/AntiCorruptionPlan/{id}/delete', [AdminAntiCorruptionPlanController::class, 'AntiCorruptionPlanDelete'])->name('AntiCorruptionPlanDelete');
+    Route::get('/Admin/AntiCorruptionPlan/show/details/{id}', [AdminAntiCorruptionPlanController::class, 'AntiCorruptionPlanShowDertails'])->name('AntiCorruptionPlanShowDertails');
+    Route::post('/Admin/AntiCorruptionPlan/details/{id}/create', [AdminAntiCorruptionPlanController::class, 'AntiCorruptionPlanCreateFiles'])->name('AntiCorruptionPlanCreateFiles');
+    Route::delete('/Admin/AntiCorruptionPlan/details/{id}/delete', [AdminAntiCorruptionPlanController::class, 'AntiCorruptionPlanDertailsDelete'])->name('AntiCorruptionPlanDertailsDelete');
+
+    //ProcurementAction
+    Route::get('/Admin/ProcurementAction/page', [AdminProcurementActionPlanController::class, 'ProcurementActionPlanAdmin'])->name('ProcurementActionPlanAdmin');
+    Route::post('/Admin/ProcurementActionPlan/create', [AdminProcurementActionPlanController::class, 'ProcurementActionPlanCreate'])->name('ProcurementActionPlanCreate');
+    Route::put('/Admin/ProcurementActionPlan/{id}/update', [AdminProcurementActionPlanController::class, 'ProcurementActionPlanUpdate'])->name('ProcurementActionPlanUpdate');
+    Route::delete('/Admin/ProcurementActionPlan/{id}/delete', [AdminProcurementActionPlanController::class, 'ProcurementActionPlanDelete'])->name('ProcurementActionPlanDelete');
+    Route::get('/Admin/ProcurementActionPlan/show/details/{id}', [AdminProcurementActionPlanController::class, 'ProcurementActionPlanShowDertails'])->name('ProcurementActionPlanShowDertails');
+    Route::post('/Admin/ProcurementActionPlan/details/{id}/create', [AdminProcurementActionPlanController::class, 'ProcurementActionPlanCreateFiles'])->name('ProcurementActionPlanCreateFiles');
+    Route::delete('/Admin/ProProcurementActionPlan/details/{id}/delete', [AdminProcurementActionPlanController::class, 'ProcurementActionPlanDertailsDelete'])->name('ProcurementActionPlanDertailsDelete');
+
+    //LocalDevelopmentPlan
+    Route::get('/Admin/LocalDevelopmentPlan/page', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanAdmin'])->name('LocalDevelopmentPlanAdmin');
+    Route::post('/Admin/LocalDevelopmentPlan/create', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanCreate'])->name('LocalDevelopmentPlanCreate');
+    Route::put('/Admin/LocalDevelopmentPlan/{id}/update', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanUpdate'])->name('LocalDevelopmentPlanUpdate');
+    Route::delete('/Admin/LocalDevelopmentPlan/{id}/delete', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanDelete'])->name('LocalDevelopmentPlanDelete');
+    Route::get('/Admin/LocalDevelopmentPlan/show/details/{id}', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanShowDertails'])->name('LocalDevelopmentPlanShowDertails');
+    Route::post('/Admin/LocalDevelopmentPlan/details/{id}/create', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanCreateFiles'])->name('LocalDevelopmentPlanCreateFiles');
+    Route::delete('/Admin/LocalDevelopmentPlan/details/{id}/delete', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanDertailsDelete'])->name('LocalDevelopmentPlanDertailsDelete');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

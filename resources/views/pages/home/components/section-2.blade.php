@@ -64,7 +64,7 @@
                     <div>
                         <span>วิดีทัศน์แนะนำ</span>
                         <img src="{{ asset('images/home/section-2/clapperboard.png') }}" alt="icon"
-                            style="margin-top: -30px;">
+                            style="margin-top: -30px;" class="d-none d-sm-block">
                         <div class="fs-3">องค์การบริหารส่วนตำบลพระอาจารย์</div>
                     </div>
                 </div>

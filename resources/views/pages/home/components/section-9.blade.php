@@ -447,7 +447,7 @@
                 <img src="{{ asset('images/home/section-9/10.png') }}" alt="10">
             </div>
 
-            {{-- <!-- เมฆขวา -->
+            <!-- เมฆขวา -->
             <img src="{{ asset('images/home/section-9/เมฆขวา.png') }}" alt="could-right" class="could-right">
 
             <!-- เมฆซ้าย -->
@@ -455,7 +455,7 @@
 
             <!-- ดวงอาทิตย์ -->
             <img src="{{ asset('images/home/section-9/ดวงอาทิตย์.png') }}" alt="sun" class="sun"
-                style="width: 180px;"> --}}
+                style="width: 180px;">
         </div>
         {{-- <div class="row d-xxl-none">
             <div class="col-md-6 col-xl-4 col-12">

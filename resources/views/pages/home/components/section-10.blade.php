@@ -98,19 +98,19 @@
         </div>
         <div class="bg-coute mb-4">
             <div class="container d-flex flex-column flex-lg-row justify-content-center align-items-center">
-                <div class="text-center py-3 px-4 border-3 border-light border-end lh-1">
+                <div class="text-center py-3 px-4  border-3 border-light border-end lh-1">
                     <span class="fw-bold fs-3">จำนวนผู้เข้าชมเว็บไซต์</span> <br>
                     number of website visitors
                 </div>
-                <div class="text-center py-3 px-5 border-3 border-light border-end lh-1">
+                <div class="text-center py-3 px-5  border-3 border-light border-end lh-1">
                     <span class=" fs-1">1</span> <br>
                     <span class="fw-bold">ขณะนี้</span>
                 </div>
-                <div class="text-center py-3 px-5 border-3 border-light border-end lh-1">
+                <div class="text-center py-3 px-5  border-3 border-light border-end lh-1">
                     <span class=" fs-1">1</span> <br>
                     <span class="fw-bold">วันนี้</span>
                 </div>
-                <div class="text-center py-3 px-5 border-3 border-light border-end lh-1">
+                <div class="text-center py-3 px-5  border-3 border-light border-end lh-1">
                     <span class=" fs-1">1</span> <br>
                     <span class="fw-bold">เดือนนี้</span>
                 </div>
@@ -118,7 +118,7 @@
                     <span class=" fs-1">1</span> <br>
                     <span class="fw-bold">ปีนี้</span>
                 </div>
-                <div class="text-center py-3 px-5 border-3 border-light border-start lh-1">
+                <div class="text-center py-3 px-5  border-3 border-light border-start lh-1">
                     <span class=" fs-1">1</span> <br>
                     <span class="fw-bold">ทั้งหมด</span>
                 </div>

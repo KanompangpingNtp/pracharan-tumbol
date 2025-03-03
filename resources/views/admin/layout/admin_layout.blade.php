@@ -232,7 +232,9 @@
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark overflow-auto" id="sidenavAccordion">
+            {{-- <nav class="sb-sidenav accordion sb-sidenav-dark overflow-auto" id="sidenavAccordion"> --}}
+                <nav class="sb-sidenav accordion sb-sidenav-dark overflow-auto" id="sidenavAccordion" style="overflow-y: auto; max-height: 100vh;">
+
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">ข้อมูลหน้าหลัก</div>
@@ -388,6 +390,23 @@
                                 <a class="nav-link" href="{{route('AntiCorruptionPlanAdmin')}}">แผนงานป้องกันการทุจริต</a>
                                 <a class="nav-link" href="{{route('ProcurementActionPlanAdmin')}}">แผนปฏิบัติการจัดซื้อ - จัดจ้าง</a>
                                 <a class="nav-link mb-5" href="{{route('LocalDevelopmentPlanAdmin')}}">แผนพัฒนาท้องถิ่น</a>
+                            </nav>
+                        </div>
+
+                        <a class="nav-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseLayouts6" aria-expanded="false" aria-controls="collapseLayouts6">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            กฏหมายและกฏระเบียบ
+                            <div class="sb-sidenav-collapse-arrow">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts6" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{route('CanonAdmin')}}">ข้อบัญญัติ</a>
+                                {{-- <a class="nav-link" href="#">พระราชบัญญัติ และพระราชกฤษฎีกา</a>
+                                <a class="nav-link mb-5" href="#">กฎหมาย ระเบียบ และประกาศกระทรวง</a> --}}
                             </nav>
                         </div>
                     </div>

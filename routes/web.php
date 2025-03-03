@@ -76,7 +76,8 @@ use App\Http\Controllers\local_development_plan\AdminProcurementActionPlanContro
 use App\Http\Controllers\local_development_plan\ProcurementActionPlanController;
 use App\Http\Controllers\local_development_plan\AdminLocalDevelopmentPlanController;
 use App\Http\Controllers\local_development_plan\LocalDevelopmentPlanController;
-
+use App\Http\Controllers\laws_regs\AdminCanonController;
+use App\Http\Controllers\laws_regs\CanonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -248,6 +249,10 @@ Route::get('/HRResultsReport/show/details/results/{id}', [HRResultsReportControl
 //ป้ายประกาศ
 Route::get('/NoticeBoard/ShowData', [NoticeBoardController::class, 'NoticeBoardShowData'])->name('NoticeBoardShowData');
 Route::get('/NoticeBoard/ShowDetails/{id}', [NoticeBoardController::class, 'NoticeBoardShowDetails'])->name('NoticeBoardShowDetails');
+
+//ข้อบัญญัติ
+Route::get('/Canon/ShowData', [CanonController::class, 'CanonPage'])->name('CanonPage');
+Route::get('/Canon/ShowDetails/{id}', [CanonController::class, 'CanonDertail'])->name('CanonDertail');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -605,6 +610,15 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/LocalDevelopmentPlan/show/details/{id}', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanShowDertails'])->name('LocalDevelopmentPlanShowDertails');
     Route::post('/Admin/LocalDevelopmentPlan/details/{id}/create', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanCreateFiles'])->name('LocalDevelopmentPlanCreateFiles');
     Route::delete('/Admin/LocalDevelopmentPlan/details/{id}/delete', [AdminLocalDevelopmentPlanController::class, 'LocalDevelopmentPlanDertailsDelete'])->name('LocalDevelopmentPlanDertailsDelete');
+
+    //Canon
+    Route::get('/Admin/Canon/page', [AdminCanonController::class, 'CanonAdmin'])->name('CanonAdmin');
+    Route::post('/Admin/Canon/create', [AdminCanonController::class, 'CanonCreate'])->name('CanonCreate');
+    Route::put('/Admin/Canon/{id}/update', [AdminCanonController::class, 'CanonUpdate'])->name('CanonUpdate');
+    Route::delete('/Admin/Canon/{id}/delete', [AdminCanonController::class, 'CanonDelete'])->name('CanonDelete');
+    Route::get('/Admin/Canon/show/details/{id}', [AdminCanonController::class, 'CanonShowDertails'])->name('CanonShowDertails');
+    Route::post('/Admin/Canon/details/{id}/create', [AdminCanonController::class, 'CanonCreateFiles'])->name('CanonCreateFiles');
+    Route::delete('/Admin/Canon/details/{id}/delete', [AdminCanonController::class, 'CanonDertailsDelete'])->name('CanonDertailsDelete');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

@@ -338,7 +338,7 @@
                                 <a class="nav-link" href="{{route('CommunityProductsAdmin')}}">ผลิตภัณฑ์ชุมชน/OTOP</a>
                                 <a class="nav-link" href="{{route('ImportantPlacesAdmin')}}">สถานที่สำคัญ/แหล่งท่องเที่ยว</a>
                                 <a class="nav-link" href="{{route('AuthorityAdmin')}}">อำนาจหน้าที่</a>
-                                <a class="nav-link" href="{{route('ManagementPolicyAdmin')}}">นโยบายการบริหาร/เจตจำนงสุจริต</a><br>
+                                <a class="nav-link" href="{{route('ManagementPolicyAdmin')}}">การบริหารและพัฒนาทรัพยากรบุคคล</a><br>
                             </nav>
                         </div>
 

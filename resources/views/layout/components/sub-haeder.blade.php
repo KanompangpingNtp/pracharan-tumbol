@@ -318,7 +318,7 @@
                             <a class="nav-link d-flex flex-column align-items-center" href="#">
                                 <img src="{{ asset('images/header/group.png') }}" alt="เมนูสำหรับประชาชน"
                                     class="navbar-icon">
-                                <div class="navbar-text">เมนูหรับประชาชน</div>
+                                <div class="navbar-text">เมนูสำหรับประชาชน</div>
                             </a>
                         </li>
 

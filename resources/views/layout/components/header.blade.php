@@ -304,13 +304,24 @@
                                 </ul>
                             </li>
 
-
                             <!-- 6. กฏหมายและกฏระเบียบ -->
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link d-flex flex-column align-items-center" href="#">
                                     <img src="{{ asset('images/header/law.png') }}" alt="กฏหมายและกฏระเบียบ" class="navbar-icon">
                                     <div class="navbar-text">กฏหมายและกฏระเบียบ</div>
                                 </a>
+                            </li> --}}
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex flex-column align-items-center" id="lawDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="{{ asset('images/header/law.png') }}" alt="กฏหมายและกฏระเบียบ" class="navbar-icon">
+                                    <div class="navbar-text">กฏหมายและกฏระเบียบ</div>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="lawDropdown">
+                                    <li><a class="dropdown-item" href="{{route('CanonPage')}}">ข้อบัญญัติ</a></li>
+                                    <li><a class="dropdown-item" href="http://inthai.info/_rss/readall.php?cat=8" target="_blank">พระราชบัญญัติ และพระราชกฤษฎีกา</a></li>
+                                    <li><a class="dropdown-item" href="http://inthai.info/_rss/readall.php?cat=9" target="_blank">กฎหมาย ระเบียบ และประกาศกระทรวง</a></li>
+                                </ul>
                             </li>
 
                             <!-- 7. เมนูหรับประชาชน -->

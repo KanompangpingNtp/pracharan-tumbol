@@ -40,6 +40,8 @@ class PerfResultsTypeSeeder extends Seeder
             ['type_name' => 'แผนงานป้องกันการทุจริต'],
             ['type_name' => 'แผนปฏิบัติการจัดซื้อจัดจ้าง'],
             ['type_name' => 'แผนพัฒนาท้องถิ่น'],
+
+            ['type_name' => 'ข้อบัญญัติ'],
         ];
 
         foreach ($data as $item) {

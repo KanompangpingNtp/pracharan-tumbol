@@ -16,16 +16,16 @@ class VisitorsController extends Controller
         $five_minutes_ago = $now->copy()->subMinutes(5);
         $online_users = Visitor::where('last_activity', '>=', $five_minutes_ago)->count();
 
-        // จำนวนผู้เข้าชมวันนี้
-        $today_users = Visitor::whereDate('last_activity', $now->toDateString())->count();
+        // จำนวนผู้เข้าชมวันนี้ (ใช้ created_at แทน last_activity)
+        $today_users = Visitor::whereDate('created_at', $now->toDateString())->count();
 
-        // จำนวนผู้เข้าชมเดือนนี้
-        $month_users = Visitor::whereMonth('last_activity', $now->month)
-            ->whereYear('last_activity', $now->year)
+        // จำนวนผู้เข้าชมเดือนนี้ (ใช้ created_at แทน last_activity)
+        $month_users = Visitor::whereMonth('created_at', $now->month)
+            ->whereYear('created_at', $now->year)
             ->count();
 
-        // จำนวนผู้เข้าชมปีนี้
-        $year_users = Visitor::whereYear('last_activity', $now->year)->count();
+        // จำนวนผู้เข้าชมปีนี้ (ใช้ created_at แทน last_activity)
+        $year_users = Visitor::whereYear('created_at', $now->year)->count();
 
         // จำนวนผู้เข้าชมทั้งหมด
         $all_users = Visitor::count();

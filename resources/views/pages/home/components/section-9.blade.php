@@ -13,7 +13,7 @@
     width: 100%;
     height: 600px;
     overflow-x: auto; /* หรือใช้ scroll */
-    overflow-y: hidden; /* ป้องกันไม่ให้เกิดการเลื่อนในแนวตั้ง */
+    overflow-y: auto; /* ป้องกันไม่ให้เกิดการเลื่อนในแนวตั้ง */
     white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ของเนื้อหาภายใน */
 }
 

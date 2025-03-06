@@ -78,6 +78,7 @@ use App\Http\Controllers\local_development_plan\AdminLocalDevelopmentPlanControl
 use App\Http\Controllers\local_development_plan\LocalDevelopmentPlanController;
 use App\Http\Controllers\laws_regs\AdminCanonController;
 use App\Http\Controllers\laws_regs\CanonController;
+use App\Http\Controllers\VisitorsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -627,6 +628,4 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/showRegistrationForm', [AuthController::class, 'showRegistrationForm'])->name('showRegistrationForm');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
-// Route::get('/banner', function () {
-//     return view('pages.banner-in.app');
-// })->name('banner');
+Route::get('/visitor-stats', [VisitorsController::class, 'getVisitorStats']);

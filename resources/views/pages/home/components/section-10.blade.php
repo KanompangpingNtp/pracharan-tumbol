@@ -102,7 +102,7 @@
                     <span class="fw-bold fs-3">จำนวนผู้เข้าชมเว็บไซต์</span> <br>
                     number of website visitors
                 </div>
-                <div class="text-center py-3 px-5  border-3 border-light border-end lh-1">
+                {{-- <div class="text-center py-3 px-5  border-3 border-light border-end lh-1">
                     <span class=" fs-1">1</span> <br>
                     <span class="fw-bold">ขณะนี้</span>
                 </div>
@@ -121,6 +121,47 @@
                 <div class="text-center py-3 px-5  border-3 border-light border-start lh-1">
                     <span class=" fs-1">1</span> <br>
                     <span class="fw-bold">ทั้งหมด</span>
+                </div> --}}
+                <div class="d-flex justify-content-center">
+                    <div class="text-center py-3 px-5 border-3 border-light border-end lh-1">
+                        <span class="fs-1" id="online_users">0</span> <br>
+                        <span class="fw-bold">ขณะนี้</span>
+                    </div>
+                    <div class="text-center py-3 px-5 border-3 border-light border-end lh-1">
+                        <span class="fs-1" id="today_users">0</span> <br>
+                        <span class="fw-bold">วันนี้</span>
+                    </div>
+                    <div class="text-center py-3 px-5 border-3 border-light border-end lh-1">
+                        <span class="fs-1" id="month_users">0</span> <br>
+                        <span class="fw-bold">เดือนนี้</span>
+                    </div>
+                    <div class="text-center py-3 px-5 border-3 border-light border-end lh-1">
+                        <span class="fs-1" id="year_users">0</span> <br>
+                        <span class="fw-bold">ปีนี้</span>
+                    </div>
+                    <div class="text-center py-3 px-5 border-3 border-light border-start lh-1">
+                        <span class="fs-1" id="all_users">0</span> <br>
+                        <span class="fw-bold">ทั้งหมด</span>
+                    </div>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            fetchVisitorStats();
+                        });
+
+                        function fetchVisitorStats() {
+                            fetch('/visitor-stats')
+                                .then(response => response.json())
+                                .then(data => {
+                                    document.getElementById('online_users').innerText = data.online_users;
+                                    document.getElementById('today_users').innerText = data.today_users;
+                                    document.getElementById('month_users').innerText = data.month_users;
+                                    document.getElementById('year_users').innerText = data.year_users;
+                                    document.getElementById('all_users').innerText = data.all_users;
+                                })
+                                .catch(error => console.error('Error fetching visitor stats:', error));
+                        }
+                    </script>
                 </div>
             </div>
         </div>

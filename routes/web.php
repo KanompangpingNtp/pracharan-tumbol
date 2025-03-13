@@ -79,6 +79,8 @@ use App\Http\Controllers\local_development_plan\LocalDevelopmentPlanController;
 use App\Http\Controllers\laws_regs\AdminCanonController;
 use App\Http\Controllers\laws_regs\CanonController;
 use App\Http\Controllers\VisitorsController;
+use App\Http\Controllers\menu_for_public\ReceiveComplaintsController;
+use App\Http\Controllers\menu_for_public\SatisfactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -254,6 +256,13 @@ Route::get('/NoticeBoard/ShowDetails/{id}', [NoticeBoardController::class, 'Noti
 //ข้อบัญญัติ
 Route::get('/Canon/ShowData', [CanonController::class, 'CanonPage'])->name('CanonPage');
 Route::get('/Canon/ShowDetails/{id}', [CanonController::class, 'CanonDertail'])->name('CanonDertail');
+
+//รับเรื่องราวร้องทุกข์
+Route::get('/ReceiveComplaints/form', [ReceiveComplaintsController::class, 'ReceiveComplaintsForm'])->name('ReceiveComplaintsForm');
+Route::post('/ReceiveComplaints/form/create', [ReceiveComplaintsController::class, 'ReceiveComplaintsFormCreate'])->name('ReceiveComplaintsFormCreate');
+
+//รับแจ้งร้องเรียนทุจริตประพฤติมิชอบ
+Route::get('/Satisfaction/form', [SatisfactionController::class, 'SatisfactionForm'])->name('SatisfactionForm');
 
 Route::middleware(['check.auth'])->group(function () {
 

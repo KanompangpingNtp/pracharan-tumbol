@@ -325,12 +325,17 @@
                         </li>
 
                         <!-- 7. เมนูหรับประชาชน -->
-                        <li class="nav-item">
-                            <a class="nav-link d-flex flex-column align-items-center" href="#">
-                                <img src="{{ asset('images/header/group.png') }}" alt="เมนูสำหรับประชาชน"
-                                    class="navbar-icon">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex flex-column align-items-center" id="citizenMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ asset('images/header/group.png') }}" alt="เมนูสำหรับประชาชน" class="navbar-icon">
                                 <div class="navbar-text">เมนูสำหรับประชาชน</div>
                             </a>
+                            <ul class="dropdown-menu" aria-labelledby="citizenMenuDropdown">
+                                <li><a class="dropdown-item" href="{{route('ReceiveComplaintsForm')}}">รับเรื่องราวร้องทุกข์</a></li>
+                                <li><a class="dropdown-item" href="{{route('SatisfactionForm')}}">รับแจ้งร้องเรียนทุจริตประพฤติมิชอบ</a></li>
+                                <li><a class="dropdown-item" href="#">รายงานผลสำรวจความพึงพอใจการให้บริการ</a></li>
+                                <li><a class="dropdown-item" href="#">แบบสอบถามความพึงพอใจ</a></li>
+                            </ul>
                         </li>
 
                     </ul>

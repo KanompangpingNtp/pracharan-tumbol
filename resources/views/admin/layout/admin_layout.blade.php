@@ -233,7 +233,7 @@
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             {{-- <nav class="sb-sidenav accordion sb-sidenav-dark overflow-auto" id="sidenavAccordion"> --}}
-                <nav class="sb-sidenav accordion sb-sidenav-dark overflow-auto" id="sidenavAccordion" style="overflow-y: auto; max-height: 100vh;">
+                <nav class="sb-sidenav accordion sb-sidenav-dark overflow-auto" id="sidenavAccordion">
 
                 <div class="sb-sidenav-menu">
                     <div class="nav">

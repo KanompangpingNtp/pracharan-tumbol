@@ -18,7 +18,6 @@ class TrackVisitor
      */
     public function handle(Request $request, Closure $next): Response
     {
-
         $ip = $request->ip();
         $session_id = Session::getId();
         $now = Carbon::now('Asia/Bangkok');
@@ -39,7 +38,6 @@ class TrackVisitor
             // ถ้าพบข้อมูลให้ทำการอัปเดต last_activity
             $visitor->update(['last_activity' => $now]);
         }
-
 
         return $next($request);
     }

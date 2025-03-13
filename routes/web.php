@@ -81,6 +81,8 @@ use App\Http\Controllers\laws_regs\CanonController;
 use App\Http\Controllers\VisitorsController;
 use App\Http\Controllers\menu_for_public\ReceiveComplaintsController;
 use App\Http\Controllers\menu_for_public\SatisfactionController;
+use App\Http\Controllers\ITA\AdminITAController;
+use App\Http\Controllers\ITA\ITAController;
 
 /*
 |--------------------------------------------------------------------------
@@ -263,6 +265,9 @@ Route::post('/ReceiveComplaints/form/create', [ReceiveComplaintsController::clas
 
 //รับแจ้งร้องเรียนทุจริตประพฤติมิชอบ
 Route::get('/Satisfaction/form', [SatisfactionController::class, 'SatisfactionForm'])->name('SatisfactionForm');
+
+//ita
+Route::get('/ita/page', [ITAController::class, 'itaPage'])->name('itaPage');
 
 Route::middleware(['check.auth'])->group(function () {
 
@@ -629,6 +634,18 @@ Route::middleware(['check.auth'])->group(function () {
     Route::get('/Admin/Canon/show/details/{id}', [AdminCanonController::class, 'CanonShowDertails'])->name('CanonShowDertails');
     Route::post('/Admin/Canon/details/{id}/create', [AdminCanonController::class, 'CanonCreateFiles'])->name('CanonCreateFiles');
     Route::delete('/Admin/Canon/details/{id}/delete', [AdminCanonController::class, 'CanonDertailsDelete'])->name('CanonDertailsDelete');
+
+    //ITA
+    Route::get('/Admin/ITA/type/page', [AdminITAController::class, 'AdminITAType'])->name('AdminITAType');
+    Route::post('/Admin/ITA/type/create', [AdminITAController::class, 'ITATypeCreate'])->name('ITATypeCreate');
+    Route::put('/Admin/ITA/type/update/{id}', [AdminITAController::class, 'ITATypeUpdate'])->name('ITATypeUpdate');
+    Route::delete('/Admin/ITA/type/delete/{id}', [AdminITAController::class, 'ITATypeDelete'])->name('ITATypeDelete');
+
+    Route::get('/Admin/ITA/type/detail/page/{id}', [AdminITAController::class, 'AdminITA'])->name('AdminITA');
+    Route::post('/Admin/ITA/create/{id}', [AdminITAController::class, 'ITACreate'])->name('ITACreate');
+    Route::put('/Admin/ITA/update/{id}', [AdminITAController::class, 'ITAUpdate'])->name('ITAUpdate');
+    Route::delete('/Admin/ITA/delete/{id}', [AdminITAController::class, 'ITADelete'])->name('ITADelete');
+    Route::delete('iTALink/{id}', [AdminITAController::class, 'destroy'])->name('ITAlink.destroy');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

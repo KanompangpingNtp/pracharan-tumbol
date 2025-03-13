@@ -316,9 +316,15 @@
                         <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('LocalAdminPromotionPage') }}">จากกรมส่งเสริมการปกครองท้องถิ่น</a>
-                                <a class="nav-link" href="">จากท้องถิ่นจังหวัด</a>
+                                <a class="nav-link" href="#">จากท้องถิ่นจังหวัด</a>
                             </nav>
                         </div>
+                        <a class="nav-link" href="{{route('AdminITAType')}}">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการการประเมินคุณธรรม(ITA)
+                        </a>
 
                         <div class="sb-sidenav-menu-heading">แถบเมนู</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts3">

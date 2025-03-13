@@ -276,7 +276,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a herf="#" class="menu-box text-decoration-none text-black lh-1" style="background-color: #54b901;">
+                <a href="{{route('itaPage')}}" class="menu-box text-decoration-none text-black lh-1" style="background-color: #54b901;">
                     <img src="{{asset('images/home/section-1/ITA.png')}}" alt="icon">
                     <div>การประเมินคุณธรรม<br>และ ความโปร่งใส</div>
                 </a>

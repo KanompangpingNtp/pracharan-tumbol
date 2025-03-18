@@ -238,7 +238,12 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">ข้อมูลหน้าหลัก</div>
-
+                        <a class="nav-link" href="{{route('AdminWebIntro')}}">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            จัดการอินโทรเว็บไซต์
+                        </a>
                         <a class="nav-link" href="{{ route('ExecutiveBoardPage') }}">
                             <div class="sb-nav-link-icon">
                                 <i class="bi bi-database-add"></i>

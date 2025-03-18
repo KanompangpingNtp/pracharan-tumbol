@@ -83,6 +83,8 @@ use App\Http\Controllers\menu_for_public\ReceiveComplaintsController;
 use App\Http\Controllers\menu_for_public\SatisfactionController;
 use App\Http\Controllers\ITA\AdminITAController;
 use App\Http\Controllers\ITA\ITAController;
+use App\Http\Controllers\web_intro\AdminWebIntroController;
+use App\Http\Controllers\web_intro\WebIntroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,8 +100,8 @@ use App\Http\Controllers\ITA\ITAController;
 // Route::get('/check', function () {
 //     return view('pages.banner-in.app');
 // });
-
-Route::get('/', [ShowDataDetailController::class, 'HomeDataPage'])->name('HomeDataPage');
+Route::get('/', [WebIntroController::class, 'WebIntroPage'])->name('WebIntroPage');
+Route::get('/home', [ShowDataDetailController::class, 'HomeDataPage'])->name('HomeDataPage');
 Route::get('/layout', [ShowDataDetailController::class, 'layout'])->name('layout');
 Route::get('/banner', [ShowDataDetailController::class, 'banner'])->name('banner');
 
@@ -646,6 +648,11 @@ Route::middleware(['check.auth'])->group(function () {
     Route::put('/Admin/ITA/update/{id}', [AdminITAController::class, 'ITAUpdate'])->name('ITAUpdate');
     Route::delete('/Admin/ITA/delete/{id}', [AdminITAController::class, 'ITADelete'])->name('ITADelete');
     Route::delete('iTALink/{id}', [AdminITAController::class, 'destroy'])->name('ITAlink.destroy');
+
+    //MenuForPublic
+    Route::get('/Admin/WebIntro/page', [AdminWebIntroController::class, 'AdminWebIntro'])->name('AdminWebIntro');
+    Route::post('/Admin/WebIntro/create', [AdminWebIntroController::class, 'WebIntroCreate'])->name('WebIntroCreate');
+    Route::delete('/Admin/WebIntro/delete/{id}', [AdminWebIntroController::class, 'WebIntroDelete'])->name('WebIntroDelete');
 });
 
 Route::get('/showLoginForm', [AuthController::class, 'showLoginForm'])->name('showLoginForm');

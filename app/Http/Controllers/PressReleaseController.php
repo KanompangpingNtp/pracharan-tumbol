@@ -13,18 +13,6 @@ use Illuminate\Support\Facades\Storage;
 
 class PressReleaseController extends Controller
 {
-    //
-    // public function PressReleaseHome()
-    // {
-    //     $postTypes = PostType::all();
-
-    //     $postTypeId = $postTypes->firstWhere('type_name', 'ข่าวประชาสัมพันธ์')->id;
-    //     $postDetails = PostDetail::with('postType')
-    //         ->where('post_type_id', $postTypeId)
-    //         ->get();
-
-    //     return view('admin.post.press_release.press_release', compact('postDetails', 'postTypes'));
-    // }
     public function PressReleaseHome()
     {
         $postTypes = PostType::all();

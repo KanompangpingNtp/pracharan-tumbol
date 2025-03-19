@@ -61,10 +61,10 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-7 d-flex flex-column">
                 <div class="title-section2 lh-1 d-flex flex-column align-items-center justify-content-center mb-3">
-                    <div>
-                        <span>วิดีทัศน์แนะนำ</span>
-                        <img src="{{ asset('images/home/section-2/clapperboard.png') }}" alt="icon"
-                            style="margin-top: -30px;" class="d-none d-sm-block">
+                    <div class="d-flex flex-column w-100 align-items-center justify-content-center">
+                        <div class="d-flex">วิดีทัศน์แนะนำ
+                            <img src="{{ asset('images/home/section-2/clapperboard.png') }}" alt="icon"
+                                style=" width:80px;" class="d-none d-sm-block"></div>
                         <div class="fs-3">องค์การบริหารส่วนตำบลพระอาจารย์</div>
                     </div>
                 </div>

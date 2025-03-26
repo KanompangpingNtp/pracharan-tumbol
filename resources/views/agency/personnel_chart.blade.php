@@ -37,9 +37,9 @@
 
             </style>
 
-            <div>
+            {{-- <div>
                 <img src="{{ asset('images/personnel_chart/st01-3.png') }}" class="a4-size" alt="">
-            </div>
+            </div> --}}
 
         </div>
 

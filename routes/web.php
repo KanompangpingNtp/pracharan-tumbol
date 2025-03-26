@@ -167,7 +167,7 @@ Route::get('/RecommendedPlaces/ShowData', [RecommendedPlacesController::class, '
 Route::get('/RecommendedPlaces/ShowDetails/{id}', [RecommendedPlacesController::class, 'RecommendedPlacesShowDetails'])->name('RecommendedPlacesShowDetails');
 
 //บุคลากร
-Route::get('/Agency/page', [ShowDataAgencyController::class, 'AgencyPage'])->name('AgencyPage');
+Route::get('/Agency/page', [ShowDataAgencyController::class, 'PersonnelChart'])->name('PersonnelChart');
 Route::get('/agency/{id}', [ShowDataAgencyController::class, 'AgencyShow'])->name('AgencyShow');
 
 //ข้อมูลพื้นฐาน

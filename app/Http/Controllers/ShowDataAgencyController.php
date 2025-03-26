@@ -22,4 +22,11 @@ class ShowDataAgencyController extends Controller
 
         return view('agency.show', compact('agency','personnelAgencies'));
     }
+
+    public function PersonnelChart()
+    {
+        $personnelAgencies = PersonnelAgency::with('ranks')->get();
+
+        return view('agency.personnel_chart', compact('personnelAgencies'));
+    }
 }

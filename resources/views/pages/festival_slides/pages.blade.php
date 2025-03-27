@@ -158,7 +158,7 @@
         <img id="background-image" src="{{ asset('storage/' . $item->files_path) }}" alt="รูปภาพอินโทร">
         @endforeach
         <div class="button-container">
-            <a href="{{ route('Home') }}" class="login-button">
+            <a href="{{ route('HomeDataPage') }}" class="login-button">
                 <strong>เข้าสู่เว็บไซต์</strong>
             </a>
             @if($Button && $item->button_name)

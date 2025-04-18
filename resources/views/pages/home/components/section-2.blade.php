@@ -106,7 +106,7 @@
                 </a>
             </div>
             <div class="col-6 col-lg-4">
-                <a href="#">
+                <a href="{{route('Eservice')}}">
                     <img src="{{ asset('images/home/section-2/5.png') }}" alt="5" class="img-fluid img-hover">
                 </a>
             </div>

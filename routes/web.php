@@ -86,6 +86,8 @@ use App\Http\Controllers\ITA\ITAController;
 use App\Http\Controllers\web_intro\AdminWebIntroController;
 use App\Http\Controllers\web_intro\WebIntroController;
 
+use App\Http\Controllers\eservice\test\PagesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -96,6 +98,18 @@ use App\Http\Controllers\web_intro\WebIntroController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/eservice/pages', [PagesController::class, 'Eservice'])->name('Eservice');
+Route::get('/eservice/page1', [PagesController::class, 'page1'])->name('page1');
+Route::get('/eservice/page2', [PagesController::class, 'page2'])->name('page2');
+Route::get('/eservice/page3', [PagesController::class, 'page3'])->name('page3');
+Route::get('/eservice/page4', [PagesController::class, 'page4'])->name('page4');
+Route::get('/eservice/page5', [PagesController::class, 'page5'])->name('page5');
+Route::get('/eservice/page6', [PagesController::class, 'page6'])->name('page6');
+Route::get('/eservice/page7', [PagesController::class, 'page7'])->name('page7');
+Route::get('/eservice/page8', [PagesController::class, 'page8'])->name('page8');
+Route::get('/eservice/page9', [PagesController::class, 'page9'])->name('page9');
+Route::get('/eservice/page10', [PagesController::class, 'page10'])->name('page10');
 
 // Route::get('/check', function () {
 //     return view('pages.banner-in.app');

@@ -457,35 +457,5 @@
             <img src="{{ asset('images/home/section-9/ดวงอาทิตย์.png') }}" alt="sun" class="sun"
                 style="width: 180px;">
         </div>
-        {{-- <div class="row d-xxl-none">
-            <div class="col-md-6 col-xl-4 col-12">
-                <img src="{{ asset('images/home/section-9/1.png') }}" alt="1" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-xl-4 col-12">
-                <img src="{{ asset('images/home/section-9/13.png') }}" alt="13" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-xl-4 col-12">
-                <img src="{{ asset('images/home/section-9/5.png') }}" alt="5" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-xl-4 col-12">
-                <img src="{{ asset('images/home/section-9/3.png') }}" alt="3" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-xl-4 col-12">
-                <img src="{{ asset('images/home/section-9/8.png') }}" alt="8" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-xl-4 col-12">
-                <img src="{{ asset('images/home/section-9/11.png') }}" alt="11" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-xl-4 col-12">
-                <img src="{{ asset('images/home/section-9/7.png') }}" alt="7" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-xl-4 col-12">
-                <img src="{{ asset('images/home/section-9/6.png') }}" alt="6" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-xl-4 col-12">
-                <img src="{{ asset('images/home/section-9/10.png') }}" alt="10" class="img-fluid">
-            </div>
-        </div> --}}
-
     </div>
 </main>

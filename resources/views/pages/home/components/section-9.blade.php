@@ -9,13 +9,12 @@
     }
 
     .map-container {
-    position: relative;
-    width: 100%;
-    height: 900px;
-    overflow-x: auto; /* หรือใช้ scroll */
-    overflow-y: auto; /* ป้องกันไม่ให้เกิดการเลื่อนในแนวตั้ง */
-    white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ของเนื้อหาภายใน */
-}
+        position: relative;
+        width: 100%;
+        height: 100%;
+        white-space: nowrap;
+        /* ป้องกันการขึ้นบรรทัดใหม่ของเนื้อหาภายใน */
+    }
 
     .map-container img {
         position: absolute;
@@ -40,10 +39,16 @@
         font-size: 14px;
         opacity: 0;
         z-index: 999;
-        top: -10px;
-        left: 160px;
-        transform: scale(1);
+        width: 30rem;
+        height: 17rem;
+        top: 80px;
+        left: 400px;
         transition: all 0.3s ease-in-out;
+    }
+
+    .tooltip-section9 img {
+        width: 100%;
+        height: 100%;
     }
 
     /* แสดงกล่องเมื่อ hover */
@@ -53,176 +58,188 @@
 
     /* ตำแหน่งของแต่ละโซน */
     .piece-1 {
-        top: 300px;
+        top: 100px;
+        left: 90px;
+        width: 210px;
+    }
+
+    .piece-13 {
+        top: 195px;
         left: 0px;
         width: 200px;
     }
 
-    .piece-13 {
-        top: 360px;
-        left: 140px;
-        width: 200px;
-    }
-
     .piece-2 {
-        top: 410px;
-        left: 250px;
+        top: 320px;
+        left: 0px;
         width: 200px;
     }
 
     .piece-4 {
-        top: 490px;
-        left: 360px;
-        width: 200px;
+        top: 420px;
+        left: 30px;
+        width: 230px;
         z-index: 4;
     }
 
     .piece-5 {
-        top: 540px;
-        left: 480px;
-        width: 200px;
+        top: 525px;
+        left: 30px;
+        width: 280px;
         z-index: 5;
     }
 
     .piece-3 {
-        top: 390px;
-        left: 460px;
-        width: 290px;
+        top: 430px;
+        left: 250px;
+        width: 230px;
         z-index: 3;
     }
 
     .piece-8 {
-        top: 460px;
-        left: 570px;
-        width: 290px;
+        top: 540px;
+        left: 290px;
+        width: 220px;
         z-index: 4;
     }
 
     .piece-12 {
-        top: 350px;
-        left: 660px;
-        width: 200px;
+        top: 380px;
+        left: 460px;
+        width: 190px;
         z-index: 2;
     }
 
     .piece-11 {
-        top: 320px;
-        left: 760px;
-        width: 250px;
+        top: 540px;
+        left: 500px;
+        width: 170px;
         z-index: 3;
     }
 
     .piece-9 {
-        top: 280px;
-        left: 770px;
-        width: 200px;
+        top: 370px;
+        left: 640px;
+        width: 180px;
         z-index: 1;
     }
 
     .piece-7 {
-        top: 290px;
-        left: 890px;
-        width: 230px;
+        top: 520px;
+        left: 650px;
+        width: 180px;
         z-index: 2;
     }
 
     .piece-6 {
-        top: 170px;
-        left: 890px;
-        width: 290px;
+        top: 370px;
+        left: 790px;
+        width: 300px;
     }
 
     .piece-10 {
-        top: 190px;
-        left: 1010px;
-        width: 300px;
+        top: 510px;
+        left: 820px;
+        width: 200px;
+    }
+
+    .piece-14 {
+        top: 540px;
+        left: 1000px;
+        width: 200px;
     }
 
     @media (max-width: 1400px) {
         .piece-1 {
-            top: 300px;
-            left: 130px;
-            width: 130px;
+            top: 70px;
+            left: 120px;
+            width: 170px;
         }
 
         .piece-13 {
-            top: 350px;
-            left: 210px;
-            width: 130px;
+            top: 165px;
+            left: 50px;
+            width: 170px;
         }
 
         .piece-2 {
-            top: 380px;
-            left: 280px;
-            width: 130px;
+            top: 275px;
+            left: 50px;
+            width: 170px;
         }
 
         .piece-4 {
-            top: 430px;
-            left: 350px;
-            width: 130px;
+            top: 360px;
+            left: 60px;
+            width: 200px;
             z-index: 4;
         }
 
         .piece-5 {
-            top: 465px;
-            left: 435px;
-            width: 130px;
+            top: 450px;
+            left: 60px;
+            width: 240px;
             z-index: 5;
         }
 
         .piece-3 {
-            top: 360px;
-            left: 410px;
-            width: 200px;
+            top: 430px;
+            left: 250px;
+            width: 230px;
             z-index: 3;
         }
 
         .piece-8 {
-            top: 410px;
-            left: 490px;
-            width: 190px;
+            top: 540px;
+            left: 290px;
+            width: 220px;
             z-index: 4;
         }
 
         .piece-12 {
-            top: 325px;
-            left: 560px;
-            width: 150px;
+            top: 380px;
+            left: 460px;
+            width: 190px;
             z-index: 2;
         }
 
         .piece-11 {
-            top: 323px;
-            left: 620px;
-            width: 160px;
+            top: 540px;
+            left: 500px;
+            width: 170px;
             z-index: 3;
         }
 
         .piece-9 {
-            top: 282px;
-            left: 645px;
-            width: 130px;
+            top: 370px;
+            left: 640px;
+            width: 180px;
             z-index: 1;
         }
 
         .piece-7 {
-            top: 305px;
-            left: 700px;
-            width: 150px;
+            top: 520px;
+            left: 650px;
+            width: 180px;
             z-index: 2;
         }
 
         .piece-6 {
-            top: 193px;
-            left: 705px;
-            width: 220px;
+            top: 370px;
+            left: 790px;
+            width: 300px;
         }
 
         .piece-10 {
-            top: 226px;
-            left: 776px;
-            width: 230px;
+            top: 510px;
+            left: 820px;
+            width: 200px;
+        }
+
+        .piece-14 {
+            top: 540px;
+            left: 1000px;
+            width: 200px;
         }
 
         .tooltip-section9 {
@@ -375,79 +392,85 @@
 
 <main class="bg-section9 d-flex">
     <div class="container d-flex flex-column justify-content-start align-items-center align-items-xxl-start ">
-        <img src="{{ asset('images/home/section-9/title-section-9.png') }}" alt="title" class="img-fluid" style="width: 50%; height:10%;">
+        <img src="{{ asset('images/home/section-9/title-section-9.png') }}" alt="title" class="img-fluid"
+            style="width: 50%; height:10%;">
         <div class="map-container ">
             <!-- หมู่ 1 -->
-            <img src="{{ asset('images/home/section-9/หมู่1.png') }}" alt="1" class="piece-1">
+            <img src="{{ asset('images/home/section-9/อันดับ1.png') }}" alt="1" class="piece-1">
             <div class="tooltip-section9">
-                <img src="{{ asset('images/home/section-9/1.png') }}" alt="1">
+                <img src="{{ asset('images/home/section-9/หมู่1.png') }}" alt="1">
             </div>
 
             <!-- หมู่ 13 -->
-            <img src="{{ asset('images/home/section-9/หมู่13.png') }}" alt="13" class="piece-13">
+            <img src="{{ asset('images/home/section-9/อันดับ2.png') }}" alt="13" class="piece-13">
             <div class="tooltip-section9">
-                <img src="{{ asset('images/home/section-9/13.png') }}" alt="13">
+                <img src="{{ asset('images/home/section-9/หมู่13.png') }}" alt="13">
             </div>
 
             <!-- หมู่ 2 -->
-            <img src="{{ asset('images/home/section-9/หมู่2.png') }}" alt="2" class="piece-2">
+            <img src="{{ asset('images/home/section-9/อันดับ3.png') }}" alt="2" class="piece-2">
             {{-- <div class="tooltip" style="top: 400px; left: 250px;">หมู่ 2</div> --}}
 
             <!-- หมู่ 4 -->
-            <img src="{{ asset('images/home/section-9/หมู่4.png') }}" alt="4" class="piece-4">
+            <img src="{{ asset('images/home/section-9/อันดับ4.png') }}" alt="4" class="piece-4">
             {{-- <div class="tooltip" style="top: 480px; left: 360px;">หมู่ 4</div> --}}
 
             <!-- หมู่ 5 -->
-            <img src="{{ asset('images/home/section-9/หมู่5.png') }}" alt="5" class="piece-5">
+            <img src="{{ asset('images/home/section-9/อันดับ5.png') }}" alt="5" class="piece-5">
             <div class="tooltip-section9">
-                <img src="{{ asset('images/home/section-9/5.png') }}" alt="5">
+                <img src="{{ asset('images/home/section-9/หมู่5.png') }}" alt="5">
             </div>
 
             <!-- หมู่ 3 -->
-            <img src="{{ asset('images/home/section-9/หมู่3.png') }}" alt="3" class="piece-3">
+            <img src="{{ asset('images/home/section-9/อันดับ6.png') }}" alt="3" class="piece-3">
             <div class="tooltip-section9">
-                <img src="{{ asset('images/home/section-9/3.png') }}" alt="3">
+                <img src="{{ asset('images/home/section-9/หมู่3.png') }}" alt="3">
             </div>
 
             <!-- หมู่ 8 -->
-            <img src="{{ asset('images/home/section-9/หมู่8.png') }}" alt="8" class="piece-8">
+            <img src="{{ asset('images/home/section-9/อันดับ7.png') }}" alt="8" class="piece-8">
             <div class="tooltip-section9">
-                <img src="{{ asset('images/home/section-9/8.png') }}" alt="8">
+                <img src="{{ asset('images/home/section-9/หมู่8.png') }}" alt="8">
             </div>
 
             <!-- หมู่ 12 -->
-            <img src="{{ asset('images/home/section-9/หมู่12.png') }}" alt="12" class="piece-12">
+            <img src="{{ asset('images/home/section-9/อันดับ8.png') }}" alt="12" class="piece-12">
             {{-- <div class="tooltip" style="top: 350px; left: 660px;">หมู่ 12</div> --}}
 
             <!-- หมู่ 11 -->
-            <img src="{{ asset('images/home/section-9/หมู่11.png') }}" alt="11" class="piece-11">
+            <img src="{{ asset('images/home/section-9/อันดับ9.png') }}" alt="11" class="piece-11">
             <div class="tooltip-section9">
-                <img src="{{ asset('images/home/section-9/11.png') }}" alt="11">
+                <img src="{{ asset('images/home/section-9/หมู่11.png') }}" alt="11">
             </div>
 
             <!-- หมู่ 9 -->
-            <img src="{{ asset('images/home/section-9/หมู่9.png') }}" alt="9" class="piece-9">
+            <img src="{{ asset('images/home/section-9/อันดับ10.png') }}" alt="9" class="piece-9">
             {{-- <div class="tooltip" style="top: 280px; left: 770px;">หมู่ 9</div> --}}
 
             <!-- หมู่ 7 -->
-            <img src="{{ asset('images/home/section-9/หมู่7.png') }}" alt="7" class="piece-7">
+            <img src="{{ asset('images/home/section-9/อันดับ11.png') }}" alt="7" class="piece-7">
             <div class="tooltip-section9">
-                <img src="{{ asset('images/home/section-9/7.png') }}" alt="7">
+                <img src="{{ asset('images/home/section-9/หมู่7.png') }}" alt="7">
             </div>
 
             <!-- หมู่ 6 -->
-            <img src="{{ asset('images/home/section-9/หมู่6.png') }}" alt="6" class="piece-6">
+            <img src="{{ asset('images/home/section-9/อันดับ12.png') }}" alt="6" class="piece-6">
             <div class="tooltip-section9">
-                <img src="{{ asset('images/home/section-9/6.png') }}" alt="6">
+                <img src="{{ asset('images/home/section-9/หมู่6.png') }}" alt="6">
             </div>
 
             <!-- หมู่ 10 -->
-            <img src="{{ asset('images/home/section-9/หมู่10.png') }}" alt="10" class="piece-10">
+            <img src="{{ asset('images/home/section-9/อันดับ13.png') }}" alt="10" class="piece-10">
             <div class="tooltip-section9">
-                <img src="{{ asset('images/home/section-9/10.png') }}" alt="10">
+                <img src="{{ asset('images/home/section-9/หมู่10.png') }}" alt="10">
             </div>
+            <!-- บ่อน้ำ -->
+            <img src="{{ asset('images/home/section-9/อันดับ14.png') }}" alt="14" class="piece-14">
+            {{-- <div class="tooltip-section9">
+                <img src="{{ asset('images/home/section-9/10.png') }}" alt="14">
+            </div> --}}
 
-            <!-- เมฆขวา -->
+            {{-- <!-- เมฆขวา -->
             <img src="{{ asset('images/home/section-9/เมฆขวา.png') }}" alt="could-right" class="could-right">
 
             <!-- เมฆซ้าย -->
@@ -455,7 +478,7 @@
 
             <!-- ดวงอาทิตย์ -->
             <img src="{{ asset('images/home/section-9/ดวงอาทิตย์.png') }}" alt="sun" class="sun"
-                style="width: 180px;">
+                style="width: 180px;"> --}}
         </div>
     </div>
 </main>

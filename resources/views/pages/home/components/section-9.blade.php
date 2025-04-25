@@ -4,14 +4,14 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        min-height: 100vh;
-        padding: 2rem 0;
+        min-height: 120vh;
+        padding: 4rem 0;
     }
 
     .map-container {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 900px;
     overflow-x: auto; /* หรือใช้ scroll */
     overflow-y: auto; /* ป้องกันไม่ให้เกิดการเลื่อนในแนวตั้ง */
     white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ของเนื้อหาภายใน */
@@ -375,7 +375,7 @@
 
 <main class="bg-section9 d-flex">
     <div class="container d-flex flex-column justify-content-start align-items-center align-items-xxl-start ">
-        <img src="{{ asset('images/home/section-9/title-section-9.png') }}" alt="title" class="img-fluid">
+        <img src="{{ asset('images/home/section-9/title-section-9.png') }}" alt="title" class="img-fluid" style="width: 50%; height:10%;">
         <div class="map-container ">
             <!-- หมู่ 1 -->
             <img src="{{ asset('images/home/section-9/หมู่1.png') }}" alt="1" class="piece-1">

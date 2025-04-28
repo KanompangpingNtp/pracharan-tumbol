@@ -122,7 +122,7 @@
                     <span class=" fs-1">1</span> <br>
                     <span class="fw-bold">ทั้งหมด</span>
                 </div> --}}
-                <div class="d-flex justify-content-center">
+                <div class="d-flex flex-column flex-md-row justify-content-center">
                     <div class="text-center py-3 px-5 border-3 border-light border-end lh-1">
                         <span class="fs-1" id="online_users">0</span> <br>
                         <span class="fw-bold">ขณะนี้</span>

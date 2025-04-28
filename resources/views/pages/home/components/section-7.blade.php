@@ -216,7 +216,7 @@
 <main class="bg-page7 d-flex">
     <div class="container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
         <div class="col-lg-7 d-flex flex-column justify-content-between align-items-center">
-            <img src="{{ asset('images/home/section-7/titlex.png') }}" alt="titlex" class="mb-3">
+            <img src="{{ asset('images/home/section-7/titlex.png') }}" alt="titlex" class="mb-3 img-fluid">
             <div class="d-flex flex-column align-content-center justify-content-center w-100" style="flex-grow: 1;">
                 <div class="bg-view-page7">
                     <div class="d-flex align-content-center justify-content-around gap-2 py-3 px-3">

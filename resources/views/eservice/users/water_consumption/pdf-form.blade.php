@@ -160,7 +160,7 @@
                     ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                     ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )<br>
                     <div style="margin-top:1rem; text-align: center;">
-                        <span>(นางสุณิสา แสงมัธยม)</span><br>
+                        <span>(นางสาวสมยา จันทร์ฟัก)</span><br>
                         <span>หัวหน้าสำนนักปลัดเทศบาล</span>
                     </div>
                 </div>
@@ -172,7 +172,7 @@
                         ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
-                            <span>(.................................................)</span><br>
+                            <span>(นายเสกสรรค์ บัวเจริญ)</span><br>
                             <span>ปลัดเทศบาลตำบลพระอาจารย์</span>
                         </div>
                     </div>
@@ -185,7 +185,7 @@
                        (<span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
-                            <span>(.................................................)</span><br>
+                            <span>(นายสายชล ทับเปลี่ยน)</span><br>
                             <span >รองนายกเทศมนตรี ปฏิบัติราชการแทน</span><br>
                             <span>นายกเทศมนตรีตำบลพระอาจารย์</span>
                         </div>
@@ -257,7 +257,7 @@
                         ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
-                            <span>(นายเสกสรรค์ บัวเจริญง)</span><br>
+                            <span>(นายเสกสรรค์ บัวเจริญ )</span><br>
                             <span>ปลัดเทศบาลตำบลพระอาจารย์</span>
                         </div>
                     </div>
@@ -270,7 +270,7 @@
                         ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
-                            <span>(นายสุรพงษ์ โพธิพงษ์)</span><br>
+                            <span>(นายสายชล ทับเปลี่ยน)</span><br>
                             <span >รองนายกเทศมนตรี ปฏิบัติราชการแทน</span><br>
                             <span>นายกเทศมนตรีตำบลพระอาจารย์</span>
                         </div>

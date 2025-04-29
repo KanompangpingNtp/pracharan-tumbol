@@ -258,7 +258,7 @@
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
                             <span>(นายเสกสรรค์ บัวเจริญ )</span><br>
-                            <span>ปลัดเทศบาลตำบลพระอาจารย์</span>
+                            <span>ปลัดเทศบาลตำบลพระอาจารย์ </span>
                         </div>
                     </div>
                 </div>

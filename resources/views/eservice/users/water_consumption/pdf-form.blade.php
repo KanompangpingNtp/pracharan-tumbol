@@ -123,8 +123,8 @@
         <span>เรียน นายกเทศมนตรีตำบลพระอาจารย์</span>
         <div style="margin-left: 3rem;">
             <span>ข้าพเจ้าชื่อ</span><span class="dotted-line" style="width: 30%; text-align: center;">{{$form->salutation}}{{$form->full_name}}</span>
-            <span>อยู่บ้านเลขที่</span><span class="dotted-line" style="width: 9%; text-align: center;">{{$form->house_number}}</span>
-            <span>หมู่ที่</span><span class="dotted-line" style="width: 9%; text-align: center;">{{$form->village}}</span>
+            <span>อยู่บ้านเลขที่</span><span class="dotted-line" style="width: 6%; text-align: center;">{{$form->house_number}}</span>
+            <span>หมู่ที่</span><span class="dotted-line" style="width: 6%; text-align: center;">{{$form->village}}</span>
             <span>ตำบลพระอาจารย์ อำเภอขลุง จังหวัดจันทบุรี</span>
         </div>
         <span>อาชีพ</span><span class="dotted-line" style="width: 25%; text-align: center;">{{$form->occupation}}</span>

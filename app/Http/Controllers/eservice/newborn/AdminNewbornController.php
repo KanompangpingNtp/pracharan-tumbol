@@ -66,7 +66,7 @@ class AdminNewbornController extends Controller
     public function NewbornAdminExportPDF($id)
     {
         $form = NewbornInformations::with('details')->findOrFail($id);
-        $pdf = Pdf::loadView('eservice.users.municipal_office.newborn.pdf-form', compact('form'))
+        $pdf = Pdf::loadView('eservice.users.newborn.pdf-form', compact('form'))
             ->setPaper('A4', 'portrait');
 
         return $pdf->stream('แบบคำร้องขอลงทะเบียนเพื่อขอรับสิทธิเงินอุดหนุนเพื่อการเลี้ยงดูเด็กแรกเกิด.pdf');

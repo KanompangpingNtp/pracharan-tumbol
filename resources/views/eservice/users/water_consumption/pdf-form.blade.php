@@ -105,25 +105,25 @@
         </strong>
     </div>
     <div class="box_text" style="text-align: right; margin-top:-0.5rem;">
-        <span>เขียนที่ สำนักงานเทศกาลตำบลเกวียนหัก</span> <br>
+        <span>เขียนที่ สำนักงานเทศกาลตำบลพระอาจารย์</span> <br>
         <span>วันที่</span><span class="dotted-line" style="width: 8%; text-align: center;"></span>
         <span>เดือนที่</span><span class="dotted-line" style="width: 12%; text-align: center;"></span>
         <span>พ.ศ.</span><span class="dotted-line" style="width: 8%; text-align: center;"></span>
     </div>
     <div class="box_text" style="text-align: left; margin-top:-0.5rem;">
         <span>เรื่อง ขอความอนุเคราะห์สนับสนุนน้ำเพื่ออุปโภค-บริโภค</span> <br>
-        <span>เรียน นายกเทศมนตรีตำบลเกวียนหัก</span>
+        <span>เรียน นายกเทศมนตรีตำบลพระอาจารย์</span>
         <div style="margin-left: 3rem;">
             <span>ข้าพเจ้าชื่อ</span><span class="dotted-line" style="width: 30%; text-align: center;"></span>
             <span>อยู่บ้านเลขที่</span><span class="dotted-line" style="width: 9%; text-align: center;"></span>
             <span>หมู่ที่</span><span class="dotted-line" style="width: 9%; text-align: center;"></span>
-            <span>ตำบลเกวียนหัก อำเภอขลุง จังหวัดจันทบุรี</span>
+            <span>ตำบลพระอาจารย์ อำเภอขลุง จังหวัดจันทบุรี</span>
         </div>
         <span>อาชีพ</span><span class="dotted-line" style="width: 25%; text-align: center;"></span>
         <span>มีจำนวนสมาชิกที่อาศัยอยู่จริงในบ้าน จำนวน</span><span class="dotted-line"
             style="width: 10%; text-align: center;"></span>
         <span>คน เบอโทรศัพท์</span><span class="dotted-line" style="width: 20%; text-align: center;"></span>
-        <span>ขอยื่นคำร้องขอรับการสนับสนุนน้ำเพื่อการอุปโภคบริโภค - บริโภคจากเทศบาลตำบลเกวียนหัก
+        <span>ขอยื่นคำร้องขอรับการสนับสนุนน้ำเพื่อการอุปโภคบริโภค - บริโภคจากเทศบาลตำบลพระอาจารย์
             ในการแก้ปัญหาการขาดแคลนน้ำ โดยการจัดหาน้ำให้ต่อไป</span>
         <span>จำนวน</span><span class="dotted-line" style="width: 10%; text-align: center;"></span>
         <span>เที่ยว ซึ่งน้ำจำนวนดังกล่าวจะช่วยบรรเทาความเดือดร้อนในเบื้องต้นได้</span>
@@ -156,9 +156,9 @@
         <tr>
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:2rem;">
-                    <span>เรียน ปลัดเทศบาลตำบลเกวียนหัก</span><br>
-                    <span class="dotted-line" style="width: 65%; text-align: center; ">()</span><br>
-                    <span class="dotted-line" style="width: 65%; text-align: center;">()</span><br>
+                    <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
+                    ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
+                    ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )<br>
                     <div style="margin-top:1rem; text-align: center;">
                         <span>(นางสุณิสา แสงมัธยม)</span><br>
                         <span>หัวหน้าสำนนักปลัดเทศบาล</span>
@@ -168,12 +168,12 @@
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:1rem;">
                     <div class="box_text" style="text-align: center; margin-top:1rem;">
-                        <span>เรียน ปลัดเทศบาลตำบลเกวียนหัก</span><br>
-                        <span class="dotted-line" style="width: 65%; text-align: center; ">()</span><br>
-                        <span class="dotted-line" style="width: 65%; text-align: center;">()</span>
+                        <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
+                        ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
+                        ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
-                            <span>(นางสาวณัฐณิชา กล่ำแสง)</span><br>
-                            <span>ปลัดเทศบาลตำบลเกวียนหัก</span>
+                            <span>(.................................................)</span><br>
+                            <span>ปลัดเทศบาลตำบลพระอาจารย์</span>
                         </div>
                     </div>
                 </div>
@@ -181,13 +181,13 @@
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:1.5rem;">
                     <div class="box_text" style="text-align: center; margin-top:1rem;">
-                        <span>เรียน ปลัดเทศบาลตำบลเกวียนหัก</span><br>
-                        <span class="dotted-line" style="width: 65%; text-align: center; ">()</span><br>
-                        <span class="dotted-line" style="width: 65%; text-align: center;">()</span>
+                        <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
+                       (<span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
+                        ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
-                            <span>(นายสุรพงษ์ โพธิพงษ์)</span><br>
+                            <span>(.................................................)</span><br>
                             <span >รองนายกเทศมนตรี ปฏิบัติราชการแทน</span><br>
-                            <span>นายกเทศมนตรีตำบลเกวียนหัก</span>
+                            <span>นายกเทศมนตรีตำบลพระอาจารย์</span>
                         </div>
                     </div>
                 </div>
@@ -199,7 +199,7 @@
         บันทึกการปฎิบัติงานของเจ้าหน้าที่
     </div>
     <div class="box_text" style="text-align: left;">
-        <span>เรียน นายกเทศมนตรีตำบลเกวียนหัก</span>
+        <span>เรียน นายกเทศมนตรีตำบลพระอาจารย์</span>
         <div style="margin-left: 3rem;">
             <span>ข้าพเจ้าชื่อ</span><span class="dotted-line" style="width: 30%; text-align: center;"></span>
             <span>ตำแหน่ง</span><span class="dotted-line" style="width: 25%; text-align: center;"></span>
@@ -208,7 +208,7 @@
         <span>ให้แก่</span><span class="dotted-line" style="width: 36%; text-align: center;"></span>
         <span>อยู่บ้านเลขที่</span><span class="dotted-line" style="width: 10%; text-align: center;"></span>
         <span>หมู่ที่</span><span class="dotted-line" style="width: 10%; text-align: center;"></span>
-        <span>ตำบลเกวียนหัก อำเภอขลุง จังหวัดจันทบุรี</span>
+        <span>ตำบลพระอาจารย์ อำเภอขลุง จังหวัดจันทบุรี</span>
         <span>ในวันที่</span><span class="dotted-line" style="width: 12%; text-align: center;"></span>
         <span>เดือน</span><span class="dotted-line" style="width: 15%; text-align: center;"></span>
         <span>ในวันที่</span><span class="dotted-line" style="width: 12%; text-align: center;"></span>
@@ -241,11 +241,11 @@
         <tr>
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:2rem;">
-                    <span>เรียน ปลัดเทศบาลตำบลเกวียนหัก</span><br>
-                    <span class="dotted-line" style="width: 65%; text-align: center; ">()</span><br>
-                    <span class="dotted-line" style="width: 65%; text-align: center;">()</span><br>
+                    <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
+                    ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
+                    ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )<br>
                     <div style="margin-top:1rem; text-align: center;">
-                        <span>(นางสุณิสา แสงมัธยม)</span><br>
+                        <span>(นางสาวสมยา จันทร์ฟัก)</span><br>
                         <span>หัวหน้าสำนนักปลัดเทศบาล</span>
                     </div>
                 </div>
@@ -253,12 +253,12 @@
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:1rem;">
                     <div class="box_text" style="text-align: center; margin-top:1rem;">
-                        <span>เรียน ปลัดเทศบาลตำบลเกวียนหัก</span><br>
-                        <span class="dotted-line" style="width: 65%; text-align: center; ">()</span><br>
-                        <span class="dotted-line" style="width: 65%; text-align: center;">()</span>
+                        <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
+                        ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
+                        ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
-                            <span>(นางสาวณัฐณิชา กล่ำแสง)</span><br>
-                            <span>ปลัดเทศบาลตำบลเกวียนหัก</span>
+                            <span>(นายเสกสรรค์ บัวเจริญง)</span><br>
+                            <span>ปลัดเทศบาลตำบลพระอาจารย์</span>
                         </div>
                     </div>
                 </div>
@@ -266,13 +266,13 @@
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:1.5rem;">
                     <div class="box_text" style="text-align: center; margin-top:1rem;">
-                        <span>เรียน ปลัดเทศบาลตำบลเกวียนหัก</span><br>
-                        <span class="dotted-line" style="width: 65%; text-align: center; ">()</span><br>
-                        <span class="dotted-line" style="width: 65%; text-align: center;">()</span>
+                        <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
+                        ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
+                        ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
                             <span>(นายสุรพงษ์ โพธิพงษ์)</span><br>
                             <span >รองนายกเทศมนตรี ปฏิบัติราชการแทน</span><br>
-                            <span>นายกเทศมนตรีตำบลเกวียนหัก</span>
+                            <span>นายกเทศมนตรีตำบลพระอาจารย์</span>
                         </div>
                     </div>
                 </div>

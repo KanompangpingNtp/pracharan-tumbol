@@ -477,9 +477,9 @@
             <span class="dotted-line" style="width: 45%; text-align: center; border-bottom: 2px dotted black;"></span>
         </div>
     </div>
-    <div class="footer font-sarabun-bold">
+    {{-- <div class="footer font-sarabun-bold">
         <p>องค์การบริหารส่วนเทศบาลตำบลเกวียนหักิ์ เทศบาลตำบลเกวียนหัก</p>
-    </div>
+    </div> --}}
 </body>
 
 </html>

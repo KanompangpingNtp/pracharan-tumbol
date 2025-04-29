@@ -143,9 +143,9 @@
     </div>
     <div class="box_text" style="text-align: right;">
         <span style="line-height: 0.7;">
-            องค์การบริหารส่วนตำบลเสม็ดใต้ <br>
-            เลขที่ 111 หมู่ที่ 4 ตำบลเสม็ดใต้ <br>
-            อำเภอบางคล้า จังหวัดฉะเชิงเทรา 24110
+            องค์การบริหารส่วนตำบลพระอาจารย์<br>
+            ถนนคลองหกวา หมู่ที่ 5 ตำบลพระอาจารย์<br>
+            อำเภอองครักษ์ จังหวัดนครนายก 26120
         </span>
         <div style="margin-right: 80px; margin-top: 10px;">
             <span>วันที่</span><span class="dotted-line" style="width: 5%; text-align: center;"> {{ $day }}
@@ -187,11 +187,11 @@
             class="dotted-line" style="width: 19%; text-align: center;">{{ $form->phone }}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:5rem">
-        <span>เรื่องที่ร้องต่อองค์การบริหารส่วนตำบลเสม็ดใต้ กรณี</span><span class="dotted-line"
+        <span>เรื่องที่ร้องต่อองค์การบริหารส่วนตำบลพระอาจารย์กรณี</span><span class="dotted-line"
             style="min-width: 50%; text-align: start;">{{ $form->request_details }}</span>
     </div>
     <div class="box_text" style="text-align: left;">
-        <span style="margin-left:5rem;">ข้าพเจ้าขอความอนุเคราะห์ให้องค์การบริหารส่วนตำบลเสม็ดใต้ ดำเนินการ</span>
+        <span style="margin-left:5rem;">ข้าพเจ้าขอความอนุเคราะห์ให้องค์การบริหารส่วนตำบลพระอาจารย์ดำเนินการ</span>
         <span class="dotted-line"
             style="min-width: 30%; text-align: start;">{{ $form->proceedings }}</span>
     </div>

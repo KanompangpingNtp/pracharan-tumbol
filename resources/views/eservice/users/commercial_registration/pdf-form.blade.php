@@ -141,7 +141,7 @@
                 </td>
                 <td
                     style="border: 1px solid black; width: 8rem; padding-top:10px; padding-bottom:10px; text-align: center;">
-                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('pdf/Logo.png'))) }}" alt="Logo" style="width: 100px">
+                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/header/logo.png'))) }}" alt="Logo" style="width: 100px">
                 </td>
                 <td style="border: 1px solid black; width: 12rem; padding-top:10px; padding-bottom:10px;">
                     <div style="display: flex; align-items: center; margin-bottom: 5px; text-align: center;">

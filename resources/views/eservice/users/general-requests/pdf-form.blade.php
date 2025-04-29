@@ -161,7 +161,7 @@
             style="min-width: 95%; text-align: start; margin-left: 10px;">{{ $form->subject }}</span>
     </div>
     <div class="box_text" style="text-align: left;">
-        <span>เรียน นายกองค์การบริหารส่วนตำบลเสม็ดใต้</span>
+        <span>เรียน นายกองค์การบริหารส่วนตำบลพระอาจารย์</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>สิ่งที่ส่งมาด้วย</span><span class="dotted-line"

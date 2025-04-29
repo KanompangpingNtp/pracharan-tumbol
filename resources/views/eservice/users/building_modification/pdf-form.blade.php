@@ -313,9 +313,9 @@
             <span>เป็นผู้ออกแบบและคำนวณ</span>
         </div>
     </div>
-    <div class="footer font-sarabun-bold">
+    {{-- <div class="footer font-sarabun-bold">
         <p>องค์การบริหารส่วนเทศบาลตำบลเกวียนหักิ์ เทศบาลตำบลเกวียนหัก</p>
-    </div>
+    </div> --}}
     {{-- new page --}}
     <div style="page-break-before: always;"></div>
     {{-- <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐

@@ -182,7 +182,7 @@ function convertYearPlus($date)
         </div>
     </div>
     <div class="title_doc">
-        <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/pdf/ครุฑ.png'))) }}"
+        <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('pdf/ครุฑ.png'))) }}"
             alt="Logo" height="100" style="margin-left:4rem;"> <br>
         <div class="box_text" style="text-align: center; margin-top:5px;">
             <div style="font-weight: bold;">

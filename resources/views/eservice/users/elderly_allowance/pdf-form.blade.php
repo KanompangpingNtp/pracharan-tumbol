@@ -412,7 +412,7 @@
             <div style="border-bottom:2px solid black;">
                 <div id="left" style="float: left; width: 49%; padding-top:5px;">
                     <div>ความเห็นเจ้าหน้าที่ผู้รับยืนยันสิทธิ</div>
-                    <div>เรียน คณะกรรมการตรวจสอบคุณสมบัติ
+                    <div>เรียน นายกองค์การบริหารส่วนตำบลพระอาจารย์
                     </div>
                     <div style="text-align:center;">ได้ตรวจสอบคุณสมบัติของ</div>
                     <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $form->salutation }}

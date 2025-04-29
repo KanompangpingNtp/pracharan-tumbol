@@ -99,6 +99,14 @@
 </head>
 
 <body>
+    @php
+    use Carbon\Carbon;
+    $date = Carbon::parse($form->created_at);
+    $day = $date->day;
+    $month = $date->locale('th')->translatedFormat('F');
+    $year = $date->year + 543;
+@endphp
+
     <div style="text-align: center; ">
         <strong>
             คำร้องขอสนับสนุนน้ำเพื่ออุปโภค-บริโภค
@@ -106,26 +114,26 @@
     </div>
     <div class="box_text" style="text-align: right; margin-top:-0.5rem;">
         <span>เขียนที่ สำนักงานเทศกาลตำบลพระอาจารย์</span> <br>
-        <span>วันที่</span><span class="dotted-line" style="width: 8%; text-align: center;"></span>
-        <span>เดือนที่</span><span class="dotted-line" style="width: 12%; text-align: center;"></span>
-        <span>พ.ศ.</span><span class="dotted-line" style="width: 8%; text-align: center;"></span>
+        <span>วันที่</span><span class="dotted-line" style="width: 8%; text-align: center;">{{$day}}</span>
+        <span>เดือนที่</span><span class="dotted-line" style="width: 12%; text-align: center;">{{$month}}</span>
+        <span>พ.ศ.</span><span class="dotted-line" style="width: 8%; text-align: center;">{{$year}}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-top:-0.5rem;">
         <span>เรื่อง ขอความอนุเคราะห์สนับสนุนน้ำเพื่ออุปโภค-บริโภค</span> <br>
         <span>เรียน นายกเทศมนตรีตำบลพระอาจารย์</span>
         <div style="margin-left: 3rem;">
-            <span>ข้าพเจ้าชื่อ</span><span class="dotted-line" style="width: 30%; text-align: center;"></span>
-            <span>อยู่บ้านเลขที่</span><span class="dotted-line" style="width: 9%; text-align: center;"></span>
-            <span>หมู่ที่</span><span class="dotted-line" style="width: 9%; text-align: center;"></span>
+            <span>ข้าพเจ้าชื่อ</span><span class="dotted-line" style="width: 30%; text-align: center;">{{$form->salutation}}{{$form->full_name}}</span>
+            <span>อยู่บ้านเลขที่</span><span class="dotted-line" style="width: 9%; text-align: center;">{{$form->house_number}}</span>
+            <span>หมู่ที่</span><span class="dotted-line" style="width: 9%; text-align: center;">{{$form->village}}</span>
             <span>ตำบลพระอาจารย์ อำเภอขลุง จังหวัดจันทบุรี</span>
         </div>
-        <span>อาชีพ</span><span class="dotted-line" style="width: 25%; text-align: center;"></span>
+        <span>อาชีพ</span><span class="dotted-line" style="width: 25%; text-align: center;">{{$form->occupation}}</span>
         <span>มีจำนวนสมาชิกที่อาศัยอยู่จริงในบ้าน จำนวน</span><span class="dotted-line"
-            style="width: 10%; text-align: center;"></span>
-        <span>คน เบอโทรศัพท์</span><span class="dotted-line" style="width: 20%; text-align: center;"></span>
+            style="width: 10%; text-align: center;">{{$form->number_people}}</span>
+        <span>คน เบอโทรศัพท์</span><span class="dotted-line" style="width: 20%; text-align: center;">{{$form->phone_number}}</span>
         <span>ขอยื่นคำร้องขอรับการสนับสนุนน้ำเพื่อการอุปโภคบริโภค - บริโภคจากเทศบาลตำบลพระอาจารย์
             ในการแก้ปัญหาการขาดแคลนน้ำ โดยการจัดหาน้ำให้ต่อไป</span>
-        <span>จำนวน</span><span class="dotted-line" style="width: 10%; text-align: center;"></span>
+        <span>จำนวน</span><span class="dotted-line" style="width: 10%; text-align: center;">{{$form->number_trips}}</span>
         <span>เที่ยว ซึ่งน้ำจำนวนดังกล่าวจะช่วยบรรเทาความเดือดร้อนในเบื้องต้นได้</span>
         <div style="margin-left: 3rem;">
             <span>จึงเรียนมาเพื่อโปรดพิจารณาให้ความอนุเคราะห์</span>
@@ -138,11 +146,11 @@
         </span><span>ผู้ยื่นคำร้อง</span>
         <div style="margin-right: 50px;">
             <span>(</span>
-            <span class="dotted-line" style="width: 30%; text-align: center;"></span>
+            <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->salutation}}{{$form->full_name}}</span>
             <span>)</span>
         </div>
     </div>
-    <div class="box_text" style="text-align: right; margin-top:0.5rem;">
+    {{-- <div class="box_text" style="text-align: right; margin-top:0.5rem;">
         <span>ลงชื่อ</span>
         <span class="dotted-line" style="width: 30%; text-align: center;">
         </span><span>ผู้ยื่นคำร้อง</span>
@@ -151,7 +159,7 @@
             <span class="dotted-line" style="width: 30%; text-align: center;"></span>
             <span>)</span>
         </div>
-    </div>
+    </div> --}}
     <table style="width: 100%; margin-top: -2.3rem; margin-bottom: 0.4rem; " >
         <tr>
             <td style="width: 33%; text-align: center;">
@@ -161,7 +169,7 @@
                     ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )<br>
                     <div style="margin-top:1rem; text-align: center;">
                         <span>(นางสาวสมยา จันทร์ฟัก)</span><br>
-                        <span>หัวหน้าสำนนักปลัดเทศบาล</span>
+                        <span>หัวหน้าสำนักปลัด</span>
                     </div>
                 </div>
             </td>
@@ -186,8 +194,7 @@
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
                             <span>(นายสายชล ทับเปลี่ยน)</span><br>
-                            <span >รองนายกเทศมนตรี ปฏิบัติราชการแทน</span><br>
-                            <span>นายกเทศมนตรีตำบลพระอาจารย์</span>
+                            <span >นายกองค์การบริหารส่วนตำบลพระอาจารย์</span>
                         </div>
                     </div>
                 </div>
@@ -246,7 +253,7 @@
                     ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )<br>
                     <div style="margin-top:1rem; text-align: center;">
                         <span>(นางสาวสมยา จันทร์ฟัก)</span><br>
-                        <span>หัวหน้าสำนนักปลัดเทศบาล</span>
+                        <span>หัวหน้าสำนักปลัด</span>
                     </div>
                 </div>
             </td>
@@ -258,7 +265,7 @@
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
                             <span>(นายเสกสรรค์ บัวเจริญ )</span><br>
-                            <span>ปลัดเทศบาลตำบลพระอาจารย์ </span>
+                            <span>ปลัดองค์การบริหารส่วนตำบลพระอาจารย์</span>
                         </div>
                     </div>
                 </div>
@@ -271,8 +278,7 @@
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
                             <span>(นายสายชล ทับเปลี่ยน)</span><br>
-                            <span >รองนายกเทศมนตรี ปฏิบัติราชการแทน</span><br>
-                            <span>นายกเทศมนตรีตำบลพระอาจารย์</span>
+                            <span >นายกองค์การบริหารส่วนตำบลพระอาจารย์</span>
                         </div>
                     </div>
                 </div>

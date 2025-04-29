@@ -142,8 +142,8 @@
     <div class="box_text" style="text-align: right; margin-top:-0.5rem;">
         <span style="margin-right: 7rem; margin-bottom:0.5rem;">ขอแสดงความนับถือ</span><br>
         <span>ลงชื่อ</span>
-        <span class="dotted-line" style="width: 30%; text-align: center;">
-        </span><span>ผู้ยื่นคำร้อง</span>
+        <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->full_name}}</span>
+        <span>ผู้ยื่นคำร้อง</span>
         <div style="margin-right: 50px;">
             <span>(</span>
             <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->salutation}}{{$form->full_name}}</span>

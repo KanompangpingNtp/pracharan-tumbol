@@ -287,7 +287,7 @@
                 <a href="#" class="col-span-2 text-center">
                     <img src="{{ asset('images/home/section-7/11.png') }}" alt="11" class="img-fluid img-hover">
                 </a>
-                <a href="#" class="col-span-2 text-center">
+                <a href="{{route('forum_pages')}}" class="col-span-2 text-center">
                     <img src="{{ asset('images/home/section-7/5.png') }}" alt="5" class="img-fluid img-hover">
                 </a>
                 <a href="#" class="col-span-2 text-center">

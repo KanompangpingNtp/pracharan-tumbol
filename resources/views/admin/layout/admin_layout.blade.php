@@ -330,6 +330,12 @@
                             </div>
                             จัดการการประเมินคุณธรรม(ITA)
                         </a>
+                        <a class="nav-link" href="{{route('ForumAdminPages')}}">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi bi-database-add"></i>
+                            </div>
+                            ข้อมูลกระดานกระทู้
+                        </a>
 
                         <div class="sb-sidenav-menu-heading">แถบเมนู</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts3">

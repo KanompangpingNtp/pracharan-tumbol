@@ -9,17 +9,25 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckLogin
 {
-      /**
+     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @return mixed
+     * @param  mixed  ...$statuses
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, ...$statuses): Response
     {
         if (!Auth::check()) {
             return redirect()->route('showLoginForm');
+        }
+
+        $status = Auth::user()->status;
+
+        if (!in_array($status, $statuses)) {
+            Auth::logout();
+            return redirect()->route('showLoginForm')->withErrors(['status' => 'ไม่มีสิทธิ์เข้าถึงระบบ']);
         }
 
         return $next($request);

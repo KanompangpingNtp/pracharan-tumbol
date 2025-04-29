@@ -58,34 +58,34 @@
                 <table class="table">
 
                     <tr>
-                        <td><a href="{{route('page1')}}">คำร้องทั่วไป</a></td>
+                        <td><a href="{{route('GeneralRequestsFormPage')}}">คำร้องทั่วไป</a></td>
                     </tr>
                     <tr>
-                        <td><a href="{{route('page2')}}">คำขออนุญาตก่อสร้างอาคารดัดแปลงอาคาร</a></td>
+                        <td><a href="{{route('BuildingChangeFormPage')}}">คำขออนุญาตก่อสร้างอาคารดัดแปลงอาคาร</a></td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <td><a href="{{route('page3')}}">คำร้องขอรับบริการจัดเก็บขยะมูลฝอย</a></td>
+                    </tr> --}}
+                    <tr>
+                        <td><a href="{{route('TradeRegistryFormPage')}}">แบบคำขอจดทะเบียนพาณิชย์</a></td>
                     </tr>
                     <tr>
-                        <td><a href="{{route('page4')}}">แบบคำขอจดทะเบียนพาณิชย์</a></td>
+                        <td><a href="{{route('DisabilityFormPage')}}">คำขอลงทะเบียนรับเงินเบี้ยความพิการ</a></td>
                     </tr>
                     <tr>
-                        <td><a href="{{route('page5')}}">คำขอลงทะเบียนรับเงินเบี้ยความพิการ</a></td>
+                        <td><a href="{{route('WaterConsumptionPage')}}">คำร้องขอน้ำอุปโภค บริโภค</a></td>
                     </tr>
                     <tr>
-                        <td><a href="{{route('page6')}}">คำร้องขอน้ำอุปโภค บริโภค</a></td>
+                        <td><a href="{{route('NewbornFormPage')}}">(ดร.๐๑) คำร้องขอลงทะเบียนเพื่อขอรับสิทธิเงินอุดหนุนเพื่อการเลี้ยงดูเด็กแรกเกิด</a></td>
                     </tr>
                     <tr>
-                        <td><a href="{{route('page7')}}">(ดร.๐๑) คำร้องขอลงทะเบียนเพื่อขอรับสิทธิเงินอุดหนุนเพื่อการเลี้ยงดูเด็กแรกเกิด</a></td>
+                        <td><a href="{{route('ElderlyAllowanceFormPage')}}">แบบยืนยันสิทธิการจอรับเงินเบี้ยยังชีพผู้สูงอายุ</a></td>
                     </tr>
                     <tr>
-                        <td><a href="{{route('page8')}}">แบบยืนยันสิทธิการจอรับเงินเบี้ยยังชีพผู้สูงอายุ</a></td>
+                        <td><a href="{{route('LicenseTaxFormPage')}}">(ภ.ป.๑) แบบแสดงรายการภาษีป้าย</a></td>
                     </tr>
                     <tr>
-                        <td><a href="{{route('page9')}}">(ภ.ป.๑) แบบแสดงรายการภาษีป้าย</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="{{route('page10')}}">(ภ.ป.๑) ใบสมัครศูนย์เด็ก</a></td>
+                        <td><a href="{{route('ChildApplyPage')}}">(ภ.ป.๑) ใบสมัครศูนย์เด็ก</a></td>
                     </tr>
 
                 </table>

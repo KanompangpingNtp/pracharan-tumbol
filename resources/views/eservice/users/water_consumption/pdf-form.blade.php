@@ -164,7 +164,7 @@
         <tr>
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:2rem;">
-                    <span>เรียน ปลัดองค์การบริหารส่วนตำบลพระอาจารย์ </span><br>
+                    <span>เรียน หัวหน้าสำนักปลัด </span><br>
                     ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                     ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )<br>
                     <div style="margin-top:1rem; text-align: center;">
@@ -206,7 +206,7 @@
         บันทึกการปฎิบัติงานของเจ้าหน้าที่
     </div>
     <div class="box_text" style="text-align: left;">
-        <span>เรียน นายกเทศมนตรีตำบลพระอาจารย์</span>
+        <span>เรียน นายกองค์การบริหารส่วนตําบลพระอาจารย์</span>
         <div style="margin-left: 3rem;">
             <span>ข้าพเจ้าชื่อ</span><span class="dotted-line" style="width: 30%; text-align: center;"></span>
             <span>ตำแหน่ง</span><span class="dotted-line" style="width: 25%; text-align: center;"></span>
@@ -241,14 +241,14 @@
         </div>
         <span style="font-weight: bold;">คำรับรองการปฏิบัติงานของเจ้าหน้าที่</span>
         <div style="margin-left: 3rem;">
-            <span>ข้าพเจ้าได้รับน้ำเพื่อการอุปโภคบริโภค ตามจำนวนที่ร้องขอความช่วยเหลือจากเทศบาลตำบลเกวียนนนหักเรียบร้อยแล้ว</span>
+            <span>ข้าพเจ้าได้รับน้ำเพื่อการอุปโภคบริโภค ตามจำนวนที่ร้องขอความช่วยเหลือจากองค์การบริหารส่วนตําบลพระอาจารย์เรียบร้อยแล้ว</span>
         </div>
     </div>
     <table style="width: 100%; margin-top: -2.3rem; margin-bottom: 0.4rem; " >
         <tr>
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:2rem;">
-                    <span>เรียน ปลัดองค์การบริหารส่วนตำบลพระอาจารย์ </span><br>
+                    <span>เรียน หัวหน้าสำนักปลัด </span><br>
                     ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                     ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )<br>
                     <div style="margin-top:1rem; text-align: center;">

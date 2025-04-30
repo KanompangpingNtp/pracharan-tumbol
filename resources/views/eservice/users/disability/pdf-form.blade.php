@@ -478,7 +478,7 @@
 
             <div id="right" style="float: right; width: 49%;  height: 42%; padding-left: 9px; border-left: 2px solid black;">
                 <div>ความเห็นคณะกรรมการตรวจสอบคุณสมบัติ</div>
-                <div style="margin-top: 10px;">เรียน นายก เทศมนตรี/อบต.<span class="dotted-line" style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black; "> </span></div>
+                <div style="margin-top: 10px;">เรียน นายกองค์การบริหารส่วนตำบลพระอาจารย์<span class="dotted-line" style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black; "> </span></div>
                 <div style="text-align: center; margin-top: 5px;">คณะกรรมการตรวจสอบคุณสมบัติได้ตรวจสอบแล้ว</div>
                 <div style="text-align: left; margin-top: 10px;">มีความเห็นดังนี้</div>
                 <div class="box_text" style="text-align:left; margin-top: 10px;">
@@ -539,7 +539,7 @@
                 </span>
                 <div style="margin-left: 40px;">
                 </div>
-                <span>นายก เทศมนตรี/นายก อบต.</span>
+                <span>นายกองค์การบริหารส่วนตำบลพระอาจารย์</span>
                 <span class="dotted-line"
                     style="width: 30%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                 </span>

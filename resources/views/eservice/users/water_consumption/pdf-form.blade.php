@@ -164,7 +164,7 @@
         <tr>
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:2rem;">
-                    <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
+                    <span>เรียน หัวหน้าสำนักปลัด</span><br>
                     ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                     ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )<br>
                     <div style="margin-top:1rem; text-align: center;">
@@ -189,7 +189,7 @@
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:1.5rem;">
                     <div class="box_text" style="text-align: center; margin-top:1rem;">
-                        <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
+                        <span>เรียน นายกองค์การบริหารส่วนตำบลพระอาจารย์</span><br>
                        (<span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
@@ -248,7 +248,7 @@
         <tr>
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:2rem;">
-                    <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
+                    <span>เรียน หัวหน้าสำนักปลัด</span><br>
                     ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
                     ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )<br>
                     <div style="margin-top:1rem; text-align: center;">
@@ -260,8 +260,8 @@
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:1rem;">
                     <div class="box_text" style="text-align: center; margin-top:1rem;">
-                        <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
-                        ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
+                        <span>เรียน ปลัดองค์การบริหารส่วนตำบลพระอาจารย์</span><br>
+                        ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> ) <br>
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
                             <span>(นายเสกสรรค์ บัวเจริญ )</span><br>
@@ -273,8 +273,8 @@
             <td style="width: 33%; text-align: center;">
                 <div class="box_text" style="text-align: center; margin-top:1.5rem;">
                     <div class="box_text" style="text-align: center; margin-top:1rem;">
-                        <span>เรียน ปลัดเทศบาลตำบลพระอาจารย์</span><br>
-                        ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> )<br>
+                        <span>เรียน นายกองค์การบริหารส่วนตำบลพระอาจารย์</span><br>
+                        ( <span class="dotted-line" style="width: 65%; text-align: center; "></span> ) <br>
                         ( <span class="dotted-line" style="width: 65%; text-align: center;"></span> )
                         <div style="margin-top:1rem; text-align: center;">
                             <span>(นายสายชล ทับเปลี่ยน)</span><br>

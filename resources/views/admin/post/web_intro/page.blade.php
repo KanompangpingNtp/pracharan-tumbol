@@ -61,8 +61,21 @@
 <br>
 
 @foreach($Image as $item)
-<div class="image-container">
+@php
+$extension = strtolower(pathinfo($item->files_path, PATHINFO_EXTENSION));
+@endphp
+
+<div class="image-container mb-3">
+    @if(in_array($extension, ['jpg', 'jpeg', 'png', 'gif']))
     <img src="{{ asset('storage/' . $item->files_path) }}" alt="Image" style="max-width: 100%; height: auto;">
+    @elseif($extension === 'webm')
+    <video controls style="max-width: 100%; height: auto;">
+        <source src="{{ asset('storage/' . $item->files_path) }}" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    @else
+    <p>ไม่สามารถแสดงตัวอย่างไฟล์ประเภทนี้ได้</p>
+    @endif
     <p>ประเภทไฟล์: {{ $item->files_type }}</p>
 </div>
 
@@ -81,7 +94,8 @@
         var container = document.getElementById("buttonContainer");
         container.style.display = (container.style.display === "none") ? "block" : "none";
     });
-    </script>
+
+</script>
 
 
 @endsection

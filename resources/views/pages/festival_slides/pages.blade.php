@@ -31,7 +31,8 @@
             align-items: center;
         }
 
-        .fullscreen-image img {
+        .fullscreen-image img,
+        .fullscreen-image video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -52,12 +53,12 @@
                 overflow-x: scroll;
             }
 
-            .fullscreen-image img {
+            .fullscreen-image img,
+            .fullscreen-image video {
                 min-width: 100%;
                 min-height: 100%;
                 object-fit: contain;
             }
-
         }
 
         .button-container {
@@ -155,8 +156,20 @@
 
     <div class="fullscreen-image">
         @foreach($Image as $item)
+        @php
+        $extension = pathinfo($item->files_path, PATHINFO_EXTENSION);
+        @endphp
+
+        @if(in_array(strtolower($extension), ['jpg', 'jpeg', 'png', 'gif']))
         <img id="background-image" src="{{ asset('storage/' . $item->files_path) }}" alt="รูปภาพอินโทร">
+        @elseif(strtolower($extension) === 'webm')
+        <video id="background-image" autoplay muted loop>
+            <source src="{{ asset('storage/' . $item->files_path) }}" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        @endif
         @endforeach
+
         <div class="button-container">
             <a href="{{ route('HomeDataPage') }}" class="login-button">
                 <strong>เข้าสู่เว็บไซต์</strong>

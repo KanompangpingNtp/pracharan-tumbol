@@ -84,7 +84,7 @@
         }
 
         .login-button {
-            margin-top: 700px;
+            margin-top: 740px;
             width: 280px;
             height: 50px;
             border-radius: 20px;

@@ -16,7 +16,7 @@ class ShowDataDetailController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('type_name', 'ข่าวประชาสัมพันธ์');
             })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->get();
 
         //กิจกรรม
@@ -24,7 +24,7 @@ class ShowDataDetailController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('type_name', 'กิจกรรม');
             })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->get();
 
         //ประกาศจัดซื้อจัดจ้าง
@@ -32,7 +32,7 @@ class ShowDataDetailController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('type_name', 'ประกาศจัดซื้อจัดจ้าง');
             })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->get();
 
         //ผลจัดซื้อจัดจ้าง
@@ -40,7 +40,7 @@ class ShowDataDetailController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('type_name', 'ผลจัดซื้อจัดจ้าง');
             })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->get();
 
         //ประกาศราคากลาง
@@ -48,7 +48,7 @@ class ShowDataDetailController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('type_name', 'ประกาศราคากลาง');
             })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->get();
 
         //งานเก็บรายได้
@@ -56,7 +56,7 @@ class ShowDataDetailController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('type_name', 'งานเก็บรายได้');
             })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->get();
 
         //สถานที่แนะนำ
